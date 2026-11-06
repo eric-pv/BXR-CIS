@@ -48,7 +48,7 @@
   "types": {
     "cover": {
       "background": "approved-layouts/military-tech/BXR_Military_Cover_16x9.png",
-      "content_region": "right two-thirds",
+      "content_region": "right two-thirds intended text space; focal flare placement decided by Claude",
       "placeholder_roles": [
         "title",
         "subtitle",
@@ -60,11 +60,12 @@
       "placeholder_roles": [
         "chapter",
         "section_title"
-      ]
+      ],
+      "title_zone": "place chapter/title in deliberate relation to focal light streak; Claude determines exact typography and coordinates"
     },
     "content": {
       "background": "approved-layouts/military-tech/BXR_Military_Content_White_16x9.png",
-      "content_region": "white area below header",
+      "content_region": "white body below the header for body material; header banner reserved for title",
       "banner_height_fraction": [
         0.1,
         0.12
@@ -74,22 +75,34 @@
         "body",
         "footer",
         "page_number"
-      ]
+      ],
+      "title_zone": "top banner"
     }
   },
-  "typography_provisional_pt": {
-    "cover_title": 36,
-    "cover_subtitle": 20,
-    "section_number": 28,
-    "section_title": 34,
-    "content_title": 26,
-    "body": 18,
-    "caption": 12,
-    "footnote": 10
-  },
   "notes": [
-    "Typography points are a readable implementation baseline, NOT claimed to be mandated by CIS. Confirm against source official PPTX template and approved real slide renders.",
-    "For presentation readability, do not shrink full text to fit; reflow or split slide instead.",
-    "Do not manually insert logo on generated slides."
-  ]
+    "Do not treat prototype coordinates and type sizes as formal design specs.",
+    "PowerPoint layout and typography specifications are the responsibility of Claude, informed by CIS and approved visual references.",
+    "Visual accents / flares should meaningfully emphasize titles rather than being disconnected decoration."
+  ],
+  "designer_authority": {
+    "owner": "Claude Code / presentation designer",
+    "delegated": [
+      "font sizes and type scale within CIS",
+      "spatial hierarchy and alignment",
+      "typographic emphasis",
+      "using light flares, diagonal lines and visual focal points",
+      "content density, layout composition, diagram design, chart styles",
+      "cover/section title artistic placement"
+    ],
+    "hard_constraints": [
+      "use approved imagery unmodified unless user approves revision",
+      "cover artwork occupies approximately left 1/3, leave right 2/3 for copy",
+      "content page top banner is the title zone; do not default its title to the white body",
+      "content page white body stays uncluttered",
+      "all slide-specific text remains editable",
+      "official logo via master/layout, not repeated per slide",
+      "respect CIS v3.2 brand colors and font families"
+    ],
+    "note": "These are user-approved intentions, not fixed coordinate/point-size recipes. The final layout system is to be authored and tested by Claude."
+  }
 }
