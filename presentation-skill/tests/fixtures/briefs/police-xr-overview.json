@@ -1,0 +1,45 @@
+{
+  "id": "police-xr-overview",
+  "topic": "警用 XR 沉浸式訓練方案",
+  "language": "zh-TW",
+  "audience": "government",
+  "purpose": "介紹XR模擬訓練方案及導入方式",
+  "slides": 12,
+  "series": "military-tech",
+  "sector": "police",
+  "source_policy": "provided-only",
+  "content": [
+    {
+      "title": "訓練方案概要",
+      "facts": [
+        "使用可重複的虛擬情境進行演練",
+        "示範內容應以提供的產品資料為準"
+      ]
+    },
+    {
+      "title": "訓練流程",
+      "facts": [
+        "需求確認",
+        "情境設定",
+        "演練執行",
+        "回饋檢討"
+      ]
+    },
+    {
+      "title": "導入評估",
+      "facts": [
+        "設備條件依專案評估",
+        "不編造績效數字"
+      ]
+    }
+  ],
+  "must_avoid": [
+    "未經證實的訓練成效百分比",
+    "虛構客戶名稱"
+  ],
+  "output": {
+    "pptx": true,
+    "pdf": true
+  },
+  "designer_notes": "Claude自主設計；內容頁標題置於頂部Banner；封面和章節頁標題與光點呼應"
+}
