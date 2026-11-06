@@ -1,0 +1,151 @@
+﻿檔名,版本,資料夾,格式,向量或點陣,實際像素,透明背景,建議用途,最大輸出_手持0_35m_300ppi,最大輸出_觀看3m,正式印刷,需RD重新渲染,狀態
+Asset_Inventory_v3.2.csv,v3.2,/,表格 CSV,—,—,—,說明文件,—,—,—,否,v3.2 新增／更新
+BXR_CIS_Changes_v3.1_to_v3.2.csv,v3.2,/,表格 CSV,—,—,—,說明文件,—,—,—,否,v3.2 新增／更新
+BXR_Sector_Color_Comparison_v3.2.jpg,v3.2,/,點陣 JPG,點陣,3200 × 5400,否,說明文件,27 cm 寬,2.79 m 寬,視尺寸,否,v3.2 新增／更新
+README_v3.2.txt,v3.2,/,文字,—,—,—,說明文件,—,—,—,否,v3.2 新增／更新
+BXR_Logo_H_Black.png,—,01_Logo/PNG,點陣 PNG,點陣,2000 × 496,是,螢幕用 PNG；印刷請用 SVG,17 cm 寬,1.74 m 寬,否（用 SVG）,否,沿用
+BXR_Logo_H_Color.png,—,01_Logo/PNG,點陣 PNG,點陣,2000 × 496,是,螢幕用 PNG；印刷請用 SVG,17 cm 寬,1.74 m 寬,否（用 SVG）,否,沿用
+BXR_Logo_H_Reverse.png,—,01_Logo/PNG,點陣 PNG,點陣,2000 × 496,是,螢幕用 PNG；印刷請用 SVG,17 cm 寬,1.74 m 寬,否（用 SVG）,否,沿用
+BXR_Logo_H_White.png,—,01_Logo/PNG,點陣 PNG,點陣,2000 × 496,是,螢幕用 PNG；印刷請用 SVG,17 cm 寬,1.74 m 寬,否（用 SVG）,否,沿用
+BXR_Logo_V_Black.png,—,01_Logo/PNG,點陣 PNG,點陣,2000 × 1544,是,螢幕用 PNG；印刷請用 SVG,17 cm 寬,1.74 m 寬,否（用 SVG）,否,沿用
+BXR_Logo_V_Color.png,—,01_Logo/PNG,點陣 PNG,點陣,2000 × 1544,是,螢幕用 PNG；印刷請用 SVG,17 cm 寬,1.74 m 寬,否（用 SVG）,否,沿用
+BXR_Logo_V_Reverse.png,—,01_Logo/PNG,點陣 PNG,點陣,2000 × 1544,是,螢幕用 PNG；印刷請用 SVG,17 cm 寬,1.74 m 寬,否（用 SVG）,否,沿用
+BXR_Logo_V_White.png,—,01_Logo/PNG,點陣 PNG,點陣,2000 × 1544,是,螢幕用 PNG；印刷請用 SVG,17 cm 寬,1.74 m 寬,否（用 SVG）,否,沿用
+BXR_Symbol_Black.png,—,01_Logo/PNG,點陣 PNG,點陣,2000 × 2050,是,螢幕用 PNG；印刷請用 SVG,17 cm 寬,1.74 m 寬,否（用 SVG）,否,沿用
+BXR_Symbol_Outline_Red.png,—,01_Logo/PNG,點陣 PNG,點陣,2000 × 2049,是,螢幕用 PNG；印刷請用 SVG,17 cm 寬,1.74 m 寬,否（用 SVG）,否,沿用
+BXR_Symbol_Outline_White.png,—,01_Logo/PNG,點陣 PNG,點陣,2000 × 2049,是,螢幕用 PNG；印刷請用 SVG,17 cm 寬,1.74 m 寬,否（用 SVG）,否,沿用
+BXR_Symbol_Red.png,—,01_Logo/PNG,點陣 PNG,點陣,2000 × 2050,是,螢幕用 PNG；印刷請用 SVG,17 cm 寬,1.74 m 寬,否（用 SVG）,否,沿用
+BXR_Symbol_White.png,—,01_Logo/PNG,點陣 PNG,點陣,2000 × 2050,是,螢幕用 PNG；印刷請用 SVG,17 cm 寬,1.74 m 寬,否（用 SVG）,否,沿用
+BXR_Logo_H_Black.svg,—,01_Logo/SVG,向量 SVG,向量,向量,是,所有媒材的標誌,不限,不限,是,否,沿用
+BXR_Logo_H_Color.svg,—,01_Logo/SVG,向量 SVG,向量,向量,是,所有媒材的標誌,不限,不限,是,否,沿用
+BXR_Logo_H_Reverse.svg,—,01_Logo/SVG,向量 SVG,向量,向量,是,所有媒材的標誌,不限,不限,是,否,沿用
+BXR_Logo_H_White.svg,—,01_Logo/SVG,向量 SVG,向量,向量,是,所有媒材的標誌,不限,不限,是,否,沿用
+BXR_Logo_V_Black.svg,—,01_Logo/SVG,向量 SVG,向量,向量,是,所有媒材的標誌,不限,不限,是,否,沿用
+BXR_Logo_V_Color.svg,—,01_Logo/SVG,向量 SVG,向量,向量,是,所有媒材的標誌,不限,不限,是,否,沿用
+BXR_Logo_V_Reverse.svg,—,01_Logo/SVG,向量 SVG,向量,向量,是,所有媒材的標誌,不限,不限,是,否,沿用
+BXR_Logo_V_White.svg,—,01_Logo/SVG,向量 SVG,向量,向量,是,所有媒材的標誌,不限,不限,是,否,沿用
+BXR_Symbol_Black.svg,—,01_Logo/SVG,向量 SVG,向量,向量,是,所有媒材的標誌,不限,不限,是,否,沿用
+BXR_Symbol_Outline_Red.svg,—,01_Logo/SVG,向量 SVG,向量,向量,是,所有媒材的標誌,不限,不限,是,否,沿用
+BXR_Symbol_Outline_White.svg,—,01_Logo/SVG,向量 SVG,向量,向量,是,所有媒材的標誌,不限,不限,是,否,沿用
+BXR_Symbol_Red.svg,—,01_Logo/SVG,向量 SVG,向量,向量,是,所有媒材的標誌,不限,不限,是,否,沿用
+BXR_Symbol_White.svg,—,01_Logo/SVG,向量 SVG,向量,向量,是,所有媒材的標誌,不限,不限,是,否,沿用
+BXR_Colors_v3.2.ase,v3.2,02_Color,色票 ASE,—,—,—,設計軟體色票／網站與開發色彩變數,—,—,—,否,v3.2 新增／更新
+BXR_Colors_v3.2.css,v3.2,02_Color,程式 CSS,—,—,—,設計軟體色票／網站與開發色彩變數,—,—,—,否,v3.2 新增／更新
+BXR_Colors_v3.2.json,v3.2,02_Color,資料 JSON,—,—,—,設計軟體色票／網站與開發色彩變數,—,—,—,否,v3.2 新增／更新
+BXR_CIS_v3.2_P12_color-architecture.png,v3.2,02_Color/Reference_Pages,點陣 PNG,點陣,1600 × 900,否,色彩規範參考頁（螢幕）,14 cm 寬,1.39 m 寬,否,否,v3.2 新增／更新
+BXR_CIS_v3.2_P13_brand-core.png,v3.2,02_Color/Reference_Pages,點陣 PNG,點陣,1600 × 900,否,色彩規範參考頁（螢幕）,14 cm 寬,1.39 m 寬,否,否,v3.2 新增／更新
+BXR_CIS_v3.2_P14_text-red.png,v3.2,02_Color/Reference_Pages,點陣 PNG,點陣,1600 × 900,否,色彩規範參考頁（螢幕）,14 cm 寬,1.39 m 寬,否,否,v3.2 新增／更新
+BXR_CIS_v3.2_P15_brass.png,v3.2,02_Color/Reference_Pages,點陣 PNG,點陣,1600 × 900,否,色彩規範參考頁（螢幕）,14 cm 寬,1.39 m 寬,否,否,v3.2 新增／更新
+BXR_CIS_v3.2_P16_neutral-functional.png,v3.2,02_Color/Reference_Pages,點陣 PNG,點陣,1600 × 900,否,色彩規範參考頁（螢幕）,14 cm 寬,1.39 m 寬,否,否,v3.2 新增／更新
+BXR_CIS_v3.2_P17_usage-context.png,v3.2,02_Color/Reference_Pages,點陣 PNG,點陣,1600 × 900,否,色彩規範參考頁（螢幕）,14 cm 寬,1.39 m 寬,否,否,v3.2 新增／更新
+BXR_CIS_v3.2_P18_sector-colors.png,v3.2,02_Color/Reference_Pages,點陣 PNG,點陣,1600 × 900,否,色彩規範參考頁（螢幕）,14 cm 寬,1.39 m 寬,否,否,v3.2 新增／更新
+BXR_CIS_v3.2_P19_sector-review.png,v3.2,02_Color/Reference_Pages,點陣 PNG,點陣,1600 × 900,否,色彩規範參考頁（螢幕）,14 cm 寬,1.39 m 寬,否,否,v3.2 新增／更新
+BXR_CIS_v3.2_P20_sector-rules.png,v3.2,02_Color/Reference_Pages,點陣 PNG,點陣,1600 × 900,否,色彩規範參考頁（螢幕）,14 cm 寬,1.39 m 寬,否,否,v3.2 新增／更新
+BXR_CIS_v3.2_P21_sector-proof.png,v3.2,02_Color/Reference_Pages,點陣 PNG,點陣,1600 × 900,否,色彩規範參考頁（螢幕）,14 cm 寬,1.39 m 寬,否,否,v3.2 新增／更新
+BXR_CIS_v3.2_P22_multi-sector.png,v3.2,02_Color/Reference_Pages,點陣 PNG,點陣,1600 × 900,否,色彩規範參考頁（螢幕）,14 cm 寬,1.39 m 寬,否,否,v3.2 新增／更新
+BXR_CIS_v3.2_P23_asset-colors.png,v3.2,02_Color/Reference_Pages,點陣 PNG,點陣,1600 × 900,否,色彩規範參考頁（螢幕）,14 cm 寬,1.39 m 寬,否,否,v3.2 新增／更新
+BXR_CIS_v3.2_P24_color-dodont.png,v3.2,02_Color/Reference_Pages,點陣 PNG,點陣,1600 × 900,否,色彩規範參考頁（螢幕）,14 cm 寬,1.39 m 寬,否,否,v3.2 新增／更新
+BXR_CIS_v3.2_P34_sector-graphics.png,v3.2,02_Color/Reference_Pages,點陣 PNG,點陣,1600 × 900,否,色彩規範參考頁（螢幕）,14 cm 寬,1.39 m 寬,否,否,v3.2 新增／更新
+BXR_CIS_v3.2_P35_sector-graphics-use.png,v3.2,02_Color/Reference_Pages,點陣 PNG,點陣,1600 × 900,否,色彩規範參考頁（螢幕）,14 cm 寬,1.39 m 寬,否,否,v3.2 新增／更新
+BXR_CIS_v3.2_P53_product-sector.png,v3.2,02_Color/Reference_Pages,點陣 PNG,點陣,1600 × 900,否,色彩規範參考頁（螢幕）,14 cm 寬,1.39 m 寬,否,否,v3.2 新增／更新
+BXR_CIS_v3.2_P75_sector-army.png,v3.2,02_Color/Reference_Pages,點陣 PNG,點陣,1600 × 900,否,色彩規範參考頁（螢幕）,14 cm 寬,1.39 m 寬,否,否,v3.2 新增／更新
+BXR_CIS_v3.2_P76_sector-navy.png,v3.2,02_Color/Reference_Pages,點陣 PNG,點陣,1600 × 900,否,色彩規範參考頁（螢幕）,14 cm 寬,1.39 m 寬,否,否,v3.2 新增／更新
+BXR_CIS_v3.2_P77_sector-air.png,v3.2,02_Color/Reference_Pages,點陣 PNG,點陣,1600 × 900,否,色彩規範參考頁（螢幕）,14 cm 寬,1.39 m 寬,否,否,v3.2 新增／更新
+BXR_CIS_v3.2_P78_sector-fire.png,v3.2,02_Color/Reference_Pages,點陣 PNG,點陣,1600 × 900,否,色彩規範參考頁（螢幕）,14 cm 寬,1.39 m 寬,否,否,v3.2 新增／更新
+BXR_CIS_v3.2_P79_sector-police.png,v3.2,02_Color/Reference_Pages,點陣 PNG,點陣,1600 × 900,否,色彩規範參考頁（螢幕）,14 cm 寬,1.39 m 寬,否,否,v3.2 新增／更新
+BXR_CIS_v3.2_P81_corporate-kv.png,v3.2,02_Color/Reference_Pages,點陣 PNG,點陣,1600 × 900,否,色彩規範參考頁（螢幕）,14 cm 寬,1.39 m 寬,否,否,v3.2 新增／更新
+README_Fonts.txt,—,03_Fonts,文字,—,—,—,字體說明,—,—,—,否,沿用
+BXR_RealityLine.svg,—,04_Graphics,向量 SVG,向量,向量,是,品牌與領域圖形,不限,不限,是,否,沿用
+BXR_Terrain_Dark.svg,—,04_Graphics,向量 SVG,向量,向量,是,品牌與領域圖形,不限,不限,是,否,沿用
+BXR_Terrain_Light.svg,—,04_Graphics,向量 SVG,向量,向量,是,品牌與領域圖形,不限,不限,是,否,沿用
+BXR_XGrid_Dark.svg,—,04_Graphics,向量 SVG,向量,向量,是,品牌與領域圖形,不限,不限,是,否,沿用
+BXR_XGrid_Light.svg,—,04_Graphics,向量 SVG,向量,向量,是,品牌與領域圖形,不限,不限,是,否,沿用
+BXR_Icon_AI.svg,—,04_Graphics/Icons,向量 SVG,向量,向量,是,品牌與領域圖形,不限,不限,是,否,沿用
+BXR_Icon_Analytics.svg,—,04_Graphics/Icons,向量 SVG,向量,向量,是,品牌與領域圖形,不限,不限,是,否,沿用
+BXR_Icon_Command.svg,—,04_Graphics/Icons,向量 SVG,向量,向量,是,品牌與領域圖形,不限,不限,是,否,沿用
+BXR_Icon_Communication.svg,—,04_Graphics/Icons,向量 SVG,向量,向量,是,品牌與領域圖形,不限,不限,是,否,沿用
+BXR_Icon_Fire_Disaster.svg,—,04_Graphics/Icons,向量 SVG,向量,向量,是,品牌與領域圖形,不限,不限,是,否,沿用
+BXR_Icon_Military.svg,—,04_Graphics/Icons,向量 SVG,向量,向量,是,品牌與領域圖形,不限,不限,是,否,沿用
+BXR_Icon_Police.svg,—,04_Graphics/Icons,向量 SVG,向量,向量,是,品牌與領域圖形,不限,不限,是,否,沿用
+BXR_Icon_Sensor_Radar.svg,—,04_Graphics/Icons,向量 SVG,向量,向量,是,品牌與領域圖形,不限,不限,是,否,沿用
+BXR_Icon_Simulation.svg,—,04_Graphics/Icons,向量 SVG,向量,向量,是,品牌與領域圖形,不限,不限,是,否,沿用
+BXR_Icon_Training.svg,—,04_Graphics/Icons,向量 SVG,向量,向量,是,品牌與領域圖形,不限,不限,是,否,沿用
+BXR_Icon_UAV.svg,—,04_Graphics/Icons,向量 SVG,向量,向量,是,品牌與領域圖形,不限,不限,是,否,沿用
+BXR_Icon_XR.svg,—,04_Graphics/Icons,向量 SVG,向量,向量,是,品牌與領域圖形,不限,不限,是,否,沿用
+BXR_GFX_SECTOR_AIR_OnBlock_v3.2.svg,v3.2,04_Graphics/Sector,向量 SVG,向量,向量,是,領域圖形（點與塊用量，見 P.34–35）,不限,不限,是,否,v3.2 新增／更新
+BXR_GFX_SECTOR_AIR_OnDark_v3.2.svg,v3.2,04_Graphics/Sector,向量 SVG,向量,向量,是,領域圖形（點與塊用量，見 P.34–35）,不限,不限,是,否,v3.2 新增／更新
+BXR_GFX_SECTOR_AIR_OnLight_v3.2.svg,v3.2,04_Graphics/Sector,向量 SVG,向量,向量,是,領域圖形（點與塊用量，見 P.34–35）,不限,不限,是,否,v3.2 新增／更新
+BXR_GFX_SECTOR_ARMY_OnBlock_v3.2.svg,v3.2,04_Graphics/Sector,向量 SVG,向量,向量,是,領域圖形（點與塊用量，見 P.34–35）,不限,不限,是,否,v3.2 新增／更新
+BXR_GFX_SECTOR_ARMY_OnDark_v3.2.svg,v3.2,04_Graphics/Sector,向量 SVG,向量,向量,是,領域圖形（點與塊用量，見 P.34–35）,不限,不限,是,否,v3.2 新增／更新
+BXR_GFX_SECTOR_ARMY_OnLight_v3.2.svg,v3.2,04_Graphics/Sector,向量 SVG,向量,向量,是,領域圖形（點與塊用量，見 P.34–35）,不限,不限,是,否,v3.2 新增／更新
+BXR_GFX_SECTOR_FIRE_OnBlock_v3.2.svg,v3.2,04_Graphics/Sector,向量 SVG,向量,向量,是,領域圖形（點與塊用量，見 P.34–35）,不限,不限,是,否,v3.2 新增／更新
+BXR_GFX_SECTOR_FIRE_OnDark_v3.2.svg,v3.2,04_Graphics/Sector,向量 SVG,向量,向量,是,領域圖形（點與塊用量，見 P.34–35）,不限,不限,是,否,v3.2 新增／更新
+BXR_GFX_SECTOR_FIRE_OnLight_v3.2.svg,v3.2,04_Graphics/Sector,向量 SVG,向量,向量,是,領域圖形（點與塊用量，見 P.34–35）,不限,不限,是,否,v3.2 新增／更新
+BXR_GFX_SECTOR_NAVY_OnBlock_v3.2.svg,v3.2,04_Graphics/Sector,向量 SVG,向量,向量,是,領域圖形（點與塊用量，見 P.34–35）,不限,不限,是,否,v3.2 新增／更新
+BXR_GFX_SECTOR_NAVY_OnDark_v3.2.svg,v3.2,04_Graphics/Sector,向量 SVG,向量,向量,是,領域圖形（點與塊用量，見 P.34–35）,不限,不限,是,否,v3.2 新增／更新
+BXR_GFX_SECTOR_NAVY_OnLight_v3.2.svg,v3.2,04_Graphics/Sector,向量 SVG,向量,向量,是,領域圖形（點與塊用量，見 P.34–35）,不限,不限,是,否,v3.2 新增／更新
+BXR_GFX_SECTOR_POLICE_OnBlock_v3.2.svg,v3.2,04_Graphics/Sector,向量 SVG,向量,向量,是,領域圖形（點與塊用量，見 P.34–35）,不限,不限,是,否,v3.2 新增／更新
+BXR_GFX_SECTOR_POLICE_OnDark_v3.2.svg,v3.2,04_Graphics/Sector,向量 SVG,向量,向量,是,領域圖形（點與塊用量，見 P.34–35）,不限,不限,是,否,v3.2 新增／更新
+BXR_GFX_SECTOR_POLICE_OnLight_v3.2.svg,v3.2,04_Graphics/Sector,向量 SVG,向量,向量,是,領域圖形（點與塊用量，見 P.34–35）,不限,不限,是,否,v3.2 新增／更新
+BXR_ICON_SECTOR_AIR_v3.2.svg,v3.2,04_Graphics/Sector,向量 SVG,向量,向量,是,領域圖形（點與塊用量，見 P.34–35）,不限,不限,是,否,v3.2 新增／更新
+BXR_ICON_SECTOR_ARMY_v3.2.svg,v3.2,04_Graphics/Sector,向量 SVG,向量,向量,是,領域圖形（點與塊用量，見 P.34–35）,不限,不限,是,否,v3.2 新增／更新
+BXR_ICON_SECTOR_FIRE_v3.2.svg,v3.2,04_Graphics/Sector,向量 SVG,向量,向量,是,領域圖形（點與塊用量，見 P.34–35）,不限,不限,是,否,v3.2 新增／更新
+BXR_ICON_SECTOR_NAVY_v3.2.svg,v3.2,04_Graphics/Sector,向量 SVG,向量,向量,是,領域圖形（點與塊用量，見 P.34–35）,不限,不限,是,否,v3.2 新增／更新
+BXR_ICON_SECTOR_POLICE_v3.2.svg,v3.2,04_Graphics/Sector,向量 SVG,向量,向量,是,領域圖形（點與塊用量，見 P.34–35）,不限,不限,是,否,v3.2 新增／更新
+BXR_CHR_A_AIM_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,558 × 652,是,螢幕主視覺、簡報、社群；角色規格頁,5 cm 寬,49 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_A_BACK_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,400 × 900,是,螢幕主視覺、簡報、社群；角色規格頁,3 cm 寬,35 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_A_FRONT_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,430 × 900,是,螢幕主視覺、簡報、社群；角色規格頁,4 cm 寬,37 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_A_KNEEL_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,558 × 652,是,螢幕主視覺、簡報、社群；角色規格頁,5 cm 寬,49 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_A_LOWREADY_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,558 × 652,是,螢幕主視覺、簡報、社群；角色規格頁,5 cm 寬,49 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_A_MOVE_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,560 × 652,是,螢幕主視覺、簡報、社群；角色規格頁,5 cm 寬,49 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_A_REAR_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,558 × 652,是,螢幕主視覺、簡報、社群；角色規格頁,5 cm 寬,49 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_A_SIDE_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,340 × 900,是,螢幕主視覺、簡報、社群；角色規格頁,3 cm 寬,30 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_B_AIM_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,576 × 714,是,螢幕主視覺、簡報、社群；角色規格頁,5 cm 寬,50 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_B_BACK_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,372 × 820,是,螢幕主視覺、簡報、社群；角色規格頁,3 cm 寬,32 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_B_FRONT_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,370 × 820,是,螢幕主視覺、簡報、社群；角色規格頁,3 cm 寬,32 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_B_KNEEL_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,584 × 714,是,螢幕主視覺、簡報、社群；角色規格頁,5 cm 寬,51 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_B_LOWREADY_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,544 × 714,是,螢幕主視覺、簡報、社群；角色規格頁,5 cm 寬,47 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_B_MOVE_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,600 × 714,是,螢幕主視覺、簡報、社群；角色規格頁,5 cm 寬,52 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_B_REAR_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,616 × 714,是,螢幕主視覺、簡報、社群；角色規格頁,5 cm 寬,54 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_B_SIDE-L_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,334 × 820,是,螢幕主視覺、簡報、社群；角色規格頁,3 cm 寬,29 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_B_SIDE-R_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,424 × 820,是,螢幕主視覺、簡報、社群；角色規格頁,4 cm 寬,37 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_C_AIM_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,574 × 716,是,螢幕主視覺、簡報、社群；角色規格頁,5 cm 寬,50 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_C_BACK_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,410 × 850,是,螢幕主視覺、簡報、社群；角色規格頁,3 cm 寬,36 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_C_FRONT_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,376 × 850,是,螢幕主視覺、簡報、社群；角色規格頁,3 cm 寬,33 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_C_KNEEL_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,608 × 716,是,螢幕主視覺、簡報、社群；角色規格頁,5 cm 寬,53 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_C_LOWREADY_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,574 × 716,是,螢幕主視覺、簡報、社群；角色規格頁,5 cm 寬,50 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_C_MOVE_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,606 × 716,是,螢幕主視覺、簡報、社群；角色規格頁,5 cm 寬,53 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_C_REAR_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,576 × 716,是,螢幕主視覺、簡報、社群；角色規格頁,5 cm 寬,50 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_C_SIDE-L_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,378 × 850,是,螢幕主視覺、簡報、社群；角色規格頁,3 cm 寬,33 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_C_SIDE-R_v1.png,v1,05_Characters/Cutouts,點陣 PNG,點陣,396 × 850,是,螢幕主視覺、簡報、社群；角色規格頁,3 cm 寬,35 cm 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_A_ReferenceSheet_v1.png,v1,05_Characters/Reference_Sheets,點陣 PNG,點陣,1536 × 945,是,角色原始參考（不作版面素材）,13 cm 寬,1.34 m 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_B_ReferenceSheet_v1.png,v1,05_Characters/Reference_Sheets,點陣 PNG,點陣,1536 × 961,是,角色原始參考（不作版面素材）,13 cm 寬,1.34 m 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_C_ReferenceSheet_v1.png,v1,05_Characters/Reference_Sheets,點陣 PNG,點陣,1536 × 1024,否,角色原始參考（不作版面素材）,13 cm 寬,1.34 m 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_CHR_PoseOverview_v1.png,v1,05_Characters/Reference_Sheets,點陣 PNG,點陣,1536 × 968,是,角色原始參考（不作版面素材）,13 cm 寬,1.34 m 寬,僅小尺寸（≤ A6）,是（印刷、海報、展覽）,沿用
+BXR_KV_AI_NPC_v3.jpg,v3,06_KeyVisuals,點陣 JPG,點陣,1920 × 1080,否,簡報、網站、社群（合成示意）,16 cm 寬,1.67 m 寬,否（示意稿）,是（印刷與大圖）,沿用
+BXR_KV_A_CQB_v3.jpg,v3,06_KeyVisuals,點陣 JPG,點陣,1920 × 1080,否,簡報、網站、社群（合成示意）,16 cm 寬,1.67 m 寬,否（示意稿）,是（印刷與大圖）,沿用
+BXR_KV_B_SEAM_v3.jpg,v3,06_KeyVisuals,點陣 JPG,點陣,1920 × 1080,否,簡報、網站、社群（合成示意）,16 cm 寬,1.67 m 寬,否（示意稿）,是（印刷與大圖）,沿用
+BXR_KV_B_TERRAIN_v3.jpg,v3,06_KeyVisuals,點陣 JPG,點陣,1920 × 1080,否,簡報、網站、社群（合成示意）,16 cm 寬,1.67 m 寬,否（示意稿）,是（印刷與大圖）,沿用
+BXR_KV_CORP_AI_TERRAIN_v3.2.jpg,v3.2,06_KeyVisuals,點陣 JPG,點陣,1920 × 1080,否,企業通用：官網、簡介、簡報（不持槍）,16 cm 寬,1.67 m 寬,否（示意稿）,是（印刷與大圖）,v3.2 新增／更新
+BXR_KV_CORP_DIGITAL_TWIN_v3.2.jpg,v3.2,06_KeyVisuals,點陣 JPG,點陣,1920 × 1080,否,企業通用：官網、簡介、簡報（不持槍）,16 cm 寬,1.67 m 寬,否（示意稿）,是（印刷與大圖）,v3.2 新增／更新
+BXR_KV_CORP_SMART_CITY_v3.2.jpg,v3.2,06_KeyVisuals,點陣 JPG,點陣,1920 × 1080,否,企業通用：官網、簡介、簡報（不持槍）,16 cm 寬,1.67 m 寬,否（示意稿）,是（印刷與大圖）,v3.2 新增／更新
+BXR_KV_CORP_TERRAIN_v3.jpg,v3,06_KeyVisuals,點陣 JPG,點陣,1920 × 1080,否,企業通用：官網、簡介、簡報（不持槍）,16 cm 寬,1.67 m 寬,否（示意稿）,是（印刷與大圖）,沿用
+BXR_KV_CORP_TRAINING_SPACE_v3.2.jpg,v3.2,06_KeyVisuals,點陣 JPG,點陣,1920 × 1080,否,企業通用：官網、簡介、簡報（不持槍）,16 cm 寬,1.67 m 寬,否（示意稿）,是（印刷與大圖）,v3.2 新增／更新
+BXR_KV_CORP_TWIN_v3.jpg,v3,06_KeyVisuals,點陣 JPG,點陣,1920 × 1080,否,企業通用：官網、簡介、簡報（不持槍）,16 cm 寬,1.67 m 寬,否（示意稿）,是（印刷與大圖）,沿用
+BXR_KV_COVER_v3.jpg,v3,06_KeyVisuals,點陣 JPG,點陣,1920 × 1080,否,簡報、網站、社群（合成示意）,16 cm 寬,1.67 m 寬,否（示意稿）,是（印刷與大圖）,沿用
+BXR_KV_C_SIM_v3.jpg,v3,06_KeyVisuals,點陣 JPG,點陣,1920 × 1080,否,簡報、網站、社群（合成示意）,16 cm 寬,1.67 m 寬,否（示意稿）,是（印刷與大圖）,沿用
+BXR_KV_EXHIBITION_WALL_v3.jpg,v3,06_KeyVisuals,點陣 JPG,點陣,2880 × 1080,否,簡報、網站、社群（合成示意）,24 cm 寬,2.51 m 寬,否（示意稿）,是（印刷與大圖）,沿用
+BXR_KV_NAVY_SEA_DARK_v3.1.jpg,v3.1,06_KeyVisuals,點陣 JPG,點陣,1920 × 1080,否,簡報、網站、社群（合成示意）,16 cm 寬,1.67 m 寬,否（示意稿）,是（印刷與大圖）,沿用
+BXR_KV_NAVY_SEA_LIGHT_v3.1.jpg,v3.1,06_KeyVisuals,點陣 JPG,點陣,1920 × 1080,否,簡報、網站、社群（合成示意）,16 cm 寬,1.67 m 寬,否（示意稿）,是（印刷與大圖）,沿用
+BXR_KV_TEAM_v3.jpg,v3,06_KeyVisuals,點陣 JPG,點陣,1920 × 1080,否,簡報、網站、社群（合成示意）,16 cm 寬,1.67 m 寬,否（示意稿）,是（印刷與大圖）,沿用
+BXR_KV_UAV_TERRAIN_v3.jpg,v3,06_KeyVisuals,點陣 JPG,點陣,1920 × 1080,否,簡報、網站、社群（合成示意）,16 cm 寬,1.67 m 寬,否（示意稿）,是（印刷與大圖）,沿用
+BXR_KV_XR_AR_v3.jpg,v3,06_KeyVisuals,點陣 JPG,點陣,1920 × 1080,否,簡報、網站、社群（合成示意）,16 cm 寬,1.67 m 寬,否（示意稿）,是（印刷與大圖）,沿用
+BXR_KV_XR_MR_v3.jpg,v3,06_KeyVisuals,點陣 JPG,點陣,1920 × 1080,否,簡報、網站、社群（合成示意）,16 cm 寬,1.67 m 寬,否（示意稿）,是（印刷與大圖）,沿用
+BXR_KV_XR_SCAN_v3.jpg,v3,06_KeyVisuals,點陣 JPG,點陣,1920 × 1080,否,簡報、網站、社群（合成示意）,16 cm 寬,1.67 m 寬,否（示意稿）,是（印刷與大圖）,沿用
+BXR_KV_XR_TWIN_v3.jpg,v3,06_KeyVisuals,點陣 JPG,點陣,1920 × 1080,否,簡報、網站、社群（合成示意）,16 cm 寬,1.67 m 寬,否（示意稿）,是（印刷與大圖）,沿用
+BXR_KV_XR_VR_v3.jpg,v3,06_KeyVisuals,點陣 JPG,點陣,1920 × 1080,否,簡報、網站、社群（合成示意）,16 cm 寬,1.67 m 寬,否（示意稿）,是（印刷與大圖）,沿用
+BXR_Presentation_Template_v3.2.pptx,v3.2,07_Templates,簡報 PPTX,—,—,—,企業簡報範本（會議室投影預設字級）,—,—,—,否,v3.2 新增／更新
+BXR_Social_16x9_Video_v3.2.png,v3.2,07_Templates/Social,點陣 PNG,點陣,1920 × 1080,否,社群發布（螢幕）,16 cm 寬,1.67 m 寬,否,否,v3.2 新增／更新
+BXR_Social_1x1_Post_v3.2.png,v3.2,07_Templates/Social,點陣 PNG,點陣,1080 × 1080,否,社群發布（螢幕）,9 cm 寬,94 cm 寬,否,否,v3.2 新增／更新
+BXR_Social_4x5_Feed_v3.2.png,v3.2,07_Templates/Social,點陣 PNG,點陣,1080 × 1350,否,社群發布（螢幕）,9 cm 寬,94 cm 寬,否,否,v3.2 新增／更新
+BXR_Social_9x16_Story_v3.2.png,v3.2,07_Templates/Social,點陣 PNG,點陣,1080 × 1920,否,社群發布（螢幕）,9 cm 寬,94 cm 寬,否,否,v3.2 新增／更新
