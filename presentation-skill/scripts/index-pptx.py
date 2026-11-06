@@ -10,7 +10,11 @@ def inspect(source,library,label,prefix):
     with zipfile.ZipFile(source) as z:
         for member in z.infolist():
             m=SLIDE.fullmatch(member.filename)
-            if not m or member.file_size>10_000_000: continue
+            if not m: continue
+            if member.file_size>10_000_000:
+                n=int(m.group(1))
+                yield [f"{prefix}-{n:04d}",library,label,n,"oversize-unparsed",0,0,0,0,0,"Slide XML exceeds safe parse limit","pending"]
+                continue
             xml=z.read(member)
             txt=" ".join(html.unescape(s.decode("utf-8","replace")) for s in TEXT.findall(xml)[:60])[:180]
             hay=(label+" "+txt).casefold()
