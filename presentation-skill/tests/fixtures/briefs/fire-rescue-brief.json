@@ -1,0 +1,32 @@
+{
+  "id": "fire-rescue-brief",
+  "topic": "消防救災訓練系統簡報",
+  "language": "zh-TW",
+  "audience": "internal",
+  "purpose": "向業務團隊說明消防情境的簡報結構",
+  "slides": 10,
+  "series": "fire",
+  "sector": "fire",
+  "source_policy": "provided-only",
+  "content": [
+    {
+      "title": "消防訓練需求",
+      "facts": [
+        "以需求訪談資料為準",
+        "不得預設客戶已有設備"
+      ]
+    },
+    {
+      "title": "操作流程",
+      "facts": [
+        "準備",
+        "訓練",
+        "回顧"
+      ]
+    }
+  ],
+  "output": {
+    "pptx": true,
+    "pdf": false
+  }
+}
