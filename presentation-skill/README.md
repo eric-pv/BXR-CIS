@@ -33,3 +33,13 @@ Ensure paid-template terms permit internal multi-user adaptation/distribution. D
 
 ## Current phase
 Initial skill contract and acceptance plan, no automated template conversion yet. See `docs/implementation-plan.md`.
+
+## 2026-11-06 verified foundation status
+- **Source archives now present:** `source-library/500頁.pptx` and `source-library/Aviation Slides.zip` via Git LFS.
+- **Approved background assets now present in this branch:** `approved-layouts/military-tech/BXR_Military_{Cover,Section,Content_White}_16x9.png` (see actual filenames).
+- **Additional icons** indexed under `../04_Graphics/Icons/` and `catalog/icon-catalog.csv`.
+- **Theme and Slide Master contract** in `config/presentation-theme.json`; selection and QA in `docs/selection-and-master-qa.md`.
+- **Runnable tools:** `scripts/index-pptx.py`, `scripts/build-military-pilot.js`, `scripts/apply-bxr-theme.py`, `scripts/validate-pptx.py`.
+- **On-demand index:** `.github/workflows/build-presentation-catalog.yml` produces downloadable CSV artifacts. No claim that all source slides are visually approved.
+- **Structural source scan:** 604 slide XMLs in main deck, 249 PPTX decks in Aviation with 5,184 slides. 29 oversized XML entries unparsed.
+- **Prototype limitation:** master/logo/layout proof demonstrated, but production-grade dynamic layout retrieval, theme inheritance validation, source-template adaptation, and actual PowerPoint tests remain pending.
