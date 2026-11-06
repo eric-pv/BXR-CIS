@@ -1,0 +1,76 @@
+{
+  "brief_id": "police-xr-overview",
+  "design_owner": "claude",
+  "quality_status": "draft",
+  "slides": [
+    {
+      "slide_id": "s01",
+      "role": "cover",
+      "message": "警用 XR 沉浸式訓練方案",
+      "content_refs": [
+        "content:0"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Cover_16x9.png"
+      },
+      "editable_elements": [
+        "title",
+        "subtitle"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": false,
+        "master_inheritance_checked": false,
+        "editability_checked": false
+      }
+    },
+    {
+      "slide_id": "s02",
+      "role": "section",
+      "message": "方案概要",
+      "content_refs": [
+        "content:0"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Section_16x9.png"
+      },
+      "editable_elements": [
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": false,
+        "master_inheritance_checked": false,
+        "editability_checked": false
+      }
+    },
+    {
+      "slide_id": "s03",
+      "role": "process",
+      "message": "訓練流程：需求確認、設定、演練、回饋",
+      "content_refs": [
+        "content:1"
+      ],
+      "layout_source": {
+        "kind": "claude-custom"
+      },
+      "editable_elements": [
+        "title",
+        "diagram",
+        "body"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": false,
+        "master_inheritance_checked": false,
+        "editability_checked": false
+      }
+    }
+  ],
+  "unverified_claims": []
+}
