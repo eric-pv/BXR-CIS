@@ -39,3 +39,11 @@ Follow `../../docs/implementation-plan.md` for staged engineering and testing.
 - When slides are duplicated or recomposed, prevent duplicate logos from both source masters and slide objects. Check rendered slide and underlying PPTX shapes for duplicates.
 - Logo policy applies across all sector variants, not only the military-tech backgrounds.
 - Validate one central master/layout edit propagates to all slides of that layout without editing individual slides.
+
+## Implementation contracts (required)
+Before generating a deck, read `../../config/presentation-theme.json` (machine-readable starter tokens) and `../../docs/selection-and-master-qa.md` (layout retrieval + acceptance). The CIS v3.2 manual and official PPTX template take precedence over provisional numeric style tokens.
+
+- Apply a real PowerPoint Theme and Slide Master/Slide Layout styles for typography (typeface, sizes, colors, title/body styles), common logo, fields and shared colors. Avoid setting every slide's shared style independently.
+- Respect separate cover / section / white-body content layouts. Load the actual approved 16:9 PNG backgrounds from `../../approved-layouts/military-tech/`.
+- Index purchased sources with `../../scripts/index-pptx.py`; catalog entries are **unreviewed candidates**, not reusable approved layouts until a human confirms the visual result.
+- Run structural QA via `../../scripts/validate-pptx.py` and visually render every slide; neither file checks nor generated mockups replace actual PowerPoint validation.
