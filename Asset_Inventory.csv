@@ -1,0 +1,86 @@
+﻿File,Content,Format,Pixels,Status
+BXR_CHR_A_AIM_v1.png,Character A · AIM,"PNG (transparent, AI 2× upscale)",558×652,Screen use; re-render for print
+BXR_CHR_A_BACK_v1.png,Character A · BACK,"PNG (transparent, AI 2× upscale)",400×900,Screen use; re-render for print
+BXR_CHR_A_FRONT_v1.png,Character A · FRONT,"PNG (transparent, AI 2× upscale)",430×900,Screen use; re-render for print
+BXR_CHR_A_KNEEL_v1.png,Character A · KNEEL,"PNG (transparent, AI 2× upscale)",558×652,Screen use; re-render for print
+BXR_CHR_A_LOWREADY_v1.png,Character A · LOWREADY,"PNG (transparent, AI 2× upscale)",558×652,Screen use; re-render for print
+BXR_CHR_A_MOVE_v1.png,Character A · MOVE,"PNG (transparent, AI 2× upscale)",560×652,Screen use; re-render for print
+BXR_CHR_A_REAR_v1.png,Character A · REAR,"PNG (transparent, AI 2× upscale)",558×652,Screen use; re-render for print
+BXR_CHR_A_SIDE_v1.png,Character A · SIDE,"PNG (transparent, AI 2× upscale)",340×900,Screen use; re-render for print
+BXR_CHR_B_AIM_v1.png,Character B · AIM,"PNG (transparent, AI 2× upscale)",576×714,Screen use; re-render for print
+BXR_CHR_B_BACK_v1.png,Character B · BACK,"PNG (transparent, AI 2× upscale)",372×820,Screen use; re-render for print
+BXR_CHR_B_FRONT_v1.png,Character B · FRONT,"PNG (transparent, AI 2× upscale)",370×820,Screen use; re-render for print
+BXR_CHR_B_KNEEL_v1.png,Character B · KNEEL,"PNG (transparent, AI 2× upscale)",584×714,Screen use; re-render for print
+BXR_CHR_B_SIDE-L_v1.png,Character B · SIDE-L,"PNG (transparent, AI 2× upscale)",334×820,Screen use; re-render for print
+BXR_CHR_B_LOWREADY_v1.png,Character B · LOWREADY,"PNG (transparent, AI 2× upscale)",544×714,Screen use; re-render for print
+BXR_CHR_B_MOVE_v1.png,Character B · MOVE,"PNG (transparent, AI 2× upscale)",600×714,Screen use; re-render for print
+BXR_CHR_B_REAR_v1.png,Character B · REAR,"PNG (transparent, AI 2× upscale)",616×714,Screen use; re-render for print
+BXR_CHR_B_SIDE-R_v1.png,Character B · SIDE-R,"PNG (transparent, AI 2× upscale)",424×820,Screen use; re-render for print
+BXR_CHR_C_AIM_v1.png,Character C · AIM,"PNG (transparent, AI 2× upscale)",574×716,Screen use; re-render for print
+BXR_CHR_C_BACK_v1.png,Character C · BACK,"PNG (transparent, AI 2× upscale)",410×850,Screen use; re-render for print
+BXR_CHR_C_FRONT_v1.png,Character C · FRONT,"PNG (transparent, AI 2× upscale)",376×850,Screen use; re-render for print
+BXR_CHR_C_KNEEL_v1.png,Character C · KNEEL,"PNG (transparent, AI 2× upscale)",608×716,Screen use; re-render for print
+BXR_CHR_C_SIDE-L_v1.png,Character C · SIDE-L,"PNG (transparent, AI 2× upscale)",378×850,Screen use; re-render for print
+BXR_CHR_C_LOWREADY_v1.png,Character C · LOWREADY,"PNG (transparent, AI 2× upscale)",574×716,Screen use; re-render for print
+BXR_CHR_C_MOVE_v1.png,Character C · MOVE,"PNG (transparent, AI 2× upscale)",606×716,Screen use; re-render for print
+BXR_CHR_C_REAR_v1.png,Character C · REAR,"PNG (transparent, AI 2× upscale)",576×716,Screen use; re-render for print
+BXR_CHR_C_SIDE-R_v1.png,Character C · SIDE-R,"PNG (transparent, AI 2× upscale)",396×850,Screen use; re-render for print
+BXR_CHR_PoseOverview_v1.png,Character reference sheet (original),PNG,1536 wide,Reference only
+BXR_CHR_A_ReferenceSheet_v1.png,Character reference sheet (original),PNG,1536 wide,Reference only
+BXR_CHR_B_ReferenceSheet_v1.png,Character reference sheet (original),PNG,1536 wide,Reference only
+BXR_CHR_C_ReferenceSheet_v1.png,Character reference sheet (original),PNG,1536 wide,Reference only
+BXR_KV_COVER_v3.jpg,Key visual / XR demo (synthetic mockup),JPG,1920×1080,Mockup; replace before print
+BXR_KV_A_CQB_v3.jpg,Key visual / XR demo (synthetic mockup),JPG,1920×1080,Mockup; replace before print
+BXR_KV_B_SEAM_v3.jpg,Key visual / XR demo (synthetic mockup),JPG,1920×1080,Mockup; replace before print
+BXR_KV_B_TERRAIN_v3.jpg,Key visual / XR demo (synthetic mockup),JPG,1920×1080,Mockup; replace before print
+BXR_KV_C_SIM_v3.jpg,Key visual / XR demo (synthetic mockup),JPG,1920×1080,Mockup; replace before print
+BXR_KV_TEAM_v3.jpg,Key visual / XR demo (synthetic mockup),JPG,1920×1080,Mockup; replace before print
+BXR_KV_AI_NPC_v3.jpg,Key visual / XR demo (synthetic mockup),JPG,1920×1080,Mockup; replace before print
+BXR_KV_EXHIBITION_WALL_v3.jpg,Key visual / XR demo (synthetic mockup),JPG,2880×1080,Mockup; replace before print
+BXR_KV_UAV_TERRAIN_v3.jpg,Key visual / XR demo (synthetic mockup),JPG,1920×1080,Mockup; replace before print
+BXR_KV_CORP_TWIN_v3.jpg,Key visual / XR demo (synthetic mockup),JPG,1920×1080,Mockup; replace before print
+BXR_KV_CORP_TERRAIN_v3.jpg,Key visual / XR demo (synthetic mockup),JPG,1920×1080,Mockup; replace before print
+BXR_KV_XR_VR_v3.jpg,Key visual / XR demo (synthetic mockup),JPG,1920×1080,Mockup; replace before print
+BXR_KV_XR_AR_v3.jpg,Key visual / XR demo (synthetic mockup),JPG,1920×1080,Mockup; replace before print
+BXR_KV_XR_MR_v3.jpg,Key visual / XR demo (synthetic mockup),JPG,1920×1080,Mockup; replace before print
+BXR_KV_XR_SCAN_v3.jpg,Key visual / XR demo (synthetic mockup),JPG,1920×1080,Mockup; replace before print
+BXR_KV_XR_TWIN_v3.jpg,Key visual / XR demo (synthetic mockup),JPG,1920×1080,Mockup; replace before print
+BXR_Social_9x16_Story.png,Social template,PNG,native,Ready
+BXR_Social_4x5_Feed.png,Social template,PNG,native,Ready
+BXR_Social_1x1_Post.png,Social template,PNG,native,Ready
+BXR_Social_16x9_Video.png,Social template,PNG,native,Ready
+BXR_Logo_H_Black.svg,Logo,SVG,vector,Ready
+BXR_Logo_H_Color.svg,Logo,SVG,vector,Ready
+BXR_Logo_H_Reverse.svg,Logo,SVG,vector,Ready
+BXR_Logo_H_White.svg,Logo,SVG,vector,Ready
+BXR_Logo_V_Black.svg,Logo,SVG,vector,Ready
+BXR_Logo_V_Color.svg,Logo,SVG,vector,Ready
+BXR_Logo_V_Reverse.svg,Logo,SVG,vector,Ready
+BXR_Logo_V_White.svg,Logo,SVG,vector,Ready
+BXR_Symbol_Black.svg,Logo,SVG,vector,Ready
+BXR_Symbol_Outline_Red.svg,Logo,SVG,vector,Ready
+BXR_Symbol_Outline_White.svg,Logo,SVG,vector,Ready
+BXR_Symbol_Red.svg,Logo,SVG,vector,Ready
+BXR_Symbol_White.svg,Logo,SVG,vector,Ready
+BXR_Colors_v3.1.json,Color tokens v3.1 (brand / sector / functional / rules / retired),JSON,—,Final
+BXR_Colors_v3.1.css,CSS custom properties v3.1,CSS,—,Final
+BXR_Colors_v3.1.ase,Adobe swatch exchange (8 groups),ASE,—,Final
+BXR_Presentation_Template_v3.1.pptx,"PowerPoint template, 6 layouts + 8 sample slides",PPTX,16:9,Final
+BXR_KV_NAVY_SEA_DARK_v3.1.jpg,Navy sector KV · dark (synthetic sea terrain),JPG,1920×1080,示意稿 Mockup
+BXR_KV_NAVY_SEA_LIGHT_v3.1.jpg,Navy sector KV · light (synthetic sea terrain),JPG,1920×1080,示意稿 Mockup
+BXR_CIS_v3.1_P12_color-architecture.png,CIS v3.1 reference page,PNG,1600×900,Reference
+BXR_CIS_v3.1_P13_brand-core.png,CIS v3.1 reference page,PNG,1600×900,Reference
+BXR_CIS_v3.1_P14_text-red.png,CIS v3.1 reference page,PNG,1600×900,Reference
+BXR_CIS_v3.1_P15_auxiliary.png,CIS v3.1 reference page,PNG,1600×900,Reference
+BXR_CIS_v3.1_P16_neutral-functional.png,CIS v3.1 reference page,PNG,1600×900,Reference
+BXR_CIS_v3.1_P17_ratio.png,CIS v3.1 reference page,PNG,1600×900,Reference
+BXR_CIS_v3.1_P18_sector-colors.png,CIS v3.1 reference page,PNG,1600×900,Reference
+BXR_CIS_v3.1_P19_sector-rules.png,CIS v3.1 reference page,PNG,1600×900,Reference
+BXR_CIS_v3.1_P20_multi-sector.png,CIS v3.1 reference page,PNG,1600×900,Reference
+BXR_CIS_v3.1_P21_asset-colors.png,CIS v3.1 reference page,PNG,1600×900,Reference
+BXR_CIS_v3.1_P22_color-dodont.png,CIS v3.1 reference page,PNG,1600×900,Reference
+BXR_CIS_v3.1_P69_sector-army.png,CIS v3.1 reference page,PNG,1600×900,Reference
+BXR_CIS_v3.1_P70_sector-navy.png,CIS v3.1 reference page,PNG,1600×900,Reference
+BXR_CIS_v3.1_P71_sector-air.png,CIS v3.1 reference page,PNG,1600×900,Reference
+BXR_CIS_v3.1_P72_sector-fire.png,CIS v3.1 reference page,PNG,1600×900,Reference
+BXR_CIS_v3.1_P73_sector-police.png,CIS v3.1 reference page,PNG,1600×900,Reference
