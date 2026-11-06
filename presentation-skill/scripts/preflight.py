@@ -5,7 +5,7 @@ No slide-design judgments. Standard library only.
 import argparse,csv,hashlib,json,re,sys
 from pathlib import Path
 REQUIRED_BRIEF=("id","topic","language","audience","purpose","slides","content")
-LANGUAGES={"zh-TW","en","jp"}
+LANGUAGES={"zh-TW","en","JP"}
 EXPECTED_BACKGROUNDS={"BXR_Military_Cover_16x9.png","BXR_Military_Section_16x9.png","BXR_Military_Content_White_16x9.png"}
 def issue(errors,message):errors.append(message)
 def check(root,require_lfs=False):
