@@ -26,3 +26,6 @@ No clipped text, overlaps, empty placeholders, incorrect logo, unverified figure
 
 ## Git workflow
 Use separate dev branches and PRs; do not merge main automatically.
+
+## Slide Master acceptance requirement
+The generator MUST create/use a real PowerPoint Slide Master and appropriate layouts for cover, section divider and content pages. Place approved corporate logo art in masters/layouts only, rather than copying the logo object into every slide. Use editable placeholders for slide-specific titles, page numbers and other copy. Validate that (a) logo is not baked into PNG backgrounds, (b) there is no duplicate logo on slides, (c) updating the layout/master logo affects every matching slide, (d) any sector-specific logo placement still follows CIS v3.2. Inspect inheritance and master visibility in native PowerPoint.
