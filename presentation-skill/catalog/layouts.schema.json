@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BXR slide layout record",
+  "type": "object",
+  "required": ["id", "source_file", "source_slide", "category", "approved", "license_status"],
+  "properties": {
+    "id": {"type": "string"},
+    "source_file": {"type": "string"},
+    "source_slide": {"type": "integer", "minimum": 1},
+    "category": {"type": "string"},
+    "tags": {"type": "array", "items": {"type": "string"}},
+    "preview": {"type": "string"},
+    "editable": {"type": "boolean"},
+    "animation_present": {"type": "boolean"},
+    "animation_verified": {"type": "boolean"},
+    "approved": {"type": "boolean"},
+    "license_status": {"enum": ["unknown", "internal-allowed", "restricted", "disallowed"]}
+  }
+}
