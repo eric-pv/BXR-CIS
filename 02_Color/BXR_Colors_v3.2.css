@@ -1,0 +1,56 @@
+:root{
+  /* Brand · core */
+  --bxr-red:#D02753;
+  --bxr-black:#0B0F14;
+  --bxr-graphite:#1E252D;
+  --bxr-white:#FFFFFF;
+  --bxr-paper:#F2F4F6;
+  /* Brand · text (red text on light only) */
+  --bxr-text-red:#A51C40;
+  /* Interactive states */
+  --bxr-red-hover:#B72249;
+  --bxr-red-pressed:#A51C40;
+  /* Special accent (corporate premium only; not in sector materials) */
+  --bxr-brass:#A8834F;
+  /* Neutral */
+  --bxr-slate:#5B6670;
+  --bxr-ash:#8A96A3;
+  --bxr-mist:#C5CCD3;
+  --bxr-line:#DDE2E7;
+  /* Functional (XR / status only) */
+  --bxr-sim-cyan:#6FC3D1;
+  --bxr-signal-teal:#3FA7B8;
+  --bxr-signal-amber:#E6B325;
+  --bxr-status-green:#3F9C6E;
+  /* Sector identity · accent & block only, never full-page background */
+  --sector-army-base:#596B42;
+  --sector-army-deep:#596B42;
+  --sector-army-light:#718352;
+  --sector-army-tint:#EEF0EC;
+  --sector-army-detail:#A89F74;
+  --sector-army-block-text:#FFFFFF;
+  --sector-navy-base:#173A55;
+  --sector-navy-deep:#173A55;
+  --sector-navy-light:#39A3C6;
+  --sector-navy-tint:#E8EBEE;
+  --sector-navy-detail:#7FA7BF;
+  --sector-navy-block-text:#FFFFFF;
+  --sector-air-base:#5D8AA8;
+  --sector-air-deep:#497289;
+  --sector-air-light:#5D8AA8;
+  --sector-air-tint:#EFF3F6;
+  --sector-air-detail:#C9DCE8;
+  --sector-air-block-text:#0B0F14;
+  --sector-fire-base:#D2361E;
+  --sector-fire-deep:#C8311E;
+  --sector-fire-light:#E1452D;
+  --sector-fire-tint:#FAEBE8;
+  --sector-fire-detail:#F6B7AA;
+  --sector-fire-block-text:#FFFFFF;
+  --sector-police-base:#2E5C9A;
+  --sector-police-deep:#2E5C9A;
+  --sector-police-light:#527CE0;
+  --sector-police-tint:#EAEFF5;
+  --sector-police-detail:#9FB8E0;
+  --sector-police-block-text:#FFFFFF;
+}

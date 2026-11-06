@@ -1,0 +1,125 @@
+{
+ "version": "3.2",
+ "cmyk_profile": "FOGRA39L Coated (ISO Coated v2), sRGB → CMYK relative colorimetric. Printers using Japan Color 2001/2011 Coated must re-convert from sRGB. Proof every new paper/vendor (target ΔE ≤ 3).",
+ "layers": "Brand (core / text / special accent) · Sector · Asset. Asset colors are never sampled into this palette. RD reference-render background #213B54 is excluded.",
+ "brand": {
+  "core": {
+   "BxR Red": { "hex": "#D02753", "rgb": [ 208, 39, 83 ], "cmyk_fogra39": [ 0, 96, 47, 13 ], "contrast_on_white": 5.13, "contrast_on_command_black": 3.75, "role": "Only corporate primary color. Logo, CTA, Reality Line, one focus per view." },
+   "Command Black": { "hex": "#0B0F14", "rgb": [ 11, 15, 20 ], "cmyk_fogra39": [ 89, 70, 38, 98 ], "contrast_on_white": 19.22, "contrast_on_command_black": 1.0, "role": "Primary dark field and text", "rich_black_large_area": [ 60, 40, 40, 100 ], "small_text": "K100" },
+   "Graphite": { "hex": "#1E252D", "rgb": [ 30, 37, 45 ], "cmyk_fogra39": [ 89, 64, 39, 90 ], "contrast_on_white": 15.47, "contrast_on_command_black": 1.24, "role": "Secondary dark field, panels, chart main series on light" },
+   "White": { "hex": "#FFFFFF", "rgb": [ 255, 255, 255 ], "cmyk_fogra39": [ 0, 0, 0, 0 ], "contrast_on_white": 1.0, "contrast_on_command_black": 19.22 },
+   "Paper": { "hex": "#F2F4F6", "rgb": [ 242, 244, 246 ], "cmyk_fogra39": [ 6, 4, 4, 0 ], "contrast_on_white": 1.1, "contrast_on_command_black": 17.43 }
+  },
+  "text": {
+   "Text Red": { "hex": "#A51C40", "rgb": [ 165, 28, 64 ], "cmyk_fogra39": [ 4, 98, 48, 35 ], "contrast_on_white": 7.39, "contrast_on_command_black": 2.6, "role": "Brand text color: red text, numerals, alerts on light backgrounds only. Not a second corporate color; no fills." }
+  },
+  "special_accent": {
+   "Command Brass": { "hex": "#A8834F", "rgb": [ 168, 131, 79 ], "cmyk_fogra39": [ 31, 44, 76, 16 ], "contrast_on_white": 3.49, "contrast_on_command_black": 5.51, "role": "Optional special accent for corporate premium contexts (partner, VIP, awards, annual report). Not used in sector materials, charts or buttons." }
+  }
+ },
+ "interactive": {
+  "default": "#D02753",
+  "hover": "#B72249",
+  "pressed": "#A51C40",
+  "focus": "2 px ring (black on light, white on dark), 2 px offset",
+  "disabled": {
+   "fill": "#C5CCD3",
+   "text": "#5B6670"
+  }
+ },
+ "neutral": {
+  "Slate": { "hex": "#5B6670", "rgb": [ 91, 102, 112 ], "cmyk_fogra39": [ 65, 48, 40, 31 ], "contrast_on_white": 5.87, "contrast_on_command_black": 3.28 },
+  "Ash": { "hex": "#8A96A3", "rgb": [ 138, 150, 163 ], "cmyk_fogra39": [ 49, 33, 26, 11 ], "contrast_on_white": 3.01, "contrast_on_command_black": 6.38 },
+  "Mist": { "hex": "#C5CCD3", "rgb": [ 197, 204, 211 ], "cmyk_fogra39": [ 27, 16, 15, 0 ], "contrast_on_white": 1.62, "contrast_on_command_black": 11.85 },
+  "Line": { "hex": "#DDE2E7", "rgb": [ 221, 226, 231 ], "cmyk_fogra39": [ 16, 10, 9, 0 ], "contrast_on_white": 1.3, "contrast_on_command_black": 14.74 }
+ },
+ "functional": {
+  "Sim Cyan": { "hex": "#6FC3D1", "rgb": [ 111, 195, 209 ], "cmyk_fogra39": [ 56, 5, 19, 1 ], "contrast_on_white": 2.02, "contrast_on_command_black": 9.52, "role": "XR/simulation layer lines on dark" },
+  "Signal Teal": { "hex": "#3FA7B8", "rgb": [ 63, 167, 184 ], "cmyk_fogra39": [ 69, 7, 23, 9 ], "contrast_on_white": 2.83, "contrast_on_command_black": 6.8, "role": "XR data on light backgrounds only" },
+  "Signal Amber": { "hex": "#E6B325", "rgb": [ 230, 179, 37 ], "cmyk_fogra39": [ 7, 28, 93, 6 ], "contrast_on_white": 1.94, "contrast_on_command_black": 9.92, "role": "UI warning with icon" },
+  "Status Green": { "hex": "#3F9C6E", "rgb": [ 63, 156, 110 ], "cmyk_fogra39": [ 74, 7, 67, 12 ], "contrast_on_white": 3.39, "contrast_on_command_black": 5.67, "role": "UI status" }
+ },
+ "sector": {
+  "Army": {
+   "name": "Tactical Olive",
+   "name_zh": "戰術橄欖綠",
+   "sector": "Army",
+   "sector_zh": "陸軍",
+   "base": { "hex": "#596B42", "rgb": [ 89, 107, 66 ], "cmyk_fogra39": [ 65, 37, 85, 34 ], "contrast_on_white": 5.82, "contrast_on_command_black": 3.3, "block_text": "white" },
+   "deep": { "hex": "#596B42", "rgb": [ 89, 107, 66 ], "cmyk_fogra39": [ 65, 37, 85, 34 ], "contrast_on_white": 5.82, "contrast_on_command_black": 3.3, "use": "text on white / Paper / Tint" },
+   "light": { "hex": "#718352", "rgb": [ 113, 131, 82 ], "cmyk_fogra39": [ 57, 30, 77, 22 ], "contrast_on_white": 4.14, "contrast_on_command_black": 4.64, "use": "text on Command Black / Graphite" },
+   "tint": { "hex": "#EEF0EC", "rgb": [ 238, 240, 236 ], "cmyk_fogra39": [ 7, 5, 8, 0 ], "contrast_on_white": 1.15, "contrast_on_command_black": 16.76, "use": "light block background, Command Black text" },
+   "detail": { "hex": "#A89F74", "rgb": [ 168, 159, 116 ], "cmyk_fogra39": [ 38, 31, 59, 7 ], "contrast_on_white": 2.67, "contrast_on_command_black": 7.21, "use": "graphics only, never text" }
+  },
+  "Navy": {
+   "name": "Naval Blue",
+   "name_zh": "海軍藍",
+   "sector": "Navy",
+   "sector_zh": "海軍",
+   "base": { "hex": "#173A55", "rgb": [ 23, 58, 85 ], "cmyk_fogra39": [ 92, 49, 11, 67 ], "contrast_on_white": 11.85, "contrast_on_command_black": 1.62, "block_text": "white" },
+   "deep": { "hex": "#173A55", "rgb": [ 23, 58, 85 ], "cmyk_fogra39": [ 92, 49, 11, 67 ], "contrast_on_white": 11.85, "contrast_on_command_black": 1.62, "use": "text on white / Paper / Tint" },
+   "light": { "hex": "#39A3C6", "rgb": [ 57, 163, 198 ], "cmyk_fogra39": [ 70, 10, 10, 11 ], "contrast_on_white": 2.91, "contrast_on_command_black": 6.62, "use": "text on Command Black / Graphite" },
+   "tint": { "hex": "#E8EBEE", "rgb": [ 232, 235, 238 ], "cmyk_fogra39": [ 10, 7, 7, 0 ], "contrast_on_white": 1.2, "contrast_on_command_black": 16.06, "use": "light block background, Command Black text" },
+   "detail": { "hex": "#7FA7BF", "rgb": [ 127, 167, 191 ], "cmyk_fogra39": [ 53, 22, 15, 7 ], "contrast_on_white": 2.57, "contrast_on_command_black": 7.49, "use": "graphics only, never text" }
+  },
+  "Air": {
+   "name": "Air Force Blue",
+   "name_zh": "空軍藍",
+   "sector": "Air Force",
+   "sector_zh": "空軍",
+   "base": { "hex": "#5D8AA8", "rgb": [ 93, 138, 168 ], "cmyk_fogra39": [ 62, 28, 14, 21 ], "contrast_on_white": 3.71, "contrast_on_command_black": 5.19, "block_text": "Command Black" },
+   "deep": { "hex": "#497289", "rgb": [ 73, 114, 137 ], "cmyk_fogra39": [ 72, 37, 25, 28 ], "contrast_on_white": 5.18, "contrast_on_command_black": 3.71, "use": "text on white / Paper / Tint" },
+   "light": { "hex": "#5D8AA8", "rgb": [ 93, 138, 168 ], "cmyk_fogra39": [ 62, 28, 14, 21 ], "contrast_on_white": 3.71, "contrast_on_command_black": 5.19, "use": "text on Command Black / Graphite" },
+   "tint": { "hex": "#EFF3F6", "rgb": [ 239, 243, 246 ], "cmyk_fogra39": [ 7, 4, 4, 0 ], "contrast_on_white": 1.12, "contrast_on_command_black": 17.23, "use": "light block background, Command Black text" },
+   "detail": { "hex": "#C9DCE8", "rgb": [ 201, 220, 232 ], "cmyk_fogra39": [ 25, 9, 9, 0 ], "contrast_on_white": 1.41, "contrast_on_command_black": 13.62, "use": "graphics only, never text" }
+  },
+  "Fire": {
+   "name": "Fire Red",
+   "name_zh": "消防紅",
+   "sector": "Fire & Rescue",
+   "sector_zh": "消防",
+   "base": { "hex": "#D2361E", "rgb": [ 210, 54, 30 ], "cmyk_fogra39": [ 0, 91, 98, 11 ], "contrast_on_white": 4.9, "contrast_on_command_black": 3.92, "block_text": "white" },
+   "deep": { "hex": "#C8311E", "rgb": [ 200, 49, 30 ], "cmyk_fogra39": [ 0, 93, 98, 16 ], "contrast_on_white": 5.37, "contrast_on_command_black": 3.58, "use": "text on white / Paper / Tint" },
+   "light": { "hex": "#E1452D", "rgb": [ 225, 69, 45 ], "cmyk_fogra39": [ 0, 86, 92, 5 ], "contrast_on_white": 4.13, "contrast_on_command_black": 4.66, "use": "text on Command Black / Graphite" },
+   "tint": { "hex": "#FAEBE8", "rgb": [ 250, 235, 232 ], "cmyk_fogra39": [ 5, 9, 8, 0 ], "contrast_on_white": 1.16, "contrast_on_command_black": 16.58, "use": "light block background, Command Black text" },
+   "detail": { "hex": "#F6B7AA", "rgb": [ 246, 183, 170 ], "cmyk_fogra39": [ 4, 36, 30, 1 ], "contrast_on_white": 1.71, "contrast_on_command_black": 11.23, "use": "graphics only, never text" }
+  },
+  "Police": {
+   "name": "Police Blue",
+   "name_zh": "警察藍",
+   "sector": "Police",
+   "sector_zh": "警察",
+   "base": { "hex": "#2E5C9A", "rgb": [ 46, 92, 154 ], "cmyk_fogra39": [ 88, 58, 0, 19 ], "contrast_on_white": 6.74, "contrast_on_command_black": 2.85, "block_text": "white" },
+   "deep": { "hex": "#2E5C9A", "rgb": [ 46, 92, 154 ], "cmyk_fogra39": [ 88, 58, 0, 19 ], "contrast_on_white": 6.74, "contrast_on_command_black": 2.85, "use": "text on white / Paper / Tint" },
+   "light": { "hex": "#527CE0", "rgb": [ 82, 124, 224 ], "cmyk_fogra39": [ 71, 51, 0, 0 ], "contrast_on_white": 3.95, "contrast_on_command_black": 4.87, "use": "text on Command Black / Graphite" },
+   "tint": { "hex": "#EAEFF5", "rgb": [ 234, 239, 245 ], "cmyk_fogra39": [ 9, 5, 5, 0 ], "contrast_on_white": 1.16, "contrast_on_command_black": 16.62, "use": "light block background, Command Black text" },
+   "detail": { "hex": "#9FB8E0", "rgb": [ 159, 184, 224 ], "cmyk_fogra39": [ 42, 23, 4, 1 ], "contrast_on_white": 2.02, "contrast_on_command_black": 9.52, "use": "graphics only, never text" }
+  }
+ },
+ "usage": {
+  "levels": {
+   "accent": "labels, kickers, key word, numerals, thin rules, icons — all contexts",
+   "block": "info blocks, bands, side columns, table headers, chart main series — single-sector materials",
+   "field": "NOT USED: no full-page / full-wall sector background"
+  },
+  "brand_fixed": ["Logo (standard color/reverse only, never on a sector block)", "CTA (BxR Red, outside sector blocks)", "Reality Line (BxR Red)"],
+  "one_accent_slot": "Sector color OR Command Brass, never both",
+  "blue_sectors": "Navy, Air Force and Police shown together always carry text labels and their own sector graphics",
+  "fire_vs_brand_red": "Fire blocks never touch red CTAs or red headlines; on Fire pages the red focus is Logo + Reality Line",
+  "disclaimer": "Sector colors are generic associative colors defined by Big x Reality. They are not the official colors of any nation, military branch, fire service or police force."
+ },
+ "retired": {
+  "v3.1 sectors": {
+   "Army": "#596B42",
+   "Navy": "#105A75",
+   "Air": "#5B8FD0",
+   "Fire": "#C2410C",
+   "Police": "#323B6E"
+  },
+  "Red Light": "#E8577A",
+  "Steel Blue": "#3D5A73",
+  "Field Amber": "#D99A2B",
+  "Command Navy": "#0F1D2B",
+  "RD reference background": "#213B54"
+ }
+}
