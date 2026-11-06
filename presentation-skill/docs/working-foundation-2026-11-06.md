@@ -42,3 +42,24 @@ Pilot validates editable content and shared layout backgrounds conceptually; **a
 - Render thumbnails and visually audit candidates. Review paid-template licensing and privacy/access control.
 - Select and approve a small pilot set of complex source layouts, with PowerPoint animation retention tests.
 - Implement the NL brief -> narrative -> approved layout retrieval -> PPTX generation -> render/QA pipeline.
+
+## Additional implemented tools and reproducible commands
+
+Generate a PPTX with approved layouts and then apply theme + master typography defaults:
+
+```powershell
+npm install pptxgenjs
+node .\presentation-skill\scripts\build-military-pilot.js "." ".\01_Logo\<approved-square-symbol>.png" ".\pilot-base.pptx"
+python .\presentation-skill\scripts\apply-bxr-theme.py ".\pilot-base.pptx" ".\pilot-themed.pptx"
+python .\presentation-skill\scripts\validate-pptx.py ".\pilot-themed.pptx"
+```
+
+The OOXML patch applies the CIS color scheme, theme font references and default Slide Master title/body typography. Slide-specific explicit text formatting still overrides master styles; verify inheritance in native PowerPoint. Do not replace the official v3.2 template with this technical sample until the relevant design is approved.
+
+Safe candidate selector (blocks all unapproved source layouts):
+
+```powershell
+python .\presentation-skill\scripts\select-layout.py ".\presentation-skill\catalog\generated\layouts.csv" "請幫我做一頁訓練流程圖"
+```
+
+GitHub Actions `Build BXR PPTX Source Catalog` can also regenerate both catalog CSVs on demand and provides a workflow artifact. Requires Git LFS source downloads. Outputs remain provisional, not official templates.
