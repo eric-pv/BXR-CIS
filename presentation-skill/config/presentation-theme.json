@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0.0",
+  "source": "BXR CIS v3.2",
+  "language": "zh-TW",
+  "slide_ratio": "16:9",
+  "fonts": {
+    "primary": "Noto Sans TC",
+    "primary_weights": [
+      300,
+      400,
+      500,
+      600
+    ],
+    "technical": "B612 Mono",
+    "technical_max_fraction": 0.1,
+    "fallback_windows": "Microsoft JhengHei",
+    "fallback_mac": "PingFang TC"
+  },
+  "colors": {
+    "brand_red": "#D02753",
+    "text_red": "#A51C40",
+    "command_black": "#0B0F14",
+    "graphite": "#1E252D",
+    "paper": "#F2F4F6",
+    "white": "#FFFFFF",
+    "slate": "#5B6670",
+    "ash": "#8A96A3",
+    "line": "#DDE2E7",
+    "sim_cyan": "#6FC3D1",
+    "signal_teal": "#3FA7B8",
+    "army": "#596B42",
+    "navy": "#173A55",
+    "air_force": "#5D8AA8",
+    "fire": "#D2361E",
+    "police": "#2E5C9A"
+  },
+  "master_rules": {
+    "logo_source": "01_Logo/",
+    "logo_location": "Slide Master or Slide Layout ONLY",
+    "text_formatting": "Theme fonts + master placeholders",
+    "colors": "Theme color map",
+    "bullet": "master paragraph styles",
+    "slide_numbers": "layout-controlled fields",
+    "editability": "slide-specific content in native PPT objects",
+    "backgrounds": "full-slide approved PNG in layout; no baked text/logo",
+    "charts": "native chart objects and theme palette"
+  },
+  "types": {
+    "cover": {
+      "background": "approved-layouts/military-tech/BXR_Military_Cover_16x9.png",
+      "content_region": "right two-thirds",
+      "placeholder_roles": [
+        "title",
+        "subtitle",
+        "date"
+      ]
+    },
+    "section": {
+      "background": "approved-layouts/military-tech/BXR_Military_Section_16x9.png",
+      "placeholder_roles": [
+        "chapter",
+        "section_title"
+      ]
+    },
+    "content": {
+      "background": "approved-layouts/military-tech/BXR_Military_Content_White_16x9.png",
+      "content_region": "white area below header",
+      "banner_height_fraction": [
+        0.1,
+        0.12
+      ],
+      "placeholder_roles": [
+        "title",
+        "body",
+        "footer",
+        "page_number"
+      ]
+    }
+  },
+  "typography_provisional_pt": {
+    "cover_title": 36,
+    "cover_subtitle": 20,
+    "section_number": 28,
+    "section_title": 34,
+    "content_title": 26,
+    "body": 18,
+    "caption": 12,
+    "footnote": 10
+  },
+  "notes": [
+    "Typography points are a readable implementation baseline, NOT claimed to be mandated by CIS. Confirm against source official PPTX template and approved real slide renders.",
+    "For presentation readability, do not shrink full text to fit; reflow or split slide instead.",
+    "Do not manually insert logo on generated slides."
+  ]
+}

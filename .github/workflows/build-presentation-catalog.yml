@@ -1,0 +1,40 @@
+name: Build BXR PPTX Source Catalog
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'presentation-skill/scripts/index-pptx.py'
+      - '.github/workflows/build-presentation-catalog.yml'
+permissions:
+  contents: read
+jobs:
+  catalog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Fetch source archives from Git LFS
+        run: |
+          git lfs pull --include="presentation-skill/source-library/500頁.pptx,presentation-skill/source-library/Aviation Slides.zip"
+          python - <<'PY'
+          from pathlib import Path
+          for name in ("500頁.pptx","Aviation Slides.zip"):
+              p=Path("presentation-skill/source-library")/name
+              assert p.exists() and p.stat().st_size > 1000000, f"{p} is missing or a Git LFS pointer"
+          PY
+      - name: Generate read-only structural catalogs
+        run: |
+          python presentation-skill/scripts/index-pptx.py \
+            --big-deck "presentation-skill/source-library/500頁.pptx" \
+            --aviation-zip "presentation-skill/source-library/Aviation Slides.zip" \
+            --output "presentation-skill/catalog/generated"
+      - name: Upload catalog results as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: bxr-slide-structure-catalog
+          path: |
+            presentation-skill/catalog/generated/layouts.csv
+            presentation-skill/catalog/generated/aviation-decks.csv
+          retention-days: 30
