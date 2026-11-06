@@ -30,3 +30,12 @@ Read the complete CIS v3.2 manual, official brand assets in the repository, and 
 Source archives must remain immutable. Remove unwanted sample source marks from reusable designs where licensing permits, without deleting required attribution.
 
 Follow `../../docs/implementation-plan.md` for staged engineering and testing.
+
+## PowerPoint Slide Master / Logo policy (mandatory)
+- Corporate logos must be managed through **Slide Master and its Slide Layouts** (or native editable master elements), NEVER inserted separately by the generation engine on each slide.
+- Use official logo assets already in `01_Logo/`. Brand-approved placement, variant, clear space, and size must follow the original CIS.
+- Create purpose-specific layouts for cover, section divider, and content slides. Master/layout design controls whether the logo appears, including its color and position. A layout may intentionally suppress the logo if required by the approved design.
+- Do not bake logos, titles, chapter numbers, dates, or other editable presentation content into background PNGs.
+- When slides are duplicated or recomposed, prevent duplicate logos from both source masters and slide objects. Check rendered slide and underlying PPTX shapes for duplicates.
+- Logo policy applies across all sector variants, not only the military-tech backgrounds.
+- Validate one central master/layout edit propagates to all slides of that layout without editing individual slides.
