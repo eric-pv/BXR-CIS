@@ -6,11 +6,11 @@ Status: initial planning and audit, not yet a production-ready slide generator.
 Create editable, high-quality PowerPoint decks from natural-language briefs using existing licensed slide designs and BXR CIS v3.2. Claude Code will perform primary design and implementation. Users should not need to select layouts or manually remove sample content.
 
 ## Existing authoritative assets
-- `../README_v3.2.txt` — v3.2 brand release notes.
+- `../00_Brand_Guidelines/v3.2/README_v3.2.txt` — v3.2 brand release notes.
 - `../02_Color/BXR_Colors_v3.2.json` — machine-readable color system.
 - `../07_Templates/BXR_Presentation_Template_v3.2.pptx` — official starting presentation template.
-- `../Asset_Inventory_v3.2.csv` — official asset inventory.
-- The 89-page `BXR_CIS_Brand_Guidelines_v3.2.pdf` is the definitive manual. If split, both parts together constitute the complete source.
+- `../00_Brand_Guidelines/v3.2/Asset_Inventory_v3.2.csv` — official asset inventory.
+- The two PDFs in `../00_Brand_Guidelines/v3.2/` together form the definitive 89-page CIS v3.2 manual (pages 1–45 and 46–89).
 
 ## Proposed workflow
 1. Read CIS and user's brief; identify internal/external audience and sector.
