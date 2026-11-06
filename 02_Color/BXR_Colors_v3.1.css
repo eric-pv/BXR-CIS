@@ -1,0 +1,44 @@
+:root{
+  /* Brand */
+  --bxr-red:#D02753;
+  --bxr-text-red:#A51C40;
+  --bxr-red-hover:#B72249;
+  --bxr-red-pressed:#A51C40;
+  --bxr-black:#0B0F14;
+  --bxr-graphite:#1E252D;
+  --bxr-brass:#A8834F;
+  /* Neutral */
+  --bxr-slate:#5B6670;
+  --bxr-ash:#8A96A3;
+  --bxr-mist:#C5CCD3;
+  --bxr-line:#DDE2E7;
+  --bxr-paper:#F2F4F6;
+  --bxr-white:#FFFFFF;
+  /* Functional (XR / status only) */
+  --bxr-sim-cyan:#6FC3D1;
+  --bxr-signal-teal:#3FA7B8;
+  --bxr-signal-amber:#E6B325;
+  --bxr-status-green:#3F9C6E;
+  /* Sector identity (generic associative colors, not official national colors) */
+  --sector-army-base:#596B42;
+  --sector-army-deep:#596B42;
+  --sector-army-light:#6E8452;
+  --sector-army-tint:#EBEDE8;
+  --sector-navy-base:#105A75;
+  --sector-navy-deep:#105A75;
+  --sector-navy-light:#1887AF;
+  --sector-navy-tint:#E2EBEE;
+  --sector-air-base:#5B8FD0;
+  --sector-air-deep:#4B75AA;
+  --sector-air-light:#5B8FD0;
+  --sector-air-tint:#EBF2F9;
+  --sector-fire-base:#C2410C;
+  --sector-fire-deep:#C2410C;
+  --sector-fire-light:#DF4B0E;
+  --sector-fire-tint:#F8E8E2;
+  --sector-police-base:#323B6E;
+  --sector-police-deep:#323B6E;
+  --sector-police-light:#6D79BD;
+  --sector-police-tint:#E6E7EE;
+}
+/* Usage: sector colors for tags, kickers, chart series, 1–2px rules, blocks ≤30%. Logo / CTA / Reality Line always --bxr-red. */

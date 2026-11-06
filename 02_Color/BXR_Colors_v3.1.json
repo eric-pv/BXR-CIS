@@ -1,0 +1,668 @@
+{
+ "version": "3.1",
+ "note": "Three layers: Brand / Sector / Asset. Asset colors (uniforms, camouflage, scenes, photos) are never sampled into this palette. The RD reference-render navy background #213B54 is excluded from the CIS.",
+ "brand": {
+  "BxR Red": {
+   "hex": "#D02753",
+   "rgb": [
+    208,
+    39,
+    83
+   ],
+   "cmyk": [
+    0,
+    81,
+    60,
+    18
+   ],
+   "contrast_on_white": 5.13,
+   "contrast_on_command_black": 3.75,
+   "role": "Only corporate red. Logo, CTA, Reality Line, key highlights. ≈10% of layout.",
+   "print_cmyk": [
+    0,
+    81,
+    60,
+    18
+   ]
+  },
+  "Text Red": {
+   "hex": "#A51C40",
+   "rgb": [
+    165,
+    28,
+    64
+   ],
+   "cmyk": [
+    0,
+    83,
+    61,
+    35
+   ],
+   "contrast_on_white": 7.39,
+   "contrast_on_command_black": 2.6,
+   "role": "Red text, numerals and inline emphasis on light backgrounds only (7.39:1 on white). Never a second brand color, never a fill block."
+  },
+  "Command Black": {
+   "hex": "#0B0F14",
+   "rgb": [
+    11,
+    15,
+    20
+   ],
+   "cmyk": [
+    45,
+    25,
+    0,
+    92
+   ],
+   "contrast_on_white": 19.22,
+   "contrast_on_command_black": 1.0,
+   "role": "Primary dark field",
+   "cmyk_rich_black": [
+    60,
+    40,
+    40,
+    100
+   ]
+  },
+  "Graphite": {
+   "hex": "#1E252D",
+   "rgb": [
+    30,
+    37,
+    45
+   ],
+   "cmyk": [
+    33,
+    18,
+    0,
+    82
+   ],
+   "contrast_on_white": 15.47,
+   "contrast_on_command_black": 1.24,
+   "role": "Secondary dark field, panels, chart series 1"
+  },
+  "Command Brass": {
+   "hex": "#A8834F",
+   "rgb": [
+    168,
+    131,
+    79
+   ],
+   "cmyk": [
+    0,
+    22,
+    53,
+    34
+   ],
+   "contrast_on_white": 3.49,
+   "contrast_on_command_black": 5.51,
+   "role": "Corporate auxiliary color. Kickers, labels, dividers, chart series 2, partner/premium marks. ≤8% of layout. Not for body text on white (3.49:1)."
+  }
+ },
+ "interactive": {
+  "Default": "#D02753",
+  "Hover": "#B72249",
+  "Pressed": "#A51C40",
+  "Focus": "2 px ring BxR Red, 2 px offset",
+  "Disabled": {
+   "fill": "#C5CCD3",
+   "text": "#5B6670"
+  },
+  "note": "White label on Default 5.13:1, Hover 6.29:1, Pressed 7.39:1"
+ },
+ "neutral": {
+  "Slate": {
+   "hex": "#5B6670",
+   "rgb": [
+    91,
+    102,
+    112
+   ],
+   "cmyk": [
+    19,
+    9,
+    0,
+    56
+   ],
+   "contrast_on_white": 5.87,
+   "contrast_on_command_black": 3.28
+  },
+  "Ash": {
+   "hex": "#8A96A3",
+   "rgb": [
+    138,
+    150,
+    163
+   ],
+   "cmyk": [
+    15,
+    8,
+    0,
+    36
+   ],
+   "contrast_on_white": 3.01,
+   "contrast_on_command_black": 6.38
+  },
+  "Mist": {
+   "hex": "#C5CCD3",
+   "rgb": [
+    197,
+    204,
+    211
+   ],
+   "cmyk": [
+    7,
+    3,
+    0,
+    17
+   ],
+   "contrast_on_white": 1.62,
+   "contrast_on_command_black": 11.85
+  },
+  "Line": {
+   "hex": "#DDE2E7",
+   "rgb": [
+    221,
+    226,
+    231
+   ],
+   "cmyk": [
+    4,
+    2,
+    0,
+    9
+   ],
+   "contrast_on_white": 1.3,
+   "contrast_on_command_black": 14.74
+  },
+  "Paper": {
+   "hex": "#F2F4F6",
+   "rgb": [
+    242,
+    244,
+    246
+   ],
+   "cmyk": [
+    2,
+    1,
+    0,
+    4
+   ],
+   "contrast_on_white": 1.1,
+   "contrast_on_command_black": 17.43
+  },
+  "White": {
+   "hex": "#FFFFFF",
+   "rgb": [
+    255,
+    255,
+    255
+   ],
+   "cmyk": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "contrast_on_white": 1.0,
+   "contrast_on_command_black": 19.22
+  }
+ },
+ "functional": {
+  "Sim Cyan": {
+   "hex": "#6FC3D1",
+   "rgb": [
+    111,
+    195,
+    209
+   ],
+   "cmyk": [
+    47,
+    7,
+    0,
+    18
+   ],
+   "contrast_on_white": 2.02,
+   "contrast_on_command_black": 9.52,
+   "role": "XR / simulation layer only (UI overlays, scan lines). Not a brand color."
+  },
+  "Signal Teal": {
+   "hex": "#3FA7B8",
+   "rgb": [
+    63,
+    167,
+    184
+   ],
+   "cmyk": [
+    66,
+    9,
+    0,
+    28
+   ],
+   "contrast_on_white": 2.83,
+   "contrast_on_command_black": 6.8,
+   "role": "XR data on light backgrounds"
+  },
+  "Signal Amber": {
+   "hex": "#E6B325",
+   "rgb": [
+    230,
+    179,
+    37
+   ],
+   "cmyk": [
+    0,
+    22,
+    84,
+    10
+   ],
+   "contrast_on_white": 1.94,
+   "contrast_on_command_black": 9.92,
+   "role": "Warning / status"
+  },
+  "Status Green": {
+   "hex": "#3F9C6E",
+   "rgb": [
+    63,
+    156,
+    110
+   ],
+   "cmyk": [
+    60,
+    0,
+    29,
+    39
+   ],
+   "contrast_on_white": 3.39,
+   "contrast_on_command_black": 5.67,
+   "role": "Success / status"
+  }
+ },
+ "sector": {
+  "Army": {
+   "name": "Tactical Olive",
+   "name_zh": "戰術橄欖綠",
+   "sector": "Army",
+   "sector_zh": "陸軍",
+   "base": {
+    "hex": "#596B42",
+    "rgb": [
+     89,
+     107,
+     66
+    ],
+    "cmyk": [
+     17,
+     0,
+     38,
+     58
+    ],
+    "contrast_on_white": 5.82,
+    "contrast_on_command_black": 3.3
+   },
+   "deep_text_on_light": {
+    "hex": "#596B42",
+    "rgb": [
+     89,
+     107,
+     66
+    ],
+    "cmyk": [
+     17,
+     0,
+     38,
+     58
+    ],
+    "contrast_on_white": 5.82,
+    "contrast_on_command_black": 3.3
+   },
+   "light_text_on_dark": {
+    "hex": "#6E8452",
+    "rgb": [
+     110,
+     132,
+     82
+    ],
+    "cmyk": [
+     17,
+     0,
+     38,
+     48
+    ],
+    "contrast_on_white": 4.13,
+    "contrast_on_command_black": 4.65
+   },
+   "tint_background": {
+    "hex": "#EBEDE8",
+    "rgb": [
+     235,
+     237,
+     232
+    ],
+    "cmyk": [
+     1,
+     0,
+     2,
+     7
+    ],
+    "contrast_on_white": 1.18,
+    "contrast_on_command_black": 16.3
+   },
+   "initial_suggestion": "#596B42"
+  },
+  "Navy": {
+   "name": "Maritime Blue",
+   "name_zh": "深海藍",
+   "sector": "Navy",
+   "sector_zh": "海軍",
+   "base": {
+    "hex": "#105A75",
+    "rgb": [
+     16,
+     90,
+     117
+    ],
+    "cmyk": [
+     86,
+     23,
+     0,
+     54
+    ],
+    "contrast_on_white": 7.66,
+    "contrast_on_command_black": 2.51
+   },
+   "deep_text_on_light": {
+    "hex": "#105A75",
+    "rgb": [
+     16,
+     90,
+     117
+    ],
+    "cmyk": [
+     86,
+     23,
+     0,
+     54
+    ],
+    "contrast_on_white": 7.66,
+    "contrast_on_command_black": 2.51
+   },
+   "light_text_on_dark": {
+    "hex": "#1887AF",
+    "rgb": [
+     24,
+     135,
+     175
+    ],
+    "cmyk": [
+     86,
+     23,
+     0,
+     31
+    ],
+    "contrast_on_white": 4.1,
+    "contrast_on_command_black": 4.69
+   },
+   "tint_background": {
+    "hex": "#E2EBEE",
+    "rgb": [
+     226,
+     235,
+     238
+    ],
+    "cmyk": [
+     5,
+     1,
+     0,
+     7
+    ],
+    "contrast_on_white": 1.21,
+    "contrast_on_command_black": 15.88
+   },
+   "initial_suggestion": "#173A55"
+  },
+  "Air": {
+   "name": "Aviation Blue",
+   "name_zh": "航空藍",
+   "sector": "Air Force",
+   "sector_zh": "空軍",
+   "base": {
+    "hex": "#5B8FD0",
+    "rgb": [
+     91,
+     143,
+     208
+    ],
+    "cmyk": [
+     56,
+     31,
+     0,
+     18
+    ],
+    "contrast_on_white": 3.34,
+    "contrast_on_command_black": 5.75
+   },
+   "deep_text_on_light": {
+    "hex": "#4B75AA",
+    "rgb": [
+     75,
+     117,
+     170
+    ],
+    "cmyk": [
+     56,
+     31,
+     0,
+     33
+    ],
+    "contrast_on_white": 4.75,
+    "contrast_on_command_black": 4.05
+   },
+   "light_text_on_dark": {
+    "hex": "#5B8FD0",
+    "rgb": [
+     91,
+     143,
+     208
+    ],
+    "cmyk": [
+     56,
+     31,
+     0,
+     18
+    ],
+    "contrast_on_white": 3.34,
+    "contrast_on_command_black": 5.75
+   },
+   "tint_background": {
+    "hex": "#EBF2F9",
+    "rgb": [
+     235,
+     242,
+     249
+    ],
+    "cmyk": [
+     6,
+     3,
+     0,
+     2
+    ],
+    "contrast_on_white": 1.13,
+    "contrast_on_command_black": 17.02
+   },
+   "initial_suggestion": "#659CC4"
+  },
+  "Fire": {
+   "name": "Rescue Vermilion",
+   "name_zh": "救援朱紅",
+   "sector": "Fire & Rescue",
+   "sector_zh": "消防",
+   "base": {
+    "hex": "#C2410C",
+    "rgb": [
+     194,
+     65,
+     12
+    ],
+    "cmyk": [
+     0,
+     66,
+     94,
+     24
+    ],
+    "contrast_on_white": 5.18,
+    "contrast_on_command_black": 3.71
+   },
+   "deep_text_on_light": {
+    "hex": "#C2410C",
+    "rgb": [
+     194,
+     65,
+     12
+    ],
+    "cmyk": [
+     0,
+     66,
+     94,
+     24
+    ],
+    "contrast_on_white": 5.18,
+    "contrast_on_command_black": 3.71
+   },
+   "light_text_on_dark": {
+    "hex": "#DF4B0E",
+    "rgb": [
+     223,
+     75,
+     14
+    ],
+    "cmyk": [
+     0,
+     66,
+     94,
+     13
+    ],
+    "contrast_on_white": 4.08,
+    "contrast_on_command_black": 4.71
+   },
+   "tint_background": {
+    "hex": "#F8E8E2",
+    "rgb": [
+     248,
+     232,
+     226
+    ],
+    "cmyk": [
+     0,
+     6,
+     9,
+     3
+    ],
+    "contrast_on_white": 1.19,
+    "contrast_on_command_black": 16.14
+   },
+   "initial_suggestion": "#C83A32"
+  },
+  "Police": {
+   "name": "Enforcement Indigo",
+   "name_zh": "警政靛藍",
+   "sector": "Police",
+   "sector_zh": "警察",
+   "base": {
+    "hex": "#323B6E",
+    "rgb": [
+     50,
+     59,
+     110
+    ],
+    "cmyk": [
+     55,
+     46,
+     0,
+     57
+    ],
+    "contrast_on_white": 10.57,
+    "contrast_on_command_black": 1.82
+   },
+   "deep_text_on_light": {
+    "hex": "#323B6E",
+    "rgb": [
+     50,
+     59,
+     110
+    ],
+    "cmyk": [
+     55,
+     46,
+     0,
+     57
+    ],
+    "contrast_on_white": 10.57,
+    "contrast_on_command_black": 1.82
+   },
+   "light_text_on_dark": {
+    "hex": "#6D79BD",
+    "rgb": [
+     109,
+     121,
+     189
+    ],
+    "cmyk": [
+     42,
+     36,
+     0,
+     26
+    ],
+    "contrast_on_white": 4.1,
+    "contrast_on_command_black": 4.69
+   },
+   "tint_background": {
+    "hex": "#E6E7EE",
+    "rgb": [
+     230,
+     231,
+     238
+    ],
+    "cmyk": [
+     3,
+     3,
+     0,
+     7
+    ],
+    "contrast_on_white": 1.23,
+    "contrast_on_command_black": 15.59
+   },
+   "initial_suggestion": "#34465E"
+  }
+ },
+ "rules": {
+  "priority": "BxR Red > Command Black/Graphite > Sector color > Command Brass > Functional",
+  "brand_only_areas": [
+   "Logo",
+   "CTA buttons",
+   "Reality Line",
+   "Primary headline highlight"
+  ],
+  "sector_allowed": [
+   "Labels/tags",
+   "Kicker text (Deep on light, Light on dark)",
+   "Chart series",
+   "1–2 px borders and rules",
+   "Block backgrounds ≤30% of layout",
+   "Section dividers"
+  ],
+  "fire_vs_brand_red": "Rescue Vermilion is orange-shifted (ΔE2000 vs BxR Red ≥ 17). Never place a Vermilion block touching a BxR Red element; separate with Graphite/White; on Fire pages BxR Red is limited to Logo + CTA.",
+  "navy_vs_police": "Maritime Blue is teal-leaning, Enforcement Indigo is violet-leaning (ΔE2000 ≥ 17). When shown together always add a text label; never rely on hue alone.",
+  "all_five": "Fixed order Army → Navy → Air → Fire → Police; neutral ground (Graphite/White); equal weight; BxR Red only on the brand layer, never as a data series.",
+  "disclaimer": "Sector colors are generic associative colors defined by Big x Reality for internal classification. They are not the official colors of any nation, military branch, fire service or police force."
+ },
+ "retired": {
+  "Red Light #E8577A": "replaced by Command Brass (labels on dark) / BxR Red ≥24 px",
+  "Red Deep as brand color": "now Text Red only",
+  "Steel Blue #3D5A73": "replaced by Graphite / Brass",
+  "Command Navy": "retired in v3.0",
+  "Field Amber #D99A2B": "replaced by Signal Amber #E6B325",
+  "RD reference background #213B54": "rendering artifact, never a brand color"
+ }
+}
