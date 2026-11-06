@@ -60,3 +60,12 @@ Non-negotiable user intent:
 - A test PPTX created by ChatGPT is NOT an approved design and must not be treated as the reference for aesthetic alignment.
 
 This Skill's prep tooling is limited to source inventory, contract schemas, asset integrity, technical checks, security/licensing notes and reproducible test inputs. Claude writes the production generator and owns visual QA signoff.
+
+## V0.1 engineering contract handoff
+Claude must first read `../../docs/CLAUDE_HANDOFF_DESIGN_AUTHORITY.md` (visual design ownership) and `../../docs/CLAUDE_V01_BUILD_CHECKLIST.md` (code milestones and QA gates).
+- Input contract: `../../contracts/presentation-brief.schema.json`.
+- Per-slide plan contract: `../../contracts/deck-plan.schema.json`.
+- Integration fixtures: `../../tests/fixtures/briefs/` and `../../tests/fixtures/expected-plan-police.json`.
+- Validate prep assets: `python presentation-skill/scripts/preflight.py --repo .`.
+- Validate schema fixtures: `python presentation-skill/tests/test_contracts.py` (requires jsonschema).
+- The design authority document takes precedence over any old demo coordinates or font-point values.

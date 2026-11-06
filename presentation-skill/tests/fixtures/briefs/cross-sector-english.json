@@ -1,0 +1,45 @@
+{
+  "id": "cross-sector-english",
+  "topic": "XR Simulation Training Solutions",
+  "language": "en",
+  "audience": "external",
+  "purpose": "Introduce product capabilities and applicable training scenarios",
+  "slides": 15,
+  "series": "military-tech",
+  "sector": "cross-sector",
+  "source_policy": "provided-only",
+  "content": [
+    {
+      "title": "Overview",
+      "facts": [
+        "XR-enabled repeatable simulation scenarios",
+        "Focus on applications rather than unverified performance claims"
+      ]
+    },
+    {
+      "title": "Application Areas",
+      "facts": [
+        "Police",
+        "Fire and rescue",
+        "Defense"
+      ]
+    },
+    {
+      "title": "Implementation Path",
+      "facts": [
+        "Needs assessment",
+        "Scenario configuration",
+        "Pilot",
+        "Review"
+      ]
+    }
+  ],
+  "must_avoid": [
+    "Invented ROI",
+    "Unsupported technical specifications"
+  ],
+  "output": {
+    "pptx": true,
+    "pdf": false
+  }
+}
