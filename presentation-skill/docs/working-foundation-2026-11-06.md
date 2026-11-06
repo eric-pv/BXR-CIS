@@ -63,3 +63,6 @@ python .\presentation-skill\scripts\select-layout.py ".\presentation-skill\catal
 ```
 
 GitHub Actions `Build BXR PPTX Source Catalog` can also regenerate both catalog CSVs on demand and provides a workflow artifact. Requires Git LFS source downloads. Outputs remain provisional, not official templates.
+
+## User design handoff correction
+Prototype documents and scripts are **technical examples only**. The prior pilot put the content-page title in the white area below the header; **this is specifically rejected** by the user. Claude MUST design the actual content-page title within the top banner. Cover and section titles should be deliberately composed around the luminous focal point, not detached from it. Claude owns exact coordinates, sizes, spacing, typography and final design specifications; ChatGPT-owned tasks are asset prep, schemas, source indexing, validations and handoff tests only.

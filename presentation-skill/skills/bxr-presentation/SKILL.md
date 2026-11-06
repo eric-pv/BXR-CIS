@@ -47,3 +47,16 @@ Before generating a deck, read `../../config/presentation-theme.json` (machine-r
 - Respect separate cover / section / white-body content layouts. Load the actual approved 16:9 PNG backgrounds from `../../approved-layouts/military-tech/`.
 - Index purchased sources with `../../scripts/index-pptx.py`; catalog entries are **unreviewed candidates**, not reusable approved layouts until a human confirms the visual result.
 - Run structural QA via `../../scripts/validate-pptx.py` and visually render every slide; neither file checks nor generated mockups replace actual PowerPoint validation.
+
+## Design ownership — explicit user decision (2026-11-06)
+The **final PPT layout/design system belongs to Claude**, not to the preliminary ChatGPT prototype. Previous proof-of-concept coordinates, heading locations, sizes, and example slides are engineering demonstrations ONLY and must never be promoted into mandatory design specifications.
+
+Non-negotiable user intent:
+- Cover imagery: approximately left one-third, leaving ample right-hand title space.
+- Cover and section slides: glowing light point / streak should visually anchor or emphasize editable title text. Claude chooses exact position, grid and size.
+- **Content-page title is placed within the top technology banner**, not below it in the white body; the white body is for substantive content.
+- Preserve approved source backgrounds, text/logo editability, and official BXR branding.
+- Claude decides font-size hierarchy, exact geometry, white space, icon size, diagram structure, table layout, chart composition, and typography in the actual PPTX template while following CIS.
+- A test PPTX created by ChatGPT is NOT an approved design and must not be treated as the reference for aesthetic alignment.
+
+This Skill's prep tooling is limited to source inventory, contract schemas, asset integrity, technical checks, security/licensing notes and reproducible test inputs. Claude writes the production generator and owns visual QA signoff.

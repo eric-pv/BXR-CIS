@@ -36,3 +36,12 @@ This document defines executable acceptance contracts. It does NOT imply a fully
 
 ## Licensing
 The user permits these provided assets in the project. This is distinct from confirmation that a third-party license allows public redistribution. Access to the repo and commercial assets should be controlled appropriately.
+
+## Creative-direction boundary (2026-11-06 user feedback)
+This document describes *content-fit* and *technical compliance*, not layout design specifications. The final design is owned by Claude.
+
+- The approved military content-slide BANNER is a **title-bearing element**, not an empty decorative strip. White area starts beneath it and holds the page content.
+- Cover and section transitions use a luminous flare; arrange title/chapter lettering to use the flare as a meaningful emphasis and focal anchor. The exact placement is a Claude design decision.
+- Do not adopt any ChatGPT prototype's content-title coordinates, font sizes, or detailed geometry. No prescriptive font-size chart in the prep package.
+- Use brand family/colors from CIS and approved assets; Claude develops the specific layout, style scale and page compositions for signoff.
+- Quality review must include layout aesthetics and visual hierarchy, not merely lack of clipping.
