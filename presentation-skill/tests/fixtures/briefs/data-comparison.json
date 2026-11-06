@@ -1,0 +1,36 @@
+{
+  "id": "data-comparison",
+  "topic": "兩種技術方案的選型比較",
+  "language": "zh-TW",
+  "audience": "internal",
+  "purpose": "呈現各方案優缺點，不預設哪個較佳",
+  "slides": 8,
+  "series": "corporate",
+  "sector": "corporate",
+  "source_policy": "provided-only",
+  "content": [
+    {
+      "title": "方案比較",
+      "facts": [
+        "方案 A：條件尚待填寫",
+        "方案 B：條件尚待填寫"
+      ]
+    },
+    {
+      "title": "決策因素",
+      "facts": [
+        "成本",
+        "風險",
+        "可維護性"
+      ]
+    }
+  ],
+  "must_avoid": [
+    "虛構成本",
+    "虛構效能數據"
+  ],
+  "output": {
+    "pptx": true,
+    "pdf": false
+  }
+}
