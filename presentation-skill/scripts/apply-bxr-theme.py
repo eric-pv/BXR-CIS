@@ -6,12 +6,12 @@ Only input/output are modified as explicit paths; originals remain untouched.
 import argparse
 from pathlib import Path
 from zipfile import ZipFile,ZIP_DEFLATED
-from xml.etree import ElementTree as ET
+from lxml import etree as ET  # lxml keeps original namespace prefixes (mc:Ignorable safe)
 A="{http://schemas.openxmlformats.org/drawingml/2006/main}"
 P="{http://schemas.openxmlformats.org/presentationml/2006/main}"
 COLORS={"dk1":"0B0F14","lt1":"FFFFFF","dk2":"1E252D","lt2":"F2F4F6",
-"accent1":"D02753","accent2":"173A55","accent3":"2E5C9A",
-"accent4":"596B42","accent5":"6FC3D1","accent6":"5B6670","hlink":"2E5C9A","folHlink":"A51C40"}
+"accent1":"D02753","accent2":"1E252D","accent3":"5B6670",
+"accent4":"8A96A3","accent5":"3FA7B8","accent6":"C5CCD3","hlink":"A51C40","folHlink":"5B6670"}
 def theme(data):
     root=ET.fromstring(data);scheme=root.find(".//"+A+"clrScheme")
     if scheme is None:return data
@@ -19,29 +19,33 @@ def theme(data):
     for node in scheme:
         name=node.tag.split("}")[-1]
         if name not in COLORS:continue
-        node.clear();ET.SubElement(node,A+"srgbClr",{"val":COLORS[name]})
+        for child in list(node):node.remove(child)
+        ET.SubElement(node,A+"srgbClr",{"val":COLORS[name]})
     for family in ("majorFont","minorFont"):
         element=root.find(".//"+A+family)
         if element is None:continue
         for script in ("latin","ea","cs"):
             font=element.find(A+script)
             if font is not None:font.set("typeface","Noto Sans TC")
-    return ET.tostring(root,encoding="utf-8",xml_declaration=True)
+    return ET.tostring(root,encoding="UTF-8",xml_declaration=True,standalone=True)
 def master(data):
     root=ET.fromstring(data);styles=root.find(".//"+P+"txStyles")
     if styles is None:return data
+    # Insert defRPr in schema order (before any child elements) when missing
     for section,size in (("titleStyle",2600),("bodyStyle",1800),("otherStyle",1400)):
         node=styles.find(P+section)
         if node is None:continue
         for i,level in enumerate(node):
             if not level.tag.split("}")[-1].startswith("lvl"):continue
             props=level.find(A+"defRPr")
-            if props is None:props=ET.SubElement(level,A+"defRPr")
+            if props is None:
+                props=ET.Element(A+"defRPr");ext=level.find(A+"extLst")
+                (ext.addprevious(props) if ext is not None else level.append(props))
             props.set("sz",str(max(1000,size-i*200)))
             for script in ("latin","ea","cs"):
                 font=props.find(A+script)
                 if font is not None:font.set("typeface","Noto Sans TC")
-    return ET.tostring(root,encoding="utf-8",xml_declaration=True)
+    return ET.tostring(root,encoding="UTF-8",xml_declaration=True,standalone=True)
 def convert(src,dst):
     if Path(src).resolve()==Path(dst).resolve():raise ValueError("Input and output must be different")
     with ZipFile(src) as z,ZipFile(dst,"w",ZIP_DEFLATED) as out:
