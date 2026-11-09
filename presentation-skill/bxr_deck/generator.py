@@ -1,5 +1,5 @@
 """Plan -> editable PPTX on the BXR master, plus QA report.  CLI: python -m bxr_deck --help"""
-import datetime, hashlib, importlib.util, json, re, zipfile
+import datetime, hashlib, importlib.util, json, re
 from pathlib import Path
 from jsonschema import Draft202012Validator
 from pptx import Presentation
@@ -227,14 +227,8 @@ def generate(brief_path, out_dir, previous_plan=None, render=True, master=None):
     prev = json.loads(Path(previous_plan).read_text(encoding="utf-8")) if previous_plan else None
     slides, warnings, unverified = plan(brief, prev)
     master = Path(master or B.MASTER_PPTX)
-    if not master.exists():
-        build_master(master)
-    elif not zipfile.is_zipfile(master):
-        # Git LFS pointer (checkout without `git lfs pull`, e.g. CI): rebuild the master from code
-        # into the output folder instead of overwriting the tracked template.
-        master = build_master(out_dir / ".bxr-master.pptx")
+    if not master.exists(): build_master(master)
     prs = Presentation(str(master))
-    if master.name == ".bxr-master.pptx": master.unlink()
     if brief["language"] == "JP": set_east_asian_font(prs, B.FONT_JP)
     prs.core_properties.title = brief["topic"]; prs.core_properties.author = "Big x Reality"
     prs.core_properties.language = {"zh-TW": "zh-TW", "en": "en-US", "JP": "ja-JP"}[brief["language"]]

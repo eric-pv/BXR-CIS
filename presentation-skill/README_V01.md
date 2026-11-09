@@ -5,7 +5,7 @@
 
 ## 1. 安裝
 
-需求：Python **3.11+**、Git LFS。
+需求：Python **3.12+**（`bxr_deck/master.py` 使用 3.12 的 f-string 語法，3.11 會在匯入時 SyntaxError）、Git LFS。
 
 ```bash
 python -m pip install python-pptx jsonschema lxml pillow
@@ -19,8 +19,8 @@ git lfs install
 git lfs pull
 ```
 
-- `git lfs pull` 會下載官方範本、母片 `.pptx/.potx` 與 source-library。沒有 LFS 檔時仍可產出簡報：
-  generator 會偵測到 LFS pointer，改用程式即時重建母片（不覆寫追蹤中的範本）。
+- `git lfs pull` 會下載官方範本、母片 `templates/BXR_Military_Master_v0.1.pptx` 與 source-library。
+  `build` 需要真正的母片檔；若只有 LFS pointer 又無法 pull，可先執行 `python -m bxr_deck master` 由程式重建母片。
 - **LibreOffice（選裝）**：只用於產生 PNG/PDF 預覽（`soffice` + `pdftoppm`）。不裝就加 `--no-render`。
 
 ## 2. Windows 字型安裝
@@ -84,7 +84,7 @@ python tests/test_master.py
 python tests/test_pipeline.py
 ```
 
-`test_pipeline.py` 以 `--no-render` 跑完 6 份 fixture，不需要 LibreOffice；source-library SHA256 檢查在沒有 LFS 檔時會 skip。
+`test_pipeline.py` 以不渲染（等同 `--no-render`）的方式跑完全部 fixture，母片由程式建在暫存資料夾，不需要 LibreOffice；source-library SHA256 與 CLI 實跑兩項在沒有 LFS 檔時會 skip（CI 即為此情況）。
 
 ## 6. 限制
 

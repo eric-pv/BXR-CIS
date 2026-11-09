@@ -9,7 +9,8 @@ from lxml import etree
 from pptx import Presentation
 from bxr_deck import brand as B
 from bxr_deck.__main__ import main as cli
-from bxr_deck.generator import V, NUM_RE, GENERATED_NAMES, load_brief, BriefError
+from bxr_deck.generator import V, NUM_RE, GENERATED_NAMES, load_brief, BriefError, generate
+from bxr_deck.master import build as build_master
 
 BRIEFS = sorted((ROOT / "tests/fixtures/briefs").glob("*.json"))
 PLAN_SCHEMA = json.loads((ROOT / "contracts/deck-plan.schema.json").read_text(encoding="utf-8"))
@@ -30,10 +31,13 @@ def _src_hashes():
 def setUpModule():
     global SRC_BEFORE, RESULTS
     SRC_BEFORE = _src_hashes(); RESULTS = {}
+    # Build the master from code into a temp dir: templates/*.pptx may be Git LFS pointers (CI checkout),
+    # and the tracked template must not be overwritten. Same code path as `build --no-render`.
+    master = build_master(OUT / "master.pptx")
     for b in BRIEFS:
         out = OUT / b.stem
-        with contextlib.redirect_stdout(io.StringIO()):
-            rc = cli(["build", "--brief", str(b), "--output", str(out), "--no-render"])
+        _, _, qa = generate(str(b), out, render=False, master=master)
+        rc = 0 if qa["status"] == "PASS" else 1
         bid = json.loads(b.read_text(encoding="utf-8"))["id"]
         RESULTS[b.stem] = {"rc": rc, "brief": json.loads(b.read_text(encoding="utf-8")), "pptx": out / f"{bid}.pptx",
                            "plan": out / f"{bid}.plan.json", "qa": out / f"{bid}.qa.json"}
@@ -41,7 +45,8 @@ def setUpModule():
 
 class PipelineTests(unittest.TestCase):
     def each(self):
-        self.assertEqual(len(RESULTS), 6)
+        self.assertGreaterEqual(len(RESULTS), 6)
+        self.assertEqual(len(RESULTS), len(BRIEFS))
         for name, r in RESULTS.items():
             with self.subTest(fixture=name):
                 yield name, r
@@ -50,6 +55,8 @@ class PipelineTests(unittest.TestCase):
         for name, r in self.each():
             self.assertEqual(r["rc"], 0)
             self.assertTrue(r["pptx"].exists() and zipfile.is_zipfile(r["pptx"]))
+            plan_on_disk = r["plan"].exists(); self.assertTrue(plan_on_disk)
+            self.assertFalse((r["pptx"].parent / "preview").exists(), "--no-render must not render")
             plan = json.loads(r["plan"].read_text(encoding="utf-8"))
             self.assertEqual([e.message for e in Draft202012Validator(PLAN_SCHEMA).iter_errors(plan)], [])
             qa = json.loads(r["qa"].read_text(encoding="utf-8"))
@@ -114,6 +121,17 @@ class PipelineTests(unittest.TestCase):
                             for c in row.cells:
                                 for n in NUM_RE.findall(c.text):
                                     self.assertIn(n, allowed, f"{name}: table number {n}")
+
+    def test_cli_build_no_render(self):
+        """The CLI path itself; needs the real master template (git lfs pull)."""
+        if not zipfile.is_zipfile(B.MASTER_PPTX):
+            self.skipTest("templates master is a Git LFS pointer (run `git lfs pull`)")
+        b = next(p for p in BRIEFS if "data-comparison" in p.name)
+        with contextlib.redirect_stdout(io.StringIO()) as buf:
+            rc = cli(["build", "--brief", str(b), "--output", str(OUT / "cli"), "--no-render"])
+        self.assertEqual(rc, 0, buf.getvalue())
+        self.assertEqual(json.loads(buf.getvalue())["status"], "PASS")
+        self.assertFalse((OUT / "cli" / "preview").exists())
 
     def test_jp_theme_east_asian_font(self):
         jp = [r for r in RESULTS.values() if r["brief"]["language"] == "JP"]

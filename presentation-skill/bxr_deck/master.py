@@ -184,8 +184,7 @@ def master_xml(layout_rids):
         f'<a:spcBef><a:spcPts val="300"/></a:spcBef><a:buFont typeface="Arial"/><a:buChar char="&#8211;"/>{rpr(14, color=B.SLATE)}</a:lvl3pPr>')
     for n in range(4, 10):
         body_lvls += f'<a:lvl{n}pPr marL="{e(0.80)}" indent="0"><a:buNone/>{rpr(14, color=B.SLATE)}</a:lvl{n}pPr>'
-    title_rpr = rpr(24, color=B.WHITE).replace("<a:defRPr", '<a:defRPr kern="1200"')
-    title_lvl = f'<a:lvl1pPr algn="l"><a:lnSpc><a:spcPct val="100000"/></a:lnSpc><a:spcBef><a:spcPts val="0"/></a:spcBef><a:buNone/>{title_rpr}</a:lvl1pPr>'
+    title_lvl = f'<a:lvl1pPr algn="l"><a:lnSpc><a:spcPct val="100000"/></a:lnSpc><a:spcBef><a:spcPts val="0"/></a:spcBef><a:buNone/>{rpr(24, color=B.WHITE).replace("<a:defRPr", "<a:defRPr kern=\"1200\"")}</a:lvl1pPr>'
     ids = "".join(f'<p:sldLayoutId id="{2147483649 + i}" r:id="{rid}"/>' for i, rid in enumerate(layout_rids))
     return (f'<p:sldMaster {NSDECL}><p:cSld><p:bg><p:bgPr><a:solidFill><a:srgbClr val="FFFFFF"/></a:solidFill><a:effectLst/></p:bgPr></p:bg><p:spTree>'
             '<p:nvGrpSpPr><p:cNvPr id="1" name=""/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr>'
