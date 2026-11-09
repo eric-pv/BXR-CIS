@@ -10,7 +10,7 @@ Updated: 2026-11-09 (UTC)
 | A1 解壓與縮圖 | DONE | 安全解壓到 /tmp/bxr-a/src（略過 __MACOSX、`._*`，檢查路徑穿越與 symlink）：500 檔，249 份 PPTX，編號 D001–D249（依路徑排序，與 catalog 的 AVI-<deck> 編號一致）。分批渲染，每批 20 份：已完成到第 249 份。LibreOffice 轉檔 249/249 成功（每份 timeout 180s、失敗重試 1 次）。D248 的 pdftoppm 縮圖第一次逾時（300s），重試（900s）後成功。共 5,164 頁。總覽圖在 /tmp/bxr-a/sheets（未提交） |
 | A2 layouts_aviation.py | DONE | 7 家族、19 個 variant（下表） |
 | A3 tests/test_aviation_layouts.py + 樣張 | DONE | 6 項測試通過；55 張樣張渲染到 /tmp/bxr-a/review。看總覽圖後做了一輪修正：B612 Mono 字寬估算、少項目時垂直置中與限制行高、gauge 中心數字避開弧線、年份不換行 |
-| A4 合併 main、測試、PR、merge | BLOCKED | 已合併 origin/main（無衝突）；PR https://github.com/eric-pv/BXR-CIS/pull/23 ；`test_catalog.py` 失敗（見〈阻擋問題〉），未 merge |
+| A4 合併 main、測試、PR、merge | IN-PROGRESS | Eric 已同意修改 select-layout.py 與 layout-registry.json（2026-11-09）；已提交，等待 CI； 已合併 origin/main（無衝突）；PR https://github.com/eric-pv/BXR-CIS/pull/23 ；`test_catalog.py` 失敗（見〈阻擋問題〉），未 merge |
 
 ## 新增版型
 | variant | family | n | ref |
@@ -44,12 +44,12 @@ ref 使用 catalog/generated/source-slides.csv 的 slide_id（`AVI-<deck>-<page>
 - test_pipeline.py：8 OK
 - test_acceptance.py：6 OK
 - test_aviation_layouts.py：6 OK（新）
-- test_catalog.py：**FAILED**（1 failure、1 error），原因見下
+- test_catalog.py：套用修正前 FAILED；Eric 同意後套用 select-layout.py 修正並重新產生 registry（36 layouts），23 OK（1 skip）
 
 註：CI workflow（presentation-preflight.yml）沒有執行 test_aviation_layouts.py；workflow 不在允許修改範圍，建議日後加入。
 
 ## 阻擋問題
-1. **test_catalog.py 與允許修改範圍衝突。** main（#22）新增的 `scripts/select-layout.py` 會掃描 `bxr_deck.layouts_aviation`，但 `record()` 用 `f"PMLD-{p:04d}"` 格式化 ref，遇到 `AVI-...` 字串 ref 就丟出 ValueError；另外 `catalog/layout-registry.json` 必須與 variant 同步。兩者都不在本任務允許修改的檔案內（只能改 layouts_aviation.py、test_aviation_layouts.py 與本進度檔），所以 CI 不會全綠，依授權條件**不 merge**。
+1. **（已解決：Eric 同意後已提交修正）** test_catalog.py 與允許修改範圍衝突。 main（#22）新增的 `scripts/select-layout.py` 會掃描 `bxr_deck.layouts_aviation`，但 `record()` 用 `f"PMLD-{p:04d}"` 格式化 ref，遇到 `AVI-...` 字串 ref 就丟出 ValueError；另外 `catalog/layout-registry.json` 必須與 variant 同步。兩者都不在本任務允許修改的檔案內（只能改 layouts_aviation.py、test_aviation_layouts.py 與本進度檔），所以 CI 不會全綠，依授權條件**不 merge**。
    修正方式：在本機套用下列 patch，再執行 `python presentation-skill/scripts/select-layout.py --write-registry`（registry 會變成 36 個 layout），之後 test_catalog.py 23 項通過（1 skip）。此修正未提交，留給 Eric 或後續任務決定。
 ```diff
 diff --git a/presentation-skill/scripts/select-layout.py b/presentation-skill/scripts/select-layout.py
