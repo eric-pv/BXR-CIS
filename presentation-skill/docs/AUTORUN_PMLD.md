@@ -1,7 +1,7 @@
 # AUTORUN — 500頁（PMLD）版型補完
 
 PMLD=IN-PROGRESS
-最後更新：2026-11-09T11:50Z
+最後更新：2026-11-09T12:00Z
 分支：claude/affectionate-wright-80u02w（系統指定）
 合併：本工作未獲自行合併授權 → PR 以 draft 交 Eric 合併。
 
@@ -15,8 +15,8 @@ PMLD=IN-PROGRESS
 | 項目 | 狀態 | 備註 |
 |---|---|---|
 | 前置（LFS 500頁、字型） | DONE | 500頁 sha256 b7dab6f4… 與 catalog 相符；Noto Sans CJK（apt）；B612 Mono（@fontsource/b612-mono 5.2.5 → ttf）；fontconfig 別名 Noto Sans TC/JP → Noto Sans CJK TC/JP |
-| P1 渲染 604 頁 → 縮圖 → 編號總覽圖（/tmp/bxr-pmld） | IN-PROGRESS | |
-| P2 新 variant（layouts.py） | TODO | |
+| P1 渲染 604 頁 → 縮圖 → 編號總覽圖（/tmp/bxr-pmld） | DONE | LibreOffice 單檔一次轉完 604/604 頁（約 5 分鐘，峰值記憶體約 6 GB，0 失敗）；pdftoppm 640 px 縮圖 3.5 分鐘；21 張編號總覽圖（每張 30 頁，標註 PMLD 編號與 category_auto）；全部只在 /tmp，未提交 |
+| P2 新 variant（layouts.py） | IN-PROGRESS | |
 | P3 registry 重建 + tests/test_pmld_layouts.py | TODO | |
 | P4 樣張與 fixture 渲染目視驗收、全部測試、draft PR | TODO | |
 
