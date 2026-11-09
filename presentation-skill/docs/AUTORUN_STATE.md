@@ -11,4 +11,6 @@ Branch: `dev/claude-v01-low-docs-tests` (from `main` @ c06a655)
 | L2 README_V01.md | DONE | 2026-11-09 | |
 | L3 SKILL.md status/usage | DONE | 2026-11-09 | |
 | L4 presentation-preflight.yml | DONE | 2026-11-09 | |
-| LOW (PR + CI + squash merge) | IN-PROGRESS | 2026-11-09 |
+| LOW (PR + CI + squash merge) | DONE | 2026-11-09 | PR #16; CI verify-assets green (1 fix: py3.11 f-string in master.py); squash-merged to main |
+
+LOW=DONE
