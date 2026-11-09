@@ -36,9 +36,10 @@ Source catalog (M1), layout registry + status flow + official SVG icons + regist
 Visual result still `pending-eric`; not verified in desktop PowerPoint.
 
 ## Blockers / follow-ups (outside this run's file scope)
-- Add `tests/test_catalog.py` to `.github/workflows/presentation-preflight.yml`.
-- Point `.github/workflows/build-presentation-catalog.yml` at `build-source-catalog.py`.
-- `generator.py` detail pending page repeats the banner title below the banner.
+- ~~Add `tests/test_catalog.py` to `.github/workflows/presentation-preflight.yml`.~~ Done in follow-up PR (2026-11-09).
+- ~~Point `.github/workflows/build-presentation-catalog.yml` at `build-source-catalog.py`.~~ Done in follow-up PR.
+- ~~`generator.py` detail pending page repeats the banner title below the banner.~~ Done in follow-up PR
+  (icon + evidence-gap card only); review/phase3 decks regenerated.
 - Licence / public-repo question for the purchased libraries (Eric).
 
 ## Decisions

@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'presentation-skill/scripts/index-pptx.py'
+      - 'presentation-skill/scripts/build-source-catalog.py'
       - '.github/workflows/build-presentation-catalog.yml'
 permissions:
   contents: read
@@ -26,15 +26,17 @@ jobs:
           PY
       - name: Generate read-only structural catalogs
         run: |
-          python presentation-skill/scripts/index-pptx.py \
+          python -m pip install lxml
+          python presentation-skill/scripts/build-source-catalog.py \
             --big-deck "presentation-skill/source-library/500頁.pptx" \
             --aviation-zip "presentation-skill/source-library/Aviation Slides.zip" \
             --output "presentation-skill/catalog/generated"
+          git diff --exit-code -- presentation-skill/catalog/generated || echo "::warning::committed catalog differs from regenerated catalog"
       - name: Upload catalog results as workflow artifact
         uses: actions/upload-artifact@v4
         with:
           name: bxr-slide-structure-catalog
           path: |
-            presentation-skill/catalog/generated/layouts.csv
-            presentation-skill/catalog/generated/aviation-decks.csv
+            presentation-skill/catalog/generated/source-slides.csv
+            presentation-skill/catalog/generated/summary.json
           retention-days: 30
