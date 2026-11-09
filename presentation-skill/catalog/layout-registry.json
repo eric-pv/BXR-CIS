@@ -1262,6 +1262,788 @@
      "note": "native CIS v3.2 rebuild in bxr_deck"
     }
    ]
+  },
+  {
+   "id": "compare.table",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 18,
+   "category": "compare",
+   "tags": [
+    "compare"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "compare.table",
+   "family": "compare",
+   "module": "bxr_deck.layouts_aviation",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-064-0018",
+    "AVI-064-0019",
+    "AVI-063-0014"
+   ],
+   "ref_slides": [
+    "AVI-064-0018",
+    "AVI-064-0019",
+    "AVI-063-0014"
+   ],
+   "items_min": 2,
+   "items_max": 8,
+   "needs_image": false,
+   "prefers": "",
+   "description": "Native table: criteria rows × option columns, Graphite header (ref D064-18/19).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "compare.split-panels",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 12,
+   "category": "compare",
+   "tags": [
+    "compare"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "compare.split-panels",
+   "family": "compare",
+   "module": "bxr_deck.layouts_aviation",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-064-0012",
+    "AVI-063-0008",
+    "AVI-064-0007"
+   ],
+   "ref_slides": [
+    "AVI-064-0012",
+    "AVI-063-0008",
+    "AVI-064-0007"
+   ],
+   "items_min": 2,
+   "items_max": 6,
+   "needs_image": false,
+   "prefers": "",
+   "description": "Option columns as panels with dark headers; each criterion is a labelled row (ref D064-12/D063-08).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "compare.center-axis",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 17,
+   "category": "compare",
+   "tags": [
+    "compare",
+    "short"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "compare.center-axis",
+   "family": "compare",
+   "module": "bxr_deck.layouts_aviation",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-064-0017",
+    "AVI-064-0011",
+    "AVI-064-0014"
+   ],
+   "ref_slides": [
+    "AVI-064-0017",
+    "AVI-064-0011",
+    "AVI-064-0014"
+   ],
+   "items_min": 2,
+   "items_max": 6,
+   "needs_image": false,
+   "prefers": "short",
+   "description": "Two options mirrored around a central criteria spine with a VS marker (ref D064-17/D064-11).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "timeline.horizontal",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 5,
+   "category": "timeline",
+   "tags": [
+    "timeline",
+    "sequence"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "timeline.horizontal",
+   "family": "timeline",
+   "module": "bxr_deck.layouts_aviation",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-224-0005",
+    "AVI-224-0017",
+    "AVI-155-0010"
+   ],
+   "ref_slides": [
+    "AVI-224-0005",
+    "AVI-224-0017",
+    "AVI-155-0010"
+   ],
+   "items_min": 3,
+   "items_max": 8,
+   "needs_image": false,
+   "prefers": "sequence",
+   "description": "Axis with nodes; year numerals above, milestone title and text below (ref D224-05/D155-10).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "timeline.alternating",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 13,
+   "category": "timeline",
+   "tags": [
+    "timeline",
+    "sequence"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "timeline.alternating",
+   "family": "timeline",
+   "module": "bxr_deck.layouts_aviation",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-224-0013",
+    "AVI-224-0015",
+    "AVI-155-0013"
+   ],
+   "ref_slides": [
+    "AVI-224-0013",
+    "AVI-224-0015",
+    "AVI-155-0013"
+   ],
+   "items_min": 4,
+   "items_max": 8,
+   "needs_image": false,
+   "prefers": "sequence",
+   "description": "Central year band; milestones alternate above and below it (ref D224-13/D224-15/D155-13).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "timeline.vertical-visual",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 14,
+   "category": "timeline",
+   "tags": [
+    "timeline",
+    "sequence"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "timeline.vertical-visual",
+   "family": "timeline",
+   "module": "bxr_deck.layouts_aviation",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-224-0014",
+    "AVI-224-0020",
+    "AVI-155-0008"
+   ],
+   "ref_slides": [
+    "AVI-224-0014",
+    "AVI-224-0020",
+    "AVI-155-0008"
+   ],
+   "items_min": 3,
+   "items_max": 6,
+   "needs_image": true,
+   "prefers": "sequence",
+   "description": "Key visual on the left; vertical spine with year, title and text per milestone (ref D224-20/D155-08).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "map.visual-markers",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 4,
+   "category": "map",
+   "tags": [
+    "map"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "map.visual-markers",
+   "family": "map",
+   "module": "bxr_deck.layouts_aviation",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-019-0004",
+    "AVI-249-0008",
+    "AVI-019-0012"
+   ],
+   "ref_slides": [
+    "AVI-019-0004",
+    "AVI-249-0008",
+    "AVI-019-0012"
+   ],
+   "items_min": 1,
+   "items_max": 6,
+   "needs_image": true,
+   "prefers": "",
+   "description": "Large terrain visual with numbered region markers, legend list on the right (ref D019-04/D019-12).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "map.region-cards",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 17,
+   "category": "map",
+   "tags": [
+    "map"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "map.region-cards",
+   "family": "map",
+   "module": "bxr_deck.layouts_aviation",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-019-0017",
+    "AVI-019-0011",
+    "AVI-019-0007"
+   ],
+   "ref_slides": [
+    "AVI-019-0017",
+    "AVI-019-0011",
+    "AVI-019-0007"
+   ],
+   "items_min": 1,
+   "items_max": 6,
+   "needs_image": true,
+   "prefers": "",
+   "description": "Visual band with markers; one card per region below, tied by number (ref D019-17/D019-07).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "team.cards",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 15,
+   "category": "team",
+   "tags": [
+    "team"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "team.cards",
+   "family": "team",
+   "module": "bxr_deck.layouts_aviation",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-215-0015",
+    "AVI-215-0020",
+    "AVI-215-0003"
+   ],
+   "ref_slides": [
+    "AVI-215-0015",
+    "AVI-215-0020",
+    "AVI-215-0003"
+   ],
+   "items_min": 2,
+   "items_max": 6,
+   "needs_image": false,
+   "prefers": "",
+   "description": "Equal role cards: icon medallion, role, optional name and remit (ref D215-15/D215-20).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "team.lead-tree",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 19,
+   "category": "team",
+   "tags": [
+    "team"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "team.lead-tree",
+   "family": "team",
+   "module": "bxr_deck.layouts_aviation",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-215-0019",
+    "AVI-215-0004",
+    "AVI-215-0006"
+   ],
+   "ref_slides": [
+    "AVI-215-0019",
+    "AVI-215-0004",
+    "AVI-215-0006"
+   ],
+   "items_min": 3,
+   "items_max": 6,
+   "needs_image": false,
+   "prefers": "",
+   "description": "First role leads; the others hang from a connector bar below (org-chart reading, ref D215-19).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "team.side-visual",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 13,
+   "category": "team",
+   "tags": [
+    "team"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "team.side-visual",
+   "family": "team",
+   "module": "bxr_deck.layouts_aviation",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-215-0013",
+    "AVI-215-0005",
+    "AVI-215-0016"
+   ],
+   "ref_slides": [
+    "AVI-215-0013",
+    "AVI-215-0005",
+    "AVI-215-0016"
+   ],
+   "items_min": 2,
+   "items_max": 6,
+   "needs_image": true,
+   "prefers": "",
+   "description": "Team key visual on the left; role tiles in a 2-column grid on the right (ref D215-13/D215-16).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "product.visual-left",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 1,
+   "category": "product",
+   "tags": [
+    "product"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "product.visual-left",
+   "family": "product",
+   "module": "bxr_deck.layouts_aviation",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-161-0001",
+    "AVI-161-0012",
+    "AVI-161-0020"
+   ],
+   "ref_slides": [
+    "AVI-161-0001",
+    "AVI-161-0012",
+    "AVI-161-0020"
+   ],
+   "items_min": 2,
+   "items_max": 6,
+   "needs_image": true,
+   "prefers": "",
+   "description": "Product key visual left with a name tag; feature list with icon chips on the right (ref D161-01/D161-20).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "product.visual-top",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 10,
+   "category": "product",
+   "tags": [
+    "product"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "product.visual-top",
+   "family": "product",
+   "module": "bxr_deck.layouts_aviation",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-161-0010",
+    "AVI-161-0018",
+    "AVI-161-0011"
+   ],
+   "ref_slides": [
+    "AVI-161-0010",
+    "AVI-161-0018",
+    "AVI-161-0011"
+   ],
+   "items_min": 2,
+   "items_max": 4,
+   "needs_image": true,
+   "prefers": "",
+   "description": "Wide product visual band with the name panel overlapping; feature columns below (ref D161-10/D161-18).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "product.spotlight",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 4,
+   "category": "product",
+   "tags": [
+    "product"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "product.spotlight",
+   "family": "product",
+   "module": "bxr_deck.layouts_aviation",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-161-0004",
+    "AVI-161-0016",
+    "AVI-081-0009"
+   ],
+   "ref_slides": [
+    "AVI-161-0004",
+    "AVI-161-0016",
+    "AVI-081-0009"
+   ],
+   "items_min": 2,
+   "items_max": 6,
+   "needs_image": true,
+   "prefers": "",
+   "description": "Round product visual at the centre, name beneath, features split left and right (ref D161-04/D081-09).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "gauge.dials",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 17,
+   "category": "gauge",
+   "tags": [
+    "gauge"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "gauge.dials",
+   "family": "gauge",
+   "module": "bxr_deck.layouts_aviation",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-135-0017",
+    "AVI-135-0014",
+    "AVI-135-0018"
+   ],
+   "ref_slides": [
+    "AVI-135-0017",
+    "AVI-135-0014",
+    "AVI-135-0018"
+   ],
+   "items_min": 1,
+   "items_max": 4,
+   "needs_image": false,
+   "prefers": "",
+   "description": "Half-circle dials: track arc + value arc, value numeral in the hub (ref D135-17/D135-14).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "gauge.rings",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 3,
+   "category": "gauge",
+   "tags": [
+    "gauge"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "gauge.rings",
+   "family": "gauge",
+   "module": "bxr_deck.layouts_aviation",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-135-0003",
+    "AVI-081-0007",
+    "AVI-063-0018"
+   ],
+   "ref_slides": [
+    "AVI-135-0003",
+    "AVI-081-0007",
+    "AVI-063-0018"
+   ],
+   "items_min": 1,
+   "items_max": 4,
+   "needs_image": false,
+   "prefers": "",
+   "description": "Full progress rings on Paper cards, value inside, label below (ref D135-03/D081-07).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "gauge.bars",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 7,
+   "category": "gauge",
+   "tags": [
+    "gauge",
+    "long"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "gauge.bars",
+   "family": "gauge",
+   "module": "bxr_deck.layouts_aviation",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-064-0007",
+    "AVI-063-0012",
+    "AVI-064-0003"
+   ],
+   "ref_slides": [
+    "AVI-064-0007",
+    "AVI-063-0012",
+    "AVI-064-0003"
+   ],
+   "items_min": 1,
+   "items_max": 4,
+   "needs_image": false,
+   "prefers": "long",
+   "description": "Labelled progress tracks with value at the end (ref D064-07/D063-12).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "quote.panel",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 10,
+   "category": "quote",
+   "tags": [
+    "quote"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "quote.panel",
+   "family": "quote",
+   "module": "bxr_deck.layouts_aviation",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-242-0010",
+    "AVI-242-0006"
+   ],
+   "ref_slides": [
+    "AVI-242-0010",
+    "AVI-242-0006"
+   ],
+   "items_min": 1,
+   "items_max": 2,
+   "needs_image": false,
+   "prefers": "",
+   "description": "Command Black panel across the content zone; large quote mark, centred statement, attribution (ref D242-10).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "quote.visual-side",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 15,
+   "category": "quote",
+   "tags": [
+    "quote"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "quote.visual-side",
+   "family": "quote",
+   "module": "bxr_deck.layouts_aviation",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-242-0015",
+    "AVI-242-0017",
+    "AVI-242-0011"
+   ],
+   "ref_slides": [
+    "AVI-242-0015",
+    "AVI-242-0017",
+    "AVI-242-0011"
+   ],
+   "items_min": 1,
+   "items_max": 2,
+   "needs_image": true,
+   "prefers": "",
+   "description": "Statement on the left with a vertical accent bar; approved key visual on the right (ref D242-15/D242-17).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
   }
  ]
 }
