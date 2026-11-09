@@ -149,9 +149,9 @@ def build_slide(prs, L, s, brief, acc_light, acc_deep, fits, ctx=None, used=None
         items = d["items"] or [T["deep_body"]]
         ok = C.pending_box(slide, C.M, C.BODY_TOP + 0.25, C.BODY_W, None, T["pending"], items)
     elif k == "detail":
-        add_icon(slide, d["icon"], Inches(C.M), Inches(C.BODY_TOP + 0.3), Inches(0.9), acc_deep)
-        C.textbox(slide, C.M + 1.3, C.BODY_TOP + 0.3, C.BODY_W - 1.3, 0.9, s.title, size=32, color=B.BLACK, name="Detail heading")
-        ok = C.pending_box(slide, C.M, C.BODY_TOP + 1.7, C.BODY_W, None, T["pending"], [d["text"]])
+        # the banner already carries the title: icon + evidence-gap card only (no repeated heading)
+        add_icon(slide, d["icon"], Inches(C.M), Inches(C.BODY_TOP + 0.35), Inches(0.9), acc_deep)
+        ok = C.pending_box(slide, C.M + 1.3, C.BODY_TOP + 0.3, C.BODY_W - 1.3, None, T["pending"], [d["text"]])
     fits[s.slide_id] = bool(ok)
     note = list(s.notes) + [f"Evidence status: {s.evidence}", f"Slide id: {s.slide_id}"]
     C.notes(slide, "\n".join(note))
