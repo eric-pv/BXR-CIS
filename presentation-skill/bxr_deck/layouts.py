@@ -127,6 +127,7 @@ class Variant:
     needs_image: bool = False
     prefers: str = ""        # 'short' | 'long' | 'sequence' | ''
     per_item_image: bool = False   # one key visual per item (else one per slide)
+    fit: object = None             # optional f(features) -> score bonus for the content shape it suits best
 
     def images(self, n):
         return (n if self.per_item_image else 1) if self.needs_image else 0
@@ -136,9 +137,9 @@ PER_ITEM_IMAGE = {"agenda.visual-columns", "items.raised-cards", "process.stage-
                   "items.slant-panels", "items.zigzag", "items.capsules", "process.numbered-panels", "text.thumb-list"}
 
 
-def variant(name, family, ref, nmin, nmax, needs_image=False, prefers=""):
+def variant(name, family, ref, nmin, nmax, needs_image=False, prefers="", fit=None):
     def deco(fn):
-        VARIANTS.append(Variant(name, family, ref, nmin, nmax, fn, needs_image, prefers, name in PER_ITEM_IMAGE)); return fn
+        VARIANTS.append(Variant(name, family, ref, nmin, nmax, fn, needs_image, prefers, name in PER_ITEM_IMAGE, fit)); return fn
     return deco
 
 
@@ -163,6 +164,7 @@ def select(family, items, used, sequence=False, prefer=None):
         if v.prefers == "short": s += 2 if f["max"] <= 14 else -4
         if v.prefers == "long": s += 2 if f["avg"] > 14 else -1
         if v.prefers == "sequence": s += 3 if sequence else -2
+        if v.fit: s += v.fit(f)
         s -= 4 * used.count(v.name)
         s -= 0.01 * VARIANTS.index(v)      # deterministic tie-break
         if best is None or s > best[0]: best = (s, v)
@@ -499,7 +501,7 @@ def agenda_arc(slide, items, ctx):
         C.hline(slide, tx, ny + 0.48, tw, name=f"Agenda {i + 1} rule")
 
 
-@variant("agenda.number-strip", "agenda", (28, 24, 18), 3, 7, needs_image=True, prefers="short")
+@variant("agenda.number-strip", "agenda", (28, 24, 18), 3, 7, needs_image=True, prefers="short", fit=lambda f: 1.5 if f["n"] >= 6 else 0)
 def agenda_strip(slide, items, ctx):
     """Wide key visual with a strip of numbered cells overlapping its lower edge (ref p28/p24)."""
     n = len(items); gap = 0.1; cw = (W - 0.6 - gap * (n - 1)) / n; pad = 0.25 if n <= 5 else 0.14
@@ -541,7 +543,7 @@ def agenda_tiles(slide, items, ctx):
         _txt(slide, x + pad, y + 1.3, tw - 2 * pad, th - 1.4, it, size, align=PP_ALIGN.CENTER, name=f"Agenda {i + 1} title", line=1.2)
 
 
-@variant("items.pill-list", "items", (41, 47), 2, 5, needs_image=True)
+@variant("items.pill-list", "items", (41, 47), 2, 5, needs_image=True, fit=lambda f: 2.5 if f["avg"] > 14 else 0)
 def items_pills(slide, items, ctx):
     """Tall rounded key visual left; items as dark pill bars with a white icon disc (ref p41/p47)."""
     pw = 4.4
@@ -617,7 +619,7 @@ def items_overlap(slide, items, ctx):
             _txt(slide, x + 0.3, cy + 1.25 + th, tw, body_h, it["body"], 14, B.SLATE, name=f"Card {i + 1} text", line=1.35)
 
 
-@variant("items.zigzag", "items", (65, 71, 72), 2, 3, needs_image=True)
+@variant("items.zigzag", "items", (65, 71, 72), 2, 3, needs_image=True, fit=lambda f: 2 if f["avg"] > 14 else 0)
 def items_zigzag(slide, items, ctx):
     """Alternating rows: key visual on one side, overlapping dark text block on the other (ref p65/p71)."""
     n = len(items); gap = 0.18; rh = (BOT - TOP - 0.05 - gap * (n - 1)) / n
@@ -637,7 +639,7 @@ def items_zigzag(slide, items, ctx):
             _txt(slide, bx + 1.15, y + 0.18 + bh - 0.65, tw, 0.5, it["body"], 13, B.MIST, name=f"Item {i + 1} text", line=1.25)
 
 
-@variant("items.quad-center", "items", (177, 178), 4, 4, needs_image=True)
+@variant("items.quad-center", "items", (177, 178), 4, 4, needs_image=True, fit=lambda f: 2)
 def items_quad(slide, items, ctx):
     """2×2 field of Paper blocks around a central round key visual (ref p177/p178)."""
     cx, cy = M + W / 2, (TOP + 0.05 + BOT) / 2
@@ -684,7 +686,7 @@ def items_capsules(slide, items, ctx):
                  name=f"Item {i + 1} text", line=1.3)
 
 
-@variant("process.loop", "process", (239,), 3, 6, needs_image=True, prefers="sequence")
+@variant("process.loop", "process", (239,), 3, 6, needs_image=True, prefers="sequence", fit=lambda f: 1.5 if f["n"] >= 5 else 0)
 def process_loop(slide, steps, ctx):
     """Steps as nodes on a closed loop around a round key visual (cycle; ref p239)."""
     cx, cy = M + W / 2, (TOP + BOT) / 2 + 0.05
@@ -774,7 +776,7 @@ def text_framed(slide, lines, ctx):
         y += rh
 
 
-@variant("text.thumb-list", "text", (127, 104), 2, 4, needs_image=True, prefers="long")
+@variant("text.thumb-list", "text", (127, 104), 2, 4, needs_image=True, prefers="long", fit=lambda f: 1 if f["avg"] > 14 else 0)
 def text_thumbs(slide, lines, ctx):
     """Statement rows, each with a mono index block and a key-visual thumbnail at the end (ref p127/p104)."""
     n = len(lines); gap = 0.16; rh = (BOT - TOP - 0.05 - gap * (n - 1)) / n
