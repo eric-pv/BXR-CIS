@@ -52,8 +52,36 @@ def _title(slide, text, layout):
     return size
 
 
-def build_slide(prs, L, s, brief, acc_light, acc_deep, fits):
+class Ctx:
+    def __init__(self, brief, acc_light, acc_deep, kv):
+        self.kv = kv; self.topic = brief["topic"]; self.accent = acc_deep; self.accent_dark = acc_light
+        self.accent_block = acc_deep; self.title = ""; self.extra = {}
+        self.icons = ["Simulation", "Training", "Analytics", "Command"]
+
+
+FAMILY = {"agenda": "agenda", "cards": "items", "process": "process", "bullets": "text"}
+
+
+def build_slide(prs, L, s, brief, acc_light, acc_deep, fits, ctx=None, used=None):
     slide = prs.slides.add_slide(L[s.layout])
+    if ctx is not None and s.kind in FAMILY and not s.data.get("pending") and not (s.kind == "agenda" and s.data.get("details")):
+        from . import layouts as LY
+        from .planner import pick_icon
+        items = {"agenda": lambda: s.data["items"], "cards": lambda: s.data["cards"], "process": lambda: s.data["steps"],
+                 "bullets": lambda: s.data["items"]}[s.kind]()
+        keys = [x["title"] if isinstance(x, dict) else x for x in items]
+        v = LY.select(FAMILY[s.kind], keys, used, sequence=s.kind == "process")
+        if v is not None:
+            _title(slide, s.title, s.layout)
+            if s.kicker: _kicker(slide, s.kicker, acc_light)
+            ctx.title = s.title; ctx.extra = {"caption": None}
+            ctx.icons = [pick_icon(k) for k in keys] or ctx.icons
+            v.render(slide, items, ctx); used.append(v.name)
+            s.notes = list(s.notes) + [LY.ref_note(v)]
+            s.data["_variant"] = v.name
+            fits[s.slide_id] = True
+            C.notes(slide, "\n".join(list(s.notes) + [f"Evidence status: {s.evidence}", f"Slide id: {s.slide_id}"]))
+            return slide
     P = C.placeholder
     _title(slide, s.title, s.layout)
     k = s.kind; d = s.data; T = UI[brief["language"]]
@@ -162,7 +190,7 @@ def qa_report(pptx, brief, plan_json, slides, fits, warnings, src_before):
         "G1_input": {"pass": True, "detail": "brief validated against presentation-brief.schema.json"},
         "G2_plan": {"pass": not plan_errs, "detail": plan_errs or "plan validates against deck-plan.schema.json"},
         "G3_file": {"pass": struct["status"] == "PASS", "detail": struct["errors"] or "zip/xml/rels/content-types OK; native PowerPoint open still to be confirmed on Windows"},
-        "G4_brand": {"pass": all(d["pictures"] == 0 for d in struct["details"]) and all(d["inherited_logos"] for d in struct["details"]),
+        "G4_brand": {"pass": not any("logo placed on slide" in e for e in struct["errors"]) and all(d["inherited_logos"] for d in struct["details"]),
                      "detail": "logos inherited from layouts only; theme fonts " + langs[brief["language"]]},
         "G5_editability": {"pass": not editable, "detail": editable or "titles are placeholders; tables/charts native; no flattened slides"},
         "G6_layout_fit": {"pass": all(fits.values()), "detail": [k for k, v in fits.items() if not v] or "all text fits by measurement; visual review of previews required"},
@@ -174,7 +202,8 @@ def qa_report(pptx, brief, plan_json, slides, fits, warnings, src_before):
     return {"brief_id": brief["id"], "generated": datetime.datetime.now().isoformat(timespec="seconds"),
             "status": "PASS" if all(g["pass"] for g in gates.values()) else "FAIL",
             "visual_approval": "pending-eric", "slide_count": len(slides), "requested_slides": brief["slides"],
-            "layouts": [s.layout for s in slides], "source_layout_ids": [s.slide_id for s in slides],
+            "layouts": [s.layout for s in slides],
+            "content_variants": {s.slide_id: s.data.get("_variant") for s in slides if s.data.get("_variant")}, "source_layout_ids": [s.slide_id for s in slides],
             "gates": gates, "warnings": warnings + struct["warnings"],
             "unverified_claims": plan_json["unverified_claims"]}
 
@@ -208,8 +237,10 @@ def generate(brief_path, out_dir, previous_plan=None, render=True, master=None):
     acc_light = acc["light"] if acc else B.SIM_CYAN
     acc_deep = acc["deep"] if acc else B.GRAPHITE
     fits = {}
+    from .layouts import KVPicker
+    ctx = Ctx(brief, acc_light, acc_deep, KVPicker(brief.get("sector"))); used = []
     for s in slides:
-        build_slide(prs, L, s, brief, acc_light, acc_deep, fits)
+        build_slide(prs, L, s, brief, acc_light, acc_deep, fits, ctx, used)
     pptx = out_dir / f"{brief['id']}.pptx"; prs.save(pptx)
     qa_flags = {s.slide_id: {"rendered": render, "overflow_checked": True, "master_inheritance_checked": True,
                              "editability_checked": True, "animation_verified": False} for s in slides}

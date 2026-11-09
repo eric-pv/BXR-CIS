@@ -140,7 +140,22 @@ def label(slide, x, y, w, text, color=B.SLATE, size=9, name=None):
     return textbox(slide, x, y, w, 0.22, text, size=size, color=color, font=B.MONO, caps=True, spacing=160, name=name)
 
 
-def rect(slide, x, y, w, h, fill=None, line=None, line_w=0.75, name=None, shape=MSO_SHAPE.RECTANGLE):
+BANNER_BOTTOM = 1.036
+
+
+def _clean(s, fill, line=None, w=0.75):
+    """Explicit fill/line, no theme style (no shadows)."""
+    if fill: s.fill.solid(); s.fill.fore_color.rgb = rgb(fill)
+    else: s.fill.background()
+    if line: s.line.color.rgb = rgb(line); s.line.width = Pt(w)
+    else: s.line.fill.background()
+    style = s._element.find("{http://schemas.openxmlformats.org/presentationml/2006/main}style")
+    if style is not None: s._element.remove(style)
+    return s
+
+
+def rect(slide, x, y, w, h, fill=None, line=None, line_w=0.75, name=None, shape=MSO_SHAPE.RECTANGLE, **kw):
+    line_w = kw.get("w", line_w)
     s = slide.shapes.add_shape(shape, Inches(x), Inches(y), Inches(w), Inches(h))
     if name: s.name = name
     if fill: s.fill.solid(); s.fill.fore_color.rgb = rgb(fill)

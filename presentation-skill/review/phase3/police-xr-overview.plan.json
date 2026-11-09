@@ -1,0 +1,330 @@
+{
+  "brief_id": "police-xr-overview",
+  "design_owner": "claude",
+  "quality_status": "ready-for-review",
+  "slides": [
+    {
+      "slide_id": "cover",
+      "role": "cover",
+      "message": "警用 XR 沉浸式訓練方案",
+      "content_refs": [
+        "brief.topic",
+        "brief.purpose"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Cover_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "subtitle",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "agenda",
+      "role": "agenda",
+      "message": "訓練方案概要 / 訓練流程 / 導入評估",
+      "content_refs": [
+        "content[0].title",
+        "content[1].title",
+        "content[2].title"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "purpose",
+      "role": "content",
+      "message": "介紹XR模擬訓練方案及導入方式",
+      "content_refs": [
+        "brief.purpose",
+        "brief.audience"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "section-c0",
+      "role": "section",
+      "message": "訓練方案概要",
+      "content_refs": [
+        "content[0].title"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Section_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "content-c0",
+      "role": "content",
+      "message": "使用可重複的虛擬情境進行演練",
+      "content_refs": [
+        "content[0].facts[0]"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "section-c1",
+      "role": "section",
+      "message": "訓練流程",
+      "content_refs": [
+        "content[1].title"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Section_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "process-c1",
+      "role": "process",
+      "message": "需求確認 → 情境設定 → 演練執行 → 回饋檢討",
+      "content_refs": [
+        "content[1].facts[0]",
+        "content[1].facts[1]",
+        "content[1].facts[2]",
+        "content[1].facts[3]"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "diagram",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "section-c2",
+      "role": "section",
+      "message": "導入評估",
+      "content_refs": [
+        "content[2].title"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Section_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "assessment-c2",
+      "role": "content",
+      "message": "導入評估",
+      "content_refs": [
+        "content[2].facts[0]"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "notes",
+        "page-number",
+        "table",
+        "title"
+      ],
+      "evidence_status": "uncited",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "next-steps",
+      "role": "summary",
+      "message": "待確認事項與下一步",
+      "content_refs": [
+        "content[0]",
+        "content[2]"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "not-applicable",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "summary",
+      "role": "summary",
+      "message": "訓練方案概要 / 訓練流程 / 導入評估",
+      "content_refs": [
+        "content[0].title",
+        "content[1].title",
+        "content[2].title"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "closing",
+      "role": "other",
+      "message": "Turn every drill into real.",
+      "content_refs": [
+        "brand"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Cover_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "title"
+      ],
+      "evidence_status": "not-applicable",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    }
+  ],
+  "unverified_claims": [
+    "content[0]: 示範內容應以提供的產品資料為準",
+    "content[2]: 設備條件依專案評估"
+  ],
+  "source_inventory_sha256": "4a32ebc305c28e102c5a240fdea75a482864ab1c11ccccf792b2c668bf4163b4"
+}
