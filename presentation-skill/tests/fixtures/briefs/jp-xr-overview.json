@@ -1,0 +1,18 @@
+{
+  "id": "jp-xr-overview",
+  "topic": "XRシミュレーション訓練のご紹介",
+  "language": "JP",
+  "audience": "partners",
+  "purpose": "XR訓練の活用場面と導入の進め方をご説明する",
+  "slides": 10,
+  "series": "military-tech",
+  "sector": "cross-sector",
+  "source_policy": "provided-only",
+  "content": [
+    {"title": "概要", "facts": ["繰り返し実施できる仮想シナリオで訓練する", "製品仕様は提供資料に基づき要確認"]},
+    {"title": "活用分野", "facts": ["警察", "消防・救助", "防衛"]},
+    {"title": "導入の流れ", "facts": ["ヒアリング", "シナリオ設定", "試行", "振り返り"]}
+  ],
+  "must_avoid": ["根拠のない効果の数値"],
+  "output": {"pptx": true, "pdf": false}
+}

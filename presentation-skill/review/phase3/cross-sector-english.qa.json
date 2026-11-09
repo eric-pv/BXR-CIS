@@ -1,0 +1,118 @@
+{
+  "brief_id": "cross-sector-english",
+  "generated": "2026-11-09T03:16:04",
+  "status": "PASS",
+  "visual_approval": "pending-eric",
+  "slide_count": 15,
+  "requested_slides": 15,
+  "layouts": [
+    "BXR Cover",
+    "BXR Title Only",
+    "BXR Title Only",
+    "BXR Section",
+    "BXR Title + Body",
+    "BXR Section",
+    "BXR Title Only",
+    "BXR Title Only",
+    "BXR Title Only",
+    "BXR Title Only",
+    "BXR Section",
+    "BXR Title Only",
+    "BXR Title Only",
+    "BXR Title Only",
+    "BXR Closing"
+  ],
+  "content_variants": {
+    "agenda": "agenda.side-visual",
+    "content-c0": "text.visual-left",
+    "cards-c1": "items.visual-band",
+    "process-c2": "process.stage-arrow"
+  },
+  "source_layout_ids": [
+    "cover",
+    "agenda",
+    "purpose",
+    "section-c0",
+    "content-c0",
+    "section-c1",
+    "cards-c1",
+    "detail-c1-i0",
+    "detail-c1-i1",
+    "detail-c1-i2",
+    "section-c2",
+    "process-c2",
+    "next-steps",
+    "summary",
+    "closing"
+  ],
+  "gates": {
+    "G1_input": {
+      "pass": true,
+      "detail": "brief validated against presentation-brief.schema.json"
+    },
+    "G2_plan": {
+      "pass": true,
+      "detail": "plan validates against deck-plan.schema.json"
+    },
+    "G3_file": {
+      "pass": true,
+      "detail": "zip/xml/rels/content-types OK; native PowerPoint open still to be confirmed on Windows"
+    },
+    "G4_brand": {
+      "pass": true,
+      "detail": "logos inherited from layouts only; theme fonts Noto Sans TC"
+    },
+    "G5_editability": {
+      "pass": true,
+      "detail": "titles are placeholders; tables/charts native; no flattened slides"
+    },
+    "G6_layout_fit": {
+      "pass": true,
+      "detail": "all text fits by measurement; visual review of previews required"
+    },
+    "G7_evidence": {
+      "pass": true,
+      "detail": "no numbers outside the brief; pending items listed in unverified_claims"
+    },
+    "G8_language": {
+      "pass": true,
+      "detail": "language=en east-asian theme font=Noto Sans TC"
+    },
+    "G9_animation": {
+      "pass": true,
+      "detail": "no animations added; animation_verified=false"
+    },
+    "source_immutability": {
+      "pass": true,
+      "detail": {
+        "500頁.pptx": "b7dab6f439a5c04fa1dd9b760c387db5febb694f11e8be95d5745975ee9df50a",
+        "Aviation Slides.zip": "a6d47149fb2e7eeeb705b2e4dd3b6b350a72c2126619770fef80e4d94e8225dc"
+      }
+    }
+  },
+  "warnings": [
+    "PowerPoint open-without-repair, visual and animation QA still required"
+  ],
+  "unverified_claims": [
+    "content[1] detail “Police”: no supporting facts supplied",
+    "content[1] detail “Fire and rescue”: no supporting facts supplied",
+    "content[1] detail “Defense”: no supporting facts supplied"
+  ],
+  "previews": [
+    "preview/cross-sector-english-01.png",
+    "preview/cross-sector-english-02.png",
+    "preview/cross-sector-english-03.png",
+    "preview/cross-sector-english-04.png",
+    "preview/cross-sector-english-05.png",
+    "preview/cross-sector-english-06.png",
+    "preview/cross-sector-english-07.png",
+    "preview/cross-sector-english-08.png",
+    "preview/cross-sector-english-09.png",
+    "preview/cross-sector-english-10.png",
+    "preview/cross-sector-english-11.png",
+    "preview/cross-sector-english-12.png",
+    "preview/cross-sector-english-13.png",
+    "preview/cross-sector-english-14.png",
+    "preview/cross-sector-english-15.png"
+  ]
+}
