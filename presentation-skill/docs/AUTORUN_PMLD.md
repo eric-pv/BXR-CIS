@@ -1,6 +1,6 @@
 # AUTORUN — 500頁（PMLD）版型補完
 
-PMLD=DONE（draft PR https://github.com/eric-pv/BXR-CIS/pull/24 ，待 Eric 驗收與合併）
+PMLD=DONE（PR https://github.com/eric-pv/BXR-CIS/pull/24 與 https://github.com/eric-pv/BXR-CIS/pull/25 已合併到 main）
 最後更新：2026-11-09T13:40Z
 分支：claude/affectionate-wright-80u02w（系統指定）
 合併：本工作未獲自行合併授權 → PR 以 draft 交 Eric 合併。
