@@ -145,7 +145,8 @@ def aviation_family(title, facts):
             items.append({"year": re.sub(r"\s+", "", m["year"]), "title": t, "body": b})
         return "timeline", items, {}
     if CMP_TITLE_RE.search(title):
-        cols = [p.strip() for p in CMP_SPLIT_RE.split(CMP_TAIL_RE.sub("", title).strip()) if p.strip()]
+        core = re.split(r"[:：]\s*", CMP_TAIL_RE.sub("", title).strip())[-1]     # "主題：A vs B" -> "A vs B"
+        cols = [p.strip() for p in CMP_SPLIT_RE.split(core) if p.strip()]
         rows = [OPTION_RE.match(f) for f in facts]
         if 2 <= len(cols) and 2 <= n <= 8 and all(rows):
             items = [{"label": m["name"].strip(), "values": VAL_SPLIT_RE.split(m["rest"].strip())} for m in rows]
