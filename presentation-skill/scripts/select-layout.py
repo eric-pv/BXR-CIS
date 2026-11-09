@@ -27,6 +27,7 @@ TRANSITIONS = {"source-candidate": ["claude-reviewed"], "claude-reviewed": ["cis
 SELECTABLE = ("claude-reviewed", "cis-approved")
 VARIANT_MODULES = ["bxr_deck.layouts", "bxr_deck.layouts_aviation"]   # the second is scanned only if present
 REF_SOURCE = "presentation-skill/source-library/500頁.pptx"
+AVI_SOURCE = "presentation-skill/source-library/Aviation Slides.zip"
 
 FAMILY_WORDS = {
     "agenda": ["agenda", "contents", "outline", "目錄", "大綱", "議程", "アジェンダ", "目次"],
@@ -56,11 +57,12 @@ def scan_variants():
 
 def record(v, previous=None):
     ref = v["ref"]
+    avi = bool(ref) and isinstance(ref[0], str)          # aviation refs are catalog slide_ids ("AVI-064-0018")
     rec = {
         # --- fields required by catalog/layouts.schema.json (kept compatible)
         "id": v["variant"],
-        "source_file": REF_SOURCE if ref else "presentation-skill/bxr_deck/compose.py",
-        "source_slide": ref[0] if ref else 1,
+        "source_file": (AVI_SOURCE if avi else REF_SOURCE) if ref else "presentation-skill/bxr_deck/compose.py",
+        "source_slide": (int(ref[0].rsplit("-", 1)[1]) if avi else ref[0]) if ref else 1,
         "category": v["family"],
         "tags": [v["family"], v["prefers"]] if v["prefers"] else [v["family"]],
         "editable": True,
@@ -75,7 +77,7 @@ def record(v, previous=None):
         "status": "claude-reviewed",
         "origin": "reference-distilled" if ref else "native",
         "ref_pages": ref,
-        "ref_slides": [f"PMLD-{p:04d}" for p in ref],
+        "ref_slides": [p if isinstance(p, str) else f"PMLD-{p:04d}" for p in ref],
         "items_min": v["nmin"],
         "items_max": v["nmax"],
         "needs_image": v["needs_image"],
