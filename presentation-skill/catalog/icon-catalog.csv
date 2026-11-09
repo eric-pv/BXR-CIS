@@ -1,20 +1,32 @@
 path,type,tags,description_zh,status
-"Illustrations/BXR_Illustration_VR_Vocational_Training.png","illustration","XR;training","VR 職業訓練插圖",approved_for_use
-"Illustrations/BXR_Illustration_Community_Crowd.png","illustration","community;public","社區人群插圖",approved_for_use
-"Additional/Icon_Analytics.png","icon","analytics;business","分析",approved_for_use
-"Additional/Icon_Army.png","icon","army;defense","陸軍",approved_for_use
-"Additional/Icon_Ballistic_Protection.png","icon","defense;protection","防護",approved_for_use
-"Additional/Icon_Firefighter.png","icon","fire;rescue","消防員",approved_for_use
-"Additional/Icon_Globe.png","icon","global;international","全球",approved_for_use
-"Additional/Icon_Home.png","icon","home;building","首頁",approved_for_use
-"Additional/Icon_Police_Officer.png","icon","police;officer","警察",approved_for_use
-"Additional/Icon_Rifle.png","icon","weapon;training","步槍",approved_for_use
-"Additional/Icon_Security.png","icon","security;safety","安全",approved_for_use
-"Additional/Icon_Shooting_Target.png","icon","shooting;target","射擊靶",approved_for_use
-"Additional/Icon_Soldier_01.png","icon","military;soldier","軍人素材 01（待視覺確認具體造型）",approved_for_use
-"Additional/Icon_Soldier_02.png","icon","military;soldier","軍人素材 02（待視覺確認具體造型）",approved_for_use
-"Additional/Icon_Special_Forces.png","icon","military;special-forces","特種部隊",approved_for_use
-"Additional/Icon_Target_01.png","icon","target;goal","目標素材 01",approved_for_use
-"Additional/Icon_Target_02.png","icon","target;goal","目標素材 02",approved_for_use
-"Additional/Icon_Team.png","icon","people;team","團隊",approved_for_use
-"Additional/Icon_VR_Headset.png","icon","XR;VR;headset","VR 頭戴裝置",approved_for_use
+BXR_Icon_AI.svg,icon-svg,AI;artificial-intelligence;analytics;NPC,AI 人工智慧,official_cis
+BXR_Icon_Analytics.svg,icon-svg,analytics;data;evaluation;report,數據分析,official_cis
+BXR_Icon_Command.svg,icon-svg,command;control;C2;coordination,指揮管制,official_cis
+BXR_Icon_Communication.svg,icon-svg,communication;network;radio;link,通訊,official_cis
+BXR_Icon_Fire_Disaster.svg,icon-svg,fire;disaster;rescue;emergency,消防救災,official_cis
+BXR_Icon_Military.svg,icon-svg,military;defense;army,軍事國防,official_cis
+BXR_Icon_Police.svg,icon-svg,police;law-enforcement;public-safety,警政,official_cis
+BXR_Icon_Sensor_Radar.svg,icon-svg,sensor;radar;detection;surveillance,感測雷達,official_cis
+BXR_Icon_Simulation.svg,icon-svg,simulation;scenario;digital-twin,模擬,official_cis
+BXR_Icon_Training.svg,icon-svg,training;learning;exercise,訓練,official_cis
+BXR_Icon_UAV.svg,icon-svg,UAV;drone;aerial,無人機,official_cis
+BXR_Icon_XR.svg,icon-svg,XR;VR;MR;headset;immersive,XR 延展實境,official_cis
+Illustrations/BXR_Illustration_VR_Vocational_Training.png,illustration,XR;training,VR 職業訓練插圖,approved_for_use
+Illustrations/BXR_Illustration_Community_Crowd.png,illustration,community;public,社區人群插圖,approved_for_use
+Additional/Icon_Analytics.png,icon,analytics;business,分析,approved_for_use
+Additional/Icon_Army.png,icon,army;defense,陸軍,approved_for_use
+Additional/Icon_Ballistic_Protection.png,icon,defense;protection,防護,approved_for_use
+Additional/Icon_Firefighter.png,icon,fire;rescue,消防員,approved_for_use
+Additional/Icon_Globe.png,icon,global;international,全球,approved_for_use
+Additional/Icon_Home.png,icon,home;building,首頁,approved_for_use
+Additional/Icon_Police_Officer.png,icon,police;officer,警察,approved_for_use
+Additional/Icon_Rifle.png,icon,weapon;training,步槍,approved_for_use
+Additional/Icon_Security.png,icon,security;safety,安全,approved_for_use
+Additional/Icon_Shooting_Target.png,icon,shooting;target,射擊靶,approved_for_use
+Additional/Icon_Soldier_01.png,icon,military;soldier,軍人素材 01（待視覺確認具體造型）,approved_for_use
+Additional/Icon_Soldier_02.png,icon,military;soldier,軍人素材 02（待視覺確認具體造型）,approved_for_use
+Additional/Icon_Special_Forces.png,icon,military;special-forces,特種部隊,approved_for_use
+Additional/Icon_Target_01.png,icon,target;goal,目標素材 01,approved_for_use
+Additional/Icon_Target_02.png,icon,target;goal,目標素材 02,approved_for_use
+Additional/Icon_Team.png,icon,people;team,團隊,approved_for_use
+Additional/Icon_VR_Headset.png,icon,XR;VR;headset,VR 頭戴裝置,approved_for_use
