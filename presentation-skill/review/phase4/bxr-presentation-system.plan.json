@@ -1,0 +1,423 @@
+{
+  "brief_id": "bxr-presentation-system",
+  "design_owner": "claude",
+  "quality_status": "ready-for-review",
+  "slides": [
+    {
+      "slide_id": "cover",
+      "role": "cover",
+      "message": "BXR 簡報系統 V0.1：從需求到可編輯簡報",
+      "content_refs": [
+        "brief.topic",
+        "brief.purpose"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Cover_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "subtitle",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "agenda",
+      "role": "agenda",
+      "message": "為什麼需要新的簡報系統 / 生成流程 / 三種核准版型 / 內文最小字級 / 支援語言",
+      "content_refs": [
+        "content[0].title",
+        "content[1].title",
+        "content[2].title",
+        "content[3].title",
+        "content[4].title"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png",
+        "variant": "agenda.visual-columns"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "purpose",
+      "role": "content",
+      "message": "向內部同仁說明新的 CIS 簡報母片與自動生成流程",
+      "content_refs": [
+        "brief.purpose",
+        "brief.audience"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "section-c0",
+      "role": "section",
+      "message": "為什麼需要新的簡報系統",
+      "content_refs": [
+        "content[0].title"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Section_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "content-c0",
+      "role": "content",
+      "message": "簡報需符合 CIS v3.2 的字型、色彩與 Logo 規範",
+      "content_refs": [
+        "content[0].facts[0]",
+        "content[0].facts[1]",
+        "content[0].facts[2]",
+        "content[0].facts[3]"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png",
+        "variant": "text.bullets"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "section-c1",
+      "role": "section",
+      "message": "生成流程",
+      "content_refs": [
+        "content[1].title"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Section_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "process-c1",
+      "role": "process",
+      "message": "需求整理 → 簡報規劃 → 套用母片 → 產出簡報 → 品質檢查",
+      "content_refs": [
+        "content[1].facts[0]",
+        "content[1].facts[1]",
+        "content[1].facts[2]",
+        "content[1].facts[3]",
+        "content[1].facts[4]"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png",
+        "variant": "process.stage-arrow"
+      },
+      "editable_elements": [
+        "diagram",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "section-c2",
+      "role": "section",
+      "message": "三種核准版型",
+      "content_refs": [
+        "content[2].title"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Section_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "cards-c2",
+      "role": "content",
+      "message": "封面 / 章節頁 / 內容頁",
+      "content_refs": [
+        "content[2].facts[0]",
+        "content[2].facts[1]",
+        "content[2].facts[2]"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png",
+        "variant": "items.visual-band"
+      },
+      "editable_elements": [
+        "diagram",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "section-c3",
+      "role": "section",
+      "message": "內文最小字級",
+      "content_refs": [
+        "content[3].title"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Section_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "data-c3",
+      "role": "data",
+      "message": "內文最小字級",
+      "content_refs": [
+        "content[3].facts[0]",
+        "content[3].facts[1]",
+        "content[3].facts[2]",
+        "content[3].facts[3]"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "chart",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "section-c4",
+      "role": "section",
+      "message": "支援語言",
+      "content_refs": [
+        "content[4].title"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Section_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "cards-c4",
+      "role": "content",
+      "message": "繁體中文 / English / 日本語",
+      "content_refs": [
+        "content[4].facts[0]",
+        "content[4].facts[1]",
+        "content[4].facts[2]"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png",
+        "variant": "items.raised-cards"
+      },
+      "editable_elements": [
+        "diagram",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "summary",
+      "role": "summary",
+      "message": "為什麼需要新的簡報系統 / 生成流程 / 三種核准版型 / 內文最小字級 / 支援語言",
+      "content_refs": [
+        "content[0].title",
+        "content[1].title",
+        "content[2].title",
+        "content[3].title",
+        "content[4].title"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "closing",
+      "role": "other",
+      "message": "Turn every drill into real.",
+      "content_refs": [
+        "brand"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Cover_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "title"
+      ],
+      "evidence_status": "not-applicable",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    }
+  ],
+  "unverified_claims": [],
+  "source_inventory_sha256": "322b7c1a28745a39879a0cdd10b41ced00056e7a9ebb9bc13b6d0cad80decb43"
+}

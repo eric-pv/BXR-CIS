@@ -1,0 +1,414 @@
+{
+  "brief_id": "cross-sector-english",
+  "design_owner": "claude",
+  "quality_status": "ready-for-review",
+  "slides": [
+    {
+      "slide_id": "cover",
+      "role": "cover",
+      "message": "XR Simulation Training Solutions",
+      "content_refs": [
+        "brief.topic",
+        "brief.purpose"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Cover_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "subtitle",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "agenda",
+      "role": "agenda",
+      "message": "Overview / Application Areas / Implementation Path",
+      "content_refs": [
+        "content[0].title",
+        "content[1].title",
+        "content[2].title"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png",
+        "variant": "agenda.side-visual"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "purpose",
+      "role": "content",
+      "message": "Introduce product capabilities and applicable training scenarios",
+      "content_refs": [
+        "brief.purpose",
+        "brief.audience"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "section-c0",
+      "role": "section",
+      "message": "Overview",
+      "content_refs": [
+        "content[0].title"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Section_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "content-c0",
+      "role": "content",
+      "message": "XR-enabled repeatable simulation scenarios",
+      "content_refs": [
+        "content[0].facts[0]"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png",
+        "variant": "text.visual-left"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "section-c1",
+      "role": "section",
+      "message": "Application Areas",
+      "content_refs": [
+        "content[1].title"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Section_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "cards-c1",
+      "role": "content",
+      "message": "Police / Fire and rescue / Defense",
+      "content_refs": [
+        "content[1].facts[0]",
+        "content[1].facts[1]",
+        "content[1].facts[2]"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png",
+        "variant": "items.visual-band"
+      },
+      "editable_elements": [
+        "diagram",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "detail-c1-i0",
+      "role": "content",
+      "message": "Police",
+      "content_refs": [
+        "content[1].facts[0]"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "uncited",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "detail-c1-i1",
+      "role": "content",
+      "message": "Fire and rescue",
+      "content_refs": [
+        "content[1].facts[1]"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "uncited",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "detail-c1-i2",
+      "role": "content",
+      "message": "Defense",
+      "content_refs": [
+        "content[1].facts[2]"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "uncited",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "section-c2",
+      "role": "section",
+      "message": "Implementation Path",
+      "content_refs": [
+        "content[2].title"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Section_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "process-c2",
+      "role": "process",
+      "message": "Needs assessment → Scenario configuration → Pilot → Review",
+      "content_refs": [
+        "content[2].facts[0]",
+        "content[2].facts[1]",
+        "content[2].facts[2]",
+        "content[2].facts[3]"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png",
+        "variant": "process.stage-arrow"
+      },
+      "editable_elements": [
+        "diagram",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "next-steps",
+      "role": "summary",
+      "message": "Open items and next steps",
+      "content_refs": [
+        "brief"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "not-applicable",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "summary",
+      "role": "summary",
+      "message": "Overview / Application Areas / Implementation Path",
+      "content_refs": [
+        "content[0].title",
+        "content[1].title",
+        "content[2].title"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "closing",
+      "role": "other",
+      "message": "Turn every drill into real.",
+      "content_refs": [
+        "brand"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Cover_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "title"
+      ],
+      "evidence_status": "not-applicable",
+      "qa": {
+        "rendered": false,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    }
+  ],
+  "unverified_claims": [
+    "content[1] detail “Police”: no supporting facts supplied",
+    "content[1] detail “Fire and rescue”: no supporting facts supplied",
+    "content[1] detail “Defense”: no supporting facts supplied"
+  ],
+  "source_inventory_sha256": "e28e94409037c7b58d79c936e6c1018f1a1657e34b3124dabc419d0f5ca0d814"
+}

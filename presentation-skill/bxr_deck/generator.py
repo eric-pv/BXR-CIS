@@ -70,7 +70,7 @@ def build_slide(prs, L, s, brief, acc_light, acc_deep, fits, ctx=None, used=None
         items = {"agenda": lambda: s.data["items"], "cards": lambda: s.data["cards"], "process": lambda: s.data["steps"],
                  "bullets": lambda: s.data["items"]}[s.kind]()
         keys = [x["title"] if isinstance(x, dict) else x for x in items]
-        v = LY.select(FAMILY[s.kind], keys, used, sequence=s.kind == "process")
+        v = LY.select(FAMILY[s.kind], keys, used, sequence=s.kind == "process", prefer=s.data.get("_prev_variant"))
         if v is not None:
             _title(slide, s.title, s.layout)
             if s.kicker: _kicker(slide, s.kicker, acc_light)

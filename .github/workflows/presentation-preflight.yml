@@ -29,3 +29,5 @@ jobs:
         run: python presentation-skill/tests/test_master.py
       - name: Pipeline tests (--no-render, no LibreOffice needed)
         run: python presentation-skill/tests/test_pipeline.py
+      - name: Phase 4 acceptance tests (revision flow, NL brief, determinism)
+        run: python presentation-skill/tests/test_acceptance.py
