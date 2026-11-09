@@ -33,3 +33,5 @@ jobs:
         run: python presentation-skill/tests/test_acceptance.py
       - name: Source catalog / layout registry / icon catalog tests (M1-M3)
         run: python presentation-skill/tests/test_catalog.py
+      - name: 500-page (PMLD) second-pass layout tests
+        run: python presentation-skill/tests/test_pmld_layouts.py

@@ -624,6 +624,566 @@
    ]
   },
   {
+   "id": "agenda.arc-nodes",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 19,
+   "category": "agenda",
+   "tags": [
+    "agenda"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "agenda.arc-nodes",
+   "family": "agenda",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    19,
+    41
+   ],
+   "ref_slides": [
+    "PMLD-0019",
+    "PMLD-0041"
+   ],
+   "items_min": 2,
+   "items_max": 6,
+   "needs_image": true,
+   "prefers": "",
+   "description": "D-shaped key visual on the left; numbered icon nodes follow its curve (ref p19/p41).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "agenda.number-strip",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 28,
+   "category": "agenda",
+   "tags": [
+    "agenda",
+    "short"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "agenda.number-strip",
+   "family": "agenda",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    28,
+    24,
+    18
+   ],
+   "ref_slides": [
+    "PMLD-0028",
+    "PMLD-0024",
+    "PMLD-0018"
+   ],
+   "items_min": 3,
+   "items_max": 7,
+   "needs_image": true,
+   "prefers": "short",
+   "description": "Wide key visual with a strip of numbered cells overlapping its lower edge (ref p28/p24).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "agenda.tiles",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 25,
+   "category": "agenda",
+   "tags": [
+    "agenda",
+    "short"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "agenda.tiles",
+   "family": "agenda",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    25
+   ],
+   "ref_slides": [
+    "PMLD-0025"
+   ],
+   "items_min": 3,
+   "items_max": 6,
+   "needs_image": false,
+   "prefers": "short",
+   "description": "Paper field with staggered numbered tiles joined by a dashed path; no imagery (ref p25).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "items.pill-list",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 41,
+   "category": "items",
+   "tags": [
+    "items"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "items.pill-list",
+   "family": "items",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    41,
+    47
+   ],
+   "ref_slides": [
+    "PMLD-0041",
+    "PMLD-0047"
+   ],
+   "items_min": 2,
+   "items_max": 5,
+   "needs_image": true,
+   "prefers": "",
+   "description": "Tall rounded key visual left; items as dark pill bars with a white icon disc (ref p41/p47).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "items.slant-panels",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 92,
+   "category": "items",
+   "tags": [
+    "items"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "items.slant-panels",
+   "family": "items",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    92,
+    96,
+    97
+   ],
+   "ref_slides": [
+    "PMLD-0092",
+    "PMLD-0096",
+    "PMLD-0097"
+   ],
+   "items_min": 3,
+   "items_max": 4,
+   "needs_image": true,
+   "prefers": "",
+   "description": "Slanted key-visual panels, one per item, each with a matching dark label (ref p92/p96/p97).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "items.overlap-cards",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 62,
+   "category": "items",
+   "tags": [
+    "items"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "items.overlap-cards",
+   "family": "items",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    62,
+    44
+   ],
+   "ref_slides": [
+    "PMLD-0062",
+    "PMLD-0044"
+   ],
+   "items_min": 3,
+   "items_max": 4,
+   "needs_image": true,
+   "prefers": "",
+   "description": "Key-visual band with white icon cards overlapping its lower edge (ref p62/p44).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "items.zigzag",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 65,
+   "category": "items",
+   "tags": [
+    "items"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "items.zigzag",
+   "family": "items",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    65,
+    71,
+    72
+   ],
+   "ref_slides": [
+    "PMLD-0065",
+    "PMLD-0071",
+    "PMLD-0072"
+   ],
+   "items_min": 2,
+   "items_max": 3,
+   "needs_image": true,
+   "prefers": "",
+   "description": "Alternating rows: key visual on one side, overlapping dark text block on the other (ref p65/p71).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "items.quad-center",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 177,
+   "category": "items",
+   "tags": [
+    "items"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "items.quad-center",
+   "family": "items",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    177,
+    178
+   ],
+   "ref_slides": [
+    "PMLD-0177",
+    "PMLD-0178"
+   ],
+   "items_min": 4,
+   "items_max": 4,
+   "needs_image": true,
+   "prefers": "",
+   "description": "2×2 field of Paper blocks around a central round key visual (ref p177/p178).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "items.capsules",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 411,
+   "category": "items",
+   "tags": [
+    "items"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "items.capsules",
+   "family": "items",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    411,
+    415,
+    419
+   ],
+   "ref_slides": [
+    "PMLD-0411",
+    "PMLD-0415",
+    "PMLD-0419"
+   ],
+   "items_min": 3,
+   "items_max": 4,
+   "needs_image": true,
+   "prefers": "",
+   "description": "Staggered capsule-shaped key visuals with captions underneath (ref p411/p415/p419).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "process.loop",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 239,
+   "category": "process",
+   "tags": [
+    "process",
+    "sequence"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "process.loop",
+   "family": "process",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    239
+   ],
+   "ref_slides": [
+    "PMLD-0239"
+   ],
+   "items_min": 3,
+   "items_max": 6,
+   "needs_image": true,
+   "prefers": "sequence",
+   "description": "Steps as nodes on a closed loop around a round key visual (cycle; ref p239).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "process.staircase",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 438,
+   "category": "process",
+   "tags": [
+    "process",
+    "sequence"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "process.staircase",
+   "family": "process",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    438,
+    439,
+    444
+   ],
+   "ref_slides": [
+    "PMLD-0438",
+    "PMLD-0439",
+    "PMLD-0444"
+   ],
+   "items_min": 3,
+   "items_max": 5,
+   "needs_image": false,
+   "prefers": "sequence",
+   "description": "Rising columns, one per step, with an arrow above the tops (stepped growth; ref p438/p439/p444).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "process.numbered-panels",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 100,
+   "category": "process",
+   "tags": [
+    "process",
+    "sequence"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "process.numbered-panels",
+   "family": "process",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    100,
+    156,
+    201
+   ],
+   "ref_slides": [
+    "PMLD-0100",
+    "PMLD-0156",
+    "PMLD-0201"
+   ],
+   "items_min": 3,
+   "items_max": 5,
+   "needs_image": true,
+   "prefers": "sequence",
+   "description": "Key-visual panels per step with a dark caption bar carrying a large mono numeral (ref p100/p156/p201).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "text.framed-visual",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 49,
+   "category": "text",
+   "tags": [
+    "text"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "text.framed-visual",
+   "family": "text",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    49,
+    63
+   ],
+   "ref_slides": [
+    "PMLD-0049",
+    "PMLD-0063"
+   ],
+   "items_min": 1,
+   "items_max": 3,
+   "needs_image": true,
+   "prefers": "",
+   "description": "Key visual in an offset frame; the first statement leads, others follow numbered (ref p49/p63).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "text.thumb-list",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 127,
+   "category": "text",
+   "tags": [
+    "text",
+    "long"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "text.thumb-list",
+   "family": "text",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    127,
+    104
+   ],
+   "ref_slides": [
+    "PMLD-0127",
+    "PMLD-0104"
+   ],
+   "items_min": 2,
+   "items_max": 4,
+   "needs_image": true,
+   "prefers": "long",
+   "description": "Statement rows, each with a mono index block and a key-visual thumbnail at the end (ref p127/p104).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
    "id": "data.kpi-visuals",
    "source_file": "presentation-skill/source-library/500頁.pptx",
    "source_slide": 155,
