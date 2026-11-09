@@ -57,6 +57,14 @@ def _fit(text, w, h, sizes, line=1.25, max_lines=None):
     return C.fit_size(text, w, h, sizes, line=line, max_lines=max_lines)[0]
 
 
+def _fitm(text, w, h, sizes):
+    """Fit for B612 Mono (wider than the Noto metrics used by compose.fit_size): one line, ~0.6 em per glyph."""
+    for s in sizes:
+        if len(str(text)) * s * 0.62 / 72 <= w and s * 1.2 / 72 <= h:
+            return s
+    return sizes[-1]
+
+
 def _txt(slide, x, y, w, h, text, size, color=B.BLACK, **kw):
     return C.textbox(slide, x, y, w, h, text, size=size, color=color, **kw)
 
@@ -151,6 +159,12 @@ def compare_table(slide, items, ctx):
     gf = C.table(slide, head, [[lab] + vals for lab, vals in rows], top=TOP + 0.08, col_widths=widths, name="Comparison table")
     n = len(rows) + 1
     rh = min(0.62, (BOT - TOP - 0.2) / n)
+    if n <= 5:   # few rows: give them room and larger type instead of a short strip
+        for k, r in enumerate(gf.table.rows):
+            r.height = Inches(0.62 if k == 0 else min(0.95, (BOT - TOP - 0.9) / (n - 1)))
+            for cell in r.cells:
+                for p in cell.text_frame.paragraphs:
+                    for run in p.runs: run.font.size = Pt(15 if k == 0 else 17)
     if rh < 0.62:   # many rows: shrink type so the rows keep their height
         for r in gf.table.rows:
             for cell in r.cells:
@@ -168,10 +182,11 @@ def compare_panels(slide, items, ctx):
     rows = _cmp_cells(items, cols)
     k = len(cols); gap = 0.3; pw = (W - gap * (k - 1)) / k
     head_h = 0.78; y0 = TOP + 0.08
-    rh = (BOT - y0 - head_h - 0.15) / len(rows)
+    rh = min(1.25, (BOT - y0 - head_h - 0.15) / len(rows))
+    ph = head_h + 0.2 + rh * len(rows)
     for j, col in enumerate(cols):
         x = M + j * (pw + gap)
-        C.rect(slide, x, y0, pw, BOT - y0, fill=B.PAPER, name=f"Panel {j + 1}")
+        C.rect(slide, x, y0, pw, ph, fill=B.PAPER, name=f"Panel {j + 1}")
         C.rect(slide, x, y0, pw, head_h, fill=B.BLACK if j % 2 == 0 else B.GRAPHITE, name=f"Panel {j + 1} header")
         C.label(slide, x + 0.3, y0 + 0.1, pw - 0.6, f"OPTION {j + 1:02d}", color=B.MIST, size=9, name=f"Panel {j + 1} label")
         _txt(slide, x + 0.3, y0 + 0.32, pw - 0.6, 0.42, col, _fit(col, pw - 0.6, 0.42, [20, 18, 16, 14], max_lines=1), B.WHITE,
@@ -203,8 +218,8 @@ def compare_axis(slide, items, ctx):
         C.rect(slide, x if j else x + side_w - 1.2, y0 + 0.7, 1.2, 0.05, fill=_acc(ctx) if j == 0 else B.GRAPHITE, name=f"Option {j + 1} rule")
     vs = C.rect(slide, cx - 0.42, y0 - 0.05, 0.84, 0.84, fill=B.BLACK, name="VS marker", shape=MSO_SHAPE.OVAL)
     _txt(slide, cx - 0.42, y0 - 0.05, 0.84, 0.84, "VS", 18, B.WHITE, font=B.MONO, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, name="VS text")
-    ry0 = y0 + 1.1; rh = (BOT - ry0) / len(rows)
-    C.rect(slide, cx - 0.015, ry0, 0.03, BOT - ry0, fill=B.LINE, name="Spine")
+    ry0 = y0 + 1.1; rh = min(1.05, (BOT - ry0) / len(rows))
+    C.rect(slide, cx - 0.015, ry0, 0.03, rh * len(rows), fill=B.LINE, name="Spine")
     for i, (lab, vals) in enumerate(rows):
         y = ry0 + i * rh; ph = min(0.56, rh - 0.18)
         pill = C.rect(slide, cx - spine_w / 2, y + (rh - ph) / 2, spine_w, ph, fill=B.GRAPHITE, name=f"Criterion {i + 1} pill", shape=MSO_SHAPE.ROUNDED_RECTANGLE)
@@ -223,12 +238,13 @@ def compare_axis(slide, items, ctx):
 @variant("timeline.horizontal", "timeline", ("AVI-D224-05", "AVI-D224-17", "AVI-D155-10"), 3, 8, prefers="sequence")
 def timeline_horizontal(slide, items, ctx):
     """Axis with nodes; year numerals above, milestone title and text below (ref D224-05/D155-10)."""
-    n = len(items); w = W / n; ay = TOP + 1.35
+    n = len(items); w = W / n
+    ay = TOP + 1.35 + (0.85 if n <= 4 and not any(i.get("body") and len(i["body"]) > 40 for i in items) else 0.35)
     C.hline(slide, M, ay, W, color=B.MIST, weight=1.5, name="Timeline axis")
     for i, it in enumerate(items):
         x = M + i * w; cx = x + w / 2
         yr = str(it.get("year", ""))
-        _txt(slide, x + 0.1, TOP + 0.15, w - 0.2, 0.75, yr, _fit(yr, w - 0.2, 0.75, [32, 28, 24, 20, 18], max_lines=1),
+        _txt(slide, x + 0.1, ay - 1.2, w - 0.2, 0.75, yr, _fitm(yr, w - 0.2, 0.75, [32, 28, 24, 20, 18, 16, 14]),
              B.TEXT_RED if i == n - 1 else B.BLACK, font=B.MONO, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.BOTTOM, name=f"Milestone {i + 1} year")
         C.rect(slide, cx - 0.13, ay - 0.13, 0.26, 0.26, fill=_acc(ctx) if i == n - 1 else B.WHITE, line=_acc(ctx), line_w=1.75,
                name=f"Milestone {i + 1} node", shape=MSO_SHAPE.OVAL)
@@ -246,7 +262,7 @@ def timeline_alternating(slide, items, ctx):
         x = M + i * w
         seg = C.rect(slide, x, by, w + (0.001 if i < n - 1 else 0), bh, fill=B.BLACK if i % 2 == 0 else B.GRAPHITE, name=f"Year band {i + 1}")
         yr = str(it.get("year", ""))
-        _txt(slide, x + 0.08, by, w - 0.16, bh, yr, _fit(yr, w - 0.16, bh - 0.1, [20, 18, 16, 14], max_lines=1), B.WHITE,
+        _txt(slide, x + 0.08, by, w - 0.16, bh, yr, _fitm(yr, w - 0.16, bh - 0.1, [20, 18, 16, 14, 12]), B.WHITE,
              font=B.MONO, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, name=f"Milestone {i + 1} year")
         up = i % 2 == 0; cx = x + w / 2
         bw = min(2 * w - 0.3, 3.2, 2 * (cx - M), 2 * (M + W - cx))   # same-side neighbours are 2w apart
@@ -269,13 +285,13 @@ def timeline_vertical(slide, items, ctx):
     picture(slide, _pick(ctx, getattr(ctx, "title", "") + " " + " ".join(i.get("title", "") for i in items)), M, TOP + 0.05, pw, BOT - TOP - 0.05, name="Timeline visual")
     n = len(items); sx = M + pw + 0.7; rh = (BOT - TOP - 0.1) / n
     C.rect(slide, sx - 0.01, TOP + 0.05 + rh / 2 - 0.2, 0.02, rh * (n - 1) + 0.4, fill=B.LINE, name="Timeline spine")
-    yw = 1.35; tx = sx + 0.35 + yw; tw = M + W - tx
+    yw = 1.7; tx = sx + 0.35 + yw; tw = M + W - tx
     for i, it in enumerate(items):
         y = TOP + 0.05 + i * rh; cy = y + rh / 2
         C.rect(slide, sx - 0.12, cy - 0.12, 0.24, 0.24, fill=_acc(ctx) if i == n - 1 else B.WHITE, line=_acc(ctx), line_w=1.75,
                name=f"Milestone {i + 1} node", shape=MSO_SHAPE.OVAL)
         yr = str(it.get("year", ""))
-        _txt(slide, sx + 0.3, y, yw, rh, yr, _fit(yr, yw, 0.5, [22, 20, 18, 16, 14], max_lines=1), B.TEXT_RED if i == n - 1 else B.BLACK,
+        _txt(slide, sx + 0.3, y, yw, rh, yr, _fitm(yr, yw - 0.1, 0.5, [22, 20, 18, 16, 14, 12]), B.TEXT_RED if i == n - 1 else B.BLACK,
              font=B.MONO, anchor=MSO_ANCHOR.MIDDLE, name=f"Milestone {i + 1} year")
         body = it.get("body")
         title = it.get("title", "")
@@ -345,11 +361,14 @@ def map_cards(slide, items, ctx):
 def team_cards(slide, items, ctx):
     """Equal role cards: icon medallion, role, optional name and remit (ref D215-15/D215-20)."""
     n = len(items); gap = 0.26; cw = (W - gap * (n - 1)) / n
-    y0 = TOP + 0.1
+    d = 1.1 if n <= 4 else 0.9
+    body_need = max([C.wrap_lines(it["body"], 14, cw - 0.5) * 14 * 1.35 / 72 for it in items if it.get("body")] or [0])
+    card_h = min(BOT - TOP - 0.1, 0.4 + d + 0.3 + 1.05 + (0.45 if any(it.get("name") for it in items) else 0) + body_need + 0.55)
+    y0 = TOP + 0.1 + (BOT - TOP - 0.1 - card_h) / 2
+    bottom = y0 + card_h
     for i, it in enumerate(items):
         x = M + i * (cw + gap)
-        C.rect(slide, x, y0, cw, BOT - y0, fill=B.PAPER, name=f"Role {i + 1} card")
-        d = 1.1 if n <= 4 else 0.9
+        C.rect(slide, x, y0, cw, card_h, fill=B.PAPER, name=f"Role {i + 1} card")
         C.rect(slide, x + (cw - d) / 2, y0 + 0.4, d, d, fill=B.BLACK if i % 2 == 0 else B.GRAPHITE, name=f"Role {i + 1} medallion", shape=MSO_SHAPE.OVAL)
         add_icon(slide, _role_icon(it.get("role"), i, ctx), Inches(x + cw / 2 - d * 0.25), Inches(y0 + 0.4 + d * 0.25), Inches(d * 0.5), B.WHITE)
         y = y0 + 0.4 + d + 0.3
@@ -364,7 +383,7 @@ def team_cards(slide, items, ctx):
                  align=PP_ALIGN.CENTER, name=f"Role {i + 1} name")
             y += 0.45
         if it.get("body"):
-            room = BOT - y - 0.25
+            room = bottom - y - 0.25
             _txt(slide, x + 0.25, y, cw - 0.5, room, it["body"], _fit(it["body"], cw - 0.5, room, [14, 13, 12, 11], line=1.35), B.SLATE,
                  align=PP_ALIGN.CENTER, name=f"Role {i + 1} text", line=1.3)
 
@@ -441,7 +460,7 @@ def team_side(slide, items, ctx):
 
 # ================================================================== PRODUCT family
 def _feature_rows(slide, items, ctx, x, w, y0, y1, prefix="Feature"):
-    n = len(items); rh = (y1 - y0) / n
+    n = len(items); rh = min(1.45, (y1 - y0) / n); y0 = y0 + ((y1 - y0) - rh * n) / 2
     for i, it in enumerate(items):
         y = y0 + i * rh
         chip = C.rect(slide, x, y + 0.08, 0.62, 0.62, fill=B.BLACK if i % 2 == 0 else B.GRAPHITE, name=f"{prefix} {i + 1} chip", shape=MSO_SHAPE.ROUNDED_RECTANGLE)
@@ -475,7 +494,7 @@ def product_left(slide, items, ctx):
 def product_top(slide, items, ctx):
     """Wide product visual band with the name panel overlapping; feature columns below (ref D161-10/D161-18)."""
     name = _extra(ctx).get("name") or ""
-    bh = 2.55
+    bh = 2.9
     picture(slide, _pick(ctx, name + " " + getattr(ctx, "title", "")), M, TOP + 0.05, W, bh, name="Product visual band")
     if name: _name_tag(slide, M, TOP + 0.05 + bh - 0.7, 5.0, name)
     n = len(items); gap = 0.4; cw = (W - gap * (n - 1)) / n; y0 = TOP + bh + 0.4
@@ -521,9 +540,10 @@ def product_spotlight(slide, items, ctx):
 @variant("gauge.dials", "gauge", ("AVI-D135-17", "AVI-D135-14", "AVI-D135-18"), 1, 4)
 def gauge_dials(slide, items, ctx):
     """Half-circle dials: track arc + value arc, value numeral in the hub (ref D135-17/D135-14)."""
-    n = len(items); cw = W / n; d = min(3.4, cw - 0.6)
+    n = len(items); cw = W / n; d = min(4.2, cw - 0.6)
     has_notes = bool([x for x in (_extra(ctx).get("notes") or []) if x])
-    y0 = TOP + 0.35
+    block = d / 2 + 0.45 + 0.9
+    y0 = TOP + max(0.2, (BOT - TOP - (0.5 if has_notes else 0) - block) / 2)
     for i, it in enumerate(items):
         x = M + i * cw; dx = x + (cw - d) / 2
         _arc(slide, dx, y0, d, 180, 0, B.PAPER, name=f"Gauge {i + 1} track")
@@ -531,7 +551,7 @@ def gauge_dials(slide, items, ctx):
         if f > 0:
             _arc(slide, dx, y0, d, 180, 180 + 180 * f if f < 1 else 359.99, _acc(ctx) if i else B.BLACK, name=f"Gauge {i + 1} value arc")
         val = _value_text(it)
-        _txt(slide, dx + d * 0.18, y0 + d * 0.22, d * 0.64, d * 0.27, val, _fit(val, d * 0.64, d * 0.27, [40, 36, 32, 28, 24, 20], max_lines=1),
+        _txt(slide, dx + d * 0.25, y0 + d * 0.3, d * 0.5, d * 0.2, val, _fitm(val, d * 0.42, d * 0.2, [44, 40, 36, 32, 28, 24, 20, 18, 16]),
              B.BLACK, font=B.MONO, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.BOTTOM, name=f"Gauge {i + 1} value")
         C.label(slide, dx, y0 + d / 2 + 0.06, 1.0, "0", color=B.SLATE, size=9, name=f"Gauge {i + 1} min")
         mx = f"{_num(it.get('max'))}"
@@ -560,7 +580,7 @@ def gauge_rings(slide, items, ctx):
         if f > 0:
             _arc(slide, dx, dy, d, 270, 270 + 360 * f if f < 1 else 269.99, _acc(ctx) if i else B.BLACK, thick=12000, name=f"Gauge {i + 1} value arc")
         val = _value_text(it)
-        _txt(slide, dx + d * 0.15, dy + d * 0.24, d * 0.7, d * 0.38, val, _fit(val, d * 0.7, d * 0.38, [36, 32, 28, 24, 20, 18], max_lines=1),
+        _txt(slide, dx + d * 0.15, dy + d * 0.24, d * 0.7, d * 0.38, val, _fitm(val, d * 0.6, d * 0.38, [36, 32, 28, 24, 20, 18, 16]),
              B.BLACK, font=B.MONO, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, name=f"Gauge {i + 1} value")
         mx = C.label(slide, dx, dy + d * 0.64, d, f"/ {_num(it.get('max'))}", color=B.SLATE, size=9, name=f"Gauge {i + 1} max")
         mx.text_frame.paragraphs[0].alignment = PP_ALIGN.CENTER
@@ -589,7 +609,7 @@ def gauge_bars(slide, items, ctx):
             fb = C.rect(slide, tx, cy - 0.14, max(0.28, tw * f), 0.28, fill=_acc(ctx) if i else B.BLACK, name=f"Gauge {i + 1} value bar",
                         shape=MSO_SHAPE.ROUNDED_RECTANGLE); fb.adjustments[0] = 0.5
         val = _value_text(it)
-        _txt(slide, vx, y, 1.9, rh, val, _fit(val, 1.9, 0.6, [28, 24, 22, 20, 18], max_lines=1), B.BLACK, font=B.MONO, align=PP_ALIGN.RIGHT,
+        _txt(slide, vx, y, 1.9, rh, val, _fitm(val, 1.9, 0.6, [28, 24, 22, 20, 18, 16]), B.BLACK, font=B.MONO, align=PP_ALIGN.RIGHT,
              anchor=MSO_ANCHOR.MIDDLE, name=f"Gauge {i + 1} value")
         mx = C.label(slide, tx, cy + 0.2, tw, f"0 — {_num(it.get('max'))}", color=B.SLATE, size=9, name=f"Gauge {i + 1} scale")
         if i < n - 1: C.hline(slide, M, y + rh, W, name=f"Gauge {i + 1} rule")
