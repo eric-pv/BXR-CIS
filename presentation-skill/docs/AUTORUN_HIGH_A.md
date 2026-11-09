@@ -2,7 +2,7 @@
 
 HIGH_A=DONE
 Updated: 2026-11-09 (UTC)
-（A1–A3 完成、PR 已開；A4 的「CI 全綠後 merge」受阻，未 merge。見〈阻擋問題〉。之後續跑讀到 DONE 會直接結束，不會重複執行。）
+（A1–A4 全部完成：Eric 同意修改 select-layout.py／registry 後 CI 全綠，Codex review 指出的 body 遺失問題已修正，squash merge 到 main。）
 
 | Item | Status | Notes |
 |---|---|---|
@@ -10,7 +10,7 @@ Updated: 2026-11-09 (UTC)
 | A1 解壓與縮圖 | DONE | 安全解壓到 /tmp/bxr-a/src（略過 __MACOSX、`._*`，檢查路徑穿越與 symlink）：500 檔，249 份 PPTX，編號 D001–D249（依路徑排序，與 catalog 的 AVI-<deck> 編號一致）。分批渲染，每批 20 份：已完成到第 249 份。LibreOffice 轉檔 249/249 成功（每份 timeout 180s、失敗重試 1 次）。D248 的 pdftoppm 縮圖第一次逾時（300s），重試（900s）後成功。共 5,164 頁。總覽圖在 /tmp/bxr-a/sheets（未提交） |
 | A2 layouts_aviation.py | DONE | 7 家族、19 個 variant（下表） |
 | A3 tests/test_aviation_layouts.py + 樣張 | DONE | 6 項測試通過；55 張樣張渲染到 /tmp/bxr-a/review。看總覽圖後做了一輪修正：B612 Mono 字寬估算、少項目時垂直置中與限制行高、gauge 中心數字避開弧線、年份不換行 |
-| A4 合併 main、測試、PR、merge | IN-PROGRESS | Eric 已同意修改 select-layout.py 與 layout-registry.json（2026-11-09）；已提交，等待 CI； 已合併 origin/main（無衝突）；PR https://github.com/eric-pv/BXR-CIS/pull/23 ；`test_catalog.py` 失敗（見〈阻擋問題〉），未 merge |
+| A4 合併 main、測試、PR、merge | DONE | 已合併 origin/main；Eric 同意後修正 select-layout.py 並重新產生 registry（36 layouts）；修正 Codex P2（dense 版型不再省略 body，測試新增 body／compare value 檢查）；CI verify-assets 全綠；PR https://github.com/eric-pv/BXR-CIS/pull/23 squash merge |
 
 ## 新增版型
 | variant | family | n | ref |
@@ -89,7 +89,7 @@ index bdf889e..b6ed8b2 100644
          "items_max": v["nmax"],
          "needs_image": v["needs_image"],
 ```
-2. `07_Templates/*.pptx` 顯示為已修改：這是 Git LFS 設定的老問題。依指示不提交、不修改、不還原。
+2. `07_Templates/*.pptx` 顯示為已修改：這是 Git LFS 設定的老問題。依指示不提交、不修改、不還原；Eric 已說明它們只是參考，skill 由 `bxr_deck/master.py` 自行產生母片，不依賴這兩個檔案。
 3. Repo 為 PUBLIC 且含第三方商業素材：公開散布與多人使用的授權需 Eric 確認；本任務沒有提交任何新的商業素材、縮圖或解壓檔。
 
 ## 設計判斷（保守、依 CIS v3.2）
