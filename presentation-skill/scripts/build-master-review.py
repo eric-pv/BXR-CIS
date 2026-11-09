@@ -41,7 +41,7 @@ def main():
     s = prs.slides.add_slide(L["BXR Chart + Text"]); P(s, 10).text = "CIS v3.2 · P.61"; s.shapes.title.text = "不同觀看情境的內文最小字級"
     C.bar_chart(s, ["會議室投影", "桌面螢幕／PDF", "手機閱讀", "印刷（A4 講義）"], [20, 16, 28, 11], "內文最小字級 (pt)", unit="pt", highlight=0)
     C.set_text(P(s, 2), ["投影會洗淡顏色：內頁用白底，不用 Light 300。", "資料來源：BXR CIS v3.2 Readability by Medium。"], size=16)
-    s = prs.slides.add_slide(L["BXR Closing"]); s.shapes.title.text = "Turn every drill into real."
+    s = prs.slides.add_slide(L["BXR Closing"]); s.shapes.title.text = "Turn Every Drill into Real"
     P(s, 10).text = "全球動力科技股份有限公司 · bigxreality.com"; P(s, 11).text = "BIG X REALITY"
     dst = out / "BXR_Master_Review_v0.1.pptx"; prs.save(dst)
     print(dst); print(render(dst, out / "preview"))

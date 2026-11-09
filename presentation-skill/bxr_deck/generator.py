@@ -45,20 +45,20 @@ def content_title_size(titles):
 
 def _title(slide, text, layout, deck_size=None):
     t = slide.shapes.title
-    if layout in ("BXR Cover", "BXR Closing") and C.text_width_in(text, 40) > 6.9:
+    if layout == "BXR Cover" and C.text_width_in(text, 40) > 6.9:
         for sep in ("：", ": ", "｜", " — "):
             if sep in text:
                 a, b = text.split(sep, 1); text = a + sep.strip() + "\n" + b.strip(); break
     if layout == "BXR Cover":
         size, n, _ = C.fit_size(text, 6.9, 3.0, [40, 36, 32, 28], line=1.1, max_lines=3)
     elif layout == "BXR Closing":
-        size, n, _ = C.fit_size(text, 6.9, 2.5, [36, 32, 28], line=1.1, max_lines=3)
+        size, n, _ = C.fit_size(text, 8.8, 1.7, [48, 44, 40, 36], line=1.0, max_lines=2)
     elif layout == "BXR Section":
         size, n, _ = C.fit_size(text, 4.9, 1.0, [30, 28, 26, 24], line=1.1, max_lines=2)
     else:
         size = deck_size or content_title_size([text])
-    default = {"BXR Cover": 40, "BXR Section": 30, "BXR Closing": 36}.get(layout, 40)
-    C.set_text(t, text, size=None if size == default and layout != "BXR Closing" or (layout == "BXR Closing" and size == 36) else size)
+    default = {"BXR Cover": 40, "BXR Section": 30, "BXR Closing": 48}.get(layout, 40)
+    C.set_text(t, text, size=None if size == default else size)
     return size
 
 

@@ -44,6 +44,9 @@ L_SEC = 7.70              # section text column, right of the diagonal panels
 HORIZON_SEC = 4.913       # 65.5 %
 BANNER = 1.036            # content banner bottom (13.8 %)
 M = 0.62                  # content side margin
+# CIS v3.2 §02 Logo Placement (16:9): margin M = 72 px, cover logo width 360 px (of 1920)
+CIS_M = SW * 72 / 1920          # 0.5 in
+COVER_LOGO_W = SW * 360 / 1920   # 2.5 in
 RL_H = 0.022              # Reality Line thickness (~2 px at 1920)
 
 LAYOUT_NAMES = ["BXR Cover", "BXR Section", "BXR Title + Body", "BXR Two Content",
@@ -130,6 +133,11 @@ def layout_xml(name, typ, bg, shapes, show_master=True):
             f'{"".join(shapes)}</p:spTree></p:cSld><p:clrMapOvr><a:masterClrMapping/></p:clrMapOvr></p:sldLayout>')
 
 
+def logo_by_width(path, w):
+    with Image.open(path) as im: w0, h0 = im.size
+    return w, w * h0 / w0
+
+
 def logo_size(path, h):
     w0, h0 = Image.open(path).size
     return h * w0 / h0, h
@@ -211,9 +219,10 @@ def build_layouts(parts):
 
     # 1 Cover ---------------------------------------------------------------
     p = parts[0]; bg = img(p, B.BG["cover"]); lg = img(p, B.LOGO / "BXR_Logo_H_Reverse.png")
-    lw, lh = logo_size(B.LOGO / "BXR_Logo_H_Reverse.png", 0.46)
+    lw, lh = logo_by_width(B.LOGO / "BXR_Logo_H_Reverse.png", COVER_LOGO_W)
     out.append(layout_xml("BXR Cover", "title", bg_xml(bg, B.BG["cover"]), [
-        pic(2, "Logo (master-managed)", lg, SW - 0.70 - lw, 0.58, lw, lh),   # top-right (Eric 2026-11-09)
+        # CIS size/margin, mirrored to the top-right corner at Eric's request (2026-11-09)
+        pic(2, "Logo (master-managed)", lg, SW - CIS_M - lw, CIS_M, lw, lh),
         ph(3, "Title", "ctrTitle", None, L_COVER, 2.10, SW - L_COVER - 0.70, HORIZON_COVER - 0.20 - 2.10,
            lvl(1, 40, B.WHITE, ln=104), "簡報標題\nPresentation title", anchor="b"),
         rect(4, "Reality Line", L_COVER, HORIZON_COVER - RL_H / 2, 0.90, RL_H, B.RED),
@@ -263,14 +272,15 @@ def build_layouts(parts):
 
     # 7 Closing ---------------------------------------------------------------
     p = parts[6]; bg = img(p, B.BG["cover"]); lg = img(p, B.LOGO / "BXR_Logo_H_Reverse.png")
-    lw, lh = logo_size(B.LOGO / "BXR_Logo_H_Reverse.png", 0.62)
+    lw, lh = logo_by_width(B.LOGO / "BXR_Logo_H_Reverse.png", COVER_LOGO_W)
     out.append(layout_xml("BXR Closing", "cust", bg_xml(bg, B.BG["cover"]), [
-        pic(2, "Logo (master-managed)", lg, L_COVER, 0.62, lw, lh),
-        ph(3, "Closing Line", "title", None, L_COVER, 2.60, SW - L_COVER - 0.70, HORIZON_COVER - 0.20 - 2.60,
-           lvl(1, 36, B.WHITE, ln=104), "Turn every drill into real.", anchor="b"),
+        pic(2, "Logo (master-managed)", lg, SW - CIS_M - lw, CIS_M, lw, lh),
+        # closing line: large, centred in the right-hand field, vertically mid-frame (Eric 2026-11-09)
+        ph(3, "Closing Line", "title", None, 3.90, 2.70, SW - 3.90 - CIS_M, 1.70,
+           lvl(1, 48, B.WHITE, ln=100, algn="ctr"), "Turn Every Drill into Real", anchor="ctr"),
         rect(4, "Reality Line", L_COVER, HORIZON_COVER - RL_H / 2, 0.90, RL_H, B.RED),
         ph(5, "Closing Text", "body", 10, L_COVER, HORIZON_COVER + 0.19, SW - L_COVER - 0.70, 0.62,
-           lvl(1, 14, B.MIST, ln=120), "全球動力科技股份有限公司 · bigxreality.com"),
+           lvl(1, 16, B.MIST, ln=120), "全球動力科技股份有限公司 · bigxreality.com"),
     ], show_master=False))
     return out
 
