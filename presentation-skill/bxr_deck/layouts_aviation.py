@@ -8,7 +8,7 @@ Rebuilt natively in CIS v3.2 — Command Black / Graphite / Paper, Noto Sans TC 
 BXR key visuals (06_KeyVisuals, weapon-free CORP_* set unless the deck's sector allows tactical
 visuals). No pixels, logos, maps, people photos or text are taken from the purchased files, and no
 logo is placed on slides (the master/layouts own the logo). `ref` names the pages each variant was
-distilled from ("AVI-<deck>-<page>") for traceability only.
+distilled from ("AVI-<deck>-<page>" (catalog slide_id, e.g. AVI-064-0018 = deck 064 page 18)) for traceability only.
 
 Interface (shared contract with the planner/generator, do not change unilaterally):
 render(slide, items, ctx) — `items` is always a list (layouts.features/select read n from it);
@@ -148,7 +148,7 @@ def _cmp_cells(items, columns):
     return [(it.get("label", ""), [(list(it.get("values") or []) + [""] * k)[j] for j in range(k)]) for it in items]
 
 
-@variant("compare.table", "compare", ("AVI-D064-18", "AVI-D064-19", "AVI-D063-14"), 2, 8)
+@variant("compare.table", "compare", ("AVI-064-0018", "AVI-064-0019", "AVI-063-0014"), 2, 8)
 def compare_table(slide, items, ctx):
     """Native table: criteria rows × option columns, Graphite header (ref D064-18/19)."""
     cols = list(_extra(ctx).get("columns") or [])
@@ -173,7 +173,7 @@ def compare_table(slide, items, ctx):
     return gf
 
 
-@variant("compare.split-panels", "compare", ("AVI-D064-12", "AVI-D063-08", "AVI-D064-07"), 2, 6)
+@variant("compare.split-panels", "compare", ("AVI-064-0012", "AVI-063-0008", "AVI-064-0007"), 2, 6)
 def compare_panels(slide, items, ctx):
     """Option columns as panels with dark headers; each criterion is a labelled row (ref D064-12/D063-08)."""
     cols = list(_extra(ctx).get("columns") or [])
@@ -202,7 +202,7 @@ def compare_panels(slide, items, ctx):
                      name=f"Panel {j + 1} row {i + 1} value", line=1.25)
 
 
-@variant("compare.center-axis", "compare", ("AVI-D064-17", "AVI-D064-11", "AVI-D064-14"), 2, 6, prefers="short")
+@variant("compare.center-axis", "compare", ("AVI-064-0017", "AVI-064-0011", "AVI-064-0014"), 2, 6, prefers="short")
 def compare_axis(slide, items, ctx):
     """Two options mirrored around a central criteria spine with a VS marker (ref D064-17/D064-11)."""
     cols = list(_extra(ctx).get("columns") or [])
@@ -235,7 +235,7 @@ def compare_axis(slide, items, ctx):
 
 
 # ================================================================== TIMELINE family
-@variant("timeline.horizontal", "timeline", ("AVI-D224-05", "AVI-D224-17", "AVI-D155-10"), 3, 8, prefers="sequence")
+@variant("timeline.horizontal", "timeline", ("AVI-224-0005", "AVI-224-0017", "AVI-155-0010"), 3, 8, prefers="sequence")
 def timeline_horizontal(slide, items, ctx):
     """Axis with nodes; year numerals above, milestone title and text below (ref D224-05/D155-10)."""
     n = len(items); w = W / n
@@ -254,7 +254,7 @@ def timeline_horizontal(slide, items, ctx):
                     tsizes=(20, 18, 16, 14) if n <= 5 else (16, 15, 14, 13), bsizes=(14, 13, 12) if n <= 5 else (12, 11))
 
 
-@variant("timeline.alternating", "timeline", ("AVI-D224-13", "AVI-D224-15", "AVI-D155-13"), 4, 8, prefers="sequence")
+@variant("timeline.alternating", "timeline", ("AVI-224-0013", "AVI-224-0015", "AVI-155-0013"), 4, 8, prefers="sequence")
 def timeline_alternating(slide, items, ctx):
     """Central year band; milestones alternate above and below it (ref D224-13/D224-15/D155-13)."""
     n = len(items); w = W / n; bh = 0.56; by = (TOP + BOT) / 2 - bh / 2
@@ -278,7 +278,7 @@ def timeline_alternating(slide, items, ctx):
                     tsizes=(18, 16, 15, 14), bsizes=(13, 12, 11))
 
 
-@variant("timeline.vertical-visual", "timeline", ("AVI-D224-14", "AVI-D224-20", "AVI-D155-08"), 3, 6, needs_image=True, prefers="sequence")
+@variant("timeline.vertical-visual", "timeline", ("AVI-224-0014", "AVI-224-0020", "AVI-155-0008"), 3, 6, needs_image=True, prefers="sequence")
 def timeline_vertical(slide, items, ctx):
     """Key visual on the left; vertical spine with year, title and text per milestone (ref D224-20/D155-08)."""
     pw = 4.2
@@ -318,7 +318,7 @@ def _marker(slide, x, y, i, ctx, d=0.46):
     return pin
 
 
-@variant("map.visual-markers", "map", ("AVI-D019-04", "AVI-D249-08", "AVI-D019-12"), 1, 6, needs_image=True)
+@variant("map.visual-markers", "map", ("AVI-019-0004", "AVI-249-0008", "AVI-019-0012"), 1, 6, needs_image=True)
 def map_markers(slide, items, ctx):
     """Large terrain visual with numbered region markers, legend list on the right (ref D019-04/D019-12)."""
     pw = 7.0; ph = BOT - TOP - 0.05
@@ -337,7 +337,7 @@ def map_markers(slide, items, ctx):
         if i < n - 1: C.hline(slide, lx + 0.6, y + rh - 0.06, lw - 0.6, name=f"Region {i + 1} rule")
 
 
-@variant("map.region-cards", "map", ("AVI-D019-17", "AVI-D019-11", "AVI-D019-07"), 1, 6, needs_image=True)
+@variant("map.region-cards", "map", ("AVI-019-0017", "AVI-019-0011", "AVI-019-0007"), 1, 6, needs_image=True)
 def map_cards(slide, items, ctx):
     """Visual band with markers; one card per region below, tied by number (ref D019-17/D019-07)."""
     bh = 2.25; by = TOP + 0.05
@@ -357,7 +357,7 @@ def map_cards(slide, items, ctx):
 # ================================================================== TEAM family
 # Roles are shown with official BXR icons — never stock portraits — and names only when the brief
 # provides them (name=None → role only).
-@variant("team.cards", "team", ("AVI-D215-15", "AVI-D215-20", "AVI-D215-03"), 2, 6)
+@variant("team.cards", "team", ("AVI-215-0015", "AVI-215-0020", "AVI-215-0003"), 2, 6)
 def team_cards(slide, items, ctx):
     """Equal role cards: icon medallion, role, optional name and remit (ref D215-15/D215-20)."""
     n = len(items); gap = 0.26; cw = (W - gap * (n - 1)) / n
@@ -388,7 +388,7 @@ def team_cards(slide, items, ctx):
                  align=PP_ALIGN.CENTER, name=f"Role {i + 1} text", line=1.3)
 
 
-@variant("team.lead-tree", "team", ("AVI-D215-19", "AVI-D215-04", "AVI-D177-01"), 3, 6)
+@variant("team.lead-tree", "team", ("AVI-215-0019", "AVI-215-0004", "AVI-215-0006"), 3, 6)
 def team_tree(slide, items, ctx):
     """First role leads; the others hang from a connector bar below (org-chart reading, ref D215-19)."""
     lead, rest = items[0], items[1:]
@@ -431,7 +431,7 @@ def team_tree(slide, items, ctx):
                      name=f"Role {i + 2} text", line=1.3)
 
 
-@variant("team.side-visual", "team", ("AVI-D215-13", "AVI-D215-05", "AVI-D215-16"), 2, 6, needs_image=True)
+@variant("team.side-visual", "team", ("AVI-215-0013", "AVI-215-0005", "AVI-215-0016"), 2, 6, needs_image=True)
 def team_side(slide, items, ctx):
     """Team key visual on the left; role tiles in a 2-column grid on the right (ref D215-13/D215-16)."""
     pw = 4.3
@@ -479,7 +479,7 @@ def _name_tag(slide, x, y, w, name, dark=True):
          anchor=MSO_ANCHOR.MIDDLE, name="Product name")
 
 
-@variant("product.visual-left", "product", ("AVI-D161-01", "AVI-D161-12", "AVI-D161-20"), 2, 6, needs_image=True)
+@variant("product.visual-left", "product", ("AVI-161-0001", "AVI-161-0012", "AVI-161-0020"), 2, 6, needs_image=True)
 def product_left(slide, items, ctx):
     """Product key visual left with a name tag; feature list with icon chips on the right (ref D161-01/D161-20)."""
     name = _extra(ctx).get("name") or ""
@@ -490,7 +490,7 @@ def product_left(slide, items, ctx):
     _feature_rows(slide, items, ctx, fx, M + W - fx, TOP + 0.1, BOT)
 
 
-@variant("product.visual-top", "product", ("AVI-D161-10", "AVI-D161-18", "AVI-D161-11"), 2, 4, needs_image=True)
+@variant("product.visual-top", "product", ("AVI-161-0010", "AVI-161-0018", "AVI-161-0011"), 2, 4, needs_image=True)
 def product_top(slide, items, ctx):
     """Wide product visual band with the name panel overlapping; feature columns below (ref D161-10/D161-18)."""
     name = _extra(ctx).get("name") or ""
@@ -507,7 +507,7 @@ def product_top(slide, items, ctx):
                     tsizes=(20, 18, 16, 14), bsizes=(14, 13, 12))
 
 
-@variant("product.spotlight", "product", ("AVI-D161-04", "AVI-D161-16", "AVI-D081-09"), 2, 6, needs_image=True)
+@variant("product.spotlight", "product", ("AVI-161-0004", "AVI-161-0016", "AVI-081-0009"), 2, 6, needs_image=True)
 def product_spotlight(slide, items, ctx):
     """Round product visual at the centre, name beneath, features split left and right (ref D161-04/D081-09)."""
     name = _extra(ctx).get("name") or ""
@@ -537,7 +537,7 @@ def product_spotlight(slide, items, ctx):
 
 
 # ================================================================== GAUGE family
-@variant("gauge.dials", "gauge", ("AVI-D135-17", "AVI-D135-14", "AVI-D135-18"), 1, 4)
+@variant("gauge.dials", "gauge", ("AVI-135-0017", "AVI-135-0014", "AVI-135-0018"), 1, 4)
 def gauge_dials(slide, items, ctx):
     """Half-circle dials: track arc + value arc, value numeral in the hub (ref D135-17/D135-14)."""
     n = len(items); cw = W / n; d = min(4.2, cw - 0.6)
@@ -564,7 +564,7 @@ def gauge_dials(slide, items, ctx):
     _notes(slide, ctx)
 
 
-@variant("gauge.rings", "gauge", ("AVI-D135-03", "AVI-D081-07", "AVI-D063-18"), 1, 4)
+@variant("gauge.rings", "gauge", ("AVI-135-0003", "AVI-081-0007", "AVI-063-0018"), 1, 4)
 def gauge_rings(slide, items, ctx):
     """Full progress rings on Paper cards, value inside, label below (ref D135-03/D081-07)."""
     n = len(items); gap = 0.3; cw = (W - gap * (n - 1)) / n
@@ -591,7 +591,7 @@ def gauge_rings(slide, items, ctx):
     _notes(slide, ctx)
 
 
-@variant("gauge.bars", "gauge", ("AVI-D064-07", "AVI-D063-12", "AVI-D064-03"), 1, 4, prefers="long")
+@variant("gauge.bars", "gauge", ("AVI-064-0007", "AVI-063-0012", "AVI-064-0003"), 1, 4, prefers="long")
 def gauge_bars(slide, items, ctx):
     """Labelled progress tracks with value at the end (ref D064-07/D063-12)."""
     n = len(items)
@@ -617,7 +617,7 @@ def gauge_bars(slide, items, ctx):
 
 
 # ================================================================== QUOTE family
-@variant("quote.panel", "quote", ("AVI-D242-10", "AVI-D242-06", "AVI-D131-01"), 1, 2)
+@variant("quote.panel", "quote", ("AVI-242-0010", "AVI-242-0006"), 1, 2)
 def quote_panel(slide, items, ctx):
     """Command Black panel across the content zone; large quote mark, centred statement, attribution (ref D242-10)."""
     py = TOP + 0.1
@@ -635,7 +635,7 @@ def quote_panel(slide, items, ctx):
              align=PP_ALIGN.CENTER, name="Attribution")
 
 
-@variant("quote.visual-side", "quote", ("AVI-D242-15", "AVI-D242-17", "AVI-D242-11"), 1, 2, needs_image=True)
+@variant("quote.visual-side", "quote", ("AVI-242-0015", "AVI-242-0017", "AVI-242-0011"), 1, 2, needs_image=True)
 def quote_side(slide, items, ctx):
     """Statement on the left with a vertical accent bar; approved key visual on the right (ref D242-15/D242-17)."""
     pw = 4.6; px = M + W - pw
@@ -653,3 +653,7 @@ def quote_side(slide, items, ctx):
 
 
 AVIATION_FAMILIES = ("compare", "timeline", "map", "team", "product", "gauge", "quote")
+
+from .layouts import VARIANTS as _ALL_VARIANTS   # noqa: E402
+# this module's variants (scripts/select-layout.py scans `VARIANTS` per module; they also live in layouts.VARIANTS)
+VARIANTS = [v for v in _ALL_VARIANTS if v.family in AVIATION_FAMILIES]

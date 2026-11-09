@@ -5,7 +5,7 @@ placeholder content into the real BXR master and stays inside the CIS geometry.
 Run: python tests/test_aviation_layouts.py            (structure checks only)
      python tests/test_aviation_layouts.py --render /tmp/bxr-a/review   (also writes review PNGs)
 Placeholder text only — no invented figures; gauge values are explicit test inputs."""
-import hashlib, sys, tempfile, unittest
+import hashlib, re, sys, tempfile, unittest
 from pathlib import Path
 from types import SimpleNamespace
 ROOT = Path(__file__).resolve().parents[1]; sys.path.insert(0, str(ROOT))
@@ -134,7 +134,7 @@ class AviationLayoutTests(unittest.TestCase):
             if v.family in A.AVIATION_FAMILIES:
                 fams.setdefault(v.family, []).append(v)
                 self.assertRegex(v.name, rf"^{v.family}\.[a-z-]+$")
-                self.assertTrue(v.ref and all(r.startswith("AVI-D") for r in v.ref), v.name)
+                self.assertTrue(v.ref and all(re.fullmatch(r"AVI-\d{3}-\d{4}", r) for r in v.ref), v.name)
         self.assertEqual(set(fams), set(A.AVIATION_FAMILIES))
         for f, vs in fams.items():
             self.assertTrue(2 <= len(vs) <= 3, f)
