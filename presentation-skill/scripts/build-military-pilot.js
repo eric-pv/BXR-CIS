@@ -3,6 +3,8 @@
  * Prerequisite: npm install pptxgenjs
  * Usage: node build-military-pilot.js <repo-root> <official-logo-png> <output.pptx>
  * This demonstrates layout/master inheritance, NOT a finished production generator.
+ * DEPRECATED AS DESIGN REFERENCE: its coordinates/title placement were rejected by the user.
+ * The production master + generator is presentation-skill/bxr_deck (python -m bxr_deck).
  */
 const fs=require("fs"),path=require("path"),pptxgen=require("pptxgenjs");
 const [root,logo,out]=process.argv.slice(2);
@@ -15,7 +17,9 @@ function define(name,file,dark){
   if(!fs.existsSync(img))throw Error("Missing approved background: "+img);
   const objects=[{image:{path:img,x:0,y:0,w:W,h:H}}];
   if(!fs.existsSync(logo))throw Error("Missing official logo: "+logo);
-  objects.push({image:{path:logo,x:12.4,y:6.65,w:.48,h:.48}});
+  // keep official logo aspect ratio (was forced to a square, distorting horizontal logos)
+  const b=fs.readFileSync(logo),lw=b.readUInt32BE(16),lh=b.readUInt32BE(20),h=.36,w=h*lw/lh;
+  objects.push({image:{path:logo,x:W-.45-w,y:H-.45-h,w,h}});
   p.defineSlideMaster({title:name,background:{color:dark?"0B0F14":"FFFFFF"},objects});
 }
 define("COVER","BXR_Military_Cover_16x9.png",true);

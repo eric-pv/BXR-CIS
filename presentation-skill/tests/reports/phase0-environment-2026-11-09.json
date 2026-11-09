@@ -1,0 +1,88 @@
+{
+  "date": "2026-11-09",
+  "phase": 0,
+  "environment": {
+    "python": "3.13.18",
+    "node": "v22.23.4",
+    "libreoffice": "LibreOffice 24.2.7.2 420(Build:2)",
+    "git_lfs": "git-lfs/3.4.1 (GitHub; linux amd64; go 1.22.2)",
+    "python_pptx": "1.0.2",
+    "jsonschema": "4.26.0",
+    "powerpoint": "NOT AVAILABLE (Linux container) - native open/repair and animation playback must be checked on Windows"
+  },
+  "fonts_for_rendering": "Noto Sans CJK TC/JP (apt fonts-noto-cjk) aliased to 'Noto Sans TC'/'Noto Sans JP' via fontconfig; B612 Mono from @fontsource (OFL). Medium/Light weights not available in render env.",
+  "commands": {
+    "git lfs pull": "PASS (500頁.pptx 158,450,390 B; Aviation Slides.zip 244,041,815 B)",
+    "preflight --require-lfs": "PASS",
+    "test_contracts.py": "validated 5 positive fixtures, 1 negative case; failures=0"
+  },
+  "source_immutability": {
+    "before": [
+      "b7dab6f439a5c04fa1dd9b760c387db5febb694f11e8be95d5745975ee9df50a",
+      "presentation-skill/source-library/500頁.pptx",
+      "a6d47149fb2e7eeeb705b2e4dd3b6b350a72c2126619770fef80e4d94e8225dc",
+      "presentation-skill/source-library/Aviation",
+      "Slides.zip"
+    ],
+    "after_all_phase0_runs": [
+      "b7dab6f439a5c04fa1dd9b760c387db5febb694f11e8be95d5745975ee9df50a",
+      "source-library/500頁.pptx",
+      "a6d47149fb2e7eeeb705b2e4dd3b6b350a72c2126619770fef80e4d94e8225dc",
+      "source-library/Aviation",
+      "Slides.zip"
+    ],
+    "unchanged": true
+  },
+  "tool_tests": {
+    "index-pptx.py": {
+      "status": "RUNS",
+      "slides_indexed": 5788,
+      "by_library": {
+        "500pages": 604,
+        "aviation": 5184
+      },
+      "oversize_unparsed": 29,
+      "defects": [
+        "category heuristic includes the deck filename, so whole decks are tagged (e.g. 2694 'data', 1117 'map') - not usable for selection",
+        "no chart/table/aspect/hash/stable per-slide fingerprint",
+        "oversized slides recorded without byte size",
+        "replaced by catalog builder in Phase 1"
+      ]
+    },
+    "select-layout.py": {
+      "status": "RUNS",
+      "defects": [
+        "no catalog rows are approved so it always returns fallback (expected); keyword role only"
+      ]
+    },
+    "apply-bxr-theme.py": {
+      "status": "FIXED",
+      "defects": [
+        "xml.etree rewrote namespace prefixes to ns0:/ns1:, breaking mc:Ignorable prefix references -> PowerPoint repair risk. Switched to lxml.",
+        "accent palette re-ordered to CIS chart rule (Graphite main series, Slate/Ash secondary, Signal Teal data on light); hyperlink = Text Red"
+      ]
+    },
+    "build-military-pilot.js": {
+      "status": "FIXED+DEPRECATED",
+      "defects": [
+        "logo forced to 0.48x0.48 square -> distorted horizontal logo; now keeps aspect",
+        "design rejected by user; kept only as smoke test"
+      ]
+    },
+    "validate-pptx.py": {
+      "status": "REWRITTEN",
+      "added": [
+        "rels integrity",
+        "content types",
+        "XML well-formedness",
+        "official-logo hash detection on master/layout vs slide (duplicate logo = error)",
+        "tables/charts/placeholders per slide"
+      ],
+      "finding_on_official_template": "07_Templates/BXR_Presentation_Template_v3.2.pptx has 15 stale content-type overrides for non-existent slideMaster parts (tolerated by PowerPoint; reported as warning)"
+    }
+  },
+  "known_issues": [
+    "07_Templates/*.pptx are committed as plain blobs while .gitattributes routes *.pptx to LFS, so they always show as modified after checkout (repo hygiene; not changed by this PR)",
+    "Repository is PUBLIC and contains third-party commercial PPTX sources; Eric must confirm distribution/multi-user license and visibility. No new commercial material is added by this work; generated thumbnails of commercial slides are kept out of git."
+  ]
+}
