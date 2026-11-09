@@ -1,0 +1,227 @@
+{
+  "brief_id": "data-comparison",
+  "design_owner": "claude",
+  "quality_status": "ready-for-review",
+  "slides": [
+    {
+      "slide_id": "cover",
+      "role": "cover",
+      "message": "兩種技術方案的選型比較",
+      "content_refs": [
+        "brief.topic",
+        "brief.purpose"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Cover_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "subtitle",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "agenda",
+      "role": "agenda",
+      "message": "方案比較 / 決策因素",
+      "content_refs": [
+        "content[0].title",
+        "content[1].title"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png",
+        "variant": "agenda.side-visual"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "purpose",
+      "role": "content",
+      "message": "呈現各方案優缺點，不預設哪個較佳",
+      "content_refs": [
+        "brief.purpose",
+        "brief.audience"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "comparison-c0",
+      "role": "comparison",
+      "message": "方案比較",
+      "content_refs": [
+        "content[0].facts[0]",
+        "content[0].facts[1]"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "notes",
+        "page-number",
+        "table",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "cards-c1",
+      "role": "content",
+      "message": "成本 / 風險 / 可維護性",
+      "content_refs": [
+        "content[1].facts[0]",
+        "content[1].facts[1]",
+        "content[1].facts[2]"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png",
+        "variant": "items.visual-band"
+      },
+      "editable_elements": [
+        "diagram",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "next-steps",
+      "role": "summary",
+      "message": "待確認事項與下一步",
+      "content_refs": [
+        "brief"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "not-applicable",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "summary",
+      "role": "summary",
+      "message": "方案比較 / 決策因素",
+      "content_refs": [
+        "content[0].title",
+        "content[1].title"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "closing",
+      "role": "other",
+      "message": "Turn Every Drill into Real",
+      "content_refs": [
+        "brand"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Cover_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "title"
+      ],
+      "evidence_status": "not-applicable",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    }
+  ],
+  "unverified_claims": [
+    "content[0]: comparison values not supplied (方案 A, 方案 B)"
+  ],
+  "source_inventory_sha256": "721ca05f76512c868a02abf1f415d16aafa7f7818519e12dac1ed20e3c4cdfe7"
+}
