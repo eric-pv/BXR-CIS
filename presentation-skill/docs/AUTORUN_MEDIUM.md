@@ -8,8 +8,13 @@ Branch: `claude/sweet-allen-xj6vig` (system-assigned), rebuilt from origin/main 
 | Prereqs (LFS, fonts) | DONE | 2026-11-09T10:58Z | git lfs pull OK; fonts-noto-cjk; fontconfig aliases Noto Sans TC/JP → Noto Sans CJK TC/JP; B612 Mono woff2 (@fontsource/b612-mono 5.3.0) → ttf via fonttools; preflight PASS; contracts 0 failures |
 | M1 build-source-catalog.py | DONE | 2026-11-09T11:05Z | 5,788 slides (604 PMLD + 5,184 AVI in 249 decks), 33 unparsed (>8 MB XML, reasons in summary.json), 0 deck errors, all 16:9; ~38 s full run; no thumbnails / no slide text stored |
 | M2 layout-registry + icons + select-layout + test_catalog | DONE | 2026-11-09T11:20Z | registry auto-scanned from bxr_deck.layouts VARIANTS (layouts_aviation.py absent on main → skipped): 17 variants claude-reviewed; 12 official SVG added to icon-catalog.csv (official_cis); select-layout.py reads registry; tests/test_catalog.py 19 OK |
-| M3 layout fixes | IN-PROGRESS | 2026-11-09T11:20Z | |
-| M4 fixtures, previews, tests, PR, merge | TODO | | |
+| M3 layout fixes | DONE | 2026-11-09T11:50Z | raised-cards title-only → 3.3 in cards centred across dark band (was full-height empty cards); KVPicker hard cap 2 uses/deck + light/dark alternation (tone from luminance), select() skips variants that would exceed the cap; pending callout card sized to content. Rendered only affected pages (system p13, english p8/p13). Tests: test_catalog 23 OK |
+| M4 fixtures, previews, tests, PR, merge | IN-PROGRESS | 2026-11-09T11:50Z | |
+
+- M3: pending-page *composition* (icon + heading + callout) is built in `bxr_deck/generator.py`, outside this run's
+  file scope; the fix was made in `compose.pending_box` (shared by all pending pages). Follow-up for generator.py:
+  the `detail` pending page repeats the banner title as a heading under the banner — drop it in a later PR.
+- M3: light/dark tone is computed from mean luminance (< 0.45 = dark): corporate pool = 6 dark / 4 light.
 
 ## Known issues
 - `07_Templates/*.pptx` may show as modified (Git LFS config issue). Not committed, not modified, not restored.

@@ -207,5 +207,54 @@ class IconCatalog(unittest.TestCase):
             self.assertTrue(r["tags"])
 
 
+class LayoutFixes(unittest.TestCase):
+    """M3: key-visual variety, compact raised cards, compact pending callout."""
+    def test_key_visual_cap_and_tone_alternation(self):
+        from bxr_deck import layouts as L
+        kv = L.KVPicker()
+        self.assertFalse(set(kv.pool) & set(L.KV_TACTICAL), "corporate decks must not get armed key visuals")
+        picks = [kv.pick("training 訓練").name for _ in range(2 * len(kv.pool))]
+        self.assertLessEqual(max(picks.count(f) for f in set(picks)), L.MAX_KV_REPEAT)
+        self.assertEqual(kv.overflow, 0); self.assertEqual(kv.remaining(), 0)
+        tones = [L.kv_tone(f) for f in picks[:6]]
+        self.assertTrue(all(a != b for a, b in zip(tones, tones[1:])), tones)
+
+    def test_select_respects_key_visual_capacity(self):
+        from bxr_deck import layouts as L
+        kv = L.KVPicker()
+        for _ in range(2 * len(kv.pool) - 2):
+            kv.pick("")
+        v = L.select("items", ["a", "b", "c"], [])
+        self.assertIsNotNone(v)
+        self.assertLessEqual(v.images(3), kv.remaining(), v.name)
+        L._ACTIVE[0] = None
+
+    def _slide(self):
+        from pptx import Presentation
+        from pptx.util import Inches
+        prs = Presentation(); prs.slide_width, prs.slide_height = Inches(13.333), Inches(7.5)
+        return prs.slides.add_slide(prs.slide_layouts[6])
+
+    def test_raised_cards_shrink_without_body(self):
+        from bxr_deck import layouts as L, brand as B
+        class Ctx: pass
+        ctx = Ctx(); ctx.kv = L.KVPicker(); ctx.extra = {}; ctx.accent = B.GRAPHITE; ctx.title = ""
+        v = next(v for v in L.VARIANTS if v.name == "items.raised-cards")
+        s1 = self._slide(); v.render(s1, ["繁體中文", "English", "日本語"], ctx)
+        s2 = self._slide(); v.render(s2, [{"title": "A", "body": "x" * 40, "icon": "XR"}] * 3, ctx)
+        h = lambda s: max(sh.height for sh in s.shapes if sh.name == "Card 1") / 914400
+        self.assertLess(h(s1), 3.5)
+        self.assertGreater(h(s2), 4.0)
+        L._ACTIVE[0] = None
+
+    def test_pending_box_is_compact(self):
+        from bxr_deck import compose as C
+        s = self._slide()
+        C.pending_box(s, C.M, C.BODY_TOP, C.BODY_W, None, "PENDING INPUT", ["短項目"])
+        box = next(sh for sh in s.shapes if sh.name == "Pending input")
+        self.assertLess(box.width / 914400, C.BODY_W - 1)
+        self.assertLess(box.height / 914400, 1.6)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=1)
