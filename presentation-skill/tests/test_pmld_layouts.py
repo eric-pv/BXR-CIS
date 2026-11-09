@@ -75,7 +75,8 @@ class Registration(unittest.TestCase):
                 self.assertTrue(all(s.startswith("PMLD-") for s in r["ref_slides"]))
 
     def test_reference_pages_exist_and_respect_policy(self):
-        rows = {r["slide_id"]: r for r in csv.DictReader(open(ROOT / "catalog/generated/source-slides.csv", encoding="utf-8"))}
+        with open(ROOT / "catalog/generated/source-slides.csv", encoding="utf-8") as f:
+            rows = {r["slide_id"]: r for r in csv.DictReader(f)}
         for n in NEW:
             v = next(x for x in L.VARIANTS if x.name == n)
             self.assertTrue(v.ref, n)

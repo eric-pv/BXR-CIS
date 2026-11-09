@@ -760,10 +760,16 @@ def text_framed(slide, lines, ctx):
     x = M + pw + 0.85; tw = SW_IN - M - x
     n = len(lines)
     lead = _common(lines[:1], tw, 2.4 if n > 1 else 3.6, [36, 32, 30, 28, 26, 24, 22], line=1.3)
-    lead_h = _lines(lines[0], lead, tw) * lead * 1.3 / 72 + 0.1
     rest = _common(lines[1:], tw - 0.75, 1.0, [22, 20, 18, 16], line=1.3) if n > 1 else 0
-    rows = [_lines(l, rest, tw - 0.75) * rest * 1.3 / 72 + 0.45 for l in lines[1:]]
-    total = 0.4 + lead_h + (0.35 + sum(rows) if rows else 0)
+
+    def measure(lead, rest):
+        lead_h = _lines(lines[0], lead, tw) * lead * 1.3 / 72 + 0.1
+        rows = [_lines(l, rest, tw - 0.75) * rest * 1.3 / 72 + 0.45 for l in lines[1:]]
+        return lead_h, rows, 0.4 + lead_h + (0.35 + sum(rows) if rows else 0)
+    lead_h, rows, total = measure(lead, rest)
+    while total > ph - 0.2 and (lead > 20 or rest > 14):    # never run past the content area
+        lead = max(20, lead - 2); rest = max(14, rest - 2) if rest else 0
+        lead_h, rows, total = measure(lead, rest)
     y = TOP + 0.05 + max(0.2, (ph - total) / 2)
     C.rect(slide, x, y, 0.6, 0.05, fill=B.RED, name="Lead rule")
     y += 0.4
