@@ -68,7 +68,7 @@ class KVPicker:
 
 def picture(slide, path, x, y, w, h, name="Key visual"):
     """Native picture cropped (not stretched) to fill the box."""
-    iw, ih = Image.open(path).size
+    with Image.open(path) as _im: iw, ih = _im.size
     pic = slide.shapes.add_picture(str(path), Inches(x), Inches(y), Inches(w), Inches(h))
     pic.name = name
     r_img, r_box = iw / ih, w / h

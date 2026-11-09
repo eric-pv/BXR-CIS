@@ -5,7 +5,29 @@ description: Build editable Big x Reality presentations using CIS v3.2 and appro
 
 # Big x Reality Presentation Skill
 
-Status: development foundation, not production-ready.
+Status: **V0.1 working generator** (`bxr_deck`). Brief → plan → editable PPTX → QA runs end-to-end and is covered by
+automated tests (`tests/test_contracts.py`, `tests/test_master.py`, `tests/test_pipeline.py`). Not production-approved yet:
+visual sign-off by Eric (`visual_approval: pending-eric`), native PowerPoint open-without-repair check on Windows and
+animation QA are still outstanding. Install, fonts and limits: `../../README_V01.md`.
+
+## Usage (V0.1)
+Run from `presentation-skill/`:
+1. Get a brief that validates against `../../contracts/presentation-brief.schema.json`
+   (language must be `zh-TW`, `en` or `JP`). From an outline text:
+   `python -m bxr_deck brief --text outline.txt --id my-deck --output my-deck.json [--audience internal] [--slides N]`.
+2. Build: `python -m bxr_deck build --brief my-deck.json --output out/ [--previous-plan out/my-deck.plan.json] [--no-render]`.
+   Exit code 0 = QA PASS, 1 = QA FAIL, 2 = invalid brief.
+3. Review `out/<id>.qa.json` (gates G1–G9 + source immutability) and `out/<id>.plan.json` (`unverified_claims`);
+   with LibreOffice installed, check every preview in `out/preview/`. Fix the brief, never invent data.
+4. Master/theme changes go through `bxr_deck/master.py` (`python -m bxr_deck master [--potx]`), never per slide.
+
+Code map:
+- `bxr_deck/planner.py` — brief → slide plan (content-keyed slide ids, pending-input instead of invented facts).
+- `bxr_deck/layouts.py` — content layout families selected per slide: `agenda.*` (side-visual, visual-columns, list),
+  `items.*` (visual-band, raised-cards, fan, hub, visual-grid, cards), `process.*` (stage-arrow, round-nodes, track),
+  `text.*` (visual-left, statement-band, bullets), `data.*` (kpi-visuals, chart). Each variant records its reference
+  source ids in the speaker notes; variants avoid repeating within a deck.
+- `bxr_deck/compose.py` — native shapes, tables, charts, text fitting; `bxr_deck/generator.py` — pipeline + QA gates.
 
 ## Sources
 Read the complete CIS v3.2 manual, official brand assets in the repository, and approved PPTX layout catalog. Existing official template: `07_Templates/BXR_Presentation_Template_v3.2.pptx`.
@@ -17,7 +39,7 @@ Read the complete CIS v3.2 manual, official brand assets in the repository, and 
 - Use official logos and fonts. Never recreate logos or invent company data.
 - Internal and external presentations require distinct cover styles. External covers can adapt to sectors within CIS limits.
 
-## Deck workflow
+## Deck workflow (design principles; steps 1–5 and 8 are automated by `bxr_deck`)
 1. Extract audience, purpose, language, duration, slide count and supplied facts.
 2. Make a concise narrative and content plan.
 3. Match slides with approved editable PPTX layouts.
