@@ -1,0 +1,43 @@
+{
+  "id": "aviation-families-cis-v32",
+  "topic": "CIS v3.2 改版重點",
+  "language": "zh-TW",
+  "audience": "internal",
+  "purpose": "說明 CIS v3.1 到 v3.2 的領域色調整、官方簡報範本與領域色使用聲明",
+  "slides": 11,
+  "series": "corporate",
+  "sector": "corporate",
+  "source_policy": "provided-only",
+  "content": [
+    {
+      "title": "CIS 領域色：v3.1 vs v3.2",
+      "facts": [
+        "陸軍：#596B42｜#596B42",
+        "海軍：#105A75｜#173A55",
+        "空軍：#5B8FD0｜#5D8AA8",
+        "消防：#C2410C｜#D2361E",
+        "警察：#323B6E｜#2E5C9A"
+      ],
+      "source_refs": ["00_Brand_Guidelines/v3.2/BXR_CIS_Changes_v3.1_to_v3.2.csv#01-05"],
+      "notes": "Values are the v3.1 and v3.2 columns of rows 01–05 (領域色・陸軍／海軍／空軍／消防／警察)."
+    },
+    {
+      "title": "BXR Presentation Template v3.2 的產品特點",
+      "facts": [
+        "版面配置：15 layouts",
+        "範例頁：18 sample slides",
+        "搭配文件：BXR CIS Brand Guidelines v3.2（89 頁）"
+      ],
+      "source_refs": ["00_Brand_Guidelines/v3.2/README_v3.2.txt (WHAT CHANGED · 07_Templates; Use with)"]
+    },
+    {
+      "title": "領域色聲明",
+      "facts": [
+        "「Sector colors are generic associative colors defined by Big x Reality. They are not the official colors of any nation, military branch, fire service or police force.」——README_v3.2.txt"
+      ],
+      "source_refs": ["00_Brand_Guidelines/v3.2/README_v3.2.txt (COLOR LAYERS)"]
+    }
+  ],
+  "must_avoid": ["虛構數據", "把領域色說成官方軍警色"],
+  "output": {"pptx": true, "pdf": false}
+}
