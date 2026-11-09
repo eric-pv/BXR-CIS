@@ -91,6 +91,82 @@ def classify(group):
     return "content"
 
 
+# ---- content triggers for the aviation families (bxr_deck/layouts_aviation.py) -------------------
+# Each rule needs the facts themselves to carry the structure (every fact must match), so ordinary
+# groups keep their existing family. Output follows the shared render contract:
+# (family, items:list, extra:dict). Nothing is inferred beyond what the facts say.
+AV_ROLE = {"compare": "comparison", "timeline": "timeline", "map": "map", "team": "people",
+           "product": "product", "gauge": "data", "quote": "content"}
+YEAR_RE = re.compile(r"^\s*(?P<year>(?:19|20)\d{2}(?:\s*年)?|民國\s*\d{2,3}\s*年|1[0-2]\d\s*年)\s*[:：\-–—、]?\s*(?P<rest>.+)$")
+CMP_TITLE_RE = re.compile(r"\bvs\.?(?=\s|$)|\bversus\b|對比|比較|相較|対比", re.I)
+CMP_SPLIT_RE = re.compile(r"\s*(?:\bvs\.?(?=\s|$)|\bversus\b|對比|相較於|相較|與|和|及|と)\s*", re.I)
+CMP_TAIL_RE = re.compile(r"(?:の|之)?(?:比較|對比|対比|comparison)\s*$", re.I)
+VAL_SPLIT_RE = re.compile(r"\s*[｜|／]\s*|\s+vs\.?\s+", re.I)
+GAUGE_RE = re.compile(r"^(?P<label>[^:：]{1,40})[:：]\s*(?P<val>\d+(?:\.\d+)?)\s*(?P<u1>[%A-Za-z一-鿿°]*)\s*"
+                      r"(?:/|／|of|，?\s*上限|，?\s*max\.?|，?\s*満点)\s*(?P<max>\d+(?:\.\d+)?)\s*(?P<u2>[%A-Za-z一-鿿°]*)\s*$", re.I)
+QUOTE_RE = re.compile(r"^\s*[「『“\"](?P<q>.+?)[」』”\"]\s*(?:[—–\-]{1,2}\s*(?P<who>.+))?$")
+VISION_RE = re.compile(r"宣言|使命|願景|理念|\bmission\b|\bvision\b|manifesto|ミッション|ビジョン", re.I)
+PRODUCT_RE = re.compile(r"^(?P<name>.+?)\s*(?:的|之|の)?\s*(?:產品特點|產品特色|功能特點|特點|特色|主要功能|key features|features|特長|特徴)\s*$", re.I)
+ROLE_WORDS = re.compile(r"經理|主管|工程師|教官|指揮官|負責人|窗口|顧問|講師|技術支援|專員|組長|隊長|總監|執行長|"
+                        r"\bPM\b|manager|engineer|\blead\b|instructor|director|officer|coordinator|specialist|"
+                        r"担当|責任者|エンジニア|マネージャー|リーダー|講師", re.I)
+REGIONS = ("台灣 臺灣 台湾 日本 美國 美国 米国 アメリカ 韓國 韓国 新加坡 シンガポール 越南 泰國 菲律賓 印尼 馬來西亞 印度 澳洲 "
+           "德國 法國 英國 加拿大 中東 歐洲 欧州 亞洲 アジア 東南亞 東南アジア 東北亞 北美 北米 "
+           "台北市 臺北市 新北市 桃園市 台中市 臺中市 台南市 臺南市 高雄市 基隆市 新竹市 新竹縣 苗栗縣 彰化縣 南投縣 雲林縣 "
+           "嘉義市 嘉義縣 屏東縣 宜蘭縣 花蓮縣 台東縣 臺東縣 澎湖縣 金門縣 連江縣 北部 中部 南部 東部 離島 "
+           "Taiwan Japan USA Korea Singapore Vietnam Thailand Philippines Indonesia Malaysia India Australia "
+           "Germany France Canada Europe Asia").split() + ["United States", "United Kingdom", "Middle East",
+                                                          "Southeast Asia", "North America"]
+REGION_RE = re.compile(r"^(?:" + "|".join(map(re.escape, sorted(REGIONS, key=len, reverse=True))) +
+                       r")(?:\s*(?:地區|地区|區域|一帶|市場|据点|據點|region|market))?$", re.I)
+
+
+def _title_body(f):
+    m = OPTION_RE.match(f)
+    return (m["name"].strip(), m["rest"].strip()) if m else (f.strip(), None)
+
+
+def aviation_family(title, facts):
+    """Return (family, items, extra) when the facts carry one of the seven structures, else None."""
+    n = len(facts)
+    if not n:
+        return None
+    g = [GAUGE_RE.match(f) for f in facts]
+    if n <= 4 and all(g):
+        items = [{"label": m["label"].strip(), "value": float(m["val"]), "max": float(m["max"]),
+                  "unit": (m["u1"] or m["u2"]).strip()} for m in g]
+        if all(it["unit"] and 0 < it["max"] and it["value"] <= it["max"] for it in items):
+            return "gauge", items, {"notes": []}
+    y = [YEAR_RE.match(f) for f in facts]
+    if 3 <= n <= 8 and all(y):
+        items = []
+        for m in y:
+            t, b = _title_body(m["rest"])
+            items.append({"year": re.sub(r"\s+", "", m["year"]), "title": t, "body": b})
+        return "timeline", items, {}
+    if CMP_TITLE_RE.search(title):
+        cols = [p.strip() for p in CMP_SPLIT_RE.split(CMP_TAIL_RE.sub("", title).strip()) if p.strip()]
+        rows = [OPTION_RE.match(f) for f in facts]
+        if 2 <= len(cols) and 2 <= n <= 8 and all(rows):
+            items = [{"label": m["name"].strip(), "values": VAL_SPLIT_RE.split(m["rest"].strip())} for m in rows]
+            if all(len(it["values"]) == len(cols) for it in items):
+                return "compare", items, {"columns": cols}
+    q = [QUOTE_RE.match(f) for f in facts]
+    if n <= 2 and (all(q) or VISION_RE.search(title)):
+        who = next((m["who"].strip() for m in q if m and m["who"]), None)
+        return "quote", [m["q"].strip() if m else f.strip() for m, f in zip(q, facts)], {"attribution": who}
+    p = PRODUCT_RE.match(title)
+    if p and 2 <= n <= 6:
+        return "product", [dict(zip(("title", "body"), _title_body(f))) for f in facts], {"name": p["name"].strip()}
+    tb = [_title_body(f) for f in facts]
+    if 2 <= n <= 6 and all(len(t) <= 16 and ROLE_WORDS.search(t) for t, _ in tb):
+        # names are never inferred: only the role is shown unless the brief states a name
+        return "team", [{"role": t, "name": None, "body": b} for t, b in tb], {}
+    if n <= 6 and all(REGION_RE.match(t) for t, _ in tb):
+        return "map", [{"name": t, "body": b} for t, b in tb], {}
+    return None
+
+
 def split_facts(facts):
     """-> (presentable, pending, rules). Pending: 'needs data' statements; rules: presenter rules."""
     show, pend, rules = [], [], []
@@ -143,7 +219,12 @@ def plan(brief, previous=None):
         unverified += [f"content[{gi}]: {f}" for f in pend_items]
         sid = f"{kind}-c{gi}"
         role = {"data": "data", "comparison": "comparison", "process": "process", "cards": "content"}.get(kind, "content")
-        if kind == "data":
+        av = aviation_family(g["title"], items) if items and not pend_items else None
+        if av:
+            fam, av_items, extra = av
+            s = Slide(f"{fam}-c{gi}", AV_ROLE[fam], "BXR Title Only", "aviation", g["title"], g["title"], refs,
+                      ["title", "diagram"], evidence, kicker, data={"family": fam, "items": av_items, "extra": extra})
+        elif kind == "data":
             m = [NUM_FACT_RE.match(f) for f in g["facts"]]
             s = Slide(sid, role, "BXR Chart + Text", "chart", g["title"], g["title"], refs, ["title", "chart", "body"], evidence, kicker,
                       data={"categories": [x["label"].strip() for x in m], "values": [float(x["val"]) for x in m],

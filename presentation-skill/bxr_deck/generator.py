@@ -8,6 +8,10 @@ from . import brand as B, compose as C
 from .icons import add_icon
 from .master import build as build_master, set_east_asian_font
 from .planner import plan, to_plan_json, UI
+try:  # registers the aviation variants (compare/timeline/map/team/product/gauge/quote) when present
+    from . import layouts_aviation  # noqa: F401
+except ImportError:  # pragma: no cover - module not merged yet: new families fall back below
+    layouts_aviation = None
 
 CONTRACTS = B.SKILL / "contracts"
 _spec = importlib.util.spec_from_file_location("validate_pptx", B.SKILL / "scripts" / "validate-pptx.py")
@@ -73,8 +77,97 @@ class Ctx:
 FAMILY = {"agenda": "agenda", "cards": "items", "process": "process", "bullets": "text"}
 
 
+AV_KEY = {"compare": lambda it: it["label"], "timeline": lambda it: f"{it['year']} {it['title']}",
+          "map": lambda it: it["name"], "team": lambda it: it["role"], "product": lambda it: it["title"],
+          "gauge": lambda it: it["label"], "quote": lambda it: it}
+AV_FALLBACK = {"compare": "table", "timeline": "process", "map": "items", "team": "items", "product": "items",
+               "gauge": "data", "quote": "text"}
+
+
+def _av_body(fam, it):
+    return None if fam in ("quote", "gauge", "compare") else it.get("body")
+
+
+def _av_fallback(slide, fam, items, keys, ctx, used, acc_deep):
+    """No registered variant for an aviation family: render with the existing family instead."""
+    from . import layouts as LY
+    ctx.extra = {"caption": None}
+    if fam == "compare":
+        cols = [""] + list(s_extra_columns(ctx, items))
+        C.table(slide, cols, [[it["label"]] + list(it["values"]) for it in items],
+                col_widths=[3.4] + [(C.BODY_W - 3.4) / (len(cols) - 1)] * (len(cols) - 1))
+        return True, None
+    if fam == "timeline":
+        steps = [k + (f"：{b}" if (b := _av_body(fam, it)) else "") for k, it in zip(keys, items)]
+        v = LY.select("process", steps, used, sequence=True)
+        if v is not None:
+            v.render(slide, steps, ctx); return True, v
+        return C.process(slide, [{"title": k, "body": _av_body(fam, it)} for k, it in zip(keys, items)], accent=acc_deep), None
+    if fam == "gauge":
+        cats = [f"{it['label']} /{it['max']:g}{it['unit']}" for it in items]
+        vals = [it["value"] for it in items]
+        units = {it["unit"] for it in items}
+        d = {"categories": cats, "values": vals, "unit": units.pop() if len(units) == 1 else "", "notes": []}
+        v = LY.select("data", cats, used)
+        if v is not None and v.name != "data.chart":
+            v.render(slide, d, ctx); return True, v
+        from pptx.chart.data import CategoryChartData
+        from pptx.enum.chart import XL_CHART_TYPE
+        cd = CategoryChartData(); cd.categories = cats; cd.add_series(ctx.title or "value", vals)
+        ch = slide.shapes.add_chart(XL_CHART_TYPE.BAR_CLUSTERED, Inches(C.M), Inches(C.BODY_TOP + 0.1),
+                                    Inches(C.BODY_W), Inches(4.8), cd).chart
+        ch.has_legend = False; ch.plots[0].has_data_labels = True
+        return True, None
+    if fam == "quote":
+        attr = (ctx.av_extra or {}).get("attribution")
+        lines = list(items) + ([f"— {attr}"] if attr else [])
+        v = LY.select("text", lines, used)
+        if v is not None:
+            v.render(slide, lines, ctx); return True, v
+        C.statement(slide, items[0], attr); return True, None
+    # map / team / product -> items
+    from .planner import pick_icon
+    cards = [{"title": k, "body": _av_body(fam, it), "icon": pick_icon(k)} for k, it in zip(keys, items)]
+    v = LY.select("items", keys, used)
+    if v is not None:
+        v.render(slide, cards, ctx); return True, v
+    if len(cards) <= 4:
+        return C.cards(slide, cards, accent=acc_deep), None
+    return C.bullets(slide, [c["title"] + (f"：{c['body']}" if c["body"] else "") for c in cards]), None
+
+
+def s_extra_columns(ctx, items):
+    cols = (ctx.av_extra or {}).get("columns") or []
+    return cols if cols else [f"#{i + 1}" for i in range(len(items[0]["values"]))]
+
+
+def build_aviation(slide, s, ctx, used, acc_light, acc_deep):
+    """Aviation family slide: registered variant if one fits, else the existing family (AV_FALLBACK)."""
+    from . import layouts as LY
+    from .planner import pick_icon
+    d = s.data; fam = d["family"]; items = d["items"]
+    keys = [AV_KEY[fam](it) for it in items]
+    _title(slide, s.title, s.layout, ctx.title_size)
+    if s.kicker: _kicker(slide, s.kicker, acc_light)
+    ctx.title = s.title; ctx.av_extra = dict(d.get("extra") or {}); ctx.extra = dict(ctx.av_extra)
+    ctx.icons = [pick_icon(k) for k in keys] or ctx.icons
+    v = LY.select(fam, keys, used, sequence=fam == "timeline", prefer=d.get("_prev_variant"))
+    if v is not None:
+        v.render(slide, items, ctx); ok = True
+    else:
+        ok, v = _av_fallback(slide, fam, items, keys, ctx, used, acc_deep)
+        s.notes = list(s.notes) + [f"Fallback: no registered {fam} variant; rendered as {AV_FALLBACK[fam]}"]
+    if v is not None:
+        used.append(v.name); s.notes = list(s.notes) + [LY.ref_note(v)]; s.data["_variant"] = v.name
+    return ok
+
+
 def build_slide(prs, L, s, brief, acc_light, acc_deep, fits, ctx=None, used=None):
     slide = prs.slides.add_slide(L[s.layout])
+    if s.kind == "aviation":
+        fits[s.slide_id] = bool(build_aviation(slide, s, ctx, used, acc_light, acc_deep))
+        C.notes(slide, "\n".join(list(s.notes) + [f"Evidence status: {s.evidence}", f"Slide id: {s.slide_id}"]))
+        return slide
     if ctx is not None and s.kind in FAMILY and not s.data.get("pending") and not (s.kind == "agenda" and s.data.get("details")):
         from . import layouts as LY
         from .planner import pick_icon
@@ -160,7 +253,7 @@ def build_slide(prs, L, s, brief, acc_light, acc_deep, fits, ctx=None, used=None
 
 # ------------------------------------------------------------------ QA
 NUM_RE = re.compile(r"\d+(?:\.\d+)?")
-GENERATED_NAMES = re.compile(r"number|label|Page Number|Card \d+ number|Step \d+ label")
+GENERATED_NAMES = re.compile(r"number|label|Page Number|Card \d+ number|Step \d+ label|Gauge \d+ (?:min|max)\b")
 
 
 def evidence_check(prs, brief):
