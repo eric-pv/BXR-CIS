@@ -23,3 +23,9 @@ PMLD=IN-PROGRESS
 ## 已知問題
 - `07_Templates/BXR_Presentation_Template_v3.1.pptx`、`v3.2.pptx` 在工作樹顯示為已修改（以一般 blob 提交，但 `.gitattributes` 設 `*.pptx` 為 LFS）。不提交、不修改、不還原。
 - 給 A／B 的提醒：`scripts/select-layout.py` 以 `f"PMLD-{p:04d}"` 處理 `ref`，只接受整數頁碼；工作 A 的 `ref` 是字串 `"AVI-<deck>-<page>"`，A 合併後 `--write-registry` 會失敗，`test_registry_in_sync_with_variants` 也會失敗。需在 A 或 B 的 PR 中讓 select-layout 接受字串 ref。
+
+## 使用者決定：地圖參考範圍（2026-11-09，Eric）
+公司不做中國業務，中國地圖不保留；台灣與世界地圖保留。供工作 A（地圖家族）採用：
+- 可參考：世界地圖 PMLD-0458、0459、0460、0461、0462、0463；台灣輪廓 PMLD-0501、0518、0569、0603（只取輪廓形狀；0501「中國・台灣」、0569「台灣省」等來源標籤一律不採用）。
+- 排除：其餘中國全國／省市地圖頁（PMLD-0464–0500、0502–0517、0519–0568、0570–0602、0604）。
+- Aviation 地圖也比照：只用世界與台灣地圖。
