@@ -321,21 +321,38 @@ def bar_chart(slide, categories, values, series_name, number_format='0', highlig
     return gf
 
 
-def pending_height(items, w=BODY_W, size=18):
-    return 0.95 + sum(wrap_lines("□  " + t, size, w - 0.6) for t in items) * size * 1.5 / 72
+PENDING_SIZE = 16
+
+
+def _pending_width(items, w, size=PENDING_SIZE):
+    """Narrowest card (>= 5.5 in) in which every item stays on one line; else the full width."""
+    x = 5.5
+    while x < w:
+        if all(wrap_lines("□  " + t, size, x - 0.7) <= 1 for t in items):
+            return x
+        x += 0.5
+    return w
+
+
+def pending_height(items, w=BODY_W, size=PENDING_SIZE):
+    w = _pending_width(items, w, size)
+    return 0.85 + sum(wrap_lines("□  " + t, size, w - 0.7) for t in items) * size * 1.45 / 72
 
 
 def pending_box(slide, x, y, w, h, title, items, lang="zh-TW"):
     """Evidence gap callout: tells the presenter exactly what must be supplied (never invented).
-    h=None -> height follows content (max to body bottom)."""
+    Compact: the card is only as wide as its longest item and as tall as its list (h=None),
+    a red rule + mono label instead of a full-width grey slab."""
+    cw = _pending_width(items, w)
     if h is None:
         h = min(pending_height(items, w), BODY_BOTTOM - y)
-    rect(slide, x, y, w, h, fill=B.PAPER, name="Pending input")
+    rect(slide, x, y, cw, h, fill=B.PAPER, name="Pending input")
     rect(slide, x, y, 0.05, h, fill=B.TEXT_RED, name="Pending input bar")
-    label(slide, x + 0.3, y + 0.24, w - 0.6, title, color=B.TEXT_RED, size=10, name="Pending input label")
+    label(slide, x + 0.35, y + 0.22, cw - 0.7, title, color=B.TEXT_RED, size=10, name="Pending input label")
     body = "\n".join("□  " + t for t in items)
-    size, _, fits = fit_size(body, w - 0.6, h - 0.8, [18, 16, 15, 14, 13, 12], line=1.5)
-    textbox(slide, x + 0.3, y + 0.62, w - 0.6, h - 0.8, body.split("\n"), size=size, color=B.GRAPHITE, name="Pending input items", line=1.4)
+    size, _, fits = fit_size(body, cw - 0.7, h - 0.72, [PENDING_SIZE, 15, 14, 13, 12], line=1.45)
+    textbox(slide, x + 0.35, y + 0.56, cw - 0.7, h - 0.68, body.split("\n"), size=size, color=B.GRAPHITE,
+            name="Pending input items", line=1.35)
     return fits
 
 

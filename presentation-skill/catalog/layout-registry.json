@@ -1,0 +1,707 @@
+{
+ "version": 1,
+ "description": "BXR layout registry. Status flow source-candidate -> claude-reviewed -> cis-approved. Only cis-approved layouts are approved=true; only a person promotes to cis-approved.",
+ "states": [
+  "source-candidate",
+  "claude-reviewed",
+  "cis-approved"
+ ],
+ "transitions": {
+  "source-candidate": [
+   "claude-reviewed"
+  ],
+  "claude-reviewed": [
+   "cis-approved",
+   "source-candidate"
+  ],
+  "cis-approved": [
+   "claude-reviewed"
+  ]
+ },
+ "selectable_states": [
+  "claude-reviewed",
+  "cis-approved"
+ ],
+ "source_candidates": {
+  "catalog": "presentation-skill/catalog/generated/source-slides.csv",
+  "status": "source-candidate",
+  "note": "every scanned purchased slide; not selectable until rebuilt and reviewed"
+ },
+ "record_schema": "presentation-skill/catalog/layouts.schema.json",
+ "layouts": [
+  {
+   "id": "agenda.side-visual",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 21,
+   "category": "agenda",
+   "tags": [
+    "agenda"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "agenda.side-visual",
+   "family": "agenda",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    21,
+    19,
+    20
+   ],
+   "ref_slides": [
+    "PMLD-0021",
+    "PMLD-0019",
+    "PMLD-0020"
+   ],
+   "items_min": 2,
+   "items_max": 6,
+   "needs_image": true,
+   "prefers": "",
+   "description": "Left key-visual panel with chevron edge; numbered list on the right (ref p21).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "agenda.visual-columns",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 22,
+   "category": "agenda",
+   "tags": [
+    "agenda",
+    "short"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "agenda.visual-columns",
+   "family": "agenda",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    22,
+    23,
+    27
+   ],
+   "ref_slides": [
+    "PMLD-0022",
+    "PMLD-0023",
+    "PMLD-0027"
+   ],
+   "items_min": 3,
+   "items_max": 5,
+   "needs_image": true,
+   "prefers": "short",
+   "description": "Equal columns: key-visual strip, big mono numeral, title (ref p22/p23/p27).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "agenda.list",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 19,
+   "category": "agenda",
+   "tags": [
+    "agenda"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "agenda.list",
+   "family": "agenda",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    19
+   ],
+   "ref_slides": [
+    "PMLD-0019"
+   ],
+   "items_min": 2,
+   "items_max": 10,
+   "needs_image": false,
+   "prefers": "",
+   "description": "",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "items.visual-band",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 102,
+   "category": "items",
+   "tags": [
+    "items"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "items.visual-band",
+   "family": "items",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    102,
+    151,
+    111
+   ],
+   "ref_slides": [
+    "PMLD-0102",
+    "PMLD-0151",
+    "PMLD-0111"
+   ],
+   "items_min": 2,
+   "items_max": 4,
+   "needs_image": true,
+   "prefers": "",
+   "description": "Full-width key-visual band on top, dark info band below with icon columns (ref p102/p151).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "items.raised-cards",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 112,
+   "category": "items",
+   "tags": [
+    "items"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "items.raised-cards",
+   "family": "items",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    112,
+    158,
+    159
+   ],
+   "ref_slides": [
+    "PMLD-0112",
+    "PMLD-0158",
+    "PMLD-0159"
+   ],
+   "items_min": 3,
+   "items_max": 4,
+   "needs_image": true,
+   "prefers": "",
+   "description": "Raised cards with round key-visual medallion over a dark base band (ref p112/p158).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "items.fan",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 142,
+   "category": "items",
+   "tags": [
+    "items"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "items.fan",
+   "family": "items",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    142,
+    59,
+    89
+   ],
+   "ref_slides": [
+    "PMLD-0142",
+    "PMLD-0059",
+    "PMLD-0089"
+   ],
+   "items_min": 3,
+   "items_max": 4,
+   "needs_image": true,
+   "prefers": "",
+   "description": "Semi-circle key visual at the base, items fanned along the arc (ref p142/p59).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "items.hub",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 56,
+   "category": "items",
+   "tags": [
+    "items"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "items.hub",
+   "family": "items",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    56,
+    57,
+    58
+   ],
+   "ref_slides": [
+    "PMLD-0056",
+    "PMLD-0057",
+    "PMLD-0058"
+   ],
+   "items_min": 4,
+   "items_max": 8,
+   "needs_image": true,
+   "prefers": "",
+   "description": "Central round key visual with items on a ring (4/6/8 points; ref p56–58).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "items.visual-grid",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 46,
+   "category": "items",
+   "tags": [
+    "items"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "items.visual-grid",
+   "family": "items",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    46,
+    48
+   ],
+   "ref_slides": [
+    "PMLD-0046",
+    "PMLD-0048"
+   ],
+   "items_min": 4,
+   "items_max": 6,
+   "needs_image": true,
+   "prefers": "",
+   "description": "Tall key visual left, icon grid (2 columns) right (ref p46).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "items.cards",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 103,
+   "category": "items",
+   "tags": [
+    "items"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "items.cards",
+   "family": "items",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    103
+   ],
+   "ref_slides": [
+    "PMLD-0103"
+   ],
+   "items_min": 2,
+   "items_max": 4,
+   "needs_image": false,
+   "prefers": "",
+   "description": "",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "process.stage-arrow",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 175,
+   "category": "process",
+   "tags": [
+    "process",
+    "sequence"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "process.stage-arrow",
+   "family": "process",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    175,
+    131
+   ],
+   "ref_slides": [
+    "PMLD-0175",
+    "PMLD-0131"
+   ],
+   "items_min": 3,
+   "items_max": 5,
+   "needs_image": true,
+   "prefers": "sequence",
+   "description": "Icon nodes on a connector line, visual strip per stage, chevron arrow band (ref p175).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "process.round-nodes",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 237,
+   "category": "process",
+   "tags": [
+    "process",
+    "sequence"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "process.round-nodes",
+   "family": "process",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    237,
+    254
+   ],
+   "ref_slides": [
+    "PMLD-0237",
+    "PMLD-0254"
+   ],
+   "items_min": 3,
+   "items_max": 6,
+   "needs_image": true,
+   "prefers": "sequence",
+   "description": "Statement band, then round key-visual nodes on a line with step names (ref p237).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "process.track",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 131,
+   "category": "process",
+   "tags": [
+    "process",
+    "sequence"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "process.track",
+   "family": "process",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    131,
+    441
+   ],
+   "ref_slides": [
+    "PMLD-0131",
+    "PMLD-0441"
+   ],
+   "items_min": 3,
+   "items_max": 6,
+   "needs_image": false,
+   "prefers": "sequence",
+   "description": "",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "text.visual-left",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 46,
+   "category": "text",
+   "tags": [
+    "text"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "text.visual-left",
+   "family": "text",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    46,
+    49,
+    125
+   ],
+   "ref_slides": [
+    "PMLD-0046",
+    "PMLD-0049",
+    "PMLD-0125"
+   ],
+   "items_min": 1,
+   "items_max": 4,
+   "needs_image": true,
+   "prefers": "",
+   "description": "Key visual on the left 40 %, statements with icon markers on the right (ref p46/p49).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "text.statement-band",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 63,
+   "category": "text",
+   "tags": [
+    "text"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "text.statement-band",
+   "family": "text",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    63,
+    237
+   ],
+   "ref_slides": [
+    "PMLD-0063",
+    "PMLD-0237"
+   ],
+   "items_min": 1,
+   "items_max": 2,
+   "needs_image": true,
+   "prefers": "",
+   "description": "Wide key visual with a dark statement panel overlapping it (ref p63).",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "text.bullets",
+   "source_file": "presentation-skill/bxr_deck/compose.py",
+   "source_slide": 1,
+   "category": "text",
+   "tags": [
+    "text",
+    "long"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "text.bullets",
+   "family": "text",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "native",
+   "ref_pages": [],
+   "ref_slides": [],
+   "items_min": 3,
+   "items_max": 8,
+   "needs_image": false,
+   "prefers": "long",
+   "description": "",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "data.kpi-visuals",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 155,
+   "category": "data",
+   "tags": [
+    "data"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "data.kpi-visuals",
+   "family": "data",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    155,
+    73,
+    179
+   ],
+   "ref_slides": [
+    "PMLD-0155",
+    "PMLD-0073",
+    "PMLD-0179"
+   ],
+   "items_min": 2,
+   "items_max": 4,
+   "needs_image": true,
+   "prefers": "",
+   "description": "KPI numerals row, visual strip below, source note (ref p155/p73). Values only from the brief.",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "data.chart",
+   "source_file": "presentation-skill/source-library/500頁.pptx",
+   "source_slide": 125,
+   "category": "data",
+   "tags": [
+    "data"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "data.chart",
+   "family": "data",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    125,
+    135
+   ],
+   "ref_slides": [
+    "PMLD-0125",
+    "PMLD-0135"
+   ],
+   "items_min": 2,
+   "items_max": 12,
+   "needs_image": false,
+   "prefers": "",
+   "description": "",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  }
+ ]
+}
