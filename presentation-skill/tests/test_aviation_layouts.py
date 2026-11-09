@@ -156,7 +156,7 @@ class AviationLayoutTests(unittest.TestCase):
                 self.assertLessEqual(y + h, FOOTER_TOP, where)                   # never covers the master footer
 
     def test_text_is_editable_text(self):
-        for v, n, slide in self.slides():
+        for (v, n, long), slide in zip(cases(), self.prs.slides):
             texts = [s for s in slide.shapes if not s.is_placeholder and s.has_text_frame and s.text_frame.text.strip()]
             tables = [s for s in slide.shapes if s.has_table]
             self.assertTrue(texts or tables, v.name)
@@ -167,10 +167,16 @@ class AviationLayoutTests(unittest.TestCase):
                     self.assertNotIn(h, self.logos, f"{v.name}: logo placed on slide")
             # every content string of the sample appears as live text (not baked into an image)
             all_text = " ".join(s.text_frame.text for s in texts) + " ".join(c.text for t in tables for r in t.table.rows for c in r.cells)
-            items, extra = sample(v.family, n, False)
+            items, extra = sample(v.family, n, long)
             for it in items:
                 key = it if isinstance(it, str) else it.get("label") or it.get("title") or it.get("name") or it.get("role")
                 self.assertIn(key[:6], all_text, f"{v.name} n={n}: '{key}' not found as text")
+            bodies = [it.get("body") for it in items if isinstance(it, dict) and it.get("body")]
+            if bodies:   # supplied body text is never silently dropped, however dense the layout
+                self.assertGreaterEqual(all_text.count(bodies[0]), len(bodies), f"{v.name} n={n}: body text missing")
+            for it in items:
+                for val in (it.get("values") or []) if isinstance(it, dict) else []:
+                    self.assertIn(val, all_text, f"{v.name} n={n}: value '{val}' missing")
 
     def test_no_text_overflow_or_text_overlap(self):
         problems = []

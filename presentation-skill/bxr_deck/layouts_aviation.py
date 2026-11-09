@@ -82,6 +82,22 @@ def _title_body(slide, x, y, w, h, title, body, name, tsizes=(20, 18, 16, 14), b
         if room > 0.25:
             bs = _fit(body, w, room, list(bsizes), line=1.4)
             _txt(slide, x, y + th + 0.12, w, room, body, bs, bcolor, align=align, name=f"{name} text", line=1.35)
+        else:   # dense layout: never drop supplied text — re-set title + body together, smaller
+            slide.shapes._spTree.remove(slide.shapes[-1]._element)
+            _compact(slide, x, y, w, h, title, body, name, align=align, tcolor=tcolor, bcolor=bcolor)
+
+
+def _compact(slide, x, y, w, h, title, body, name, align=PP_ALIGN.LEFT, anchor=MSO_ANCHOR.TOP, tcolor=B.BLACK, bcolor=B.SLATE):
+    """Title and body as two paragraphs of one text box, sizes fitted jointly (used when space is tight)."""
+    pairs = [(18, 13), (16, 12), (15, 12), (14, 11), (13, 11), (12, 10), (11, 10), (10, 9)]
+    for ts, bs in pairs:
+        need = C.wrap_lines(title, ts, w) * ts * 1.15 / 72 + C.wrap_lines(body, bs, w) * bs * 1.25 / 72
+        if need * 1.1 <= h:
+            break
+    tb = _txt(slide, x, y, w, h, title, ts, tcolor, align=align, anchor=anchor, name=f"{name} title + text", line=1.1)
+    p = tb.text_frame.add_paragraph(); p.alignment = align; p.line_spacing = 1.2
+    r = p.add_run(); r.text = body; r.font.size = Pt(bs); r.font.color.rgb = C.rgb(bcolor); r.font.bold = False
+    return tb
 
 
 def _arc(slide, x, y, d, start, end, fill, thick=18000, name=None):
@@ -300,6 +316,8 @@ def timeline_vertical(slide, items, ctx):
         if body and bh > 0.25:
             _txt(slide, tx, y + 0.1, tw, 0.45, title, ts, B.BLACK, anchor=MSO_ANCHOR.BOTTOM, name=f"Milestone {i + 1} title")
             _txt(slide, tx, y + 0.6, tw, bh, body, _fit(body, tw, bh, [14, 13, 12, 11], line=1.35), B.SLATE, name=f"Milestone {i + 1} text", line=1.3)
+        elif body:   # tight rows: keep the body, set both in one box
+            _compact(slide, tx, y + 0.06, tw, rh - 0.12, title, body, f"Milestone {i + 1}", anchor=MSO_ANCHOR.MIDDLE)
         else:
             _txt(slide, tx, y, tw, rh, title, ts, B.BLACK, anchor=MSO_ANCHOR.MIDDLE, name=f"Milestone {i + 1} title")
         if i < n - 1: C.hline(slide, tx, y + rh, tw, name=f"Milestone {i + 1} rule")
