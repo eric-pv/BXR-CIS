@@ -47,8 +47,8 @@ def _title(slide, text, layout):
     elif layout == "BXR Section":
         size, n, _ = C.fit_size(text, 4.9, 1.0, [30, 28, 26, 24], line=1.1, max_lines=2)
     else:
-        size, n, _ = C.fit_size(text, 8.5, 0.5, [24, 22, 20, 18], line=1.0, max_lines=1)
-    C.set_text(t, text, size=None if size in (40, 36, 30, 24) and layout != "BXR Closing" or (layout == "BXR Closing" and size == 36) else size)
+        size, n, _ = C.fit_size(text, 8.5, 0.7, [30, 28, 26, 24, 22, 20], line=1.0, max_lines=1)
+    C.set_text(t, text, size=None if size in (40, 36, 30) and layout != "BXR Closing" or (layout == "BXR Closing" and size == 36) else size)
     return size
 
 
@@ -90,9 +90,9 @@ def build_slide(prs, L, s, brief, acc_light, acc_deep, fits, ctx=None, used=None
     if k == "cover":
         C.set_text(P(slide, 1), d["subtitle"]); C.set_text(P(slide, 10), f"{datetime.date.today():%Y.%m} · {d['meta']} · BIG X REALITY")
     elif k == "section":
-        C.set_text(P(slide, 10), d["number"]); C.set_text(P(slide, 11), "SECTION " + d["number"])
+        C.set_text(P(slide, 10), d["number"])
     elif k == "closing":
-        C.set_text(P(slide, 10), d["text"]); C.set_text(P(slide, 11), "BIG X REALITY")
+        C.set_text(P(slide, 10), d["text"])
     elif k == "agenda":
         C.agenda(slide, d["items"], details=d.get("details"))
     elif k == "statement":

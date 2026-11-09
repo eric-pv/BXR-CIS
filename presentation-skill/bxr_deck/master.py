@@ -184,7 +184,7 @@ def master_xml(layout_rids):
         f'<a:spcBef><a:spcPts val="300"/></a:spcBef><a:buFont typeface="Arial"/><a:buChar char="&#8211;"/>{rpr(14, color=B.SLATE)}</a:lvl3pPr>')
     for n in range(4, 10):
         body_lvls += f'<a:lvl{n}pPr marL="{e(0.80)}" indent="0"><a:buNone/>{rpr(14, color=B.SLATE)}</a:lvl{n}pPr>'
-    title_rpr = rpr(24, color=B.WHITE).replace("<a:defRPr", '<a:defRPr kern="1200"')
+    title_rpr = rpr(30, color=B.WHITE).replace("<a:defRPr", '<a:defRPr kern="1200"')
     title_lvl = f'<a:lvl1pPr algn="l"><a:lnSpc><a:spcPct val="100000"/></a:lnSpc><a:spcBef><a:spcPts val="0"/></a:spcBef><a:buNone/>{title_rpr}</a:lvl1pPr>'
     ids = "".join(f'<p:sldLayoutId id="{2147483649 + i}" r:id="{rid}"/>' for i, rid in enumerate(layout_rids))
     return (f'<p:sldMaster {NSDECL}><p:cSld><p:bg><p:bgPr><a:solidFill><a:srgbClr val="FFFFFF"/></a:solidFill><a:effectLst/></p:bgPr></p:bg><p:spTree>'
@@ -213,14 +213,14 @@ def build_layouts(parts):
     p = parts[0]; bg = img(p, B.BG["cover"]); lg = img(p, B.LOGO / "BXR_Logo_H_Reverse.png")
     lw, lh = logo_size(B.LOGO / "BXR_Logo_H_Reverse.png", 0.46)
     out.append(layout_xml("BXR Cover", "title", bg_xml(bg, B.BG["cover"]), [
-        pic(2, "Logo (master-managed)", lg, L_COVER, 0.62, lw, lh),
+        pic(2, "Logo (master-managed)", lg, SW - 0.70 - lw, 0.58, lw, lh),   # top-right (Eric 2026-11-09)
         ph(3, "Title", "ctrTitle", None, L_COVER, 2.10, SW - L_COVER - 0.70, HORIZON_COVER - 0.20 - 2.10,
            lvl(1, 40, B.WHITE, ln=104), "簡報標題\nPresentation title", anchor="b"),
         rect(4, "Reality Line", L_COVER, HORIZON_COVER - RL_H / 2, 0.90, RL_H, B.RED),
         ph(5, "Subtitle", "subTitle", 1, L_COVER, HORIZON_COVER + 0.19, SW - L_COVER - 0.70, 0.62,
            lvl(1, 16, B.MIST, ln=115), "副標題｜簡報目的與對象"),
-        ph(6, "Meta", "body", 10, L_COVER, HORIZON_COVER + 0.86, SW - L_COVER - 0.70, 0.30,
-           kicker_dark(B.ASH, 10), "2026.11 · ORGANIZATION · PRESENTER"),
+        ph(6, "Meta", "body", 10, L_COVER, HORIZON_COVER + 0.86, SW - L_COVER - 0.70, 0.40,
+           lvl(1, 14, B.WHITE), "2026.11 · ORGANIZATION · PRESENTER", autofit="none"),
     ], show_master=False))
 
     # 2 Section -------------------------------------------------------------
@@ -231,9 +231,7 @@ def build_layouts(parts):
         ph(3, "Chapter Number", "body", 10, L_SEC, 2.20, 4.9, HORIZON_SEC - 0.10 - 2.20,
            lvl(1, 96, B.RED, ln=85), "01", anchor="b", autofit="none"),
         rect(4, "Reality Line", L_SEC, HORIZON_SEC - RL_H / 2, 0.80, RL_H, B.RED),
-        ph(6, "Section Label", "body", 11, L_SEC, HORIZON_SEC + 0.14, SW - L_SEC - 0.62, 0.26,
-           kicker_dark(B.SIM_CYAN, 10), "SECTION LABEL", autofit="none"),
-        ph(5, "Section Title", "title", None, L_SEC, HORIZON_SEC + 0.44, SW - L_SEC - 0.62, 1.05,
+        ph(5, "Section Title", "title", None, L_SEC, HORIZON_SEC + 0.22, SW - L_SEC - 0.62, 1.05,
            lvl(1, 30, B.WHITE, ln=108), "章節名稱"),
     ], show_master=False))
 
@@ -243,15 +241,12 @@ def build_layouts(parts):
         cw, ch = logo_size(B.LOGO / "BXR_Logo_H_Color.png", 0.28)
         num = (f'<a:fld id="{{B5A1D1E2-0000-4000-8000-00000000000{start_id % 10}}}" type="slidenum">'
                f'{rpr(9, B.GRAPHITE, B.MONO, tag="a:rPr", lang="en-US")}<a:t>‹#›</a:t></a:fld>')
-        foot = f'<a:r>{rpr(8, B.ASH, B.MONO, spc=160, tag="a:rPr", lang="en-US")}<a:t>BIG X REALITY</a:t></a:r>'
         return [textbox(start_id, "Page Number", M, 6.93, 0.40, 0.26, num),
                 rect(start_id + 1, "Reality Line", M + 0.45, 7.06 - RL_H / 2, 0.42, RL_H, B.RED),
-                textbox(start_id + 2, "Footer", M + 1.02, 6.93, 4.0, 0.26, foot),
                 pic(start_id + 3, "Logo (master-managed)", lg, SW - M - cw, 6.92, cw, ch)]
 
     def banner(title_w=8.6):
-        return [ph(2, "Kicker", "body", 10, M, 0.17, title_w, 0.24, kicker_dark(), "SECTION · LABEL", anchor="b", autofit="none"),
-                ph(3, "Title", "title", None, M, 0.42, title_w, 0.52, lvl(1, 24, B.WHITE), "內容頁標題（位於上方 Banner）", anchor="t")]
+        return [ph(3, "Title", "title", None, M, 0.14, title_w, 0.76, lvl(1, 30, B.WHITE), "內容頁標題（位於上方 Banner）", anchor="ctr")]
 
     content_bg = lambda part: bg_xml(img(part, B.BG["content"]), B.BG["content"])
     body_w = SW - 2 * M
@@ -276,7 +271,6 @@ def build_layouts(parts):
         rect(4, "Reality Line", L_COVER, HORIZON_COVER - RL_H / 2, 0.90, RL_H, B.RED),
         ph(5, "Closing Text", "body", 10, L_COVER, HORIZON_COVER + 0.19, SW - L_COVER - 0.70, 0.62,
            lvl(1, 14, B.MIST, ln=120), "全球動力科技股份有限公司 · bigxreality.com"),
-        ph(6, "Contact", "body", 11, L_COVER, HORIZON_COVER + 0.86, SW - L_COVER - 0.70, 0.30, kicker_dark(B.ASH, 10), "CONTACT"),
     ], show_master=False))
     return out
 
