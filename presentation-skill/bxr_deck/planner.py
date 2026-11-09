@@ -239,6 +239,7 @@ def plan(brief, previous=None):
         for s in final:
             if s.slide_id in prev and prev[s.slide_id].get("role") == s.role:
                 s.data["_kept_from_previous"] = True
+                s.data["_prev_variant"] = prev[s.slide_id].get("layout_source", {}).get("variant")
     return final, warnings, unverified
 
 
@@ -248,7 +249,8 @@ def to_plan_json(brief, slides, unverified, status="ready-for-review", qa=None):
     for s in slides:
         bg = LAYOUT_BG.get(s.layout, "content")
         entry = {"slide_id": s.slide_id, "role": s.role, "message": s.message, "content_refs": s.content_refs,
-                 "layout_source": {"kind": "approved-background", "path": rel(B.BG[bg])},
+                 "layout_source": {"kind": "approved-background", "path": rel(B.BG[bg]),
+                                   **({"variant": s.data["_variant"]} if s.data.get("_variant") else {})},
                  "editable_elements": sorted(set(s.editable + ["page-number"] * (bg == "content") + ["notes"])),
                  "evidence_status": s.evidence}
         if qa and s.slide_id in qa: entry["qa"] = qa[s.slide_id]

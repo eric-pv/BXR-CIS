@@ -43,7 +43,7 @@ git lfs pull
 python -m bxr_deck build --brief tests/fixtures/briefs/police-xr-overview.json --output out/ --no-render
 ```
 
-- `--previous-plan out/<id>.plan.json`：修訂 brief 時沿用先前的版型選擇（slide id 以內容為鍵）。
+- `--previous-plan out/<id>.plan.json`：改稿時沿用上一版每頁的版型變體（記錄在 plan 的 `layout_source.variant`）；只修改一段內容時，其他頁面版型不變。
 - 結束碼：`0` QA PASS、`1` QA FAIL、`2` brief 不符合 schema（例如 `slides=0`、`language=ja`）。
 
 把大綱文字轉成 brief（語言標記一律用 `zh-TW`、`en`、`JP`）：
@@ -82,6 +82,10 @@ python tests/test_master.py
 
 ```bash
 python tests/test_pipeline.py
+```
+
+```bash
+python tests/test_acceptance.py
 ```
 
 `test_pipeline.py` 以 `--no-render` 跑完 6 份 fixture，不需要 LibreOffice；source-library SHA256 檢查在沒有 LFS 檔時會 skip。

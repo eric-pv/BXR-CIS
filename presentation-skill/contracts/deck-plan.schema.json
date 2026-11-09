@@ -89,6 +89,10 @@
               "slide_number": {
                 "type": "integer",
                 "minimum": 1
+              },
+              "variant": {
+                "type": "string",
+                "description": "bxr_deck content-layout variant (bxr_deck/layouts.py), kept on regeneration with --previous-plan"
               }
             }
           },

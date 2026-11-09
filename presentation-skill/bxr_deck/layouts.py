@@ -113,9 +113,13 @@ def features(items):
     return {"n": len(items), "avg": sum(lens) / len(lens), "max": max(lens)}
 
 
-def select(family, items, used, sequence=False):
-    """Score variants for this content; penalise those already used in the deck."""
+def select(family, items, used, sequence=False, prefer=None):
+    """Score variants for this content; penalise those already used in the deck.
+    `prefer` (variant name from a previous plan) wins whenever it still fits this content."""
     f = features(items); best = None
+    for v in VARIANTS:
+        if prefer and v.name == prefer and v.family == family and v.nmin <= f["n"] <= v.nmax:
+            return v
     for v in VARIANTS:
         if v.family != family or not (v.nmin <= f["n"] <= v.nmax): continue
         s = 10.0
