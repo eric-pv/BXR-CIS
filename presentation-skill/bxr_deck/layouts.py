@@ -16,7 +16,7 @@ from pathlib import Path
 from pptx.enum.shapes import MSO_SHAPE
 from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from pptx.util import Inches, Pt
-from PIL import Image
+from PIL import Image, ImageStat
 from . import brand as B
 from . import compose as C
 from .icons import add_icon
@@ -45,21 +45,49 @@ KV_TACTICAL = {   # armed figures: only for police / defense sector decks
 }
 
 
+MAX_KV_REPEAT = 2          # one key visual appears at most twice per deck
+_TONE = {}
+_ACTIVE = [None]           # picker of the deck being built (lets select() respect image capacity)
+
+
+def kv_tone(f):
+    """'dark' | 'light' from the image's mean luminance (cached)."""
+    if f not in _TONE:
+        with Image.open(KV_DIR / f) as im:
+            lum = ImageStat.Stat(im.convert("L").resize((64, 36))).mean[0] / 255
+        _TONE[f] = "dark" if lum < 0.45 else "light"
+    return _TONE[f]
+
+
 class KVPicker:
-    """Pick approved key visuals by keyword, avoiding repeats inside one deck."""
+    """Pick approved key visuals by keyword for one deck.
+    Rules: a visual is used at most MAX_KV_REPEAT times; consecutive picks alternate light/dark tone;
+    corporate decks only get the weapon-free pool (tactical visuals only for police/defense sectors)."""
     def __init__(self, sector=None):
         self.used = []
         self.sector = sector
         self.pool = dict(KV_TAGS)
         if sector in ("police", "army", "navy", "air"):
             self.pool.update(KV_TACTICAL)
+        self.overflow = 0
+        _ACTIVE[0] = self
+
+    def remaining(self):
+        return sum(max(0, MAX_KV_REPEAT - self.used.count(f)) for f in self.pool)
 
     def pick(self, text):
         t = (text or "").lower()
+        last = kv_tone(self.used[-1]) if self.used else None
+        free = [f for f in self.pool if self.used.count(f) < MAX_KV_REPEAT]
+        if not free:                       # select() avoids this; recorded so QA can flag it
+            self.overflow += 1
+            free = list(self.pool)
         scored = []
-        for i, (f, tags) in enumerate(self.pool.items()):
-            s = sum(1 for k in tags.split() if k in t)
+        for i, f in enumerate(self.pool):
+            if f not in free: continue
+            s = sum(1 for k in self.pool[f].split() if k in t)
             s -= 3 * self.used.count(f)
+            if last and kv_tone(f) != last: s += 1.5
             scored.append((s, -i, f))
         f = max(scored)[2]
         self.used.append(f)
@@ -98,13 +126,18 @@ class Variant:
     render: object
     needs_image: bool = False
     prefers: str = ""        # 'short' | 'long' | 'sequence' | ''
+    per_item_image: bool = False   # one key visual per item (else one per slide)
+
+    def images(self, n):
+        return (n if self.per_item_image else 1) if self.needs_image else 0
 
 VARIANTS = []
+PER_ITEM_IMAGE = {"agenda.visual-columns", "items.raised-cards", "process.stage-arrow", "process.round-nodes", "data.kpi-visuals"}
 
 
 def variant(name, family, ref, nmin, nmax, needs_image=False, prefers=""):
     def deco(fn):
-        VARIANTS.append(Variant(name, family, ref, nmin, nmax, fn, needs_image, prefers)); return fn
+        VARIANTS.append(Variant(name, family, ref, nmin, nmax, fn, needs_image, prefers, name in PER_ITEM_IMAGE)); return fn
     return deco
 
 
@@ -117,11 +150,14 @@ def select(family, items, used, sequence=False, prefer=None):
     """Score variants for this content; penalise those already used in the deck.
     `prefer` (variant name from a previous plan) wins whenever it still fits this content."""
     f = features(items); best = None
+    kv = _ACTIVE[0]
+    room = kv.remaining() if kv is not None else 10 ** 6
     for v in VARIANTS:
-        if prefer and v.name == prefer and v.family == family and v.nmin <= f["n"] <= v.nmax:
+        if prefer and v.name == prefer and v.family == family and v.nmin <= f["n"] <= v.nmax and v.images(f["n"]) <= room:
             return v
     for v in VARIANTS:
         if v.family != family or not (v.nmin <= f["n"] <= v.nmax): continue
+        if v.images(f["n"]) > room: continue          # would repeat a key visual more than MAX_KV_REPEAT
         s = 10.0
         if v.prefers == "short": s += 2 if f["max"] <= 14 else -4
         if v.prefers == "long": s += 2 if f["avg"] > 14 else -1
@@ -205,17 +241,28 @@ def items_band(slide, items, ctx):
 
 @variant("items.raised-cards", "items", (112, 158, 159), 3, 4, needs_image=True)
 def items_cards(slide, items, ctx):
-    """Raised cards with round key-visual medallion, on a dark base band (ref p112/p158)."""
+    """Raised cards with round key-visual medallion over a dark base band (ref p112/p158).
+    With body text the cards run tall; title-only cards shrink to their content and sit centred
+    across the band, so no card carries an empty lower half."""
     n = len(items); gap = 0.3; w = (W - 0.6 - gap * (n - 1)) / n
-    base_y = TOP + 2.6
-    C.rect(slide, M, base_y, W, BOT - base_y, fill=B.BLACK, name="Base band")
     summary = ctx.extra.get("summary")
+    has_body = any(_item_body(it) for it in items)
+    d = 1.35
+    if has_body:
+        y = TOP + 0.15; h = (BOT - 1.1 if summary else BOT - 0.35) - y
+        base_y = TOP + 2.6
+    else:
+        h = 3.3                                   # medallion + title + rule, nothing below
+        y = TOP + (BOT - TOP - h) / 2 - (0.35 if summary else 0.1)
+        base_y = y + h * 0.55                     # band crosses the cards' lower half
+    C.rect(slide, M, base_y, W, BOT - base_y, fill=B.BLACK, name="Base band")
     if summary:
-        _txt(slide, M + 0.4, BOT - 0.95, W - 0.8, 0.7, summary, 15, B.MIST, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, name="Summary")
+        sy = y + h + 0.15 if not has_body else BOT - 0.95
+        _txt(slide, M + 0.4, sy, W - 0.8, min(0.7, BOT - sy - 0.05), summary, 15, B.MIST, align=PP_ALIGN.CENTER,
+             anchor=MSO_ANCHOR.MIDDLE, name="Summary")
     for i, it in enumerate(items):
-        x = M + 0.3 + i * (w + gap); y = TOP + 0.15; h = (BOT - 1.1 if summary else BOT - 0.35) - y
+        x = M + 0.3 + i * (w + gap)
         C.rect(slide, x, y, w, h, fill=B.WHITE, line=B.LINE, name=f"Card {i + 1}")
-        d = 1.35
         oval_picture(slide, ctx.kv.pick(_item_title(it)), x + (w - d) / 2, y + 0.35, d, name=f"Card {i + 1} visual")
         t = _item_title(it)
         _txt(slide, x + 0.25, y + 1.95, w - 0.5, 0.85, t, _fit(t, w - 0.5, 0.85, [22, 20, 18, 16], max_lines=2), align=PP_ALIGN.CENTER,

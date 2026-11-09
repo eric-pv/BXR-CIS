@@ -1,0 +1,1785 @@
+{
+ "generator": "build-source-catalog.py 1.0",
+ "parse_limit_mb": 8.0,
+ "sources": {
+  "500頁.pptx": "b7dab6f439a5c04fa1dd9b760c387db5febb694f11e8be95d5745975ee9df50a",
+  "Aviation Slides.zip": "a6d47149fb2e7eeeb705b2e4dd3b6b350a72c2126619770fef80e4d94e8225dc"
+ },
+ "slides_total": 5788,
+ "by_library": {
+  "500pages": 604,
+  "aviation": 5184
+ },
+ "decks_total": 250,
+ "parsed": 5755,
+ "unparsed": [
+  {
+   "slide_id": "PMLD-0248",
+   "source_file": "500頁.pptx",
+   "page": 248,
+   "slide_xml_bytes": 16593369,
+   "reason": "slide XML 16.6 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-198-0010",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Project Management Powerpoint Infographics/Project Management Infographics.pptx",
+   "page": 10,
+   "slide_xml_bytes": 9011881,
+   "reason": "slide XML 9.0 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-244-0008",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Watercolor Powerpoint Infographics/Watercolor Infographics.pptx",
+   "page": 8,
+   "slide_xml_bytes": 10288678,
+   "reason": "slide XML 10.3 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-244-0011",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Watercolor Powerpoint Infographics/Watercolor Infographics.pptx",
+   "page": 11,
+   "slide_xml_bytes": 15031257,
+   "reason": "slide XML 15.0 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-244-0012",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Watercolor Powerpoint Infographics/Watercolor Infographics.pptx",
+   "page": 12,
+   "slide_xml_bytes": 8461716,
+   "reason": "slide XML 8.5 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-244-0015",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Watercolor Powerpoint Infographics/Watercolor Infographics.pptx",
+   "page": 15,
+   "slide_xml_bytes": 9484482,
+   "reason": "slide XML 9.5 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-244-0017",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Watercolor Powerpoint Infographics/Watercolor Infographics.pptx",
+   "page": 17,
+   "slide_xml_bytes": 12363395,
+   "reason": "slide XML 12.4 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-244-0018",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Watercolor Powerpoint Infographics/Watercolor Infographics.pptx",
+   "page": 18,
+   "slide_xml_bytes": 20544474,
+   "reason": "slide XML 20.5 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-244-0019",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Watercolor Powerpoint Infographics/Watercolor Infographics.pptx",
+   "page": 19,
+   "slide_xml_bytes": 9584629,
+   "reason": "slide XML 9.6 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-244-0021",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Watercolor Powerpoint Infographics/Watercolor Infographics.pptx",
+   "page": 21,
+   "slide_xml_bytes": 19046890,
+   "reason": "slide XML 19.0 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-244-0024",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Watercolor Powerpoint Infographics/Watercolor Infographics.pptx",
+   "page": 24,
+   "slide_xml_bytes": 18938794,
+   "reason": "slide XML 18.9 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-244-0025",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Watercolor Powerpoint Infographics/Watercolor Infographics.pptx",
+   "page": 25,
+   "slide_xml_bytes": 17779555,
+   "reason": "slide XML 17.8 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-244-0028",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Watercolor Powerpoint Infographics/Watercolor Infographics.pptx",
+   "page": 28,
+   "slide_xml_bytes": 15697725,
+   "reason": "slide XML 15.7 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-248-0001",
+   "source_file": "Aviation Slides.zip!/World Map Slides/World Map Powerpoint Infographics/World Map Infographics.pptx",
+   "page": 1,
+   "slide_xml_bytes": 17028270,
+   "reason": "slide XML 17.0 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-248-0002",
+   "source_file": "Aviation Slides.zip!/World Map Slides/World Map Powerpoint Infographics/World Map Infographics.pptx",
+   "page": 2,
+   "slide_xml_bytes": 14556369,
+   "reason": "slide XML 14.6 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-248-0003",
+   "source_file": "Aviation Slides.zip!/World Map Slides/World Map Powerpoint Infographics/World Map Infographics.pptx",
+   "page": 3,
+   "slide_xml_bytes": 14148396,
+   "reason": "slide XML 14.1 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-248-0004",
+   "source_file": "Aviation Slides.zip!/World Map Slides/World Map Powerpoint Infographics/World Map Infographics.pptx",
+   "page": 4,
+   "slide_xml_bytes": 14754936,
+   "reason": "slide XML 14.8 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-248-0005",
+   "source_file": "Aviation Slides.zip!/World Map Slides/World Map Powerpoint Infographics/World Map Infographics.pptx",
+   "page": 5,
+   "slide_xml_bytes": 14600209,
+   "reason": "slide XML 14.6 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-248-0006",
+   "source_file": "Aviation Slides.zip!/World Map Slides/World Map Powerpoint Infographics/World Map Infographics.pptx",
+   "page": 6,
+   "slide_xml_bytes": 14577022,
+   "reason": "slide XML 14.6 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-248-0007",
+   "source_file": "Aviation Slides.zip!/World Map Slides/World Map Powerpoint Infographics/World Map Infographics.pptx",
+   "page": 7,
+   "slide_xml_bytes": 14587109,
+   "reason": "slide XML 14.6 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-248-0008",
+   "source_file": "Aviation Slides.zip!/World Map Slides/World Map Powerpoint Infographics/World Map Infographics.pptx",
+   "page": 8,
+   "slide_xml_bytes": 14077109,
+   "reason": "slide XML 14.1 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-248-0009",
+   "source_file": "Aviation Slides.zip!/World Map Slides/World Map Powerpoint Infographics/World Map Infographics.pptx",
+   "page": 9,
+   "slide_xml_bytes": 14706788,
+   "reason": "slide XML 14.7 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-248-0010",
+   "source_file": "Aviation Slides.zip!/World Map Slides/World Map Powerpoint Infographics/World Map Infographics.pptx",
+   "page": 10,
+   "slide_xml_bytes": 17147850,
+   "reason": "slide XML 17.1 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-248-0011",
+   "source_file": "Aviation Slides.zip!/World Map Slides/World Map Powerpoint Infographics/World Map Infographics.pptx",
+   "page": 11,
+   "slide_xml_bytes": 16197361,
+   "reason": "slide XML 16.2 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-248-0012",
+   "source_file": "Aviation Slides.zip!/World Map Slides/World Map Powerpoint Infographics/World Map Infographics.pptx",
+   "page": 12,
+   "slide_xml_bytes": 13839366,
+   "reason": "slide XML 13.8 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-248-0013",
+   "source_file": "Aviation Slides.zip!/World Map Slides/World Map Powerpoint Infographics/World Map Infographics.pptx",
+   "page": 13,
+   "slide_xml_bytes": 14763007,
+   "reason": "slide XML 14.8 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-248-0014",
+   "source_file": "Aviation Slides.zip!/World Map Slides/World Map Powerpoint Infographics/World Map Infographics.pptx",
+   "page": 14,
+   "slide_xml_bytes": 14595422,
+   "reason": "slide XML 14.6 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-248-0015",
+   "source_file": "Aviation Slides.zip!/World Map Slides/World Map Powerpoint Infographics/World Map Infographics.pptx",
+   "page": 15,
+   "slide_xml_bytes": 14963064,
+   "reason": "slide XML 15.0 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-248-0016",
+   "source_file": "Aviation Slides.zip!/World Map Slides/World Map Powerpoint Infographics/World Map Infographics.pptx",
+   "page": 16,
+   "slide_xml_bytes": 14837684,
+   "reason": "slide XML 14.8 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-248-0017",
+   "source_file": "Aviation Slides.zip!/World Map Slides/World Map Powerpoint Infographics/World Map Infographics.pptx",
+   "page": 17,
+   "slide_xml_bytes": 14581356,
+   "reason": "slide XML 14.6 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-248-0018",
+   "source_file": "Aviation Slides.zip!/World Map Slides/World Map Powerpoint Infographics/World Map Infographics.pptx",
+   "page": 18,
+   "slide_xml_bytes": 14574330,
+   "reason": "slide XML 14.6 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-248-0019",
+   "source_file": "Aviation Slides.zip!/World Map Slides/World Map Powerpoint Infographics/World Map Infographics.pptx",
+   "page": 19,
+   "slide_xml_bytes": 14579938,
+   "reason": "slide XML 14.6 MB exceeds 8 MB parse limit"
+  },
+  {
+   "slide_id": "AVI-248-0020",
+   "source_file": "Aviation Slides.zip!/World Map Slides/World Map Powerpoint Infographics/World Map Infographics.pptx",
+   "page": 20,
+   "slide_xml_bytes": 14539943,
+   "reason": "slide XML 14.5 MB exceeds 8 MB parse limit"
+  }
+ ],
+ "deck_errors": [],
+ "aspect_ratios": {
+  "16:9": 5788
+ },
+ "categories": {
+  "agenda": 40,
+  "closing": 41,
+  "comparison": 42,
+  "data": 331,
+  "general": 100,
+  "image-feature": 46,
+  "image-grid": 367,
+  "infographic": 3848,
+  "process": 240,
+  "table": 137,
+  "team": 53,
+  "text-dense": 213,
+  "text-list": 150,
+  "timeline": 147,
+  "unparsed": 33
+ },
+ "with_charts": 331,
+ "with_tables": 143,
+ "with_smartart": 0,
+ "with_timing": 921,
+ "with_media": 0,
+ "status": {
+  "source-candidate": 5788
+ },
+ "notes": [
+  "Structural catalog only; no thumbnails and no slide text are stored.",
+  "Categories are heuristics from slide XML content, never from file names.",
+  "Every row is source-candidate; p:timing presence is not proof that an animation plays correctly.",
+  "Third-party logos / watermarks / licence marks are not detected automatically; keep them when reusing."
+ ],
+ "decks": [
+  {
+   "deck_id": "PMLD",
+   "source_file": "500頁.pptx",
+   "sha256": "b7dab6f439a5c04fa1dd9b760c387db5febb694f11e8be95d5745975ee9df50a",
+   "slides": 604
+  },
+  {
+   "deck_id": "AVI-001",
+   "source_file": "Aviation Slides.zip!/Aviation Slides/30 60 90 Day Plan Powerpoint Infographics/30 60 90 Days Plan.pptx",
+   "sha256": "c575dd69f822014f621865bef2625f0a3d87f17eb0cd0f435f24bd71c339bed9",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-002",
+   "source_file": "Aviation Slides.zip!/Aviation Slides/3D Powerpoint Infographics/3D Infographics.pptx",
+   "sha256": "46707e946ab01f5d2c3e3db07a09edb73ce54689d832330bc8337545a63b11eb",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-003",
+   "source_file": "Aviation Slides.zip!/Aviation Slides/5 STEPS Slides/5 STEPS Slides Powerpoint Template.pptx",
+   "sha256": "f8fb61d07aef86043fc2236e2265e3129ae1a253b2b3f036e47fb4a4345665ce",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-004",
+   "source_file": "Aviation Slides.zip!/Aviation Slides/5G Powerpoint Infographics/5G Slides.pptx",
+   "sha256": "8d8efd83cf2b344cf184292e2038a6c98d5f539a95faf235a2dc1bf8388b8f6d",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-005",
+   "source_file": "Aviation Slides.zip!/Aviation Slides/AIDA Powerpoint Infographics/AIDA Model Infographics.pptx",
+   "sha256": "2385b461bd9970ac4475332f1f11a316a258ff45da7e207ca5bf6d1ca9913577",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-006",
+   "source_file": "Aviation Slides.zip!/Aviation Slides/Africa Map Powerpoint Infographics/Africa Map Infographics.pptx",
+   "sha256": "6a5457b059d6174fb66c30841b4c1bd92246e030a2953420f0cd24528cf436c2",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-007",
+   "source_file": "Aviation Slides.zip!/Aviation Slides/Agenda Powerpoint Infographics/Agenda Powerpoint Slides.pptx",
+   "sha256": "6946255f9defd295b8179ffdafe029ca6a611446d9d2f86689a6261c6c2e1205",
+   "slides": 25
+  },
+  {
+   "deck_id": "AVI-008",
+   "source_file": "Aviation Slides.zip!/Aviation Slides/Agenda Powerpoint Infographics/Agenda Slides.pptx",
+   "sha256": "58009a7fc8fb6208c3f672336cb49dc8ed09e4c89cf3b9aa1d4244ed4c80cba4",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-009",
+   "source_file": "Aviation Slides.zip!/Aviation Slides/Agile Powerpoint Infographics/Agile Methodology.pptx",
+   "sha256": "ce0f776a34fd5be475506476e10c7dfb959534fe85b2e708fbbc12c5348cdc4a",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-010",
+   "source_file": "Aviation Slides.zip!/Aviation Slides/Agile Powerpoint Infographics/Agile Slides PowerPoint Template.pptx",
+   "sha256": "98dbf748dea0bb27037162cabe6770bed838133a85d8b6ace887b00294b5c93f",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-011",
+   "source_file": "Aviation Slides.zip!/Aviation Slides/Agriculture Powerpoint Infographics/Agriculture Slides.pptx",
+   "sha256": "3160ad7c1fb1d0a1b90f7fdf1b02c22077d0ccd7759fc03165eb1ab6eecf6c42",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-012",
+   "source_file": "Aviation Slides.zip!/Aviation Slides/Alphabet Powerpoint Infographics/Alphabet Infographics.pptx",
+   "sha256": "2064adbdc8e4d6c93078db6c6d2c4494a55de8c7997c54fb9ae4d7afd23174b3",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-013",
+   "source_file": "Aviation Slides.zip!/Aviation Slides/Anatomy Powerpoint Infographics/Anatomy Slides.pptx",
+   "sha256": "6659db7dbdd2298e6788f8642ead8651c5eb70160f5785c975321a3ff0eaf09b",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-014",
+   "source_file": "Aviation Slides.zip!/Aviation Slides/Annual Report Powerpoint Infographics/Annual Report Slides.pptx",
+   "sha256": "d887d1dd4ff55d3e586494fff247bcb77cc2c53fc2a9f827a77de3f09ae2425a",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-015",
+   "source_file": "Aviation Slides.zip!/Aviation Slides/Arrow Powerpoint Infographics/Arrow Infographics.pptx",
+   "sha256": "b3ef37cb51a4913f7c89d97cfd76af4b3e1615b49e988333aae8ca6e32993d67",
+   "slides": 23
+  },
+  {
+   "deck_id": "AVI-016",
+   "source_file": "Aviation Slides.zip!/Aviation Slides/Arrow Slides/Arrow Powerpoint Template.pptx",
+   "sha256": "680339dee55f07c0bedefecbc7fb2ff89a368c8dbb5ad9edbb39737d26cc1dce",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-017",
+   "source_file": "Aviation Slides.zip!/Aviation Slides/Artificial Intelligence Powerpoint Infographics/Artificial Intelligence Slides.pptx",
+   "sha256": "277ddb7e7e8b4a1226e86a013e0c4556f51bb68741ed8217a75be6a36d24d57f",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-018",
+   "source_file": "Aviation Slides.zip!/Aviation Slides/Artificial Intelligence Slides/Artificial Intelligence Slides.pptx",
+   "sha256": "277ddb7e7e8b4a1226e86a013e0c4556f51bb68741ed8217a75be6a36d24d57f",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-019",
+   "source_file": "Aviation Slides.zip!/Aviation Slides/Asia Map Powerpoint Infographics/Asia Map Infographics.pptx",
+   "sha256": "05bf1dbea133aac191abbcae34e5b6d44c334ed8d3cb82b528ffa81902768f3e",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-020",
+   "source_file": "Aviation Slides.zip!/Aviation Slides/Aviation Powerpoint Infographics/Aviation Infographics.pptx",
+   "sha256": "ffcaa379d58beae783c2f01504045b89d83ea5c1a607797042c40661973ba85b",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-021",
+   "source_file": "Aviation Slides.zip!/Aviation Slides/Aviation Slides/Aviation Infographics.pptx",
+   "sha256": "ffcaa379d58beae783c2f01504045b89d83ea5c1a607797042c40661973ba85b",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-022",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Big Data Powerpoint Infographics/Big Data Infographics.pptx",
+   "sha256": "3f78f2f5b29be42653ad424bda1a67e8ea12369901b538a9ab3ab6a81fab8943",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-023",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Big Data Slides/Big Data Infographics.pptx",
+   "sha256": "3f78f2f5b29be42653ad424bda1a67e8ea12369901b538a9ab3ab6a81fab8943",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-024",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Blue Ocean Strategy Powerpoint Infographics/Blue Ocean Strategy.pptx",
+   "sha256": "f52b3199ffa317bf5d2bebed673e9b0fb5256b8d6ba8ef78d3b6f5ba6d377b69",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-025",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Blue Ocean Strategy Slides/Blue Ocean Strategy.pptx",
+   "sha256": "f52b3199ffa317bf5d2bebed673e9b0fb5256b8d6ba8ef78d3b6f5ba6d377b69",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-026",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Brain Powerpoint Infographics/Brain Infographics.pptx",
+   "sha256": "baae22c6ee99c354545494c5b11b1278c8831380d8466100d4eb766c21b6e66c",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-027",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Brain Slides/Brain Slides V1 Template/Brain Powerpoint Slides.pptx",
+   "sha256": "2b9fb357d56347b82b17a1c836642382c6da83acd335a3f9f0c8cb8ffca5f0df",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-028",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Brain Slides/Brain Slides V2 Template/Brain Infographics.pptx",
+   "sha256": "baae22c6ee99c354545494c5b11b1278c8831380d8466100d4eb766c21b6e66c",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-029",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Break Even Analysis Powerpoint Infographics/Break Even Analysis.pptx",
+   "sha256": "e713f640d14a11ccf3f6ea748e953164ea77a59fce3ebeb3ab696e2dabf11f0a",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-030",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Breast Cancer Day Powerpoint Infographics/Breast Cancer Day Infographics.pptx",
+   "sha256": "0a9f2a90fa3d26984871670181bb5bc5dcd0578443baff19d481835c124ebcf0",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-031",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Bubble Map Powerpoint Infographics/Bubble Map Infographics.pptx",
+   "sha256": "8788f5a6861802e76991bad187749327ee6b6883f42867f33d682bff92a55e46",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-032",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Budget Forecasting Powerpoint Infographics/Budget Forecasting Slides.pptx",
+   "sha256": "5160e66a061220f18d6df4a7c4011dd178ad7ff7fffe6da10a4a61f5d0f7d84c",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-033",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Budget Slides/Budget Powerpoint Slides.pptx",
+   "sha256": "4431ccf8793e7758dfc5768e8938c1c59d7f90b94b996d2c8aa301fb78dedd8a",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-034",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Business Model Canvas Powerpoint Infographics/Business Model Canvas.pptx",
+   "sha256": "5c22aa9e4346b19dff115ace8766a80e7f841e7b45840594fd8593335c3d9d79",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-035",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Business Model Canvas/Business Model Canvas.pptx",
+   "sha256": "b0cb5cea84f9c7846328270aed1c2dc071004ac1bf703833e76af6342f14239a",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-036",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Business People Powerpoint Infographics/Business People Slides.pptx",
+   "sha256": "d30b3fd9d10e755fc2faaf9fd4c9f8204bacbbd3e08960727d716667ee1dd197",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-037",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Business Plan Powerpoint Infographics/Business Plan Slide.pptx",
+   "sha256": "6a4b2ffce5bdf413f10f7350f81e4cc3edf27737b17cf99d6b9f6a7af71c696a",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-038",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Business Plan Slides/Business Plan Infographics Powerpoint Template.pptx",
+   "sha256": "3df841ec49075d9ac3533bdb6bb35dc9ce6550265d94a6961e7b9cf7142bdea3",
+   "slides": 50
+  },
+  {
+   "deck_id": "AVI-039",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Business Powerpoint Infographics/Business Infographics.pptx",
+   "sha256": "496b3b2610a33dcfad4135f27ade40eef157c5f272b9c4dc0afdf85e50eabad5",
+   "slides": 15
+  },
+  {
+   "deck_id": "AVI-040",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Business Slides/Business Infographics Powerpoint Template.pptx",
+   "sha256": "1da8ff6b34146e98c06fa69d11cb15db9e3c03efc550b66f7d4f16dde0c9110c",
+   "slides": 50
+  },
+  {
+   "deck_id": "AVI-041",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Business Strategy Powerpoint Infographics/Business Strategy.pptx",
+   "sha256": "66c3437bd4af54792e410547c207c51dfb6128eea91a158da037a37dcec64146",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-042",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Buyer Persona Powerpoint Infographics/Buyer Persona Slides.pptx",
+   "sha256": "cfd098e57f87a0af534ffc6af52ef764f6a4400eef86651698e2e087a1735e37",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-043",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Buyer Persona Slides/Buyer Persona Slides.pptx",
+   "sha256": "cfd098e57f87a0af534ffc6af52ef764f6a4400eef86651698e2e087a1735e37",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-044",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Calendar 2020 Slides/Presentation Files/Calendar Powerpoint Slides .pptx",
+   "sha256": "c09f09878b3cd98b6209bfc14c9378cc77125e11a25290e0774fa84554c10ec9",
+   "slides": 54
+  },
+  {
+   "deck_id": "AVI-045",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Calendar 2021 Slides/Presentation Files/Calendar Slides 2021.pptx",
+   "sha256": "140aa94904405bcc856b4a49501f44870a00788edf1e862600964b9d2b027768",
+   "slides": 54
+  },
+  {
+   "deck_id": "AVI-046",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Calendar 2022 Slides/Calendar Slides 2022.pptx",
+   "sha256": "4c322c7e0ad02e0c27b660e90edcd1de969a0799e7e4932820da7d5bb78c0ca5",
+   "slides": 54
+  },
+  {
+   "deck_id": "AVI-047",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Calendar 2023 Slides/Calendar Slides 2023.pptx",
+   "sha256": "9343bc8de63ec4c242beaf070b02bbd10754b6733e2da24cb88b23a830da539c",
+   "slides": 54
+  },
+  {
+   "deck_id": "AVI-048",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Calendar 2024 Slides/Calendar Slides 2024.pptx",
+   "sha256": "439752dd214902b2f2feae8b04719bc2ac5bbb6f11417a7d882ba6b343a2d9d9",
+   "slides": 27
+  },
+  {
+   "deck_id": "AVI-049",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Calendar 2025 Slides/Calendar Slides 2025.pptx",
+   "sha256": "ad52ecef658127487ced5c93631ac8b2050948d91e6d473d84a9e42678d1d2a6",
+   "slides": 27
+  },
+  {
+   "deck_id": "AVI-050",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Challenges Powerpoint Infographics/Challenges Slides.pptx",
+   "sha256": "d81994a0acf88b30175b104f493d510a41886eff80b375c5699f21ae340209f4",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-051",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Challenges Slides/Challenges Slides.pptx",
+   "sha256": "d81994a0acf88b30175b104f493d510a41886eff80b375c5699f21ae340209f4",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-052",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Change Management Powerpoint Infographics/Change Management Slides.pptx",
+   "sha256": "43824ebd838095c130c081522468eb1d7e1a2b5a694e6254ae5420337454df42",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-053",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Change Management Slides/Change Management Slides.pptx",
+   "sha256": "43824ebd838095c130c081522468eb1d7e1a2b5a694e6254ae5420337454df42",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-054",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Chart Slides/Presentation Files/Chart Slides Powerpoint Template.pptx",
+   "sha256": "f08bc3f3311fc795aa83b2c48abfae8acc2b6a07007d4a1d6bafa0670b5286af",
+   "slides": 36
+  },
+  {
+   "deck_id": "AVI-055",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Circle Powerpoint Infographics/Circle Infographics.pptx",
+   "sha256": "7d644826613bc5a0cbd2886a792fbfacee6a4988363290b4b1b29c10296e6cd9",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-056",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Circle Slides/Circle PowerPoint Slides.pptx",
+   "sha256": "8f959528bfbdfaf447168f5c288f243fa4518ea66653888a5c798e7a86de6946",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-057",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Cloud Powerpoint Infographics/Cloud Slides.pptx",
+   "sha256": "d577c90c759c769bb1923ce204f77658a68254b97099ff524e760558f7eddceb",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-058",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Cloud Slides/Cloud Slides.pptx",
+   "sha256": "d577c90c759c769bb1923ce204f77658a68254b97099ff524e760558f7eddceb",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-059",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Communication Powerpoint Infographics/Communication Slides.pptx",
+   "sha256": "299b7e58a3f8a739076ad22cb7d3bf1119b9ca136732832388e4a17ed07ef1cf",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-060",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Communication Slides/Communication Slides.pptx",
+   "sha256": "299b7e58a3f8a739076ad22cb7d3bf1119b9ca136732832388e4a17ed07ef1cf",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-061",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Company Profile Powerpoint Infographics/Company Profile Slides.pptx",
+   "sha256": "a0df886087df609abcbb3363701be4f1b51fa906d8bd5e2cc76cec04f5eb7a64",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-062",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Company Profile Slides/Company Profile Powerpoint Template.pptx",
+   "sha256": "f9bb552cf15e3c28368005e5790800341804b938c0f77d28acfd76670a7d6e9b",
+   "slides": 51
+  },
+  {
+   "deck_id": "AVI-063",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Comparison Powerpoint Infographics/Comparison Infographics.pptx",
+   "sha256": "5e469e86a4752034e1d0d9e27cf2bd55d8f0b0276b613f5437a1491352480e4a",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-064",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Comparison Slides/Comparison Slides Powerpiont Template.pptx",
+   "sha256": "2968b54f9183200b165c414b48afd65b9b6250dda7e227497a07da0fb58b73fe",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-065",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Concentric Circles Powerpoint Infographics/Concentric Circles Diagrams.pptx",
+   "sha256": "31d2673b680772ba4194f59975ddf877a1f0f982b48847bcb72eb281c1cc0ea6",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-066",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Construction Powerpoint Infographics/Construction Infographics.pptx",
+   "sha256": "e89ef8819e289655a3fdb0b3edb3d11aeab51a46263bc92d99daa33462770141",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-067",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Coronavirus Slides/Coronavirus.pptx",
+   "sha256": "c5880edc8ec3783c56c28e38e4085f841a0c635ef806c6cb25e2677d80f615ae",
+   "slides": 5
+  },
+  {
+   "deck_id": "AVI-068",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Coronavirus and Social Distancing Powerpoint Infographics/Coronavirus and Social Distancing.pptx",
+   "sha256": "9dbea45e9ef705ef104fc29d3d894fc1aa1c958a816f999ac6cee307e7c3aa50",
+   "slides": 18
+  },
+  {
+   "deck_id": "AVI-069",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Cover Powerpoint Infographics/Cover Slides.pptx",
+   "sha256": "b711b9c2769ce685bf700618d15c13ac6f704145cf02571e7082019cdaf268b9",
+   "slides": 30
+  },
+  {
+   "deck_id": "AVI-070",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Credit Card Powerpoint Infographics/Credit Card Slides.pptx",
+   "sha256": "1372dceb92c2c1ce7d04626bf08a6c16026c167a02939d7abf0554aea7dd846c",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-071",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Credit Card Slides/File/Credit Card Slides.pptx",
+   "sha256": "1372dceb92c2c1ce7d04626bf08a6c16026c167a02939d7abf0554aea7dd846c",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-072",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Cryptocurrency Powerpoint Infographics/Cryptocurrency Slides.pptx",
+   "sha256": "5887be6e05aff76fdd235089599b46a5e812317bea7660e300f9153e8b315e96",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-073",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Cryptocurrency Slides/Cryptocurrency Slides.pptx",
+   "sha256": "5887be6e05aff76fdd235089599b46a5e812317bea7660e300f9153e8b315e96",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-074",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Customer Journey Map Slides/Presentation File/Customer Journey Map PowerPoint Template.pptx",
+   "sha256": "89b75f20b7d93cb7c464b348057ed56e4af6be2876eed3bf079202f3510d18a0",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-075",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Customer Journey Powerpoint Infographics/Customer Journey Infographics.pptx",
+   "sha256": "02db8673ee25532444b73515f015cc00b86ec9b08df5c7b2748b9ab199e0241f",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-076",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Customer Profile Powerpoint Infographics/Customer Profile Slides.pptx",
+   "sha256": "49e6d8acebbc95700894632c761107402bdd71e62db4685456d81fbc98f2781c",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-077",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Cyber Security Powerpoint Infographics/Cyber Security Slides.pptx",
+   "sha256": "dec44837424ae1592c8e8efb186617b5ae8d754045dd0f6aed5be330e40a1b13",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-078",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Cyber Security Slides/Cyber Security Slides.pptx",
+   "sha256": "dec44837424ae1592c8e8efb186617b5ae8d754045dd0f6aed5be330e40a1b13",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-079",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Cycle Powerpoint Infographics/Cycle Infographics.pptx",
+   "sha256": "b5729ed5c8db17e9aef0b979d68db4f3b1790af4784ad2186a97931dfd4869d3",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-080",
+   "source_file": "Aviation Slides.zip!/Cycle Slides/Cycle Slides/Presentation Files/Cycle Powerpoint Template.pptx",
+   "sha256": "a3df5c4eb8631be930d115ab4854000c94805119219f34e7003ffcc932d10c01",
+   "slides": 16
+  },
+  {
+   "deck_id": "AVI-081",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Feedback Powerpoint Infographics/Feedback Slides.pptx",
+   "sha256": "a20e76b750535b3c30e26fcacdc4db346cb10763e900af47669f5cbff3453c5e",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-082",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Finance Powerpoint Infographics/Finance Infographics.pptx",
+   "sha256": "d6dd29ffeec30e0363f060a76654e1870618b597f38c879ea17a522ffb392022",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-083",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Finance Slides/Finance Slide Powerpoint Template.pptx",
+   "sha256": "fe55099b833e9db3388430437a13ee2bb4890b0829495bd9cc270ea99be868c9",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-084",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Fishbone Powerpoint Infographics/Fishbone Infographics.pptx",
+   "sha256": "53843f47bd1f23e586bad098fcd4a8fc97aa97f6e68c4c6d76599f392e68251a",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-085",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Fishbone Slides/Fishbone Powerpoint Template.pptx",
+   "sha256": "98173462275fb73935204d43d9554eaa79be7ff076501c4feea0bad593640535",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-086",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Fitness Slides/Presentation Files/Fitness Powerpoint Slides.pptx",
+   "sha256": "7973431022993c85b813d356e485eb1b2e4dc0d60d09f5c68e21b1accd831ab9",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-087",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Flow Chart Powerpoint Infographics/Flow Chart Infographics.pptx",
+   "sha256": "8942d8bd79755d3b37d58e44d4a8e540ac1f72df535c2adef79caf80a5110c86",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-088",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Flow Slides/Flow Powerpoint Slides.pptx",
+   "sha256": "7d8ab278fa3136d957356571ca55c2c8b676debce4eeab82b1970b4a9ef76eeb",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-089",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Food Powerpoint Infographics/Food Slides.pptx",
+   "sha256": "c946a4c3f7fea21f9ae2be38b9ce3d0b7b4470479f750b5a69df806b7c97ab78",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-090",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Food Slides/Food Slides V1 Powerpoint Template.pptx",
+   "sha256": "4edc516317ecbef2a3a67c4e2809f6be28cd72fdd1943a9e223917af190a6dd6",
+   "slides": 46
+  },
+  {
+   "deck_id": "AVI-091",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Food Slides/Food Slides V2 Powerpoint Template.pptx",
+   "sha256": "7377457eaa6f9577b8ac75142a4d3f1e680f91392eb1951543aec89e331ef0bc",
+   "slides": 10
+  },
+  {
+   "deck_id": "AVI-092",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Food Slides/Food Slides V3 Powerpoint Template.pptx",
+   "sha256": "4e3e5e480bcc737565c6ec5c57a54e73cba486361f5fa045e3ea1a01b65bcaae",
+   "slides": 10
+  },
+  {
+   "deck_id": "AVI-093",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Framework Powerpoint Infographics/Framework Infographics.pptx",
+   "sha256": "1234d4208f9c18d33de65aa8ac2d2cd4bb5b67b798c34513646ad0706acb8cc0",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-094",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Funnel Powerpoint Infographics/Funnel Infographics.pptx",
+   "sha256": "85b2612c0385f8d2aa7a0031d7f8aba7cba60bcfc0b5961a5118c4677175d755",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-095",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Funnel Slides/Funnel Slides V1 Powerpoint Template/Presentation file/Funnel Slides V1 Powerpoint Template.pptx",
+   "sha256": "107fc1f0b96b3930eae43f68e951d1e277ed0e45efcd45fc6449e020874f095f",
+   "slides": 7
+  },
+  {
+   "deck_id": "AVI-096",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Funnel Slides/Funnel Slides V2 Powerpoint Template/Presentation file/Funnel Slides V2 Powerpoint Template.pptx",
+   "sha256": "6a00180bfedf524570e3cbd644c050dc5bcbd9f9dc13b78f3f9b9f65fbb37f8f",
+   "slides": 7
+  },
+  {
+   "deck_id": "AVI-097",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Funnel Slides/Funnel Slides V3 Powerpoint Template/Presentation file/Funnel Slides V3 Powerpoint Template.pptx",
+   "sha256": "ead2ec9f5fb4fb7fb4feb929fa09fffbc8eb462ee3bd3c4e21493ad6a436f99a",
+   "slides": 7
+  },
+  {
+   "deck_id": "AVI-098",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Funnel Slides/Funnel Slides V4 Powerpoint Template/Presentation file/Funnel Slides V4 Powerpoint Template.pptx",
+   "sha256": "41f9d782df0214a36e2b88c277211751a38f81270e8b27e608035871af06dd37",
+   "slides": 7
+  },
+  {
+   "deck_id": "AVI-099",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Funnel Slides/Funnel Slides V5 Powerpoint Template/Presentation file/Funnel Slides V5 Powerpoint Template.pptx",
+   "sha256": "67a34dff599740d18e87bbdcc849a37a5897411aa79f05d2d52af062c70ee284",
+   "slides": 7
+  },
+  {
+   "deck_id": "AVI-100",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Funnel Slides/Funnel Slides V6 Powerpoint Template/Presentation file/Funnel Infographics.pptx",
+   "sha256": "b3e1147b15a14926fd5b01cc17ed2170fa093e758fd4b469c8cdd2a2224366b6",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-101",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Gantt Powerpoint Infographics/Gantt Charts.pptx",
+   "sha256": "e5d7f5427a473525c6720c25044e7173603875a75ff1d861a03f0fd718f8d004",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-102",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Gantt Slides/Gantt Slides V1 Powerpoint Template/Presentation file/Gantt Slides V1 Powerpoint Template.pptx",
+   "sha256": "7594861e4821be09f1a8073ac2eaa376db7d110011648d8350489f58475d4d49",
+   "slides": 7
+  },
+  {
+   "deck_id": "AVI-103",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Gantt Slides/Gantt Slides V2 Powerpoint Template/Presentation file/Gantt Slides V2 Powerpoint Template.pptx",
+   "sha256": "8d344f78ac861b1e54d57e803b0cecea923e69dc136240b7c0c21fd89fa35ce2",
+   "slides": 7
+  },
+  {
+   "deck_id": "AVI-104",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Gantt Slides/Gantt Slides V3 Powerpoint Template/Presentation file/Gantt Slides V3 Powerpoint Template.pptx",
+   "sha256": "843235e8edc68abe8d9a7cf106823468f87ecd637fa9f57dc3e09496a44eaea4",
+   "slides": 7
+  },
+  {
+   "deck_id": "AVI-105",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Gantt Slides/Gantt Slides V4 Powerpoint Template/Presentation file/Gantt Slides V4 Powerpoint Template.pptx",
+   "sha256": "7f133acee43bb4ad15253c46cddac548f5538204774796aa001a22ddcfcd7d1c",
+   "slides": 6
+  },
+  {
+   "deck_id": "AVI-106",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Gap Analysis Powerpoint Infographics/Gap Analysis.pptx",
+   "sha256": "4265a4e0c05ce3755238fe45dd3b793be69b18363633c7593da1314eb9fd4386",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-107",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Gap Analysis Slides/Gap Analysis.pptx",
+   "sha256": "4265a4e0c05ce3755238fe45dd3b793be69b18363633c7593da1314eb9fd4386",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-108",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Geometric Powerpoint Infographics/Geometric Infographics.pptx",
+   "sha256": "5be4b65bf36264d78f26d3139d55ff870ab9f4bbe08439719ce80723d933acd7",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-109",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Geometric Slides/Geometric Slides.pptx",
+   "sha256": "5be4b65bf36264d78f26d3139d55ff870ab9f4bbe08439719ce80723d933acd7",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-110",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Goals Powerpoint Infographics/Goals Infographics.pptx",
+   "sha256": "d2b9a1a53cd9fb1a6c0290fe4165bf788dc6e2b4080ffe8e2239306a22abb3ce",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-111",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Goals Slides/Presentation File/Goals Slides Powerpoint Template.pptx",
+   "sha256": "344b5fa39d37d641dd3555dee7811f49d9eab34c6bb3c52c2084fad8aa79094f",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-112",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Governance Powerpoint Infographics/Governance Infographics.pptx",
+   "sha256": "026b6b690a842f4e24c76d4b8552a6152fd096f14b4b7d661d98f1b9e175c8a9",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-113",
+   "source_file": "Aviation Slides.zip!/Growth Powerpoint Infographics/Growth Powerpoint Infographics/Growth Infographics.pptx",
+   "sha256": "ab1c2d2fc29459094531839c947f259434464a7b9c571ffb0555fa15ea24d2bf",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-114",
+   "source_file": "Aviation Slides.zip!/IT Architecture Powerpoint Infographics/Harvey Ball Powerpoint Infographics/Harvey Ball Infographics.pptx",
+   "sha256": "3d30e20d1580082086a498184f7a188bd6eabc2cc67111510654b330253c639c",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-115",
+   "source_file": "Aviation Slides.zip!/IT Architecture Powerpoint Infographics/Harvey Ball Slides/Presentation file/Harvey Ball Powerpoint Template.pptx",
+   "sha256": "cf8dcfb58ab63c204ad2947ce507683185fe3f3bcbeed1b1061dd1b1d4d0ab0e",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-116",
+   "source_file": "Aviation Slides.zip!/IT Architecture Powerpoint Infographics/Health Powerpoint Infographics/Health Infographics.pptx",
+   "sha256": "a6c70a2086d5ed0171b833aaf0f6f4c882d0cc18174cc890db8eefbebbe9b2cf",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-117",
+   "source_file": "Aviation Slides.zip!/IT Architecture Powerpoint Infographics/Health Powerpoint Slides/Presentation Files/Health Powerpoint Slides.pptx",
+   "sha256": "d7b2a212f6e29bfccc2fcf17c85b8b7b39437346ef703debd4b3d25ef53140ad",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-118",
+   "source_file": "Aviation Slides.zip!/IT Architecture Powerpoint Infographics/Healthcare Slides/Healthcare Slides V1 Powerpoint Template/Presentation file/Healthcare Slides V1 Powerpoint Template.pptx",
+   "sha256": "6ba36755153ae2126367b6f5cf5e7b9cfd7858524f6e1be8805057f6842f517f",
+   "slides": 6
+  },
+  {
+   "deck_id": "AVI-119",
+   "source_file": "Aviation Slides.zip!/IT Architecture Powerpoint Infographics/Healthcare Slides/Healthcare Slides V2 Powerpoint Template/Presentation file/Healthcare Slides V2 Powerpoint Template.pptx",
+   "sha256": "be2fd9d3eeaa9c2db4c547ae6214a763f52e43815f6f266d892a3f4ae4053ecd",
+   "slides": 7
+  },
+  {
+   "deck_id": "AVI-120",
+   "source_file": "Aviation Slides.zip!/IT Architecture Powerpoint Infographics/Healthcare Slides/Healthcare Slides V3 Powerpoint Template/Presentation file/Healthcare Slides V3 Powerpoint Template.pptx",
+   "sha256": "c191756ace0427d4b6a4b9930228bb08e98ef71739ac0db2a0d0dac4c88b1eeb",
+   "slides": 7
+  },
+  {
+   "deck_id": "AVI-121",
+   "source_file": "Aviation Slides.zip!/IT Architecture Powerpoint Infographics/Healthcare Slides/Healthcare Slides V4 Powerpoint Template/Presentation file/Healthcare Slides V4 Powerpoint Template.pptx",
+   "sha256": "419466a7e6eb88d03ec9dace3499bbdcc11830982ac0f70782ef490976c34b5f",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-122",
+   "source_file": "Aviation Slides.zip!/IT Architecture Powerpoint Infographics/Hierarchy Powerpoint Infographics/Hierarchy Infographics.pptx",
+   "sha256": "e6b126472cb37374c810de0be0e1df9af69b37e1ee46daa9d08d8e162077225a",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-123",
+   "source_file": "Aviation Slides.zip!/IT Architecture Powerpoint Infographics/Hierarchy Slides/Hierarchy Infographics.pptx",
+   "sha256": "e6b126472cb37374c810de0be0e1df9af69b37e1ee46daa9d08d8e162077225a",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-124",
+   "source_file": "Aviation Slides.zip!/IT Architecture Powerpoint Infographics/Human Resources Powerpoint Infographics/Human Resources Slides.pptx",
+   "sha256": "ec1fd31287fa721509ef766904dec159d7a045618581dd2e875bbcbc81b24827",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-125",
+   "source_file": "Aviation Slides.zip!/IT Architecture Powerpoint Infographics/Human Resources Slides/Human Resources Powerpoint Slides.pptx",
+   "sha256": "c996769b3d7c58a5e2653f9588406206cf48f2d3f6fde6c755816cb88ce58270",
+   "slides": 50
+  },
+  {
+   "deck_id": "AVI-126",
+   "source_file": "Aviation Slides.zip!/IT Architecture Powerpoint Infographics/IT Architecture Powerpoint Infographics/IT Architecture Slides.pptx",
+   "sha256": "b687af60502e84f3b974c4dd20f8371ff81565e0233dcb8d8ea425cd42d9f548",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-127",
+   "source_file": "Aviation Slides.zip!/IT Architecture Powerpoint Infographics/Iceberg Powerpoint Infographics/Iceberg Infographics.pptx",
+   "sha256": "cedf9edd376f52718e8d9bf85e84c49a02b458819221a13e877344949bbb72fa",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-128",
+   "source_file": "Aviation Slides.zip!/IT Architecture Powerpoint Infographics/Iceberg Slides/Presentation file/Iceberg Diagram Slides Powerpoint Template.pptx",
+   "sha256": "a8ed37f31e14de973d0ca151efa4e45a513f1c6fc873403216e704f2e63c0606",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-129",
+   "source_file": "Aviation Slides.zip!/IT Architecture Powerpoint Infographics/Innovation Powerpoint Infographics/Innovation Slides.pptx",
+   "sha256": "089c5a768f2fb3ddb6a2c805df8855f0f4b2269f0e2faa3968cadf6531176568",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-130",
+   "source_file": "Aviation Slides.zip!/IT Architecture Powerpoint Infographics/Insurance Powerpoint Infographics/Insurance Slides.pptx",
+   "sha256": "cad7e92dc152da3dfc66c84e423639908c42c625e55f5a7d18820ccbce003da8",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-131",
+   "source_file": "Aviation Slides.zip!/IT Architecture Powerpoint Infographics/Introduction Powerpoint Infographics/Introduction Slides.pptx",
+   "sha256": "e591483489783b2ce05a8ef9b5668ac5efe32989f9b42374b131812f6a5a4313",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-132",
+   "source_file": "Aviation Slides.zip!/IT Architecture Powerpoint Infographics/Introduction Slides/Introduction Slides.pptx",
+   "sha256": "e591483489783b2ce05a8ef9b5668ac5efe32989f9b42374b131812f6a5a4313",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-133",
+   "source_file": "Aviation Slides.zip!/IT Architecture Powerpoint Infographics/Investment Powerpoint Infographics/Investment Infographics.pptx",
+   "sha256": "266b54000b2c03eeaacfb78057e59043dd3d97eee109c5a8d3f5da53cf3f1dd4",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-134",
+   "source_file": "Aviation Slides.zip!/IT Architecture Powerpoint Infographics/Investment Slides/Investment Slides.pptx",
+   "sha256": "266b54000b2c03eeaacfb78057e59043dd3d97eee109c5a8d3f5da53cf3f1dd4",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-135",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/KPI Dashboards Powerpoint Infographics/KPI Dashboards.pptx",
+   "sha256": "d51190d666ad01c79be01295c89e5a9b570d55200169c461da43ab532439d4f2",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-136",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/KPI Slides/KPI Powerpoint Slides.pptx",
+   "sha256": "67d918f333e1c1f4a02d5a87a96e89572b05d2c3314c39203ce475308f4ae68d",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-137",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Law Powerpoint Infographics/Law Infographics.pptx",
+   "sha256": "b84940e5c6869af816ee471d1c5924af9a9348e514650a8c3fcd27903c1475e0",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-138",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Leadership Powerpoint Infographics/Leadership Infographics.pptx",
+   "sha256": "de67fb553a7a41e49c175e1f98101015e9989ebd768afee60eef8cb80df57562",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-139",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Loyalty Program Powerpoint Infographics/Loyalty Program Slides.pptx",
+   "sha256": "51b60fa8152244d31ab6cb66f5e7e3b61657afc8976f9093296e34a18fd70d91",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-140",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Loyalty Program Slides/Loyalty Program Slides.pptx",
+   "sha256": "51b60fa8152244d31ab6cb66f5e7e3b61657afc8976f9093296e34a18fd70d91",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-141",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Manufacturing Slides/Presentation Files/Manufacturing Slides Powerpoint Template.pptx",
+   "sha256": "9b2238ad811fa111d8c3293292cb4715298e94f74f0ebce0374c137e6d060103",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-142",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Marketing Powerpoint Infographics/Marketing Slides.pptx",
+   "sha256": "1ae8796595754105117eec06850b4d8a0742ff28c45f193a4277ffa083ce135f",
+   "slides": 22
+  },
+  {
+   "deck_id": "AVI-143",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Marketing Slides/Marketing Powerpoint Slides.pptx",
+   "sha256": "99ef690a76d1663beef4d66ced372b27ffc6bd26aeb17b5e03871359bbb18711",
+   "slides": 60
+  },
+  {
+   "deck_id": "AVI-144",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Matrix Diagram Powerpoint Infographics/Matrix Diagrams.pptx",
+   "sha256": "678b08ea9b90cb24c4ebf6865b30b14d6227d89b6f2795d2eb782198c72401bd",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-145",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Matrix Slides/Presentation Files/Matrix Powerpoint Slides.pptx",
+   "sha256": "501d375b1d2203880952cdc976edcc4e45cbebc5ff8046aec806cdfce1aa0467",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-146",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/McKinsey 7S Model Powerpoint Infographics/McKinsey 7S Model.pptx",
+   "sha256": "da0f204baea6ce3e5f07526f90da22e0a06c119c25167539f3376fe5aeeb4433",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-147",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/McKinsey 7S Model Slides/McKinsey 7S Model.pptx",
+   "sha256": "da0f204baea6ce3e5f07526f90da22e0a06c119c25167539f3376fe5aeeb4433",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-148",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Medical Powerpoint Infographics/Medical Infographics.pptx",
+   "sha256": "76ec33d9c0b94f8a45b227eee350d9c8637baa21f9a79cf1d8f7c9aef16123cf",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-149",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Medical Slides/Presentation/Medical Slides Powerpoint Template.pptx",
+   "sha256": "bb80cb7e8b2e8f9e394a1ac2c89f000ba4dae8acc0c0aef4a2cdc836e5c2717e",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-150",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Medical-Slides/File/Medical Infographics.pptx",
+   "sha256": "76ec33d9c0b94f8a45b227eee350d9c8637baa21f9a79cf1d8f7c9aef16123cf",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-151",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Meeting Powerpoint Infographics/Meeting Slides.pptx",
+   "sha256": "efe606572a4403c41ea8a76cfd7349e2680d2b24f04eb9ff3bb6b7000b21db52",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-152",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Meeting Slides/Meeting Slides.pptx",
+   "sha256": "efe606572a4403c41ea8a76cfd7349e2680d2b24f04eb9ff3bb6b7000b21db52",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-153",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Mekko Chart Slides/Presentation/Mekko Chart Slides Powerpoint Template.pptx",
+   "sha256": "0ec5ab5205abc9665c7fc07283d92400fdc6e0da3689d0894f2de36c4ecf2b39",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-154",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Milestones Powerpoint Infographics/Milestones Infographics.pptx",
+   "sha256": "dd98c11ae7ab001b1793c09983e8c04e50da2abff7f829d03db3dd4550930c74",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-155",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Milestones Slides/Presenteton File/Milestones Slides Powerpoint Template.pptx",
+   "sha256": "e6bb7e309beb6e2ac9644eb74a846f9452bb835d3275280e67a43ead22093a1b",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-156",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Mind Map Powerpoint Infographics/Mind Map Infographics.pptx",
+   "sha256": "d66312a43e51ed24174fb3fcd5640cf4b66ac69fa5b483b3242fbb70728ae9ee",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-157",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Mindmap Slides/Presentation File/Mindmap Slides Powerpoint Template.pptx",
+   "sha256": "f263b75c9acaf7bcda3ee39be643a0ead93f03bbcd4398f1b141ad391db38a14",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-158",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Mission Powerpoint Infographics/Mission Slides.pptx",
+   "sha256": "59a10404a0e8ae1a561ff9ebb0c828e2a7dfd04df6d21bdde5958f736ce6a903",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-159",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Mission Slides/Mission Slides.pptx",
+   "sha256": "59a10404a0e8ae1a561ff9ebb0c828e2a7dfd04df6d21bdde5958f736ce6a903",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-160",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Mockup Devices Powerpoint Infographics/Mockup Devices.pptx",
+   "sha256": "67bbb0d20d2962666237381848f44f2d4722c2f76cad38d2892255141034b9e7",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-161",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Mockup Devices Slides/Mockup Devices.pptx",
+   "sha256": "67bbb0d20d2962666237381848f44f2d4722c2f76cad38d2892255141034b9e7",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-162",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Money Powerpoint Infographics/Money Infographics.pptx",
+   "sha256": "a0622e5c1d806a267e7c511afe65b82750d7d088e1d7c0eb4fd45063393825bc",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-163",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Money Slides/Money Infographics.pptx",
+   "sha256": "a0622e5c1d806a267e7c511afe65b82750d7d088e1d7c0eb4fd45063393825bc",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-164",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Network Powerpoint Infographics/Network Infographics.pptx",
+   "sha256": "b7721fc58a1eaa916244fa5e93c6506c8c0737412c5856ada0632bd5e896efac",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-165",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/North America Map Powerpoint Infographics/North America Map Infographics.pptx",
+   "sha256": "3a770bf23af783877a93238867a735a8e176ae0176e6d60a90663df98323a56e",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-166",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Numbers Powerpoint Infographics/Numbers Infographics.pptx",
+   "sha256": "2c5ef3e8c569bcdd26d7dfa5bf6c903c284acbc26c3f96b9d112ef8c552a7fbe",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-167",
+   "source_file": "Aviation Slides.zip!/Numbers Slides/Numbers Slides/Numbers Slides.pptx",
+   "sha256": "2c5ef3e8c569bcdd26d7dfa5bf6c903c284acbc26c3f96b9d112ef8c552a7fbe",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-168",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Network Powerpoint Infographics/Network Infographics.pptx",
+   "sha256": "b7721fc58a1eaa916244fa5e93c6506c8c0737412c5856ada0632bd5e896efac",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-169",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/North America Map Powerpoint Infographics/North America Map Infographics.pptx",
+   "sha256": "3a770bf23af783877a93238867a735a8e176ae0176e6d60a90663df98323a56e",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-170",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Numbers Powerpoint Infographics/Numbers Infographics.pptx",
+   "sha256": "2c5ef3e8c569bcdd26d7dfa5bf6c903c284acbc26c3f96b9d112ef8c552a7fbe",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-171",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Numbers Slides/Numbers Slides.pptx",
+   "sha256": "2c5ef3e8c569bcdd26d7dfa5bf6c903c284acbc26c3f96b9d112ef8c552a7fbe",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-172",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Objective Powerpoint Infographics/Objective Slides.pptx",
+   "sha256": "4ceb3b03e430a7740864937144e954b9ae1f90b5db2e05e4773de1c47da25530",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-173",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Objective Slides/Objective Slides.pptx",
+   "sha256": "4ceb3b03e430a7740864937144e954b9ae1f90b5db2e05e4773de1c47da25530",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-174",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Oceania Map Powerpoint Infographics/Oceania Map Infographics.pptx",
+   "sha256": "1d9d6aab11decfaadfd4fe338aa597e1d9af0ed853190a11732764d778827153",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-175",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Office Scenes Powerpoint Infographics/Office Scenes Slides.pptx",
+   "sha256": "dc3ed051e25cb5ec8b550a4004c750b952647e79e3cf0f869ef746993320445f",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-176",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Office Scenes Slides/Office Scenes Slides.pptx",
+   "sha256": "dc3ed051e25cb5ec8b550a4004c750b952647e79e3cf0f869ef746993320445f",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-177",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Org Chart Slides/Presentation File/Org Chart Slides Powerpoint Template.pptx",
+   "sha256": "157cca246b32109bfc2c7b12026a5df3a3aac42867be66d65f4cd17a972089f1",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-178",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/PESTEL Analysis Powerpoint Infographics/PESTEL Analysis Slides.pptx",
+   "sha256": "fde1db38a22589af1d547514c28550cb2fd6f1f88f5b1432b0c80ac41e6f05c6",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-179",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/PESTEL Analysis Slides/PESTEL Analysis Slides.pptx",
+   "sha256": "fde1db38a22589af1d547514c28550cb2fd6f1f88f5b1432b0c80ac41e6f05c6",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-180",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Performance Powerpoint Infographics/Performance Infographics.pptx",
+   "sha256": "9aee4c58af49107b834c235330f6167e16b2170741731aed63cb6c1d2a646451",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-181",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Pie Chart Slides/Presentation File/Pie Chart Slides Powerpoint Template.pptx",
+   "sha256": "fba7290b90853d42f8ae88d9917b399336a83894404ae977a10fb97e08793203",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-182",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Pillar Powerpoint Infographics/Pillar Infographics.pptx",
+   "sha256": "471be9578d17d33ed0988bd737bad9561ead84779245476fe776d5c8b5903d90",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-183",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Porter's Five Forces Slides/Porter's Five Forces.pptx",
+   "sha256": "0f17d6cfc4ec1032b8361d1764b8460d02a360f660afc0e3e05a30d04a0af795",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-184",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Porter's Fove Forces Powerpoint Infographics/Porter's Five Forces.pptx",
+   "sha256": "0f17d6cfc4ec1032b8361d1764b8460d02a360f660afc0e3e05a30d04a0af795",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-185",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Pricing Table Powerpoint Infographics/Pricing Tables Slides.pptx",
+   "sha256": "a2111813d5c13ba6fe1036bd4f98a2efd86f37cf679254b40d1273a9805209f2",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-186",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Pricing Table Slides/Pricing Table Powerpoint Slides .pptx",
+   "sha256": "eac277ce11451160574b8af9177aa6aa4a9f9a69ae2b191f9aadd62052505d74",
+   "slides": 25
+  },
+  {
+   "deck_id": "AVI-187",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Problem Powerpoint Infographics/Problem Slides.pptx",
+   "sha256": "5809e270a57e7b1b0b076e68b11c751750ffc0dec9e88a6259cd86c60673fcdc",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-188",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Problem Slides/Problem Slides.pptx",
+   "sha256": "5809e270a57e7b1b0b076e68b11c751750ffc0dec9e88a6259cd86c60673fcdc",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-189",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Process Powerpoint Infographics/Process Infographics.pptx",
+   "sha256": "29567cbe8d7fbfe22c1aae62ed11ee839287036e2aeee6e3f3e8489e9d9afeaf",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-190",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Process Slides/Process Slides V1 Template/Process Powerpoint Slides.pptx",
+   "sha256": "2afbd7e664301495703d48c998ed70414e92435e3fa4d2eadf7f446d374212b5",
+   "slides": 30
+  },
+  {
+   "deck_id": "AVI-191",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Process Slides/Process Slides V2 Template/Process Infographics.pptx",
+   "sha256": "6d6ea3454b31f5d3eb1bfb788d2ab80fe97e578c76861746aa5baebf6ea60793",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-192",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Product Life Cycle Powerpoint Infographics/Product Life Cycle.pptx",
+   "sha256": "6c3a0d38846b8fe6507948fcde9d84199874bfa566d9416da4dfda3594bd2d11",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-193",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Product Life Cycle Slides/Product Life Cycle.pptx",
+   "sha256": "6c3a0d38846b8fe6507948fcde9d84199874bfa566d9416da4dfda3594bd2d11",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-194",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Product Roadmap Slides/Product Roadmap Powerpoint Slides.pptx",
+   "sha256": "4346a56795cad7688601401a43ae5ed30548d42cd6d8ff55dc632a5b3eabc6c7",
+   "slides": 30
+  },
+  {
+   "deck_id": "AVI-195",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Profit and Loss Slides/Presentation/Profit and Loss Slides Powerpoint Template.pptx",
+   "sha256": "303a054552cce96c384457f2c00dce86d25a0ff9fb75c0745fd26571967d72aa",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-196",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Progress Powerpoint Infographics/Progress Infographics.pptx",
+   "sha256": "2f1f44b1f0bba616670892459b84e728b15a1f70d5057b47ab406d3441c3e2d1",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-197",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Progress Slides/Progress Infographics.pptx",
+   "sha256": "2f1f44b1f0bba616670892459b84e728b15a1f70d5057b47ab406d3441c3e2d1",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-198",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Project Management Powerpoint Infographics/Project Management Infographics.pptx",
+   "sha256": "b18152dd924a18eaa645083367f3a3de51c0ef6253a765345482b4dab5422ebf",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-199",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Project Management Slides/Presentation/Project Management Slides Powerpoint Template.pptx",
+   "sha256": "4a3918b299e7ede373d53af4596f37502708fc54027a313917ff2999375d5586",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-200",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Project Proposal Powerpoint Infographics/Project Proposal Slides.pptx",
+   "sha256": "82e16a13a88127cce57678665c58b162dba88be0cc89117210793d1df8530eb5",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-201",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Project Status Powerpoint Infographics/Project Status.pptx",
+   "sha256": "f5ebe2824016d309632e4f40d4bdd3a48f96e9de867eb26acc8303cbebd44471",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-202",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Project Status Slides/Project Status.pptx",
+   "sha256": "f5ebe2824016d309632e4f40d4bdd3a48f96e9de867eb26acc8303cbebd44471",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-203",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Psychology Powerpoint Infographics/Psychology Slides.pptx",
+   "sha256": "2a95cd5d7523a1c33525fb15641b513bfbc46a586f601ed5ab4188308a820268",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-204",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Puzzle Powerpoint Infographics/Puzzle Infographics.pptx",
+   "sha256": "7cbe791abce36a9170f1213910de1d6ae0741f7c119e7e27c426f5db1d034485",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-205",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Puzzle Slides/Presentation Files/Puzzle Slides Powerpoint Template.pptx",
+   "sha256": "9a45a97cd3957f1e6bddc7c60cf33807003bd397344fbcc040ee3b8e300a5756",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-206",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Pyramid Powerpoint Infographics/Pyramid Infographics.pptx",
+   "sha256": "f2d71a75b141bc4e7a65f38bdf2d104cd823dddee3e0f0dbd24de0b1c64547f6",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-207",
+   "source_file": "Aviation Slides.zip!/Pyramid Slides/Pyramid Slides/Presentation file/Pyramid Slides Powerpoint Template.pptx",
+   "sha256": "d268ed149a56d338256336c4225034c8324bf0d7bd24915839628a8ce514490e",
+   "slides": 16
+  },
+  {
+   "deck_id": "AVI-208",
+   "source_file": "Aviation Slides.zip!/World Map Slides/TAM SAM SOM Powerpoint Infographics/TAM SAM SOM Infographic.pptx",
+   "sha256": "3c94f737f20c3ffb8bf390e2305670a5a96a642ae381cec347a8306cf8d4a40f",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-209",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Table Powerpoint Infographics/Table Slides.pptx",
+   "sha256": "4679aba8c79b3712591082aa165f20a8fe7bb1692b8aaf59bd40149397628b16",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-210",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Table Slides/Table Powerpoint Slides.pptx",
+   "sha256": "0807a4eb98fdb0d9cb8f2f02972049de94d817f552f9a674290e7164c9402bdd",
+   "slides": 25
+  },
+  {
+   "deck_id": "AVI-211",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Table of Content Powerpoint Slides/Tables of Content.pptx",
+   "sha256": "23322122840140be13aca6bf0b5f390abab997d8bebc38708c3ec16ba5103566",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-212",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Tables of Content Powerpoint Infographics/Tables of Content.pptx",
+   "sha256": "23322122840140be13aca6bf0b5f390abab997d8bebc38708c3ec16ba5103566",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-213",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Target Market Powerpoint Infographics/Target Market Slides.pptx",
+   "sha256": "44bba4247ed8c0c2446cb139d4cd4756f80a81058aa7519359497ca4ea8de38f",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-214",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Target Market Slides/Target Market Slides.pptx",
+   "sha256": "cadf1e0da3483f77a4622075dc4e0743807d8c54a2fb409cc4da304861c61593",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-215",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Team Powerpoint Infographics/Team Slides.pptx",
+   "sha256": "c3958f856b608bf0f0420ea512fb4cf42c0274bf47d0b5fdc2bc97e7cc1d5810",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-216",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Team Slides/Team Slides.pptx",
+   "sha256": "9d431572a0e32dda91af04f257a1b4ee76a39e58751ac3fa74c02cb0a7bb24ef",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-217",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Teamwork Powerpoint Infographics/Teamwork Slides.pptx",
+   "sha256": "7923adfaa9d9588f9fb67760af163660e214984fadf00b401cd11639b4114ec0",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-218",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Technology Powerpoint Infographics/Technology Infographic.pptx",
+   "sha256": "88c81299a1f8127aafe6ff4179d7e40b90abcb7fe62c9d285370b8eb502b5e6a",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-219",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Technology Slides/Presentation/Technology Infographics Powerpoint Template.pptx",
+   "sha256": "633da564e9332048cf71e74ef5bdb0f3176e6ace04c7d6a4ae4ac6d37a20de95",
+   "slides": 30
+  },
+  {
+   "deck_id": "AVI-220",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Thank You Powerpoint Infographics/Thank You Slides.pptx",
+   "sha256": "f64b2268721a4c185456bad4f95d0f87beb29098d67e505b7e97ab989baa924f",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-221",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Thank You Slides/Thank You Slides.pptx",
+   "sha256": "f64b2268721a4c185456bad4f95d0f87beb29098d67e505b7e97ab989baa924f",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-222",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Time Management Powerpoint Infographics/Time Management.pptx",
+   "sha256": "bafa37c35abf05c29917cff06513da05b3077af88fe3ea96664c7aa3605a971c",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-223",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Time Management Slides/Time Management.pptx",
+   "sha256": "445080491cef4841136ead790a9190105528d5a285fafaf7cdcbccc87cf6272e",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-224",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Timeline Powerpoint Infographics/Timeline Infographics.pptx",
+   "sha256": "5c0da611faca848da05a253baf24a0df6eded3b4ae3c0e82e4d751b3a9aa993d",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-225",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Timeline Slides/Presentation Files/Timeline Infographics.pptx",
+   "sha256": "5c0da611faca848da05a253baf24a0df6eded3b4ae3c0e82e4d751b3a9aa993d",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-226",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Title Powerpoint Infographics/Title Slides.pptx",
+   "sha256": "ef6d5bdc44661f22edce87f1b69ec558af6aacedbf72d7df9a9ed4e8e71b1d06",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-227",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Training Powerpoint Infographics/Training Infographics.pptx",
+   "sha256": "20f3911b6c1e198d233f4b2da7b6d9afcce783200a72f96c4c6f76f3a99d5aef",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-228",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Training Slides/Presentation File/Training Powerpoint Slides.pptx",
+   "sha256": "273a8659aacb169c34beb61c8a81fdebd942648f72dde3c5b7f1a5875c0ba29c",
+   "slides": 19
+  },
+  {
+   "deck_id": "AVI-229",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Transportation and Logistics Powerpoint Infographics/Transportation and Logistics Slides.pptx",
+   "sha256": "6eaae00878a0a099d149ad6d856753c021d7ed03589765094a08939bf798137c",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-230",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Transportation and Logistics Slides/Transportation and Logistics Slides.pptx",
+   "sha256": "6eaae00878a0a099d149ad6d856753c021d7ed03589765094a08939bf798137c",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-231",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Travel Powerpoint Infographics/Travel Slides.pptx",
+   "sha256": "08f7d3a8f2e0c4c6b7d3310cb39d385c8ad183060c59eaed8d6c5c3b82fe5752",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-232",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Travel Slides/Template 1/Presentation File/Travel Slides PowerPoint Template V1.pptx",
+   "sha256": "b3cf5ae446c368d84293790df9cfafeff00a36946cb25f586aa0352c552ee496",
+   "slides": 10
+  },
+  {
+   "deck_id": "AVI-233",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Travel Slides/Template 2/Presentation File/Travel Slides PowerPoint Template V2.pptx",
+   "sha256": "c89b42edcbd1e35d07255b47df5f83498efa196de8d521892167772c2861bac6",
+   "slides": 10
+  },
+  {
+   "deck_id": "AVI-234",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Travel Slides/Template 3/Travel Slides.pptx",
+   "sha256": "08f7d3a8f2e0c4c6b7d3310cb39d385c8ad183060c59eaed8d6c5c3b82fe5752",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-235",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Tree Diagram Powerpoint Infographics/Tree Diagram Infographics.pptx",
+   "sha256": "6a578da22344fed635517068497a66c5b2c6e1ae0d93c03e41ef302b5a3d2f4b",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-236",
+   "source_file": "Aviation Slides.zip!/World Map Slides/United States Map Powerpoint Infographics/United States Maps.pptx",
+   "sha256": "6b813d42acdc60dd563b0d1b65e07bd786d50b9596727fa725ddfeb3387c688d",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-237",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Value Chain Powerpoint Infographics/Value Chain Infographic.pptx",
+   "sha256": "48b39c81339e6a00555ecc6ca3bb2198d547df6ed3203295ceba76c351f6e56d",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-238",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Value Chain Slides/Presentation/Value Chain Slides Powerpoint Template.pptx",
+   "sha256": "b30a35a0d0cda09a2c9b9a5579ba5535e5759c9304f897a071284a631fae296d",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-239",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Venn Diagram Powerpoint Infographics/Venn Diagram Infographics.pptx",
+   "sha256": "74d1181ef5c3aa520f8ccd8ef5f7cc3c16c677d6d768416e42d0561821dce4b2",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-240",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Venn Slides/Presentation Files/Venn Powerpoint Template.pptx",
+   "sha256": "a701fed4871959b75ef22b0d73a2d3d52f0758ccc76d0219f307017e988e0067",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-241",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Veterinary Powerpoint Infographics/Veterinary Slides.pptx",
+   "sha256": "ea2e74104f449d47ffd842dacbef887629d3441478c158ba0427e5090b1532fa",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-242",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Vision Powerpoint Infographics/Vision Slides.pptx",
+   "sha256": "2c0a175e49f4f0f56b32044d2aa2d1e189784e211fb0a4f646c9c0b1bd2ace3b",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-243",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Vision Slides/Vision Slides.pptx",
+   "sha256": "2c0a175e49f4f0f56b32044d2aa2d1e189784e211fb0a4f646c9c0b1bd2ace3b",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-244",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Watercolor Powerpoint Infographics/Watercolor Infographics.pptx",
+   "sha256": "35ca8ac95312d846d5cc8400c257b37b8c721b9397f1715b2887b87184d313e8",
+   "slides": 30
+  },
+  {
+   "deck_id": "AVI-245",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Waterfall Chart Slides/Presentation Files/Waterfall Chart Slides PowerPoint Template.pptx",
+   "sha256": "cc422d27301322bb9e9e7dd5f5623218098a23a4fd765e63bd7966867117e12a",
+   "slides": 30
+  },
+  {
+   "deck_id": "AVI-246",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Work From Home Powerpoint Infographics/Work From Home Slides.pptx",
+   "sha256": "1fdf3318ba0cf50ffe9647e1b1407f6534900ad75aa06a4b8c6875f124316df9",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-247",
+   "source_file": "Aviation Slides.zip!/World Map Slides/Work From Home Slides/File/Work From Home Slides.pptx",
+   "sha256": "1fdf3318ba0cf50ffe9647e1b1407f6534900ad75aa06a4b8c6875f124316df9",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-248",
+   "source_file": "Aviation Slides.zip!/World Map Slides/World Map Powerpoint Infographics/World Map Infographics.pptx",
+   "sha256": "5f5ad8a64a5eb571924aa7c1171ca492e9ea0bb642c80947a8163e3f78205b17",
+   "slides": 20
+  },
+  {
+   "deck_id": "AVI-249",
+   "source_file": "Aviation Slides.zip!/World Map Slides/World Map Slides/Presentation File/Worldmap Slides Powerpoint Template.pptx",
+   "sha256": "c4e80e9f06edfa312f23de45f72d5bf062bae923d57b4d49692adefc8375788b",
+   "slides": 20
+  }
+ ]
+}

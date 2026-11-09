@@ -41,7 +41,8 @@
       ],
       "layout_source": {
         "kind": "approved-background",
-        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png",
+        "variant": "agenda.side-visual"
       },
       "editable_elements": [
         "body",
@@ -119,7 +120,8 @@
       ],
       "layout_source": {
         "kind": "approved-background",
-        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png",
+        "variant": "text.visual-left"
       },
       "editable_elements": [
         "body",
@@ -172,7 +174,8 @@
       ],
       "layout_source": {
         "kind": "approved-background",
-        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png",
+        "variant": "items.visual-band"
       },
       "editable_elements": [
         "diagram",
@@ -304,7 +307,8 @@
       ],
       "layout_source": {
         "kind": "approved-background",
-        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png",
+        "variant": "process.stage-arrow"
       },
       "editable_elements": [
         "diagram",
@@ -378,7 +382,7 @@
     {
       "slide_id": "closing",
       "role": "other",
-      "message": "Turn every drill into real.",
+      "message": "Turn Every Drill into Real",
       "content_refs": [
         "brand"
       ],

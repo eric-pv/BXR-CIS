@@ -1,0 +1,58 @@
+# AUTORUN_MEDIUM — catalog / registry / layout fixes run
+
+Resumable log. MEDIUM=DONE → stop. An item IN-PROGRESS updated < 2 h ago → another session is running → stop.
+Branch: `claude/sweet-allen-xj6vig` (system-assigned), rebuilt from origin/main f62362b.
+
+| Item | Status | Updated (UTC) | Notes |
+|------|--------|---------------|-------|
+| Prereqs (LFS, fonts) | DONE | 2026-11-09T10:58Z | git lfs pull OK; fonts-noto-cjk; fontconfig aliases Noto Sans TC/JP → Noto Sans CJK TC/JP; B612 Mono woff2 (@fontsource/b612-mono 5.3.0) → ttf via fonttools; preflight PASS; contracts 0 failures |
+| M1 build-source-catalog.py | DONE | 2026-11-09T11:05Z | 5,788 slides (604 PMLD + 5,184 AVI in 249 decks), 33 unparsed (>8 MB XML, reasons in summary.json), 0 deck errors, all 16:9; ~38 s full run; no thumbnails / no slide text stored |
+| M2 layout-registry + icons + select-layout + test_catalog | DONE | 2026-11-09T11:20Z | registry auto-scanned from bxr_deck.layouts VARIANTS (layouts_aviation.py absent on main → skipped): 17 variants claude-reviewed; 12 official SVG added to icon-catalog.csv (official_cis); select-layout.py reads registry; tests/test_catalog.py 19 OK |
+| M3 layout fixes | DONE | 2026-11-09T11:50Z | raised-cards title-only → 3.3 in cards centred across dark band (was full-height empty cards); KVPicker hard cap 2 uses/deck + light/dark alternation (tone from luminance), select() skips variants that would exceed the cap; pending callout card sized to content. Rendered only affected pages (system p13, english p8/p13). Tests: test_catalog 23 OK |
+| M4 fixtures, previews, tests, PR, merge | DONE | 2026-11-09T11:08Z | 6/6 fixtures rebuilt with render, all QA PASS; review/phase3 now holds all 6 decks (pptx/plan/qa/contact); full local suite green; PR https://github.com/eric-pv/BXR-CIS/pull/21, CI verify-assets green, squash-merged to main (Eric one-time authorisation) |
+
+- M3: pending-page *composition* (icon + heading + callout) is built in `bxr_deck/generator.py`, outside this run's
+  file scope; the fix was made in `compose.pending_box` (shared by all pending pages). Follow-up for generator.py:
+  the `detail` pending page repeats the banner title as a heading under the banner — drop it in a later PR.
+- M3: light/dark tone is computed from mean luminance (< 0.45 = dark): corporate pool = 6 dark / 4 light.
+
+## Test results (local, Python 3.11, after git lfs pull)
+- test_contracts.py: 7 positive + 1 negative fixtures, 0 failures
+- test_master.py: 8 OK · test_pipeline.py: 8 OK · test_acceptance.py: 6 OK · test_catalog.py: 23 OK
+- preflight.py --require-lfs: PASS
+- Key-visual audit of the 6 fixture decks: max repeat per visual = 2 (system deck, 14 pictures), others 1
+
+## Known issues
+- `07_Templates/*.pptx` may show as modified (Git LFS config issue). Not committed, not modified, not restored.
+  (Did not appear as modified in this run after `git lfs pull`.)
+- Repo is PUBLIC and still holds the purchased source libraries (LFS); public redistribution / multi-user licence
+  needs Eric's confirmation. The catalog committed here contains only counts and hashes (no thumbnails, no text).
+
+MEDIUM=DONE
+
+## Summary
+Source catalog (M1), layout registry + status flow + official SVG icons + registry selector (M2), layout fixes
+(M3) and all 6 regenerated review decks (M4) delivered in https://github.com/eric-pv/BXR-CIS/pull/21.
+Visual result still `pending-eric`; not verified in desktop PowerPoint.
+
+## Blockers / follow-ups (outside this run's file scope)
+- ~~Add `tests/test_catalog.py` to `.github/workflows/presentation-preflight.yml`.~~ Done in follow-up PR (2026-11-09).
+- ~~Point `.github/workflows/build-presentation-catalog.yml` at `build-source-catalog.py`.~~ Done in follow-up PR.
+- ~~`generator.py` detail pending page repeats the banner title below the banner.~~ Done in follow-up PR
+  (icon + evidence-gap card only); review/phase3 decks regenerated.
+- Licence / public-repo question for the purchased libraries (Eric).
+
+## Decisions
+- M1: IDs use presentation order (page a person sees), slide part recorded separately. Categories use slide XML only
+  (chart/table objects, text keywords, object counts); deck/file names are never read for categorisation.
+- M1: parse limit 8 MB per slide XML (`--max-xml-mb`); larger slides recorded `unparsed` with size reason.
+- M1: `.github/workflows/build-presentation-catalog.yml` still calls the old `index-pptx.py`; the workflow is outside
+  this run's file scope, so it was left unchanged. Switch it to `build-source-catalog.py` in a later PR.
+- M2: registry builder lives in `select-layout.py --write-registry` (no new script outside the file scope).
+  Records keep every field required by `layouts.schema.json`; `approved=true` only for `cis-approved`;
+  rebuilds never downgrade a human `cis-approved`. `license_status=internal-allowed` (Eric allowed project use;
+  public redistribution of the purchased reference still unconfirmed). `text.bullets` has no reference page →
+  `origin=native`, `source_file=bxr_deck/compose.py`, `source_slide=1` (schema requires an integer).
+- M2: assumed `ref` numbers in layouts.py are presentation-order page numbers (= PMLD-NNNN IDs).
+- M2: `tests/test_catalog.py` is not yet in `.github/workflows/presentation-preflight.yml` (workflow outside file
+  scope); run locally. Add a CI step in a later PR.

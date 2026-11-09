@@ -1,0 +1,285 @@
+{
+  "brief_id": "jp-xr-overview",
+  "design_owner": "claude",
+  "quality_status": "ready-for-review",
+  "slides": [
+    {
+      "slide_id": "cover",
+      "role": "cover",
+      "message": "XRシミュレーション訓練のご紹介",
+      "content_refs": [
+        "brief.topic",
+        "brief.purpose"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Cover_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "subtitle",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "agenda",
+      "role": "agenda",
+      "message": "概要 / 活用分野 / 導入の流れ",
+      "content_refs": [
+        "content[0].title",
+        "content[1].title",
+        "content[2].title"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png",
+        "variant": "agenda.visual-columns"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "purpose",
+      "role": "content",
+      "message": "XR訓練の活用場面と導入の進め方をご説明する",
+      "content_refs": [
+        "brief.purpose",
+        "brief.audience"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "content-c0",
+      "role": "content",
+      "message": "繰り返し実施できる仮想シナリオで訓練する",
+      "content_refs": [
+        "content[0].facts[0]"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "cards-c1",
+      "role": "content",
+      "message": "警察 / 消防・救助 / 防衛",
+      "content_refs": [
+        "content[1].facts[0]",
+        "content[1].facts[1]",
+        "content[1].facts[2]"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png",
+        "variant": "items.visual-band"
+      },
+      "editable_elements": [
+        "diagram",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "detail-c1-i0",
+      "role": "content",
+      "message": "警察",
+      "content_refs": [
+        "content[1].facts[0]"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "uncited",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "process-c2",
+      "role": "process",
+      "message": "ヒアリング → シナリオ設定 → 試行 → 振り返り",
+      "content_refs": [
+        "content[2].facts[0]",
+        "content[2].facts[1]",
+        "content[2].facts[2]",
+        "content[2].facts[3]"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png",
+        "variant": "process.stage-arrow"
+      },
+      "editable_elements": [
+        "diagram",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "next-steps",
+      "role": "summary",
+      "message": "確認事項と次のステップ",
+      "content_refs": [
+        "content[0]"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "not-applicable",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "summary",
+      "role": "summary",
+      "message": "概要 / 活用分野 / 導入の流れ",
+      "content_refs": [
+        "content[0].title",
+        "content[1].title",
+        "content[2].title"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Content_White_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "page-number",
+        "title"
+      ],
+      "evidence_status": "provided",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    },
+    {
+      "slide_id": "closing",
+      "role": "other",
+      "message": "Turn Every Drill into Real",
+      "content_refs": [
+        "brand"
+      ],
+      "layout_source": {
+        "kind": "approved-background",
+        "path": "presentation-skill/approved-layouts/military-tech/BXR_Military_Cover_16x9.png"
+      },
+      "editable_elements": [
+        "body",
+        "notes",
+        "title"
+      ],
+      "evidence_status": "not-applicable",
+      "qa": {
+        "rendered": true,
+        "overflow_checked": true,
+        "master_inheritance_checked": true,
+        "editability_checked": true,
+        "animation_verified": false
+      }
+    }
+  ],
+  "unverified_claims": [
+    "content[0]: 製品仕様は提供資料に基づき要確認",
+    "content[1] detail “警察”: no supporting facts supplied"
+  ],
+  "source_inventory_sha256": "d3f1b0fc3c14eb3faaa4711a1fa5ee1387f3bb02ad469fcbbaef047f3493341a"
+}
