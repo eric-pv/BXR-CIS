@@ -43,7 +43,7 @@ generator 另將 `Gauge N min|max` 加入 G7 豁免名單：gauge.dials 會畫�
 
 ## PR
 - B1/B2：https://github.com/eric-pv/BXR-CIS/pull/26（squash merged）
-- B3：fix: integrate aviation families（連結見 PR 本身；CI 全綠後 squash merge）
+- B3：https://github.com/eric-pv/BXR-CIS/pull/27（squash merged）
 
 ## 測試結果（B3，本機）
 test_contracts failures=0 · preflight PASS · test_master OK · test_pipeline OK（1 skip）· test_acceptance OK · test_catalog OK（1 skip）· test_aviation_layouts OK · test_pmld_layouts OK · test_aviation_planner OK（13）

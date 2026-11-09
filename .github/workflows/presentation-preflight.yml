@@ -35,3 +35,7 @@ jobs:
         run: python presentation-skill/tests/test_catalog.py
       - name: 500-page (PMLD) second-pass layout tests
         run: python presentation-skill/tests/test_pmld_layouts.py
+      - name: Aviation layout family tests (compare/timeline/map/team/product/gauge/quote)
+        run: python presentation-skill/tests/test_aviation_layouts.py
+      - name: Aviation content triggers and fallback tests
+        run: python presentation-skill/tests/test_aviation_planner.py
