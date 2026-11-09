@@ -1,0 +1,46 @@
+{
+  "id": "bxr-presentation-system",
+  "topic": "BXR 簡報系統 V0.1：從需求到可編輯簡報",
+  "language": "zh-TW",
+  "audience": "internal",
+  "purpose": "向內部同仁說明新的 CIS 簡報母片與自動生成流程",
+  "slides": 15,
+  "series": "military-tech",
+  "sector": "corporate",
+  "source_policy": "provided-only",
+  "content": [
+    {
+      "title": "為什麼需要新的簡報系統",
+      "facts": [
+        "簡報需符合 CIS v3.2 的字型、色彩與 Logo 規範",
+        "所有文字、表格與圖表必須能在 PowerPoint 中直接修改",
+        "Logo 由母片統一管理，不在每一頁重複放置",
+        "未經確認的數據一律標示待補，不自行編造"
+      ],
+      "source_refs": ["CLAUDE.md", "00_Brand_Guidelines/v3.2"]
+    },
+    {
+      "title": "生成流程",
+      "facts": ["需求整理", "簡報規劃", "套用母片", "產出簡報", "品質檢查"],
+      "source_refs": ["presentation-skill/docs/CLAUDE_CODE_EXECUTION_ORDER.md"]
+    },
+    {
+      "title": "三種核准版型",
+      "facts": ["封面", "章節頁", "內容頁"],
+      "source_refs": ["presentation-skill/approved-layouts/military-tech/README.md"]
+    },
+    {
+      "title": "內文最小字級",
+      "facts": ["會議室投影：20 pt", "桌面螢幕／PDF：16 pt", "手機閱讀：28 pt", "印刷講義：11 pt"],
+      "notes": "資料來源：BXR CIS v3.2 Readability by Medium（P.61）",
+      "source_refs": ["00_Brand_Guidelines/v3.2/BXR_CIS_Brand_Guidelines_v3.2_Part02_p46-89.pdf#page=16"]
+    },
+    {
+      "title": "支援語言",
+      "facts": ["繁體中文", "English", "日本語"],
+      "source_refs": ["presentation-skill/contracts/presentation-brief.schema.json"]
+    }
+  ],
+  "must_avoid": ["虛構客戶名稱", "未經證實的效益數字"],
+  "output": {"pptx": true, "pdf": true}
+}

@@ -89,8 +89,19 @@ def placeholder(slide, idx):
     return None
 
 
+def lock_autofit(shape):
+    """Keep PowerPoint shrink-on-overflow for later edits but state the current scale (100%) so
+    renderers do not re-shrink text we already sized to fit."""
+    from pptx.oxml import parse_xml
+    bp = shape.text_frame._txBody.bodyPr
+    for c in list(bp):
+        if c.tag.endswith(("normAutofit", "noAutofit", "spAutoFit")): bp.remove(c)
+    bp.insert(0, parse_xml('<a:normAutofit xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" fontScale="100000" lnSpcReduction="0"/>'))
+
+
 def set_text(shape, text, size=None, color=None, font=None, lang=None):
     tf = shape.text_frame
+    if shape.is_placeholder: lock_autofit(shape)
     lines = text if isinstance(text, list) else [text]
     tf.text = ""
     for i, line in enumerate(lines):
@@ -198,13 +209,14 @@ def cards(slide, items, top=BODY_TOP + 0.05, height=None, accent=None, numbered=
 def process(slide, steps, accent=None, top=None):
     """Horizontal step flow: track line + square nodes + step labels/titles/descriptions."""
     n = len(steps); acc = accent or B.GRAPHITE
-    top = top or (3.05 if any(isinstance(x, dict) and x.get('body') for x in steps) else 3.45)
+    top = top or (2.85 if any(isinstance(x, dict) and x.get('body') for x in steps) else 3.25)
     seg = BODY_W / n
     hline(slide, M, top, BODY_W, color=B.MIST, weight=1.25, name="Process track")
     fits = True
     for i, st in enumerate(steps):
         x = M + i * seg
         node = rect(slide, x, top - 0.11, 0.22, 0.22, fill=acc if i == 0 else B.WHITE, line=acc, line_w=1.5, name=f"Step {i + 1} node")
+        textbox(slide, x, top - 1.05, seg - 0.3, 0.75, f"{i + 1:02d}", size=40, color=B.MIST, font=B.MONO, name=f"Step {i + 1} number")
         label(slide, x, top + 0.36, seg - 0.3, f"STEP {i + 1:02d}", color=B.SLATE, size=10, name=f"Step {i + 1} label")
         title = st["title"] if isinstance(st, dict) else st
         tsize, tl, f1 = fit_size(title, seg - 0.35, 1.1, [26, 24, 22, 20, 18], line=1.2, max_lines=2)
@@ -294,29 +306,58 @@ def bar_chart(slide, categories, values, series_name, number_format='0', highlig
     return gf
 
 
+def pending_height(items, w=BODY_W, size=18):
+    return 0.95 + sum(wrap_lines("□  " + t, size, w - 0.6) for t in items) * size * 1.5 / 72
+
+
 def pending_box(slide, x, y, w, h, title, items, lang="zh-TW"):
-    """Evidence gap callout: tells the presenter exactly what must be supplied (never invented)."""
+    """Evidence gap callout: tells the presenter exactly what must be supplied (never invented).
+    h=None -> height follows content (max to body bottom)."""
+    if h is None:
+        h = min(pending_height(items, w), BODY_BOTTOM - y)
     rect(slide, x, y, w, h, fill=B.PAPER, name="Pending input")
     rect(slide, x, y, 0.05, h, fill=B.TEXT_RED, name="Pending input bar")
-    label(slide, x + 0.3, y + 0.26, w - 0.6, title, color=B.TEXT_RED, size=10, name="Pending input label")
+    label(slide, x + 0.3, y + 0.24, w - 0.6, title, color=B.TEXT_RED, size=10, name="Pending input label")
     body = "\n".join("□  " + t for t in items)
-    size, _, fits = fit_size(body, w - 0.6, h - 0.85, [16, 15, 14, 13, 12], line=1.6)
-    textbox(slide, x + 0.3, y + 0.65, w - 0.6, h - 0.85, body.split("\n"), size=size, color=B.GRAPHITE, name="Pending input items", line=1.45)
+    size, _, fits = fit_size(body, w - 0.6, h - 0.8, [18, 16, 15, 14, 13, 12], line=1.5)
+    textbox(slide, x + 0.3, y + 0.62, w - 0.6, h - 0.8, body.split("\n"), size=size, color=B.GRAPHITE, name="Pending input items", line=1.4)
     return fits
 
 
-def agenda(slide, items, accent=None):
-    """Numbered agenda; two columns when > 4 items."""
-    cols = 2 if len(items) > 4 else 1
+def highlight(slide, text, icon=None, accent=None, top=BODY_TOP + 0.35):
+    """Key message block: official icon + large text. Used when a page has 1–2 short facts."""
+    acc = accent or B.GRAPHITE
+    x = M
+    if icon:
+        add_icon(slide, icon, Inches(M), Inches(top + 0.05), Inches(0.8), acc); x = M + 1.25
+    lines = text if isinstance(text, list) else [text]
+    body = "\n".join(lines)
+    size, n, fits = fit_size(body, SW - M - x - 0.5, 2.3, [32, 28, 26, 24, 22], line=1.35)
+    textbox(slide, x, top, SW - M - x - 0.5, 2.3, lines, size=size, color=B.BLACK, name="Key message", line=1.3)
+    return fits, top + max(n * size * 1.35 / 72, 0.9)
+
+
+def agenda(slide, items, accent=None, details=None):
+    """Numbered list; two columns when > 4 items. `details` adds a second line per item (summary)."""
+    cols = 2 if len(items) > (5 if details else 4) else 1
     per = (len(items) + cols - 1) // cols
     colw = (BODY_W - 0.6 * (cols - 1)) / cols
-    row_h = min(0.95, (BODY_BOTTOM - BODY_TOP - 0.2) / per)
+    row_h = min(1.25 if details else 0.95, (BODY_BOTTOM - BODY_TOP - 0.2) / per)
     for i, it in enumerate(items):
         c, r = divmod(i, per)
         x = M + c * (colw + 0.6); y = BODY_TOP + 0.15 + r * row_h
         textbox(slide, x, y, 0.9, row_h - 0.2, f"{i + 1:02d}", size=28, color=B.TEXT_RED, font=B.MONO, anchor=MSO_ANCHOR.MIDDLE, name=f"Agenda {i + 1} number")
-        size, _, _ = fit_size(it, colw - 1.1, row_h - 0.2, [24, 22, 20, 18], max_lines=1)
-        textbox(slide, x + 1.1, y, colw - 1.1, row_h - 0.2, it, size=size, color=B.BLACK, anchor=MSO_ANCHOR.MIDDLE, name=f"Agenda {i + 1} title")
+        det = details[i] if details else None
+        size, _, _ = fit_size(it, colw - 1.1, 0.5, [24, 22, 20, 18], max_lines=1)
+        if det:
+            textbox(slide, x + 1.1, y + 0.08, colw - 1.1, 0.45, it, size=size, color=B.BLACK, name=f"Agenda {i + 1} title")
+            dsize, _, okd = fit_size(det, colw - 1.1, 0.3, [16, 15, 14, 13], max_lines=1)
+            while not okd and len(det) > 8:
+                det = det[:int(len(det) * 0.85)].rstrip(" ·、,") + "…"
+                dsize, _, okd = fit_size(det, colw - 1.1, 0.3, [14, 13], max_lines=1)
+            textbox(slide, x + 1.1, y + 0.58, colw - 1.1, row_h - 0.75, det, size=dsize, color=B.SLATE, name=f"Agenda {i + 1} detail", line=1.3)
+        else:
+            textbox(slide, x + 1.1, y, colw - 1.1, row_h - 0.2, it, size=size, color=B.BLACK, anchor=MSO_ANCHOR.MIDDLE, name=f"Agenda {i + 1} title")
         hline(slide, x, y + row_h - 0.08, colw, name=f"Agenda {i + 1} rule")
 
 
