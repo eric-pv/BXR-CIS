@@ -115,6 +115,19 @@ class PipelineTests(unittest.TestCase):
                                 for n in NUM_RE.findall(c.text):
                                     self.assertIn(n, allowed, f"{name}: table number {n}")
 
+    def test_content_titles_same_size(self):
+        """Eric: every content-slide title in a deck uses one font size (40pt unless a long title forces smaller)."""
+        dark = ("BXR Cover", "BXR Section", "BXR Closing")
+        for name, r in self.each():
+            sizes = set()
+            for s in Presentation(str(r["pptx"])).slides:
+                if s.slide_layout.name in dark:
+                    continue
+                runs = [run for p in s.shapes.title.text_frame.paragraphs for run in p.runs]
+                sizes |= {run.font.size.pt if run.font.size else 40.0 for run in runs}
+            self.assertEqual(len(sizes), 1, f"{name}: {sizes}")
+            self.assertLessEqual(max(sizes), 40.0)
+
     def test_jp_theme_east_asian_font(self):
         jp = [r for r in RESULTS.values() if r["brief"]["language"] == "JP"]
         self.assertTrue(jp)

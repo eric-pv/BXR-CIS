@@ -34,7 +34,16 @@ def _kicker(slide, text, color):
         C.set_text(ph, text, color=color)
 
 
-def _title(slide, text, layout):
+CONTENT_TITLE_SIZES = [40, 36, 32, 28, 24]
+
+
+def content_title_size(titles):
+    """One size for every content-slide title in a deck (Eric: titles must all be the same size).
+    The longest title decides; all others use the same size."""
+    return min((C.fit_size(t, 8.5, 0.85, CONTENT_TITLE_SIZES, line=1.0, max_lines=1)[0] for t in titles), default=40)
+
+
+def _title(slide, text, layout, deck_size=None):
     t = slide.shapes.title
     if layout in ("BXR Cover", "BXR Closing") and C.text_width_in(text, 40) > 6.9:
         for sep in ("：", ": ", "｜", " — "):
@@ -47,8 +56,9 @@ def _title(slide, text, layout):
     elif layout == "BXR Section":
         size, n, _ = C.fit_size(text, 4.9, 1.0, [30, 28, 26, 24], line=1.1, max_lines=2)
     else:
-        size, n, _ = C.fit_size(text, 8.5, 0.7, [30, 28, 26, 24, 22, 20], line=1.0, max_lines=1)
-    C.set_text(t, text, size=None if size in (40, 36, 30) and layout != "BXR Closing" or (layout == "BXR Closing" and size == 36) else size)
+        size = deck_size or content_title_size([text])
+    default = {"BXR Cover": 40, "BXR Section": 30, "BXR Closing": 36}.get(layout, 40)
+    C.set_text(t, text, size=None if size == default and layout != "BXR Closing" or (layout == "BXR Closing" and size == 36) else size)
     return size
 
 
@@ -57,6 +67,7 @@ class Ctx:
         self.kv = kv; self.topic = brief["topic"]; self.accent = acc_deep; self.accent_dark = acc_light
         self.accent_block = acc_deep; self.title = ""; self.extra = {}
         self.icons = ["Simulation", "Training", "Analytics", "Command"]
+        self.title_size = None
 
 
 FAMILY = {"agenda": "agenda", "cards": "items", "process": "process", "bullets": "text"}
@@ -72,7 +83,7 @@ def build_slide(prs, L, s, brief, acc_light, acc_deep, fits, ctx=None, used=None
         keys = [x["title"] if isinstance(x, dict) else x for x in items]
         v = LY.select(FAMILY[s.kind], keys, used, sequence=s.kind == "process", prefer=s.data.get("_prev_variant"))
         if v is not None:
-            _title(slide, s.title, s.layout)
+            _title(slide, s.title, s.layout, ctx.title_size)
             if s.kicker: _kicker(slide, s.kicker, acc_light)
             ctx.title = s.title; ctx.extra = {"caption": None}
             ctx.icons = [pick_icon(k) for k in keys] or ctx.icons
@@ -83,7 +94,7 @@ def build_slide(prs, L, s, brief, acc_light, acc_deep, fits, ctx=None, used=None
             C.notes(slide, "\n".join(list(s.notes) + [f"Evidence status: {s.evidence}", f"Slide id: {s.slide_id}"]))
             return slide
     P = C.placeholder
-    _title(slide, s.title, s.layout)
+    _title(slide, s.title, s.layout, getattr(ctx, "title_size", None))
     k = s.kind; d = s.data; T = UI[brief["language"]]
     if s.kicker: _kicker(slide, s.kicker, acc_light)
     ok = True
@@ -245,6 +256,7 @@ def generate(brief_path, out_dir, previous_plan=None, render=True, master=None):
     fits = {}
     from .layouts import KVPicker
     ctx = Ctx(brief, acc_light, acc_deep, KVPicker(brief.get("sector"))); used = []
+    ctx.title_size = content_title_size([s.title for s in slides if s.layout not in ("BXR Cover", "BXR Section", "BXR Closing")])
     for s in slides:
         build_slide(prs, L, s, brief, acc_light, acc_deep, fits, ctx, used)
     pptx = out_dir / f"{brief['id']}.pptx"; prs.save(pptx)

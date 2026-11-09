@@ -184,7 +184,7 @@ def master_xml(layout_rids):
         f'<a:spcBef><a:spcPts val="300"/></a:spcBef><a:buFont typeface="Arial"/><a:buChar char="&#8211;"/>{rpr(14, color=B.SLATE)}</a:lvl3pPr>')
     for n in range(4, 10):
         body_lvls += f'<a:lvl{n}pPr marL="{e(0.80)}" indent="0"><a:buNone/>{rpr(14, color=B.SLATE)}</a:lvl{n}pPr>'
-    title_rpr = rpr(30, color=B.WHITE).replace("<a:defRPr", '<a:defRPr kern="1200"')
+    title_rpr = rpr(40, color=B.WHITE).replace("<a:defRPr", '<a:defRPr kern="1200"')
     title_lvl = f'<a:lvl1pPr algn="l"><a:lnSpc><a:spcPct val="100000"/></a:lnSpc><a:spcBef><a:spcPts val="0"/></a:spcBef><a:buNone/>{title_rpr}</a:lvl1pPr>'
     ids = "".join(f'<p:sldLayoutId id="{2147483649 + i}" r:id="{rid}"/>' for i, rid in enumerate(layout_rids))
     return (f'<p:sldMaster {NSDECL}><p:cSld><p:bg><p:bgPr><a:solidFill><a:srgbClr val="FFFFFF"/></a:solidFill><a:effectLst/></p:bgPr></p:bg><p:spTree>'
@@ -246,7 +246,7 @@ def build_layouts(parts):
                 pic(start_id + 3, "Logo (master-managed)", lg, SW - M - cw, 6.92, cw, ch)]
 
     def banner(title_w=8.6):
-        return [ph(3, "Title", "title", None, M, 0.14, title_w, 0.76, lvl(1, 30, B.WHITE), "內容頁標題（位於上方 Banner）", anchor="ctr")]
+        return [ph(3, "Title", "title", None, M, 0.08, title_w, 0.88, lvl(1, 40, B.WHITE), "內容頁標題（位於上方 Banner）", anchor="ctr")]
 
     content_bg = lambda part: bg_xml(img(part, B.BG["content"]), B.BG["content"])
     body_w = SW - 2 * M
