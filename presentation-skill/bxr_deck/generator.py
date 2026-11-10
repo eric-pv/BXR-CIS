@@ -58,10 +58,14 @@ def _title(slide, text, layout, deck_size=None):
     elif layout == "BXR Closing":
         size, n, _ = C.fit_size(text, 8.8, 1.7, [48, 44, 40, 36], line=1.0, max_lines=2)
     elif layout == "BXR Section":
-        size, n, _ = C.fit_size(text, 4.9, 1.0, [30, 28, 26, 24], line=1.1, max_lines=2)
+        # prefer one line (no orphan characters); wrap to two lines only when 28pt cannot hold it
+        # bold glyphs (esp. Latin) run ~10 % wider than the estimator assumes: fit against 4.3 in of the 4.78 in box
+        size, n, _ = C.fit_size(text, 4.3, 0.6, [36, 32, 30, 28], line=1.1, max_lines=1)
+        if n > 1:
+            size, n, _ = C.fit_size(text, 4.3, 1.15, [30, 28, 26, 24], line=1.15, max_lines=2)
     else:
         size = deck_size or content_title_size([text])
-    default = {"BXR Cover": 40, "BXR Section": 30, "BXR Closing": 48}.get(layout, 40)
+    default = {"BXR Cover": 40, "BXR Section": 36, "BXR Closing": 48}.get(layout, 40)
     C.set_text(t, text, size=None if size == default else size)
     return size
 
