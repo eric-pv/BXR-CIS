@@ -6,12 +6,13 @@ Design (Claude, v0.1 — pending Eric's visual approval):
   * Cover / Closing: the horizon light streak (y = 71.8 % of the frame) is the title's baseline.
     The title is bottom-anchored and "stands" on the light; a 2 px BxR-Red Reality Line starts at the
     title's left edge and runs into the cyan glow; subtitle and meta sit under the line.
-  * Section: the big BxR-Red chapter number stands on the light streak right next to the flare
-    (x 66 %, y 65.5 %); the chapter title hangs below the line.
+  * Section (rev. 2026-11-10): a large bold BxR-Red chapter number opens the right-hand column; the
+    bold chapter title stands on the light streak so the flare (x 66 %, y 65.5 %) glows under it.
   * Content: the dark top banner (0–13.8 %) carries kicker + title; its flare (x 9.8 %) sits under
     the first characters of the title. Everything below the banner is clean white body space.
-  * Logos are pictures on the layouts only (H_Reverse on dark, Symbol_White on section,
+  * Logos are pictures on the layouts only (stacked V_Reverse on cover/closing/section,
     H_Color on white content footer). Slides never get their own logo.
+  * All slide titles (cover, section, content banner incl. agenda, closing) are bold (Eric 2026-11-10).
   * Fonts/colours come from the Theme (Noto Sans TC major/minor, CIS colour scheme); text hierarchy
     comes from master txStyles + layout lstStyles. Exact sizes below are Claude's design decisions.
 Run:  python -m bxr_deck.master  [--out path] [--potx]
@@ -40,13 +41,17 @@ def e(v):  # inches -> EMU
 # ---------------------------------------------------------------- geometry (inches) — design tokens
 L_COVER = 5.60            # cover/closing text column (right ~58 % of frame, clear of artwork)
 HORIZON_COVER = 5.388     # 71.84 % of 7.5 in — measured light streak
-L_SEC = 7.70              # section text column, right of the diagonal panels
+L_SEC = 8.05              # section text column, clear of the diagonal panels' bright edge (rev. 2026-11-10)
 HORIZON_SEC = 4.913       # 65.5 %
 BANNER = 1.036            # content banner bottom (13.8 %)
 M = 0.62                  # content side margin
 # CIS v3.2 §02 Logo Placement (16:9): margin M = 72 px, cover logo width 360 px (of 1920)
 CIS_M = SW * 72 / 1920          # 0.5 in
-COVER_LOGO_W = SW * 360 / 1920   # 2.5 in
+COVER_LOGO_W = SW * 360 / 1920   # 2.5 in (horizontal logo; kept for reference)
+# Eric 2026-11-10: cover/closing/section use the stacked (vertical) logo — symbol above "Big x Reality"
+LOGO_V = "BXR_Logo_V_Reverse.png"       # red symbol + white wordmark, for dark backgrounds
+COVER_LOGO_V_W = 1.60                   # ≈230 px of 1920; ~1.24 in tall
+SECTION_LOGO_V_W = 1.00                 # quieter on chapter dividers
 RL_H = 0.022              # Reality Line thickness (~2 px at 1920)
 
 LAYOUT_NAMES = ["BXR Cover", "BXR Section", "BXR Title + Body", "BXR Two Content",
@@ -54,11 +59,11 @@ LAYOUT_NAMES = ["BXR Cover", "BXR Section", "BXR Title + Body", "BXR Two Content
 
 
 # ---------------------------------------------------------------- XML helpers
-def rpr(sz=None, color=None, font=None, spc=None, scheme=None, tag="a:defRPr", lang=None):
+def rpr(sz=None, color=None, font=None, spc=None, scheme=None, tag="a:defRPr", lang=None, bold=False):
     attrs = []
     if lang: attrs.append(f'lang="{lang}"')
     if sz: attrs.append(f'sz="{int(sz*100)}"')
-    attrs.append('b="0"')
+    attrs.append('b="1"' if bold else 'b="0"')
     if spc is not None: attrs.append(f'spc="{spc}"')
     inner = ""
     if color: inner += f'<a:solidFill><a:srgbClr val="{color}"/></a:solidFill>'
@@ -67,10 +72,10 @@ def rpr(sz=None, color=None, font=None, spc=None, scheme=None, tag="a:defRPr", l
     return f'<{tag} {" ".join(attrs)}>{inner}</{tag}>'
 
 
-def lvl(n=1, sz=None, color=None, font=None, spc=None, ln=None, caps=False, algn="l", bullet=False, scheme=None):
+def lvl(n=1, sz=None, color=None, font=None, spc=None, ln=None, caps=False, algn="l", bullet=False, scheme=None, bold=False):
     ln_xml = f'<a:lnSpc><a:spcPct val="{int(ln*1000)}"/></a:lnSpc>' if ln else ""
     bu = "" if bullet else "<a:buNone/>"
-    r = rpr(sz, color, font, spc, scheme)
+    r = rpr(sz, color, font, spc, scheme, bold=bold)
     if caps: r = r.replace("<a:defRPr ", '<a:defRPr cap="all" ', 1)
     return f'<a:lvl{n}pPr marL="0" indent="0" algn="{algn}">{ln_xml}<a:spcBef><a:spcPts val="0"/></a:spcBef>{bu}{r}</a:lvl{n}pPr>'
 
@@ -192,7 +197,7 @@ def master_xml(layout_rids):
         f'<a:spcBef><a:spcPts val="300"/></a:spcBef><a:buFont typeface="Arial"/><a:buChar char="&#8211;"/>{rpr(14, color=B.SLATE)}</a:lvl3pPr>')
     for n in range(4, 10):
         body_lvls += f'<a:lvl{n}pPr marL="{e(0.80)}" indent="0"><a:buNone/>{rpr(14, color=B.SLATE)}</a:lvl{n}pPr>'
-    title_rpr = rpr(40, color=B.WHITE).replace("<a:defRPr", '<a:defRPr kern="1200"')
+    title_rpr = rpr(40, color=B.WHITE, bold=True).replace("<a:defRPr", '<a:defRPr kern="1200"')
     title_lvl = f'<a:lvl1pPr algn="l"><a:lnSpc><a:spcPct val="100000"/></a:lnSpc><a:spcBef><a:spcPts val="0"/></a:spcBef><a:buNone/>{title_rpr}</a:lvl1pPr>'
     ids = "".join(f'<p:sldLayoutId id="{2147483649 + i}" r:id="{rid}"/>' for i, rid in enumerate(layout_rids))
     return (f'<p:sldMaster {NSDECL}><p:cSld><p:bg><p:bgPr><a:solidFill><a:srgbClr val="FFFFFF"/></a:solidFill><a:effectLst/></p:bgPr></p:bg><p:spTree>'
@@ -218,13 +223,13 @@ def build_layouts(parts):
     out = []
 
     # 1 Cover ---------------------------------------------------------------
-    p = parts[0]; bg = img(p, B.BG["cover"]); lg = img(p, B.LOGO / "BXR_Logo_H_Reverse.png")
-    lw, lh = logo_by_width(B.LOGO / "BXR_Logo_H_Reverse.png", COVER_LOGO_W)
+    p = parts[0]; bg = img(p, B.BG["cover"]); lg = img(p, B.LOGO / LOGO_V)
+    lw, lh = logo_by_width(B.LOGO / LOGO_V, COVER_LOGO_V_W)
     out.append(layout_xml("BXR Cover", "title", bg_xml(bg, B.BG["cover"]), [
         # CIS size/margin, mirrored to the top-right corner at Eric's request (2026-11-09)
         pic(2, "Logo (master-managed)", lg, SW - CIS_M - lw, CIS_M, lw, lh),
         ph(3, "Title", "ctrTitle", None, L_COVER, 2.10, SW - L_COVER - 0.70, HORIZON_COVER - 0.20 - 2.10,
-           lvl(1, 40, B.WHITE, ln=104), "簡報標題\nPresentation title", anchor="b"),
+           lvl(1, 40, B.WHITE, ln=104, bold=True), "簡報標題\nPresentation title", anchor="b"),
         rect(4, "Reality Line", L_COVER, HORIZON_COVER - RL_H / 2, 0.90, RL_H, B.RED),
         ph(5, "Subtitle", "subTitle", 1, L_COVER, HORIZON_COVER + 0.19, SW - L_COVER - 0.70, 0.62,
            lvl(1, 16, B.MIST, ln=115), "副標題｜簡報目的與對象"),
@@ -233,15 +238,20 @@ def build_layouts(parts):
     ], show_master=False))
 
     # 2 Section -------------------------------------------------------------
-    p = parts[1]; bg = img(p, B.BG["section"]); lg = img(p, B.LOGO / "BXR_Symbol_White.png")
-    sw_, sh_ = logo_size(B.LOGO / "BXR_Symbol_White.png", 0.44)
+    # Eric 2026-11-10 redesign: one text column right of the diagonal panels. A large bold BxR-Red
+    # chapter number opens the column; the bold chapter title stands directly ON the light streak
+    # (bottom-anchored, baseline just above it) so the flare (x 66 %) glows under the title; the red
+    # Reality Line starts at the title's left edge and runs into the flare. Small stacked logo top-right.
+    p = parts[1]; bg = img(p, B.BG["section"]); lg = img(p, B.LOGO / LOGO_V)
+    sw_, sh_ = logo_by_width(B.LOGO / LOGO_V, SECTION_LOGO_V_W)
+    title_bottom = HORIZON_SEC - 0.14
     out.append(layout_xml("BXR Section", "secHead", bg_xml(bg, B.BG["section"]), [
-        pic(2, "Symbol (master-managed)", lg, SW - 0.70 - sw_, 0.58, sw_, sh_),
-        ph(3, "Chapter Number", "body", 10, L_SEC, 2.20, 4.9, HORIZON_SEC - 0.10 - 2.20,
-           lvl(1, 96, B.RED, ln=85), "01", anchor="b", autofit="none"),
-        rect(4, "Reality Line", L_SEC, HORIZON_SEC - RL_H / 2, 0.80, RL_H, B.RED),
-        ph(5, "Section Title", "title", None, L_SEC, HORIZON_SEC + 0.22, SW - L_SEC - 0.62, 1.05,
-           lvl(1, 30, B.WHITE, ln=108), "章節名稱"),
+        pic(2, "Logo (master-managed)", lg, SW - CIS_M - sw_, CIS_M, sw_, sh_),
+        ph(3, "Chapter Number", "body", 10, L_SEC, 0.95, 3.6, title_bottom - 1.30 - 0.95,
+           lvl(1, 150, B.RED, ln=80, bold=True), "01", anchor="b", autofit="none"),
+        ph(5, "Section Title", "title", None, L_SEC, title_bottom - 1.20, SW - L_SEC - CIS_M, 1.20,
+           lvl(1, 36, B.WHITE, ln=105, bold=True), "章節名稱", anchor="b"),
+        rect(4, "Reality Line", L_SEC, HORIZON_SEC - RL_H / 2, 0.90, RL_H, B.RED),
     ], show_master=False))
 
     # content footer shared by layouts 3–6
@@ -255,7 +265,7 @@ def build_layouts(parts):
                 pic(start_id + 3, "Logo (master-managed)", lg, SW - M - cw, 6.92, cw, ch)]
 
     def banner(title_w=8.6):
-        return [ph(3, "Title", "title", None, M, 0.08, title_w, 0.88, lvl(1, 40, B.WHITE), "內容頁標題（位於上方 Banner）", anchor="ctr")]
+        return [ph(3, "Title", "title", None, M, 0.08, title_w, 0.88, lvl(1, 40, B.WHITE, bold=True), "內容頁標題（位於上方 Banner）", anchor="ctr")]
 
     content_bg = lambda part: bg_xml(img(part, B.BG["content"]), B.BG["content"])
     body_w = SW - 2 * M
@@ -271,13 +281,13 @@ def build_layouts(parts):
         ph(5, "Takeaway", "body", 2, M + 8.10, 1.50, body_w - 8.10, 5.10, "", "圖表重點說明")] + footer(p, 10)))
 
     # 7 Closing ---------------------------------------------------------------
-    p = parts[6]; bg = img(p, B.BG["cover"]); lg = img(p, B.LOGO / "BXR_Logo_H_Reverse.png")
-    lw, lh = logo_by_width(B.LOGO / "BXR_Logo_H_Reverse.png", COVER_LOGO_W)
+    p = parts[6]; bg = img(p, B.BG["cover"]); lg = img(p, B.LOGO / LOGO_V)
+    lw, lh = logo_by_width(B.LOGO / LOGO_V, COVER_LOGO_V_W)
     out.append(layout_xml("BXR Closing", "cust", bg_xml(bg, B.BG["cover"]), [
         pic(2, "Logo (master-managed)", lg, SW - CIS_M - lw, CIS_M, lw, lh),
         # closing line: large, centred in the right-hand field, vertically mid-frame (Eric 2026-11-09)
         ph(3, "Closing Line", "title", None, 3.90, 2.70, SW - 3.90 - CIS_M, 1.70,
-           lvl(1, 48, B.WHITE, ln=100, algn="ctr"), "Turn Every Drill into Real", anchor="ctr"),
+           lvl(1, 48, B.WHITE, ln=100, algn="ctr", bold=True), "Turn Every Drill into Real", anchor="ctr"),
         rect(4, "Reality Line", L_COVER, HORIZON_COVER - RL_H / 2, 0.90, RL_H, B.RED),
         ph(5, "Closing Text", "body", 10, L_COVER, HORIZON_COVER + 0.19, SW - L_COVER - 0.70, 0.62,
            lvl(1, 16, B.MIST, ln=120), "全球動力科技股份有限公司 · bigxreality.com"),
