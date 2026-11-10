@@ -1,0 +1,91 @@
+{
+  "id": "bxr-company-profile",
+  "topic": "全球動力科技 Big x Reality 公司簡介",
+  "language": "zh-TW",
+  "audience": "external",
+  "purpose": "介紹 Big x Reality 的願景、使命、定位、核心價值與產品架構",
+  "slides": 19,
+  "series": "corporate",
+  "sector": "corporate",
+  "source_policy": "provided-only",
+  "content": [
+    {
+      "title": "願景",
+      "facts": [
+        "「成為國防與公共安全領域最值得信賴的擬真訓練科技夥伴，讓每一位第一線人員在面對真實任務之前，都已經歷過它。」——Big x Reality 願景"
+      ],
+      "source_refs": ["00_Brand_Guidelines/v3.2/BXR_CIS_Brand_Guidelines_v3.2_Part01_p01-45.pdf#P.03"]
+    },
+    {
+      "title": "使命",
+      "facts": [
+        "整合 AI、XR 與實體裝備，打造可量測、可重複、可部署的高擬真訓練環境",
+        "把真實任務重建為可重複、可量測的訓練環境，讓能力在進入現場之前就已經被驗證"
+      ],
+      "source_refs": ["00_Brand_Guidelines/v3.2/BXR_CIS_Brand_Guidelines_v3.2_Part01_p01-45.pdf#P.03"]
+    },
+    {
+      "title": "從真實任務到現場的能力路徑",
+      "facts": [
+        "真實任務 — 高風險、不可重來、難以在現場演練的任務情境",
+        "擬真重建 — AI × XR × 實體裝備重建情境，可重複、可量測、可調整",
+        "能力回到現場 — 經過驗證的判斷與協同，帶回真實任務"
+      ],
+      "source_refs": ["00_Brand_Guidelines/v3.2/BXR_CIS_Brand_Guidelines_v3.2_Part01_p01-45.pdf#P.03"],
+      "notes": "定位：對於必須為高風險任務做好準備的軍、警、消防救災與智慧城市單位，Big x Reality 是把真實情境轉化為可量測訓練的國防科技模擬夥伴——不同於消費型 VR 或遊戲化系統，我們以任務成果、硬體整合與訓練數據為核心。"
+    },
+    {
+      "title": "核心價值",
+      "facts": [
+        "真實 Realism — 情境、裝備與壓力都要接近真實，訓練才有意義",
+        "精準 Precision — 每一次演練都能量測、記錄與復盤，用數據說話",
+        "備戰 Readiness — 系統可部署、可擴充，隨時投入單位的訓練節奏",
+        "夥伴 Partnership — 與單位共同設計訓練，而不是交付一台設備就離開"
+      ],
+      "source_refs": ["00_Brand_Guidelines/v3.2/BXR_CIS_Brand_Guidelines_v3.2_Part01_p01-45.pdf#P.04"]
+    },
+    {
+      "title": "品牌個性：我們是 vs 我們不是",
+      "facts": [
+        "專業：精準、有方法、說得清楚｜官僚、艱澀",
+        "戰術：理解編組、程序與任務節奏｜軍武迷、耍帥",
+        "先進：前瞻且有技術依據｜炫技、廉價科幻",
+        "可靠：穩定、可驗證、交付得到｜老派、沉重",
+        "沉浸：身歷其境的訓練壓力｜娛樂、遊戲感",
+        "任務導向：一切以任務成果為目標｜以設備規格為賣點"
+      ],
+      "source_refs": ["00_Brand_Guidelines/v3.2/BXR_CIS_Brand_Guidelines_v3.2_Part01_p01-45.pdf#P.04"]
+    },
+    {
+      "title": "服務領域",
+      "facts": [
+        "DEF — 國防・軍事訓練",
+        "LAW — 警政・執法",
+        "RES — 消防・救災",
+        "UAS — 無人系統",
+        "CITY — 智慧城市"
+      ],
+      "source_refs": ["00_Brand_Guidelines/v3.2/BXR_CIS_Brand_Guidelines_v3.2_Part02_p46-89.pdf#P.52"]
+    },
+    {
+      "title": "產品架構",
+      "facts": [
+        "訓練系統 — 整合式硬體方案",
+        "技術平台 — AI／XR／無人系統",
+        "產品：SUT BOX、POLICE BOX、AI MILITARY、XR TACTICAL TRAINING、MR TRAINING、UAV / UNMANNED SYSTEMS",
+        "產品分組與領域標籤以品牌窗口確認為準"
+      ],
+      "source_refs": ["00_Brand_Guidelines/v3.2/BXR_CIS_Brand_Guidelines_v3.2_Part02_p46-89.pdf#P.52"],
+      "notes": "CIS v3.2 P.52 註明：產品分組與領域標籤為本版提案，正式發布前請品牌窗口確認各產品歸屬。"
+    },
+    {
+      "title": "品牌承諾",
+      "facts": [
+        "「練過的，就是上場用得上的。」——Big x Reality 品牌承諾"
+      ],
+      "source_refs": ["00_Brand_Guidelines/v3.2/BXR_CIS_Brand_Guidelines_v3.2_Part01_p01-45.pdf#P.03"]
+    }
+  ],
+  "must_avoid": ["虛構客戶", "虛構效益數字", "遊戲化語彙"],
+  "output": {"pptx": true, "pdf": false}
+}
