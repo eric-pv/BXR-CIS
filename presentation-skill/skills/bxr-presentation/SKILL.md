@@ -30,7 +30,7 @@ Code map:
 - `bxr_deck/compose.py` — native shapes, tables, charts, text fitting; `bxr_deck/generator.py` — pipeline + QA gates.
 
 ## Sources
-Read the complete CIS v3.2 manual, official brand assets in the repository, and approved PPTX layout catalog. Existing official template: `07_Templates/BXR_Presentation_Template_v3.2.pptx`.
+Read the complete CIS v3.2 manual, official brand assets in the repository, and approved PPTX layout catalog. Do not use the former `07_Templates` PowerPoint templates (removed 2026-11-13); use `bxr_deck` with the approved layouts only.
 
 ## Brand requirements
 - Public-facing spelling: Big x Reality; BxR internally.

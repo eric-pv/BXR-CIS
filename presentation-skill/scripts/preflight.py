@@ -11,7 +11,7 @@ def issue(errors,message):errors.append(message)
 def check(root,require_lfs=False):
     base=root/"presentation-skill"
     errors=[];warnings=[];results={}
-    for name in ("00_Brand_Guidelines/v3.2","01_Logo","02_Color/BXR_Colors_v3.2.json","03_Fonts","04_Graphics/Icons","07_Templates/BXR_Presentation_Template_v3.2.pptx"):
+    for name in ("00_Brand_Guidelines/v3.2","01_Logo","02_Color/BXR_Colors_v3.2.json","03_Fonts","04_Graphics/Icons"):
         if not (root/name).exists():issue(errors,"missing authoritative source "+name)
     for name in ("contracts/presentation-brief.schema.json","contracts/deck-plan.schema.json","config/presentation-theme.json"):
         path=base/name

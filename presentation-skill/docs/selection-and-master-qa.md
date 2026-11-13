@@ -6,7 +6,7 @@ This document defines executable acceptance contracts. It does NOT imply a fully
 ## Slide selection (ranked)
 1. Determine slide **role**: cover, section, content, comparison, process, timeline, data, map, product, people, summary.
 2. For cover / section / content **in the military-tech series**, start from the 3 approved backgrounds in `approved-layouts/military-tech/`; backgrounds MUST NOT include text or logo.
-3. For complex content pages: prefer an **approved BXR-adapted editable layout** matching role, then official `07_Templates/BXR_Presentation_Template_v3.2.pptx`.
+3. For complex content pages: use an **approved BXR-adapted editable layout** matching role (the former `07_Templates` PowerPoint templates were removed on 2026-11-13 and must not be used).
 4. Purchased libraries (`500頁.pptx` and Aviation Slides) are **source candidates**, not approved BXR templates. After adapting / inspecting a specific slide, mark `cis_approved=true` with proof of visual and editability QA before automatic use.
 5. Default to one key message per slide; split dense content rather than shrinking text to unreadable size.
 6. Preserve original animation only if editable objects and timing have been validated using actual PowerPoint.
