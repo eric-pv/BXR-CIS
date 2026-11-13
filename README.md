@@ -46,6 +46,7 @@
 | [`05_Characters/`](05_Characters/) | 人物去背圖、人物動作與參考頁 | 需遵循 CIS 的使用場景限制 |
 | [`06_KeyVisuals/`](06_KeyVisuals/) | 公司及不同情境主視覺 | 優先查找現有官方視覺 |
 | [`07_Templates/`](07_Templates/) | 社群模板 | PowerPoint 簡報範本 v3.1／v3.2 已移除（2026-11-13），簡報請用 `presentation-skill` 產生器 |
+| [`systems/`](systems/) | 內部系統規格：活動管理／CRM（ExhibitIQ）與**獨立的**財務系統 | 共用開發規則在 `systems/COMMON_DEV_RULES.md` |
 | [`presentation-skill/`](presentation-skill/) | AI Skill 需求、技術規格、版型索引 schema 與工作計畫 | **開發中，尚非完整生成器** |
 
 ### 重要入口
