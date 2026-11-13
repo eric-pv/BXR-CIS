@@ -16,7 +16,7 @@
 - `02_Color/BXR_Colors_v3.2.json`：配色值。
 - `03_Fonts/`：字型與授權說明。
 - `01_Logo/`：官方 Logo 原稿。
-- `07_Templates/BXR_Presentation_Template_v3.2.pptx`：官方 PowerPoint 參考母片。
+- ~~`07_Templates/BXR_Presentation_Template_v3.2.pptx`~~：已依 Eric 2026-11-13 指示移除，不得使用。
 - `04_Graphics/Icons/`：官方 SVG、額外 ICON、插畫。
 - `presentation-skill/approved-layouts/military-tech/`：封面、章節過渡、內容頁三張背景 PNG。
 - `presentation-skill/source-library/`：商業 PPTX 素材，保持唯讀。

@@ -45,7 +45,7 @@
 | [`04_Graphics/`](04_Graphics/) | Reality Line、Terrain、XGrid、Icons、Sector 視覺 | 依場景選取適合圖形 |
 | [`05_Characters/`](05_Characters/) | 人物去背圖、人物動作與參考頁 | 需遵循 CIS 的使用場景限制 |
 | [`06_KeyVisuals/`](06_KeyVisuals/) | 公司及不同情境主視覺 | 優先查找現有官方視覺 |
-| [`07_Templates/`](07_Templates/) | 原始官方 PPTX 及社群模板 | **目前官方簡報範本為 v3.2** |
+| [`07_Templates/`](07_Templates/) | 社群模板 | PowerPoint 簡報範本 v3.1／v3.2 已移除（2026-11-13），簡報請用 `presentation-skill` 產生器 |
 | [`presentation-skill/`](presentation-skill/) | AI Skill 需求、技術規格、版型索引 schema 與工作計畫 | **開發中，尚非完整生成器** |
 
 ### 重要入口
@@ -54,7 +54,6 @@
 - [CIS v3.2 第 46–89 頁](00_Brand_Guidelines/v3.2/BXR_CIS_Brand_Guidelines_v3.2_Part02_p46-89.pdf)
 - [CIS v3.2 資產清單](00_Brand_Guidelines/v3.2/Asset_Inventory_v3.2.csv)
 - [CIS v3.2 版本說明](00_Brand_Guidelines/v3.2/README_v3.2.txt)
-- [官方簡報 PPTX v3.2](07_Templates/BXR_Presentation_Template_v3.2.pptx)
 - [AI Presentation Skill 說明](presentation-skill/README.md)
 - [Skill 規格](presentation-skill/skills/bxr-presentation/SKILL.md)
 - [交接 Claude Code 的開發計畫](presentation-skill/docs/implementation-plan.md)

@@ -37,7 +37,7 @@
 | 字體／授權 | `03_Fonts/` | 主字 Noto Sans TC，技術輔字 B612 Mono，遵守比例與權重規範 |
 | ICON／插圖 | `04_Graphics/Icons/` | 官方 SVG 與 Additional/Illustrations 分流 |
 | 角色及主視覺 | `05_Characters/`、`06_KeyVisuals/` | 依需求挑選，保留原素材 |
-| 官方範本 | `07_Templates/BXR_Presentation_Template_v3.2.pptx` | 讀取真實母片、字色與格式 |
+| ~~官方範本~~ | 已移除（2026-11-13，Eric 指示） | 不得使用 `07_Templates` 的 PowerPoint 範本 |
 | 已核准三張背景 | `presentation-skill/approved-layouts/military-tech/` | `BXR_Military_Cover_16x9.png`、`BXR_Military_Section_16x9.png`、`BXR_Military_Content_White_16x9.png` |
 | 商業母版來源 1 | `presentation-skill/source-library/500頁.pptx` | 604 slide XML；原檔維持唯讀 |
 | 商業母版來源 2 | `presentation-skill/source-library/Aviation Slides.zip` | 249 份真實 PPTX，合計約 5,184 slide XML；原檔維持唯讀 |

@@ -7,7 +7,7 @@
 2. [設計權責與使用者已確認的視覺要求](presentation-skill/docs/CLAUDE_HANDOFF_DESIGN_AUTHORITY.md)
 3. [V0.1 工程契約與測試閘門](presentation-skill/docs/CLAUDE_V01_BUILD_CHECKLIST.md)
 4. [Skill 主要規範](presentation-skill/skills/bxr-presentation/SKILL.md)
-5. [CIS v3.2 官方規範](00_Brand_Guidelines/v3.2/) 與 [官方範本](07_Templates/BXR_Presentation_Template_v3.2.pptx)
+5. [CIS v3.2 官方規範](00_Brand_Guidelines/v3.2/)（`07_Templates/` 的 PowerPoint 範本 v3.1／v3.2 已依 Eric 2026-11-13 指示移除，**不得使用或重建**；簡報一律用 `presentation-skill/bxr_deck` 產生器與核准版型）
 
 ## 終極目標
 員工用自然語言提供主題、目的、內容與語言，系統能選擇、調整符合 CIS 的高品質版型，產出**可以在 PowerPoint 裡真正修改文字、表格、圖表、物件的 PPTX**。**Claude Code 負責正式美術排版、母片及程式**；既有 ChatGPT 試作品僅作技術參考，**不能照抄它的排版**。

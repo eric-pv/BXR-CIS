@@ -32,4 +32,5 @@ python -m bxr_deck build --brief <brief.json> --output /tmp/bxr-out/<id>
 
 ## 不可做
 - 不逐頁插入 Logo（Logo 由母片管理）、不改 CIS 色彩、不把頁面壓成圖片。
-- 不修改 `07_Templates/`、`00_Brand_Guidelines/` 與 `source-library/`。
+- 不使用、不重建 `07_Templates` 的 PowerPoint 範本（已移除）；只用 `bxr_deck` 產生器與核准版型。
+- 不修改 `00_Brand_Guidelines/` 與 `source-library/`。

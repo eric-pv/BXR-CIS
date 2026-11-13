@@ -8,7 +8,7 @@ Create editable, high-quality PowerPoint decks from natural-language briefs usin
 ## Existing authoritative assets
 - `../00_Brand_Guidelines/v3.2/README_v3.2.txt` — v3.2 brand release notes.
 - `../02_Color/BXR_Colors_v3.2.json` — machine-readable color system.
-- `../07_Templates/BXR_Presentation_Template_v3.2.pptx` — official starting presentation template.
+- `07_Templates/` PowerPoint templates v3.1/v3.2 were removed (Eric, 2026-11-13): do not use or recreate them; build decks with `bxr_deck` and the approved layouts.
 - `../00_Brand_Guidelines/v3.2/Asset_Inventory_v3.2.csv` — official asset inventory.
 - The two PDFs in `../00_Brand_Guidelines/v3.2/` together form the definitive 89-page CIS v3.2 manual (pages 1–45 and 46–89).
 
