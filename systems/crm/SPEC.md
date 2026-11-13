@@ -1,6 +1,6 @@
 # 活動管理／CRM（ExhibitIQ）— 開發規格
 
-> 整理自《活動管理系統 — 開發規格書》的 CRM 模組。財務（費用管理）已獨立，見 [../finance/SPEC.md](../finance/SPEC.md)。
+> 整理自《活動管理系統 — 開發規格書》的 CRM 模組。費用管理已獨立為「活動花費紀錄」，見 [../finance/SPEC.md](../finance/SPEC.md)。
 > 共用規則（架構、流程、安全、風格、SQL、RLS 原則、踩過的坑）見 [../COMMON_DEV_RULES.md](../COMMON_DEV_RULES.md)。
 
 ## 1. 概述
@@ -26,7 +26,7 @@ profiles                -- 對應 auth.users，決定角色
   role text check in ('admin','editor','viewer') default 'viewer'
   department, title text
 
-exhibitions             -- CRM 自己的展覽主檔（財務系統另有一份；是否同步為待決事項）
+exhibitions             -- CRM 自己的展覽主檔（花費紀錄另有一份；是否同步為待決事項）
   id uuid PK
   name text not null unique
   country, series, note text
@@ -204,4 +204,4 @@ var RTL_REGEX = /[֐-׿؀-ۿݐ-ݿࢠ-ࣿיִ-﷿ﹰ-﻿]/;
 | **CRM 匯出** | 名單匯出 |
 | **分析儀表板擴充** | CRM ROI 比較，用 `event_contacts` + `contacts_with_score` |
 | **AI 費用控管** | `token_usage` / `estimated_cost` 已預留，尚未做統計與用量上限 |
-| **展覽主檔與財務系統的對應** | 財務已獨立，兩邊展覽清單是否同步、如何對應（名稱或匯出匯入）待決 |
+| **展覽主檔與花費紀錄的對應** | 花費紀錄已獨立，兩邊展覽清單是否同步、如何對應（名稱或匯出匯入）待決 |
