@@ -39,3 +39,5 @@ jobs:
         run: python presentation-skill/tests/test_aviation_layouts.py
       - name: Aviation content triggers and fallback tests
         run: python presentation-skill/tests/test_aviation_planner.py
+      - name: Aviation extraction batches (image-free structural layouts)
+        run: python presentation-skill/tests/test_extract_layouts.py

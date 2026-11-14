@@ -1264,6 +1264,420 @@
    ]
   },
   {
+   "id": "items.pyramid",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 1,
+   "category": "items",
+   "tags": [
+    "items"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "items.pyramid",
+   "family": "items",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-206-0001",
+    "AVI-206-0003",
+    "AVI-206-0006"
+   ],
+   "ref_slides": [
+    "AVI-206-0001",
+    "AVI-206-0003",
+    "AVI-206-0006"
+   ],
+   "items_min": 3,
+   "items_max": 5,
+   "needs_image": false,
+   "prefers": "",
+   "description": "",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "process.funnel",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 1,
+   "category": "process",
+   "tags": [
+    "process",
+    "sequence"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "process.funnel",
+   "family": "process",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-094-0001",
+    "AVI-094-0002",
+    "AVI-094-0003"
+   ],
+   "ref_slides": [
+    "AVI-094-0001",
+    "AVI-094-0002",
+    "AVI-094-0003"
+   ],
+   "items_min": 3,
+   "items_max": 5,
+   "needs_image": false,
+   "prefers": "sequence",
+   "description": "",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "items.matrix",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 4,
+   "category": "items",
+   "tags": [
+    "items"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "items.matrix",
+   "family": "items",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-144-0004",
+    "AVI-144-0005",
+    "AVI-144-0002"
+   ],
+   "ref_slides": [
+    "AVI-144-0004",
+    "AVI-144-0005",
+    "AVI-144-0002"
+   ],
+   "items_min": 4,
+   "items_max": 4,
+   "needs_image": false,
+   "prefers": "",
+   "description": "",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "process.cycle",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 3,
+   "category": "process",
+   "tags": [
+    "process",
+    "sequence"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "process.cycle",
+   "family": "process",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-079-0003",
+    "AVI-079-0004",
+    "AVI-080-0002"
+   ],
+   "ref_slides": [
+    "AVI-079-0003",
+    "AVI-079-0004",
+    "AVI-080-0002"
+   ],
+   "items_min": 3,
+   "items_max": 6,
+   "needs_image": false,
+   "prefers": "sequence",
+   "description": "",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "items.pillars",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 3,
+   "category": "items",
+   "tags": [
+    "items"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "items.pillars",
+   "family": "items",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-182-0003",
+    "AVI-182-0002",
+    "AVI-182-0005"
+   ],
+   "ref_slides": [
+    "AVI-182-0003",
+    "AVI-182-0002",
+    "AVI-182-0005"
+   ],
+   "items_min": 3,
+   "items_max": 5,
+   "needs_image": false,
+   "prefers": "",
+   "description": "",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "items.concentric",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 1,
+   "category": "items",
+   "tags": [
+    "items"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "items.concentric",
+   "family": "items",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-208-0001",
+    "AVI-208-0002",
+    "AVI-065-0001"
+   ],
+   "ref_slides": [
+    "AVI-208-0001",
+    "AVI-208-0002",
+    "AVI-065-0001"
+   ],
+   "items_min": 2,
+   "items_max": 4,
+   "needs_image": false,
+   "prefers": "",
+   "description": "",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "process.phases",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 2,
+   "category": "process",
+   "tags": [
+    "process",
+    "sequence"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "process.phases",
+   "family": "process",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-001-0002",
+    "AVI-001-0006",
+    "AVI-001-0004"
+   ],
+   "ref_slides": [
+    "AVI-001-0002",
+    "AVI-001-0006",
+    "AVI-001-0004"
+   ],
+   "items_min": 2,
+   "items_max": 4,
+   "needs_image": false,
+   "prefers": "sequence",
+   "description": "",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "items.venn",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 1,
+   "category": "items",
+   "tags": [
+    "items"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "items.venn",
+   "family": "items",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-239-0001",
+    "AVI-239-0003",
+    "AVI-240-0002"
+   ],
+   "ref_slides": [
+    "AVI-239-0001",
+    "AVI-239-0003",
+    "AVI-240-0002"
+   ],
+   "items_min": 2,
+   "items_max": 3,
+   "needs_image": false,
+   "prefers": "",
+   "description": "",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "process.chevrons",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 2,
+   "category": "process",
+   "tags": [
+    "process",
+    "sequence"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "process.chevrons",
+   "family": "process",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-003-0002",
+    "AVI-003-0006",
+    "AVI-003-0001"
+   ],
+   "ref_slides": [
+    "AVI-003-0002",
+    "AVI-003-0006",
+    "AVI-003-0001"
+   ],
+   "items_min": 3,
+   "items_max": 6,
+   "needs_image": false,
+   "prefers": "sequence",
+   "description": "",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
+   "id": "items.number-rings",
+   "source_file": "presentation-skill/source-library/Aviation Slides.zip",
+   "source_slide": 7,
+   "category": "items",
+   "tags": [
+    "items"
+   ],
+   "editable": true,
+   "animation_present": false,
+   "animation_verified": false,
+   "approved": false,
+   "license_status": "internal-allowed",
+   "variant": "items.number-rings",
+   "family": "items",
+   "module": "bxr_deck.layouts",
+   "status": "claude-reviewed",
+   "origin": "reference-distilled",
+   "ref_pages": [
+    "AVI-166-0007",
+    "AVI-166-0006",
+    "AVI-170-0003"
+   ],
+   "ref_slides": [
+    "AVI-166-0007",
+    "AVI-166-0006",
+    "AVI-170-0003"
+   ],
+   "items_min": 3,
+   "items_max": 5,
+   "needs_image": false,
+   "prefers": "",
+   "description": "",
+   "history": [
+    {
+     "status": "claude-reviewed",
+     "by": "claude",
+     "note": "native CIS v3.2 rebuild in bxr_deck"
+    }
+   ]
+  },
+  {
    "id": "compare.table",
    "source_file": "presentation-skill/source-library/Aviation Slides.zip",
    "source_slide": 18,
