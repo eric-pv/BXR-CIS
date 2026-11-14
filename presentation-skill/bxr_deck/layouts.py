@@ -821,3 +821,237 @@ def data_chart(slide, d, ctx):
 
 def ref_note(v):
     return f"layout variant {v.name}; distilled from reference library pages {', '.join('#' + str(p) for p in v.ref) or '—'}"
+
+
+# ================================================================== Aviation library, extraction batch 1 (2026-11-15)
+# Image-free structural diagrams distilled from Aviation Slides decks that had no BXR equivalent yet:
+# pyramid (AVI-206), funnel (AVI-094), 2x2 matrix (AVI-144), cycle (AVI-079), pillars (AVI-182),
+# concentric circles (AVI-208/065), phase columns (AVI-001), venn (AVI-239), chevron row (AVI-003),
+# numbered rings (AVI-166). Rebuilt with native shapes in CIS v3.2 colours (one red focus per slide);
+# no pixels, text or marks are taken from the purchased files. Registered in existing families so the
+# generator can select them without new dispatch code.
+def _tb_split(it):
+    """(title, body) from an items dict or a process string ("A — B" / "A：B")."""
+    if isinstance(it, dict):
+        return _item_title(it), _item_body(it)
+    for sep in (" — ", "—", "：", ": "):
+        if sep in it:
+            a, b = it.split(sep, 1)
+            if 0 < len(a.strip()) <= 20: return a.strip(), b.strip()
+    return it.strip(), None
+
+
+def _alpha(shape, val=78000):
+    """Semi-transparent solid fill (venn overlaps) — native <a:alpha>, still editable."""
+    from lxml import etree
+    clr = shape._element.spPr.find(_A + "solidFill").find(_A + "srgbClr")
+    a = etree.SubElement(clr, _A + "alpha"); a.set("val", str(val))
+
+
+def _label_rows(slide, rows, x, w, ys, h, name, num_color=None):
+    """Numbered title + body labels at given vertical centres (shared by pyramid / funnel / concentric)."""
+    ts = _common([t for t, _ in rows], w - 0.75, 0.5, [20, 18, 17, 16, 15], max_lines=1)
+    bs = _common([b for _, b in rows if b] or ["x"], w - 0.75, max(0.35, h - 0.45), [15, 14, 13, 12], line=1.2, max_lines=2)
+    for i, ((t, b), yc) in enumerate(zip(rows, ys)):
+        _num(slide, x, yc - 0.42, 0.6, 0.4, i, 15, num_color or (B.TEXT_RED if i == 0 else B.SLATE), name=f"{name} {i + 1} number")
+        tb = _txt(slide, x + 0.7, yc - 0.45, w - 0.75, 0.45, t, ts, B.BLACK, name=f"{name} {i + 1} title", anchor=MSO_ANCHOR.BOTTOM)
+        for r in tb.text_frame.paragraphs[0].runs: r.font.bold = True
+        if b:
+            bh = max(0.3, min(max(0.35, h - 0.45), BOT - (yc + 0.02)))      # never below the content zone / footer
+            _txt(slide, x + 0.7, yc + 0.02, w - 0.75, bh, b, bs, B.SLATE, name=f"{name} {i + 1} body", line=1.2)
+
+
+def _bold(tb):
+    for p in tb.text_frame.paragraphs:
+        for r in p.runs: r.font.bold = True
+    return tb
+
+
+@variant("items.pyramid", "items", ("AVI-206-0001", "AVI-206-0003", "AVI-206-0006"), 3, 5,
+         fit=lambda f: 1.0 if f["n"] >= 4 else -0.5)
+def items_pyramid(slide, items, ctx):
+    rows = [_tb_split(i) for i in items]; n = len(rows)
+    px, pw = M + 0.2, 5.0; y0, y1 = TOP + 0.15, BOT - 0.1; gap = 0.08
+    hb = (y1 - y0 - gap * (n - 1)) / n
+    fills = [B.TEXT_RED, B.BLACK, B.GRAPHITE, B.SLATE, B.ASH]
+    ys = []
+    for i in range(n):
+        top = y0 + i * (hb + gap); bot = top + hb
+        wt = pw * (top - y0) / (y1 - y0); wb = pw * (bot - y0) / (y1 - y0)
+        cx = px + pw / 2
+        if i == 0:
+            s = C.rect(slide, cx - wb / 2, top, wb, hb, fill=fills[0], name="Pyramid 1", shape=MSO_SHAPE.ISOSCELES_TRIANGLE)
+        else:
+            s = C.rect(slide, cx - wb / 2, top, wb, hb, fill=fills[min(i, 4)], name=f"Pyramid {i + 1}", shape=MSO_SHAPE.TRAPEZOID)
+            ss = min(wb, hb); s.adjustments[0] = min(0.99, ((wb - wt) / 2) / ss)
+        ys.append(top + hb / 2)
+        C.hline(slide, cx + (wt + wb) / 4 + 0.1, top + hb / 2, px + pw + 0.55 - (cx + (wt + wb) / 4 + 0.1), color=B.LINE, name=f"Pyramid {i + 1} leader")
+    _label_rows(slide, rows, px + pw + 0.65, M + W - (px + pw + 0.65), ys, hb, "Pyramid")
+
+
+@variant("process.funnel", "process", ("AVI-094-0001", "AVI-094-0002", "AVI-094-0003"), 3, 5, prefers="sequence",
+         fit=lambda f: 1.0)
+def process_funnel(slide, steps, ctx):
+    rows = [_tb_split(s) for s in steps]; n = len(rows)
+    px, pw = M + 0.2, 5.0; y0, y1 = TOP + 0.15, BOT - 0.1; gap = 0.1
+    hb = (y1 - y0 - gap * (n - 1)) / n; minw = 1.1
+    fills = [B.ASH, B.SLATE, B.GRAPHITE, B.BLACK, B.TEXT_RED]
+    ys = []
+    for i in range(n):
+        top = y0 + i * (hb + gap)
+        wt = pw - (pw - minw) * i / n; wb = pw - (pw - minw) * (i + 1) / n
+        cx = px + pw / 2
+        s = C.rect(slide, cx - wt / 2, top, wt, hb, fill=fills[-n:][i] if i < n - 1 else B.TEXT_RED, name=f"Funnel {i + 1}", shape=MSO_SHAPE.TRAPEZOID)
+        s.rotation = 180; ss = min(wt, hb); s.adjustments[0] = min(0.99, ((wt - wb) / 2) / ss)
+        _num(slide, cx - 0.4, top, 0.8, hb, i, 18, B.WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, name=f"Funnel {i + 1} number")
+        ys.append(top + hb / 2)
+    _label_rows(slide, [(t, b) for t, b in rows], px + pw + 0.65, M + W - (px + pw + 0.65), ys, hb, "Funnel", num_color=B.SLATE)
+
+
+@variant("items.matrix", "items", ("AVI-144-0004", "AVI-144-0005", "AVI-144-0002"), 4, 4, fit=lambda f: 1.0)
+def items_matrix(slide, items, ctx):
+    rows = [_tb_split(i) for i in items]
+    gap = 0.22; cw = (W - gap) / 2; ch = (BOT - TOP - 0.1 - gap) / 2
+    ts = _common([t for t, _ in rows], cw - 1.2, 0.5, [22, 20, 18, 16], max_lines=1)
+    bs = _common([b for _, b in rows if b] or ["x"], cw - 1.2, ch - 1.2, [16, 15, 14, 13], line=1.25, max_lines=3)
+    for i, (t, b) in enumerate(rows):
+        x = M + (i % 2) * (cw + gap); y = TOP + 0.1 + (i // 2) * (ch + gap); dark = i == 0
+        C.rect(slide, x, y, cw, ch, fill=B.GRAPHITE if dark else B.PAPER, name=f"Quadrant {i + 1}")
+        C.rect(slide, x, y, 0.08, ch, fill=B.RED if dark else B.LINE, name=f"Quadrant {i + 1} rule")
+        _txt(slide, x + 0.4, y + 0.3, 1.2, 0.8, chr(65 + i), 40, B.WHITE if dark else B.GRAPHITE, font=B.MONO, name=f"Quadrant {i + 1} letter")
+        _bold(_txt(slide, x + 1.35, y + 0.35, cw - 1.6, 0.5, t, ts, B.WHITE if dark else B.BLACK, name=f"Quadrant {i + 1} title"))
+        if b: _txt(slide, x + 1.35, y + 0.95, cw - 1.6, ch - 1.15, b, bs, B.MIST if dark else B.SLATE, name=f"Quadrant {i + 1} body", line=1.25)
+
+
+@variant("process.cycle", "process", ("AVI-079-0003", "AVI-079-0004", "AVI-080-0002"), 3, 6, prefers="sequence",
+         fit=lambda f: 1.5 if f["n"] >= 5 else 0.5)
+def process_cycle(slide, steps, ctx):
+    import math
+    rows = [_tb_split(s) for s in steps]; n = len(rows)
+    cx, cy = M + W / 2, (TOP + BOT) / 2 + 0.05; r = 1.75; d = 0.78
+    C.rect(slide, cx - r, cy - r, 2 * r, 2 * r, line=B.LINE, line_w=2.5, name="Cycle ring", shape=MSO_SHAPE.OVAL)
+    C.rect(slide, cx - 0.95, cy - 0.95, 1.9, 1.9, fill=B.PAPER, name="Cycle hub", shape=MSO_SHAPE.OVAL)
+    add_icon(slide, "Simulation", Inches(cx - 0.4), Inches(cy - 0.4), Inches(0.8), B.GRAPHITE)
+    tw = 3.3
+    ts = _common([t for t, _ in rows], tw, 0.45, [18, 17, 16, 15], max_lines=1)
+    bs = _common([b for _, b in rows if b] or ["x"], tw, 0.7, [14, 13, 12], line=1.2, max_lines=2)
+    for i, (t, b) in enumerate(rows):
+        a = -math.pi / 2 + 2 * math.pi * i / n
+        nx, ny = cx + r * math.cos(a), cy + r * math.sin(a)
+        C.rect(slide, nx - d / 2, ny - d / 2, d, d, fill=B.TEXT_RED if i == 0 else B.GRAPHITE, name=f"Cycle {i + 1} node", shape=MSO_SHAPE.OVAL)
+        _num(slide, nx - d / 2, ny - d / 2, d, d, i, 16, B.WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, name=f"Cycle {i + 1} number")
+        right = math.cos(a) > 0.15; left = math.cos(a) < -0.15
+        if right: tx, al = nx + d / 2 + 0.2, PP_ALIGN.LEFT
+        elif left: tx, al = nx - d / 2 - 0.2 - tw, PP_ALIGN.RIGHT
+        else: tx, al = (nx + d / 2 + 0.2, PP_ALIGN.LEFT)
+        ty = ny - 0.42
+        _bold(_txt(slide, tx, ty, tw, 0.42, t, ts, B.BLACK, align=al, name=f"Cycle {i + 1} title", anchor=MSO_ANCHOR.BOTTOM))
+        if b: _txt(slide, tx, ty + 0.45, tw, 0.7, b, bs, B.SLATE, align=al, name=f"Cycle {i + 1} body", line=1.2)
+
+
+@variant("items.pillars", "items", ("AVI-182-0003", "AVI-182-0002", "AVI-182-0005"), 3, 5, fit=lambda f: 0.5 if f["n"] >= 4 else -0.5)
+def items_pillars(slide, items, ctx):
+    rows = [_tb_split(i) for i in items]; n = len(rows)
+    roof_h = 0.75; base_h = 0.28; y_roof = TOP + 0.1; y_base = BOT - base_h
+    C.rect(slide, M, y_roof, W, roof_h, fill=B.GRAPHITE, name="Pillars roof", shape=MSO_SHAPE.ISOSCELES_TRIANGLE)
+    C.rect(slide, M, y_roof + roof_h, W, 0.05, fill=B.RED, name="Pillars rule")
+    C.rect(slide, M, y_base, W, base_h, fill=B.BLACK, name="Pillars base")
+    gap = 0.35; pw = (W - 0.6 - gap * (n - 1)) / n; top = y_roof + roof_h + 0.25; ph = y_base - 0.15 - top
+    ts = _common([t for t, _ in rows], pw - 0.4, 0.8, [20, 18, 17, 16], line=1.15, max_lines=2)
+    bs = _common([b for _, b in rows if b] or ["x"], pw - 0.4, ph - 1.9, [15, 14, 13, 12], line=1.25, max_lines=6)
+    for i, (t, b) in enumerate(rows):
+        x = M + 0.3 + i * (pw + gap)
+        C.rect(slide, x - 0.08, top, pw + 0.16, 0.16, fill=B.GRAPHITE, name=f"Pillar {i + 1} capital")
+        C.rect(slide, x, top + 0.16, pw, ph - 0.16, fill=B.PAPER, name=f"Pillar {i + 1} shaft")
+        _num(slide, x + 0.2, top + 0.35, 1, 0.4, i, 15, B.TEXT_RED if i == 0 else B.SLATE, name=f"Pillar {i + 1} number")
+        _bold(_txt(slide, x + 0.2, top + 0.8, pw - 0.4, 0.8, t, ts, B.BLACK, name=f"Pillar {i + 1} title", line=1.15))
+        if b: _txt(slide, x + 0.2, top + 1.7, pw - 0.4, ph - 1.9, b, bs, B.SLATE, name=f"Pillar {i + 1} body", line=1.25)
+
+
+@variant("items.concentric", "items", ("AVI-208-0001", "AVI-208-0002", "AVI-065-0001"), 2, 4, fit=lambda f: -0.5)
+def items_concentric(slide, items, ctx):
+    rows = [_tb_split(i) for i in items]; n = len(rows)
+    D = BOT - TOP - 0.2; cx = M + 0.2 + D / 2; base = BOT - 0.1
+    fills = [B.PAPER, B.MIST, B.SLATE, B.GRAPHITE][-n:] if n < 4 else [B.PAPER, B.MIST, B.SLATE, B.GRAPHITE]
+    fills = fills[:-1] + [B.TEXT_RED]
+    ys = []
+    for i in range(n):
+        d = D * (1 - i * 0.78 / n)
+        C.rect(slide, cx - d / 2, base - d, d, d, fill=fills[i], name=f"Circle {i + 1}", shape=MSO_SHAPE.OVAL)
+        band_top = base - d; next_top = base - D * (1 - (i + 1) * 0.78 / n) if i < n - 1 else base
+        ys.append(band_top + (next_top - band_top) / 2 if i < n - 1 else base - d / 2)
+        lbl = rows[i][0]
+        _bold(_txt(slide, cx - d / 2 + 0.2, ys[-1] - 0.2, d - 0.4, 0.4, lbl, 15, B.WHITE if i >= n - 2 and n > 2 or i == n - 1 else B.GRAPHITE,
+                   align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, name=f"Circle {i + 1} label"))
+    lx = M + 0.2 + D + 0.6
+    _label_rows(slide, rows, lx, M + W - lx, [TOP + 0.6 + i * (BOT - TOP - 0.8) / max(1, n - 1) * (1 if n > 1 else 0) for i in range(n)],
+                (BOT - TOP) / n, "Concentric")
+
+
+@variant("process.phases", "process", ("AVI-001-0002", "AVI-001-0006", "AVI-001-0004"), 2, 4, prefers="sequence",
+         fit=lambda f: 1.0 if f["n"] <= 3 else 0)
+def process_phases(slide, steps, ctx):
+    rows = [_tb_split(s) for s in steps]; n = len(rows)
+    gap = 0.2; cw = (W - gap * (n - 1)) / n; hh = 1.15; top = TOP + 0.1
+    ts = _common([t for t, _ in rows], cw - 0.6, 0.6, [24, 22, 20, 18, 16], max_lines=1)
+    bs = _common([b for _, b in rows if b] or ["x"], cw - 0.6, BOT - top - hh - 0.5, [17, 16, 15, 14, 13], line=1.3, max_lines=8)
+    for i, (t, b) in enumerate(rows):
+        x = M + i * (cw + gap); last = i == n - 1
+        C.rect(slide, x, top, cw, hh, fill=B.BLACK if last else B.GRAPHITE, name=f"Phase {i + 1} header")
+        if last: C.rect(slide, x, top + hh - 0.06, cw, 0.06, fill=B.RED, name="Phase focus rule")
+        C.label(slide, x + 0.3, top + 0.15, cw - 0.6, f"PHASE {i + 1:02d}", color=B.MIST, size=10, name=f"Phase {i + 1} label")
+        _bold(_txt(slide, x + 0.3, top + 0.42, cw - 0.6, 0.6, t, ts, B.WHITE, name=f"Phase {i + 1} title"))
+        C.rect(slide, x, top + hh, cw, BOT - top - hh, fill=B.PAPER, name=f"Phase {i + 1} body field")
+        if b: _txt(slide, x + 0.3, top + hh + 0.3, cw - 0.6, BOT - top - hh - 0.5, b, bs, B.GRAPHITE, name=f"Phase {i + 1} body", line=1.3)
+
+
+@variant("items.venn", "items", ("AVI-239-0001", "AVI-239-0003", "AVI-240-0002"), 2, 3, fit=lambda f: -0.5)
+def items_venn(slide, items, ctx):
+    rows = [_tb_split(i) for i in items]; n = len(rows)
+    d = 2.9 if n == 3 else 3.3; cx0 = M + 0.3 + (2.6 if n == 3 else 2.5); cy0 = (TOP + BOT) / 2
+    pos = [(-0.75, -0.55), (0.75, -0.55), (0, 0.65)] if n == 3 else [(-0.85, 0), (0.85, 0)]
+    fills = [B.GRAPHITE, B.SLATE, B.TEXT_RED]
+    for i, (dx, dy) in enumerate(pos):
+        s = C.rect(slide, cx0 + dx - d / 2, cy0 + dy - d / 2, d, d, fill=fills[i] if n == 3 else [B.GRAPHITE, B.TEXT_RED][i],
+                   name=f"Venn {i + 1}", shape=MSO_SHAPE.OVAL)
+        _alpha(s)
+        ox = dx * 0.45; oy = dy * 0.55
+        lab = rows[i][0]; ls = _fit(lab, 1.5, 0.5, [15, 14, 13, 12], max_lines=2)
+        _bold(_txt(slide, cx0 + dx + ox - 0.8, cy0 + dy + oy - 0.3, 1.6, 0.6, lab, ls, B.WHITE, align=PP_ALIGN.CENTER,
+                   anchor=MSO_ANCHOR.MIDDLE, name=f"Venn {i + 1} label"))
+    lx = M + 6.6
+    _label_rows(slide, rows, lx, M + W - lx, [TOP + 0.75 + i * 1.6 for i in range(n)], 1.5, "Venn")
+
+
+@variant("process.chevrons", "process", ("AVI-003-0002", "AVI-003-0006", "AVI-003-0001"), 3, 6, prefers="sequence",
+         fit=lambda f: 1.0)
+def process_chevrons(slide, steps, ctx):
+    rows = [_tb_split(s) for s in steps]; n = len(rows)
+    ov = 0.25; cw = (W + ov * (n - 1)) / n; y = TOP + 0.35; ch = 1.0
+    tw = cw - 0.35
+    ts = _common([t for t, _ in rows], tw, 0.8, [20, 18, 17, 16, 15], line=1.15, max_lines=2)
+    bs = _common([b for _, b in rows if b] or ["x"], tw, BOT - y - ch - 1.3, [15, 14, 13, 12], line=1.25, max_lines=6)
+    for i, (t, b) in enumerate(rows):
+        x = M + i * (cw - ov); last = i == n - 1
+        s = C.rect(slide, x, y, cw, ch, fill=B.TEXT_RED if last else (B.GRAPHITE if i % 2 == 0 else B.BLACK),
+                   name=f"Chevron {i + 1}", shape=MSO_SHAPE.PENTAGON if i == 0 else MSO_SHAPE.CHEVRON)
+        _num(slide, x + (0.25 if i == 0 else 0.45), y, cw - 0.9, ch, i, 20, B.WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE,
+             name=f"Chevron {i + 1} number")
+        _bold(_txt(slide, x + 0.1, y + ch + 0.35, tw, 0.8, t, ts, B.BLACK, name=f"Chevron {i + 1} title", line=1.15))
+        if b: _txt(slide, x + 0.1, y + ch + 1.15, tw, BOT - y - ch - 1.3, b, bs, B.SLATE, name=f"Chevron {i + 1} body", line=1.25)
+
+
+@variant("items.number-rings", "items", ("AVI-166-0007", "AVI-166-0006", "AVI-170-0003"), 3, 5, fit=lambda f: -0.5)
+def items_number_rings(slide, items, ctx):
+    rows = [_tb_split(i) for i in items]; n = len(rows)
+    gap = 0.3; cw = (W - gap * (n - 1)) / n; d = min(1.7, cw - 0.4); top = TOP + 0.25
+    ts = _common([t for t, _ in rows], cw - 0.2, 0.8, [20, 18, 17, 16], line=1.15, max_lines=2)
+    bs = _common([b for _, b in rows if b] or ["x"], cw - 0.2, BOT - top - d - 1.3, [15, 14, 13, 12], line=1.25, max_lines=6)
+    for i, (t, b) in enumerate(rows):
+        x = M + i * (cw + gap); cx = x + cw / 2
+        C.rect(slide, cx - d / 2, top, d, d, line=B.TEXT_RED if i == 0 else B.GRAPHITE, line_w=5, name=f"Ring {i + 1}", shape=MSO_SHAPE.OVAL)
+        _num(slide, cx - d / 2, top, d, d, i, 40, B.TEXT_RED if i == 0 else B.BLACK, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE,
+             name=f"Ring {i + 1} number")
+        _bold(_txt(slide, x + 0.1, top + d + 0.3, cw - 0.2, 0.8, t, ts, B.BLACK, align=PP_ALIGN.CENTER, name=f"Ring {i + 1} title", line=1.15))
+        if b: _txt(slide, x + 0.1, top + d + 1.1, cw - 0.2, BOT - top - d - 1.3, b, bs, B.SLATE, align=PP_ALIGN.CENTER,
+                   name=f"Ring {i + 1} body", line=1.25)
